@@ -1,0 +1,12 @@
+.DS_Store
+
+*.lck
+*.bak
+_autosave-*
+fp-info-cache
+.history/
+
+.claude/
+*-backups/
+__pycache__/
+*.pyc
