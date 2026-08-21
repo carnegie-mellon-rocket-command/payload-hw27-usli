@@ -1,12 +1,15 @@
+# Generic
 .DS_Store
+.claude/
+.vscode/
+*-backups/
+__pycache__/
+*.pyc
+*.swp
 
+# HW Specific
 *.lck
 *.bak
 _autosave-*
 fp-info-cache
 .history/
-
-.claude/
-*-backups/
-__pycache__/
-*.pyc

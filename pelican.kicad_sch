@@ -3,7 +3,7 @@
 	(generator "eeschema")
 	(generator_version "10.0")
 	(uuid "03ccc822-2fac-4029-af97-539e9460fe35")
-	(paper "A5")
+	(paper "A5" portrait)
 	(title_block
 		(title "Pelican")
 		(date "2026-05-04")
@@ -12,9 +12,34 @@
 		(comment 1 "Designed by Rahim Malik")
 	)
 	(lib_symbols)
+	(rectangle
+		(start 27.94 96.52)
+		(end 121.92 156.21)
+		(stroke
+			(width 0)
+			(type default)
+		)
+		(fill
+			(type none)
+		)
+		(uuid "a836a6d4-9e64-4bfc-9367-0d282845e5ee")
+	)
+	(text "South Bridge"
+		(exclude_from_sim no)
+		(at 29.21 99.314 0)
+		(effects
+			(font
+				(size 1.27 1.27)
+				(thickness 0.508)
+				(bold yes)
+			)
+			(justify left)
+		)
+		(uuid "cd1bb2eb-8d47-4d6c-a149-71bb72c7fc8b")
+	)
 	(sheet
-		(at 133.35 46.99)
-		(size 55.88 16.51)
+		(at 76.2 49.53)
+		(size 45.72 15.24)
 		(exclude_from_sim no)
 		(in_bom yes)
 		(on_board yes)
@@ -29,7 +54,7 @@
 		)
 		(uuid "21a08f8e-0e1c-4f6b-91ce-fe4c9ce74f58")
 		(property "Sheetname" "Camera"
-			(at 133.35 46.2784 0)
+			(at 76.2 48.8184 0)
 			(show_name no)
 			(do_not_autoplace no)
 			(effects
@@ -40,237 +65,7 @@
 			)
 		)
 		(property "Sheetfile" "schematics/camera_pelican.kicad_sch"
-			(at 133.35 64.0846 0)
-			(show_name no)
-			(do_not_autoplace no)
-			(effects
-				(font
-					(size 1.27 1.27)
-				)
-				(justify left top)
-			)
-		)
-		(instances
-			(project "pelican"
-				(path "/03ccc822-2fac-4029-af97-539e9460fe35"
-					(page "6")
-				)
-			)
-		)
-	)
-	(sheet
-		(at 20.32 71.12)
-		(size 36.83 16.51)
-		(exclude_from_sim no)
-		(in_bom yes)
-		(on_board yes)
-		(dnp no)
-		(fields_autoplaced yes)
-		(stroke
-			(width 0.1524)
-			(type solid)
-		)
-		(fill
-			(color 255 153 0 0.25)
-		)
-		(uuid "21ae68ba-843b-4af3-805b-206ec5f29f16")
-		(property "Sheetname" "Ethernet"
-			(at 20.32 70.4084 0)
-			(show_name no)
-			(do_not_autoplace no)
-			(effects
-				(font
-					(size 1.27 1.27)
-				)
-				(justify left bottom)
-			)
-		)
-		(property "Sheetfile" "schematics/ethernet_pelican.kicad_sch"
-			(at 20.32 88.2146 0)
-			(show_name no)
-			(do_not_autoplace no)
-			(effects
-				(font
-					(size 1.27 1.27)
-				)
-				(justify left top)
-			)
-		)
-		(instances
-			(project "pelican"
-				(path "/03ccc822-2fac-4029-af97-539e9460fe35"
-					(page "7")
-				)
-			)
-		)
-	)
-	(sheet
-		(at 64.77 21.59)
-		(size 124.46 17.78)
-		(exclude_from_sim no)
-		(in_bom yes)
-		(on_board yes)
-		(dnp no)
-		(fields_autoplaced yes)
-		(stroke
-			(width 0.1524)
-			(type solid)
-		)
-		(fill
-			(color 0 0 255 0.25)
-		)
-		(uuid "3345064e-ebc3-49d0-bdab-fd2c2db56ccd")
-		(property "Sheetname" "Power"
-			(at 64.77 20.8784 0)
-			(show_name no)
-			(do_not_autoplace no)
-			(effects
-				(font
-					(size 1.27 1.27)
-				)
-				(justify left bottom)
-			)
-		)
-		(property "Sheetfile" "schematics/power_pelican.kicad_sch"
-			(at 64.77 39.9546 0)
-			(show_name no)
-			(do_not_autoplace no)
-			(effects
-				(font
-					(size 1.27 1.27)
-				)
-				(justify left top)
-			)
-		)
-		(instances
-			(project "pelican"
-				(path "/03ccc822-2fac-4029-af97-539e9460fe35"
-					(page "2")
-				)
-			)
-		)
-	)
-	(sheet
-		(at 133.35 71.12)
-		(size 55.88 16.51)
-		(exclude_from_sim no)
-		(in_bom yes)
-		(on_board yes)
-		(dnp no)
-		(fields_autoplaced yes)
-		(stroke
-			(width 0.1524)
-			(type solid)
-		)
-		(fill
-			(color 0 255 0 0.25)
-		)
-		(uuid "4aa55629-72f0-42cd-91f0-be24c8a25a9f")
-		(property "Sheetname" "Microphone"
-			(at 133.35 70.4084 0)
-			(show_name no)
-			(do_not_autoplace no)
-			(effects
-				(font
-					(size 1.27 1.27)
-				)
-				(justify left bottom)
-			)
-		)
-		(property "Sheetfile" "schematics/microphone_pelican.kicad_sch"
-			(at 133.35 88.2146 0)
-			(show_name no)
-			(do_not_autoplace no)
-			(effects
-				(font
-					(size 1.27 1.27)
-				)
-				(justify left top)
-			)
-		)
-		(instances
-			(project "pelican"
-				(path "/03ccc822-2fac-4029-af97-539e9460fe35"
-					(page "8")
-				)
-			)
-		)
-	)
-	(sheet
-		(at 20.32 46.99)
-		(size 36.83 16.51)
-		(exclude_from_sim no)
-		(in_bom yes)
-		(on_board yes)
-		(dnp no)
-		(fields_autoplaced yes)
-		(stroke
-			(width 0.1524)
-			(type solid)
-		)
-		(fill
-			(color 255 153 0 0.25)
-		)
-		(uuid "676f47cc-81fa-4570-932f-1e8291c2a37f")
-		(property "Sheetname" "USB"
-			(at 20.32 46.2784 0)
-			(show_name no)
-			(do_not_autoplace no)
-			(effects
-				(font
-					(size 1.27 1.27)
-				)
-				(justify left bottom)
-			)
-		)
-		(property "Sheetfile" "schematics/usb_pelican.kicad_sch"
-			(at 20.32 64.0846 0)
-			(show_name no)
-			(do_not_autoplace no)
-			(effects
-				(font
-					(size 1.27 1.27)
-				)
-				(justify left top)
-			)
-		)
-		(instances
-			(project "pelican"
-				(path "/03ccc822-2fac-4029-af97-539e9460fe35"
-					(page "5")
-				)
-			)
-		)
-	)
-	(sheet
-		(at 20.32 21.59)
-		(size 36.83 17.78)
-		(exclude_from_sim no)
-		(in_bom yes)
-		(on_board yes)
-		(dnp no)
-		(fields_autoplaced yes)
-		(stroke
-			(width 0.1524)
-			(type solid)
-		)
-		(fill
-			(color 255 153 0 0.2509803922)
-		)
-		(uuid "a85a53bb-5b50-475b-995a-b454556c96ce")
-		(property "Sheetname" "Storage"
-			(at 20.32 20.8784 0)
-			(show_name no)
-			(do_not_autoplace no)
-			(effects
-				(font
-					(size 1.27 1.27)
-				)
-				(justify left bottom)
-			)
-		)
-		(property "Sheetfile" "schematics/storage_pelican.kicad_sch"
-			(at 20.32 39.9546 0)
+			(at 76.2 65.3546 0)
 			(show_name no)
 			(do_not_autoplace no)
 			(effects
@@ -289,8 +84,237 @@
 		)
 	)
 	(sheet
-		(at 64.77 46.99)
-		(size 60.96 40.64)
+		(at 31.75 140.97)
+		(size 86.36 10.16)
+		(exclude_from_sim no)
+		(in_bom yes)
+		(on_board yes)
+		(dnp no)
+		(fields_autoplaced yes)
+		(stroke
+			(width 0.1524)
+			(type solid)
+		)
+		(fill
+			(color 255 153 0 0.25)
+		)
+		(uuid "21ae68ba-843b-4af3-805b-206ec5f29f16")
+		(property "Sheetname" "Ethernet"
+			(at 31.75 140.2584 0)
+			(show_name no)
+			(do_not_autoplace no)
+			(effects
+				(font
+					(size 1.27 1.27)
+				)
+				(justify left bottom)
+			)
+		)
+		(property "Sheetfile" "schematics/ethernet_pelican.kicad_sch"
+			(at 31.75 151.7146 0)
+			(show_name no)
+			(do_not_autoplace no)
+			(effects
+				(font
+					(size 1.27 1.27)
+				)
+				(justify left top)
+			)
+		)
+		(instances
+			(project "pelican"
+				(path "/03ccc822-2fac-4029-af97-539e9460fe35"
+					(page "8")
+				)
+			)
+		)
+	)
+	(sheet
+		(at 27.94 24.13)
+		(size 93.98 17.78)
+		(exclude_from_sim no)
+		(in_bom yes)
+		(on_board yes)
+		(dnp no)
+		(fields_autoplaced yes)
+		(stroke
+			(width 0.1524)
+			(type solid)
+		)
+		(fill
+			(color 0 0 255 0.25)
+		)
+		(uuid "3345064e-ebc3-49d0-bdab-fd2c2db56ccd")
+		(property "Sheetname" "Power"
+			(at 27.94 23.4184 0)
+			(show_name no)
+			(do_not_autoplace no)
+			(effects
+				(font
+					(size 1.27 1.27)
+				)
+				(justify left bottom)
+			)
+		)
+		(property "Sheetfile" "schematics/power_pelican.kicad_sch"
+			(at 27.94 42.4946 0)
+			(show_name no)
+			(do_not_autoplace no)
+			(effects
+				(font
+					(size 1.27 1.27)
+				)
+				(justify left top)
+			)
+		)
+		(instances
+			(project "pelican"
+				(path "/03ccc822-2fac-4029-af97-539e9460fe35"
+					(page "2")
+				)
+			)
+		)
+	)
+	(sheet
+		(at 76.2 72.39)
+		(size 45.72 15.24)
+		(exclude_from_sim no)
+		(in_bom yes)
+		(on_board yes)
+		(dnp no)
+		(fields_autoplaced yes)
+		(stroke
+			(width 0.1524)
+			(type solid)
+		)
+		(fill
+			(color 0 255 0 0.25)
+		)
+		(uuid "4aa55629-72f0-42cd-91f0-be24c8a25a9f")
+		(property "Sheetname" "Microphone"
+			(at 76.2 71.6784 0)
+			(show_name no)
+			(do_not_autoplace no)
+			(effects
+				(font
+					(size 1.27 1.27)
+				)
+				(justify left bottom)
+			)
+		)
+		(property "Sheetfile" "schematics/microphone_pelican.kicad_sch"
+			(at 76.2 88.2146 0)
+			(show_name no)
+			(do_not_autoplace no)
+			(effects
+				(font
+					(size 1.27 1.27)
+				)
+				(justify left top)
+			)
+		)
+		(instances
+			(project "pelican"
+				(path "/03ccc822-2fac-4029-af97-539e9460fe35"
+					(page "5")
+				)
+			)
+		)
+	)
+	(sheet
+		(at 31.75 123.19)
+		(size 86.36 10.16)
+		(exclude_from_sim no)
+		(in_bom yes)
+		(on_board yes)
+		(dnp no)
+		(fields_autoplaced yes)
+		(stroke
+			(width 0.1524)
+			(type solid)
+		)
+		(fill
+			(color 255 153 0 0.25)
+		)
+		(uuid "676f47cc-81fa-4570-932f-1e8291c2a37f")
+		(property "Sheetname" "USB"
+			(at 31.75 122.4784 0)
+			(show_name no)
+			(do_not_autoplace no)
+			(effects
+				(font
+					(size 1.27 1.27)
+				)
+				(justify left bottom)
+			)
+		)
+		(property "Sheetfile" "schematics/usb_pelican.kicad_sch"
+			(at 31.75 133.9346 0)
+			(show_name no)
+			(do_not_autoplace no)
+			(effects
+				(font
+					(size 1.27 1.27)
+				)
+				(justify left top)
+			)
+		)
+		(instances
+			(project "pelican"
+				(path "/03ccc822-2fac-4029-af97-539e9460fe35"
+					(page "7")
+				)
+			)
+		)
+	)
+	(sheet
+		(at 31.75 105.41)
+		(size 86.36 10.16)
+		(exclude_from_sim no)
+		(in_bom yes)
+		(on_board yes)
+		(dnp no)
+		(stroke
+			(width 0.1524)
+			(type solid)
+		)
+		(fill
+			(color 255 153 0 0.2509803922)
+		)
+		(uuid "a85a53bb-5b50-475b-995a-b454556c96ce")
+		(property "Sheetname" "Storage"
+			(at 31.75 104.6984 0)
+			(show_name no)
+			(do_not_autoplace no)
+			(effects
+				(font
+					(size 1.27 1.27)
+				)
+				(justify left bottom)
+			)
+		)
+		(property "Sheetfile" "schematics/storage_pelican.kicad_sch"
+			(at 31.75 116.078 0)
+			(show_name no)
+			(do_not_autoplace no)
+			(effects
+				(font
+					(size 1.27 1.27)
+				)
+				(justify left top)
+			)
+		)
+		(instances
+			(project "pelican"
+				(path "/03ccc822-2fac-4029-af97-539e9460fe35"
+					(page "6")
+				)
+			)
+		)
+	)
+	(sheet
+		(at 27.94 49.53)
+		(size 40.64 38.1)
 		(exclude_from_sim no)
 		(in_bom yes)
 		(on_board yes)
@@ -305,7 +329,7 @@
 		)
 		(uuid "c2f7e557-87bd-48d4-8cf1-e69c1d4630c4")
 		(property "Sheetname" "Core"
-			(at 64.77 46.2784 0)
+			(at 27.94 48.8184 0)
 			(show_name no)
 			(do_not_autoplace no)
 			(effects
@@ -316,7 +340,7 @@
 			)
 		)
 		(property "Sheetfile" "schematics/core_pelican.kicad_sch"
-			(at 64.77 88.2146 0)
+			(at 27.94 88.2146 0)
 			(show_name no)
 			(do_not_autoplace no)
 			(effects

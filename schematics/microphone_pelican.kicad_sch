@@ -1367,7 +1367,7 @@
 		(dnp no)
 		(fields_autoplaced yes)
 		(uuid "321f5ade-9c1b-4ae8-866a-e48d77cf86ea")
-		(property "Reference" "R19"
+		(property "Reference" "R501"
 			(at 106.68 53.34 0)
 			(show_name no)
 			(do_not_autoplace no)
@@ -1443,7 +1443,7 @@
 		(instances
 			(project "pelican"
 				(path "/03ccc822-2fac-4029-af97-539e9460fe35/4aa55629-72f0-42cd-91f0-be24c8a25a9f"
-					(reference "R19")
+					(reference "R501")
 					(unit 1)
 				)
 			)
@@ -1461,7 +1461,7 @@
 		(dnp no)
 		(fields_autoplaced yes)
 		(uuid "74e56906-f0ba-43fb-a26d-f3fc632cf278")
-		(property "Reference" "C15"
+		(property "Reference" "C501"
 			(at 96.52 62.2299 90)
 			(show_name no)
 			(do_not_autoplace no)
@@ -1539,7 +1539,7 @@
 		(instances
 			(project "pelican"
 				(path "/03ccc822-2fac-4029-af97-539e9460fe35/4aa55629-72f0-42cd-91f0-be24c8a25a9f"
-					(reference "C15")
+					(reference "C501")
 					(unit 1)
 				)
 			)
@@ -1556,7 +1556,7 @@
 		(in_pos_files yes)
 		(dnp no)
 		(uuid "96bef786-62c7-4a55-a1df-0953b465ac67")
-		(property "Reference" "#PWR62"
+		(property "Reference" "#PWR0502"
 			(at 124.46 83.82 0)
 			(hide yes)
 			(show_name no)
@@ -1616,7 +1616,7 @@
 		(instances
 			(project "pelican"
 				(path "/03ccc822-2fac-4029-af97-539e9460fe35/4aa55629-72f0-42cd-91f0-be24c8a25a9f"
-					(reference "#PWR62")
+					(reference "#PWR0502")
 					(unit 1)
 				)
 			)
@@ -1634,7 +1634,7 @@
 		(in_pos_files yes)
 		(dnp no)
 		(uuid "ab9f89b4-00a7-48c1-9c0a-8c27562e840b")
-		(property "Reference" "C14"
+		(property "Reference" "C502"
 			(at 115.57 64.7699 90)
 			(show_name no)
 			(do_not_autoplace no)
@@ -1712,7 +1712,7 @@
 		(instances
 			(project "pelican"
 				(path "/03ccc822-2fac-4029-af97-539e9460fe35/4aa55629-72f0-42cd-91f0-be24c8a25a9f"
-					(reference "C14")
+					(reference "C502")
 					(unit 1)
 				)
 			)
@@ -1729,7 +1729,7 @@
 		(in_pos_files yes)
 		(dnp no)
 		(uuid "de40e1ea-0db4-4a5e-9dd6-a9670583b242")
-		(property "Reference" "#PWR63"
+		(property "Reference" "#PWR0501"
 			(at 92.71 73.66 0)
 			(hide yes)
 			(show_name no)
@@ -1789,7 +1789,7 @@
 		(instances
 			(project "pelican"
 				(path "/03ccc822-2fac-4029-af97-539e9460fe35/4aa55629-72f0-42cd-91f0-be24c8a25a9f"
-					(reference "#PWR63")
+					(reference "#PWR0501")
 					(unit 1)
 				)
 			)
@@ -1807,7 +1807,7 @@
 		(dnp no)
 		(fields_autoplaced yes)
 		(uuid "e0fcee21-a0cf-4886-ae01-2a13af1c2ed3")
-		(property "Reference" "M1"
+		(property "Reference" "MIC_M501"
 			(at 128.27 49.5249 0)
 			(show_name no)
 			(do_not_autoplace no)
@@ -1915,7 +1915,7 @@
 		(instances
 			(project "pelican"
 				(path "/03ccc822-2fac-4029-af97-539e9460fe35/4aa55629-72f0-42cd-91f0-be24c8a25a9f"
-					(reference "M1")
+					(reference "MIC_M501")
 					(unit 1)
 				)
 			)

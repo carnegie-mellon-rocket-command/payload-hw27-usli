@@ -2897,7 +2897,7 @@
 					(justify bottom)
 				)
 			)
-			(property "Sim.Library" "libraries/aviolib/transistors/Q_DMG2305UX-13/Q_DMG2305UX-13.spice"
+			(property "Sim.Library" "libraries/Q_DMG2305UX-13/Q_DMG2305UX-13.spice"
 				(at 0 0 0)
 				(show_name no)
 				(do_not_autoplace no)
@@ -3340,7 +3340,7 @@
 					)
 				)
 			)
-			(property "Sim.Library" "libraries/aviolib/transistors/Q_NDS7002A/Q_NDS7002A.spice"
+			(property "Sim.Library" "libraries/Q_NDS7002A/Q_NDS7002A.spice"
 				(at 0 0 0)
 				(show_name no)
 				(do_not_autoplace no)
@@ -8787,7 +8787,7 @@
 		)
 		(uuid "b3f20f7c-4af4-4f68-9883-b62709a12c20")
 	)
-	(text "Power Regulation"
+	(text "Boost Converter"
 		(exclude_from_sim no)
 		(at 232.41 147.32 0)
 		(effects
@@ -8984,12 +8984,6 @@
 		(uuid "66908589-1da4-4b23-8a44-b779321a5883")
 	)
 	(junction
-		(at 250.19 93.98)
-		(diameter 0)
-		(color 0 0 0 0)
-		(uuid "6a96628b-f0ec-466e-9773-44c4724b330e")
-	)
-	(junction
 		(at 132.08 93.98)
 		(diameter 0)
 		(color 0 0 0 0)
@@ -9096,6 +9090,12 @@
 		(diameter 0)
 		(color 0 0 0 0)
 		(uuid "ed5798d1-52ac-4596-8008-1148fcbbe278")
+	)
+	(junction
+		(at 250.19 93.98)
+		(diameter 0)
+		(color 0 0 0 0)
+		(uuid "f190b2e4-c947-4e36-ad9b-285d1d64feaf")
 	)
 	(junction
 		(at 203.2 185.42)
@@ -10091,7 +10091,7 @@
 			)
 		)
 	)
-	(global_label "SWITCH_STAT"
+	(global_label "SW_STAT"
 		(shape output)
 		(at 83.82 107.95 180)
 		(fields_autoplaced yes)
@@ -10103,7 +10103,7 @@
 		)
 		(uuid "574ba398-921d-40fc-80d7-9e78b073edcb")
 		(property "Intersheetrefs" "${INTERSHEET_REFS}"
-			(at 68.8001 107.95 0)
+			(at 72.973 107.95 0)
 			(hide yes)
 			(show_name no)
 			(do_not_autoplace no)
@@ -10223,7 +10223,7 @@
 		(in_pos_files yes)
 		(dnp no)
 		(uuid "007bd9eb-1fb5-474d-84d5-8a011d4fe228")
-		(property "Reference" "C4"
+		(property "Reference" "C210"
 			(at 246.38 96.5199 90)
 			(show_name no)
 			(do_not_autoplace no)
@@ -10301,7 +10301,7 @@
 		(instances
 			(project "pelican"
 				(path "/03ccc822-2fac-4029-af97-539e9460fe35/3345064e-ebc3-49d0-bdab-fd2c2db56ccd"
-					(reference "C4")
+					(reference "C210")
 					(unit 1)
 				)
 			)
@@ -10319,7 +10319,7 @@
 		(in_pos_files yes)
 		(dnp no)
 		(uuid "00da7c72-fdfe-44b3-87e2-285acaa45f69")
-		(property "Reference" "J1"
+		(property "Reference" "BAT_J201"
 			(at 77.47 82.55 0)
 			(show_name no)
 			(do_not_autoplace no)
@@ -10492,7 +10492,7 @@
 		(instances
 			(project "pelican"
 				(path "/03ccc822-2fac-4029-af97-539e9460fe35/3345064e-ebc3-49d0-bdab-fd2c2db56ccd"
-					(reference "J1")
+					(reference "BAT_J201")
 					(unit 1)
 				)
 			)
@@ -10510,7 +10510,7 @@
 		(dnp no)
 		(fields_autoplaced yes)
 		(uuid "01b648bc-6070-4040-a2c7-e076ae3b4e7a")
-		(property "Reference" "U2"
+		(property "Reference" "MUX_U201"
 			(at 154.94 167.64 0)
 			(show_name no)
 			(do_not_autoplace no)
@@ -10604,7 +10604,7 @@
 		(instances
 			(project "pelican"
 				(path "/03ccc822-2fac-4029-af97-539e9460fe35/3345064e-ebc3-49d0-bdab-fd2c2db56ccd"
-					(reference "U2")
+					(reference "MUX_U201")
 					(unit 1)
 				)
 			)
@@ -10622,7 +10622,7 @@
 		(dnp no)
 		(fields_autoplaced yes)
 		(uuid "03b95b25-6a3b-470a-a213-263308a52298")
-		(property "Reference" "#PWR30"
+		(property "Reference" "#PWR0238"
 			(at 342.9 193.04 0)
 			(hide yes)
 			(show_name no)
@@ -10682,7 +10682,7 @@
 		(instances
 			(project "pelican"
 				(path "/03ccc822-2fac-4029-af97-539e9460fe35/3345064e-ebc3-49d0-bdab-fd2c2db56ccd"
-					(reference "#PWR30")
+					(reference "#PWR0238")
 					(unit 1)
 				)
 			)
@@ -10699,7 +10699,7 @@
 		(in_pos_files yes)
 		(dnp no)
 		(uuid "049e121d-96e6-4f8b-9012-bcc24ff16a5a")
-		(property "Reference" "#PWR44"
+		(property "Reference" "#PWR0236"
 			(at 332.74 120.65 0)
 			(hide yes)
 			(show_name no)
@@ -10759,7 +10759,7 @@
 		(instances
 			(project "pelican"
 				(path "/03ccc822-2fac-4029-af97-539e9460fe35/3345064e-ebc3-49d0-bdab-fd2c2db56ccd"
-					(reference "#PWR44")
+					(reference "#PWR0236")
 					(unit 1)
 				)
 			)
@@ -10776,7 +10776,7 @@
 		(in_pos_files yes)
 		(dnp no)
 		(uuid "06c5860b-2bbc-49fc-a092-199188b11212")
-		(property "Reference" "C8"
+		(property "Reference" "C202"
 			(at 84.582 193.04 90)
 			(show_name no)
 			(do_not_autoplace no)
@@ -10854,7 +10854,7 @@
 		(instances
 			(project "pelican"
 				(path "/03ccc822-2fac-4029-af97-539e9460fe35/3345064e-ebc3-49d0-bdab-fd2c2db56ccd"
-					(reference "C8")
+					(reference "C202")
 					(unit 1)
 				)
 			)
@@ -10871,7 +10871,7 @@
 		(in_pos_files yes)
 		(dnp no)
 		(uuid "07e6aecb-94da-49dc-b88f-c8ea3220a4ff")
-		(property "Reference" "#PWR9"
+		(property "Reference" "#PWR0201"
 			(at 76.2 176.53 0)
 			(hide yes)
 			(show_name no)
@@ -10931,7 +10931,7 @@
 		(instances
 			(project "pelican"
 				(path "/03ccc822-2fac-4029-af97-539e9460fe35/3345064e-ebc3-49d0-bdab-fd2c2db56ccd"
-					(reference "#PWR9")
+					(reference "#PWR0201")
 					(unit 1)
 				)
 			)
@@ -10949,7 +10949,7 @@
 		(dnp no)
 		(fields_autoplaced yes)
 		(uuid "0c788a2b-2da4-4c13-94fc-3381b1fd77db")
-		(property "Reference" "#PWR34"
+		(property "Reference" "#PWR0206"
 			(at 86.36 124.46 0)
 			(hide yes)
 			(show_name no)
@@ -11009,7 +11009,7 @@
 		(instances
 			(project "pelican"
 				(path "/03ccc822-2fac-4029-af97-539e9460fe35/3345064e-ebc3-49d0-bdab-fd2c2db56ccd"
-					(reference "#PWR34")
+					(reference "#PWR0206")
 					(unit 1)
 				)
 			)
@@ -11027,7 +11027,7 @@
 		(dnp no)
 		(fields_autoplaced yes)
 		(uuid "0ee72a60-5f20-47a3-9bb0-7470354ea568")
-		(property "Reference" "#PWR57"
+		(property "Reference" "#PWR0210"
 			(at 114.3 82.55 0)
 			(hide yes)
 			(show_name no)
@@ -11087,7 +11087,7 @@
 		(instances
 			(project "pelican"
 				(path "/03ccc822-2fac-4029-af97-539e9460fe35/3345064e-ebc3-49d0-bdab-fd2c2db56ccd"
-					(reference "#PWR57")
+					(reference "#PWR0210")
 					(unit 1)
 				)
 			)
@@ -11105,7 +11105,7 @@
 		(dnp no)
 		(fields_autoplaced yes)
 		(uuid "12a87917-2791-4d13-ace1-804e301be15a")
-		(property "Reference" "R15"
+		(property "Reference" "R207"
 			(at 165.1 93.9799 90)
 			(show_name no)
 			(do_not_autoplace no)
@@ -11183,7 +11183,7 @@
 		(instances
 			(project "pelican"
 				(path "/03ccc822-2fac-4029-af97-539e9460fe35/3345064e-ebc3-49d0-bdab-fd2c2db56ccd"
-					(reference "R15")
+					(reference "R207")
 					(unit 1)
 				)
 			)
@@ -11201,7 +11201,7 @@
 		(dnp no)
 		(fields_autoplaced yes)
 		(uuid "12e932e9-6841-44b1-8966-571596286702")
-		(property "Reference" "C5"
+		(property "Reference" "C212"
 			(at 346.71 96.5199 90)
 			(show_name no)
 			(do_not_autoplace no)
@@ -11279,7 +11279,7 @@
 		(instances
 			(project "pelican"
 				(path "/03ccc822-2fac-4029-af97-539e9460fe35/3345064e-ebc3-49d0-bdab-fd2c2db56ccd"
-					(reference "C5")
+					(reference "C212")
 					(unit 1)
 				)
 			)
@@ -11296,7 +11296,7 @@
 		(in_pos_files yes)
 		(dnp no)
 		(uuid "164bf94b-6592-45ba-9836-7957c61f2077")
-		(property "Reference" "#PWR50"
+		(property "Reference" "#PWR0222"
 			(at 193.04 74.93 0)
 			(hide yes)
 			(show_name no)
@@ -11356,7 +11356,7 @@
 		(instances
 			(project "pelican"
 				(path "/03ccc822-2fac-4029-af97-539e9460fe35/3345064e-ebc3-49d0-bdab-fd2c2db56ccd"
-					(reference "#PWR50")
+					(reference "#PWR0222")
 					(unit 1)
 				)
 			)
@@ -11373,7 +11373,7 @@
 		(in_pos_files yes)
 		(dnp no)
 		(uuid "172794dc-1775-4301-b5e7-a538a3010d70")
-		(property "Reference" "C12"
+		(property "Reference" "C206"
 			(at 212.852 180.34 90)
 			(show_name no)
 			(do_not_autoplace no)
@@ -11451,7 +11451,7 @@
 		(instances
 			(project "pelican"
 				(path "/03ccc822-2fac-4029-af97-539e9460fe35/3345064e-ebc3-49d0-bdab-fd2c2db56ccd"
-					(reference "C12")
+					(reference "C206")
 					(unit 1)
 				)
 			)
@@ -11468,7 +11468,7 @@
 		(in_pos_files yes)
 		(dnp no)
 		(uuid "19c115ba-286a-4714-8cb0-4e63fd113a14")
-		(property "Reference" "L1"
+		(property "Reference" "L201"
 			(at 299.72 151.892 0)
 			(show_name no)
 			(do_not_autoplace no)
@@ -11577,7 +11577,7 @@
 		(instances
 			(project "pelican"
 				(path "/03ccc822-2fac-4029-af97-539e9460fe35/3345064e-ebc3-49d0-bdab-fd2c2db56ccd"
-					(reference "L1")
+					(reference "L201")
 					(unit 1)
 				)
 			)
@@ -11594,7 +11594,7 @@
 		(in_pos_files yes)
 		(dnp no)
 		(uuid "1cb23c44-e65e-497a-b005-86867ab13e20")
-		(property "Reference" "#PWR49"
+		(property "Reference" "#PWR0218"
 			(at 162.56 74.93 0)
 			(hide yes)
 			(show_name no)
@@ -11654,7 +11654,7 @@
 		(instances
 			(project "pelican"
 				(path "/03ccc822-2fac-4029-af97-539e9460fe35/3345064e-ebc3-49d0-bdab-fd2c2db56ccd"
-					(reference "#PWR49")
+					(reference "#PWR0218")
 					(unit 1)
 				)
 			)
@@ -11672,7 +11672,7 @@
 		(dnp no)
 		(fields_autoplaced yes)
 		(uuid "1da4b09b-3d11-4291-9478-49d0f349442e")
-		(property "Reference" "R14"
+		(property "Reference" "R206"
 			(at 165.1 76.1999 90)
 			(show_name no)
 			(do_not_autoplace no)
@@ -11750,7 +11750,7 @@
 		(instances
 			(project "pelican"
 				(path "/03ccc822-2fac-4029-af97-539e9460fe35/3345064e-ebc3-49d0-bdab-fd2c2db56ccd"
-					(reference "R14")
+					(reference "R206")
 					(unit 1)
 				)
 			)
@@ -11768,7 +11768,7 @@
 		(dnp no)
 		(fields_autoplaced yes)
 		(uuid "1ddb4e60-acfe-47c9-a338-8c42ff269d46")
-		(property "Reference" "#PWR32"
+		(property "Reference" "#PWR0204"
 			(at 86.36 81.28 0)
 			(hide yes)
 			(show_name no)
@@ -11828,7 +11828,7 @@
 		(instances
 			(project "pelican"
 				(path "/03ccc822-2fac-4029-af97-539e9460fe35/3345064e-ebc3-49d0-bdab-fd2c2db56ccd"
-					(reference "#PWR32")
+					(reference "#PWR0204")
 					(unit 1)
 				)
 			)
@@ -11846,7 +11846,7 @@
 		(dnp no)
 		(fields_autoplaced yes)
 		(uuid "219f5922-27d1-48b1-9ec4-eadb911bb72c")
-		(property "Reference" "R8"
+		(property "Reference" "R204"
 			(at 120.65 87.63 0)
 			(show_name no)
 			(do_not_autoplace no)
@@ -11922,7 +11922,7 @@
 		(instances
 			(project "pelican"
 				(path "/03ccc822-2fac-4029-af97-539e9460fe35/3345064e-ebc3-49d0-bdab-fd2c2db56ccd"
-					(reference "R8")
+					(reference "R204")
 					(unit 1)
 				)
 			)
@@ -11940,7 +11940,7 @@
 		(dnp no)
 		(fields_autoplaced yes)
 		(uuid "2c242e53-884f-4cb6-9c51-b11462d437bc")
-		(property "Reference" "#PWR43"
+		(property "Reference" "#PWR0219"
 			(at 162.56 107.95 0)
 			(hide yes)
 			(show_name no)
@@ -12000,7 +12000,7 @@
 		(instances
 			(project "pelican"
 				(path "/03ccc822-2fac-4029-af97-539e9460fe35/3345064e-ebc3-49d0-bdab-fd2c2db56ccd"
-					(reference "#PWR43")
+					(reference "#PWR0219")
 					(unit 1)
 				)
 			)
@@ -12017,7 +12017,7 @@
 		(in_pos_files yes)
 		(dnp no)
 		(uuid "30ed6d18-5b44-4b3f-a2b7-5988198435a9")
-		(property "Reference" "C9"
+		(property "Reference" "C203"
 			(at 97.282 175.26 90)
 			(show_name no)
 			(do_not_autoplace no)
@@ -12095,7 +12095,7 @@
 		(instances
 			(project "pelican"
 				(path "/03ccc822-2fac-4029-af97-539e9460fe35/3345064e-ebc3-49d0-bdab-fd2c2db56ccd"
-					(reference "C9")
+					(reference "C203")
 					(unit 1)
 				)
 			)
@@ -12112,7 +12112,7 @@
 		(in_pos_files yes)
 		(dnp no)
 		(uuid "359d664d-88a8-4af1-8803-1e6de50cb3b0")
-		(property "Reference" "#PWR16"
+		(property "Reference" "#PWR0224"
 			(at 203.2 191.77 0)
 			(hide yes)
 			(show_name no)
@@ -12172,7 +12172,7 @@
 		(instances
 			(project "pelican"
 				(path "/03ccc822-2fac-4029-af97-539e9460fe35/3345064e-ebc3-49d0-bdab-fd2c2db56ccd"
-					(reference "#PWR16")
+					(reference "#PWR0224")
 					(unit 1)
 				)
 			)
@@ -12190,7 +12190,7 @@
 		(in_pos_files yes)
 		(dnp no)
 		(uuid "35ac93e5-853c-4f48-86dc-9c46e0e60209")
-		(property "Reference" "R34"
+		(property "Reference" "R205"
 			(at 114.3 123.1899 90)
 			(show_name no)
 			(do_not_autoplace no)
@@ -12268,7 +12268,7 @@
 		(instances
 			(project "pelican"
 				(path "/03ccc822-2fac-4029-af97-539e9460fe35/3345064e-ebc3-49d0-bdab-fd2c2db56ccd"
-					(reference "R34")
+					(reference "R205")
 					(unit 1)
 				)
 			)
@@ -12286,7 +12286,7 @@
 		(dnp no)
 		(fields_autoplaced yes)
 		(uuid "383d6cbd-b583-4304-a423-070264707480")
-		(property "Reference" "R16"
+		(property "Reference" "R208"
 			(at 195.58 76.1999 90)
 			(show_name no)
 			(do_not_autoplace no)
@@ -12364,7 +12364,7 @@
 		(instances
 			(project "pelican"
 				(path "/03ccc822-2fac-4029-af97-539e9460fe35/3345064e-ebc3-49d0-bdab-fd2c2db56ccd"
-					(reference "R16")
+					(reference "R208")
 					(unit 1)
 				)
 			)
@@ -12382,7 +12382,7 @@
 		(dnp no)
 		(fields_autoplaced yes)
 		(uuid "3cf039bd-50dd-469e-9ea1-fa1711073882")
-		(property "Reference" "LED1"
+		(property "Reference" "BAT_LED201"
 			(at 199.39 91.4399 90)
 			(show_name no)
 			(do_not_autoplace no)
@@ -12460,7 +12460,7 @@
 		(instances
 			(project "pelican"
 				(path "/03ccc822-2fac-4029-af97-539e9460fe35/3345064e-ebc3-49d0-bdab-fd2c2db56ccd"
-					(reference "LED1")
+					(reference "BAT_LED201")
 					(unit 1)
 				)
 			)
@@ -12477,7 +12477,7 @@
 		(in_pos_files yes)
 		(dnp no)
 		(uuid "4ad22313-a5f8-405f-8212-0f5a82246c3b")
-		(property "Reference" "#PWR38"
+		(property "Reference" "#PWR0239"
 			(at 349.25 182.88 0)
 			(hide yes)
 			(show_name no)
@@ -12537,7 +12537,7 @@
 		(instances
 			(project "pelican"
 				(path "/03ccc822-2fac-4029-af97-539e9460fe35/3345064e-ebc3-49d0-bdab-fd2c2db56ccd"
-					(reference "#PWR38")
+					(reference "#PWR0239")
 					(unit 1)
 				)
 			)
@@ -12554,7 +12554,7 @@
 		(in_pos_files yes)
 		(dnp no)
 		(uuid "4f9c17a9-c05e-418b-8d3c-7aaf9a3121f4")
-		(property "Reference" "#PWR35"
+		(property "Reference" "#PWR0217"
 			(at 142.24 116.84 0)
 			(hide yes)
 			(show_name no)
@@ -12614,7 +12614,7 @@
 		(instances
 			(project "pelican"
 				(path "/03ccc822-2fac-4029-af97-539e9460fe35/3345064e-ebc3-49d0-bdab-fd2c2db56ccd"
-					(reference "#PWR35")
+					(reference "#PWR0217")
 					(unit 1)
 				)
 			)
@@ -12632,7 +12632,7 @@
 		(dnp no)
 		(fields_autoplaced yes)
 		(uuid "50afc294-cea7-4a15-9aca-8bef4cb3d131")
-		(property "Reference" "U3"
+		(property "Reference" "CHG_U203"
 			(at 306.7686 86.36 0)
 			(show_name no)
 			(do_not_autoplace no)
@@ -12852,7 +12852,7 @@
 		(instances
 			(project "pelican"
 				(path "/03ccc822-2fac-4029-af97-539e9460fe35/3345064e-ebc3-49d0-bdab-fd2c2db56ccd"
-					(reference "U3")
+					(reference "CHG_U203")
 					(unit 1)
 				)
 			)
@@ -12869,7 +12869,7 @@
 		(in_pos_files yes)
 		(dnp no)
 		(uuid "514a2f9d-229e-4313-b4ad-15ace5b87f92")
-		(property "Reference" "#PWR24"
+		(property "Reference" "#PWR0214"
 			(at 135.89 181.61 0)
 			(hide yes)
 			(show_name no)
@@ -12929,7 +12929,7 @@
 		(instances
 			(project "pelican"
 				(path "/03ccc822-2fac-4029-af97-539e9460fe35/3345064e-ebc3-49d0-bdab-fd2c2db56ccd"
-					(reference "#PWR24")
+					(reference "#PWR0214")
 					(unit 1)
 				)
 			)
@@ -12947,7 +12947,7 @@
 		(dnp no)
 		(fields_autoplaced yes)
 		(uuid "5245c5d9-cdc4-434d-8e8b-51ea1f1ad84a")
-		(property "Reference" "R2"
+		(property "Reference" "R213"
 			(at 325.12 185.4199 90)
 			(show_name no)
 			(do_not_autoplace no)
@@ -13025,7 +13025,7 @@
 		(instances
 			(project "pelican"
 				(path "/03ccc822-2fac-4029-af97-539e9460fe35/3345064e-ebc3-49d0-bdab-fd2c2db56ccd"
-					(reference "R2")
+					(reference "R213")
 					(unit 1)
 				)
 			)
@@ -13043,7 +13043,7 @@
 		(dnp no)
 		(fields_autoplaced yes)
 		(uuid "53fd5cc9-5d3e-4c46-8b11-3a31a3c5ef0b")
-		(property "Reference" "#PWR27"
+		(property "Reference" "#PWR0227"
 			(at 252.73 187.96 0)
 			(hide yes)
 			(show_name no)
@@ -13103,7 +13103,7 @@
 		(instances
 			(project "pelican"
 				(path "/03ccc822-2fac-4029-af97-539e9460fe35/3345064e-ebc3-49d0-bdab-fd2c2db56ccd"
-					(reference "#PWR27")
+					(reference "#PWR0227")
 					(unit 1)
 				)
 			)
@@ -13120,7 +13120,7 @@
 		(in_pos_files yes)
 		(dnp no)
 		(uuid "5cdc10f6-80c3-4d48-8aed-351f3e273b23")
-		(property "Reference" "#PWR26"
+		(property "Reference" "#PWR0215"
 			(at 135.89 194.31 0)
 			(hide yes)
 			(show_name no)
@@ -13180,7 +13180,7 @@
 		(instances
 			(project "pelican"
 				(path "/03ccc822-2fac-4029-af97-539e9460fe35/3345064e-ebc3-49d0-bdab-fd2c2db56ccd"
-					(reference "#PWR26")
+					(reference "#PWR0215")
 					(unit 1)
 				)
 			)
@@ -13198,7 +13198,7 @@
 		(dnp no)
 		(fields_autoplaced yes)
 		(uuid "60605f66-8b61-4c99-97d2-f1340eb119aa")
-		(property "Reference" "#PWR40"
+		(property "Reference" "#PWR0226"
 			(at 250.19 107.95 0)
 			(hide yes)
 			(show_name no)
@@ -13258,7 +13258,84 @@
 		(instances
 			(project "pelican"
 				(path "/03ccc822-2fac-4029-af97-539e9460fe35/3345064e-ebc3-49d0-bdab-fd2c2db56ccd"
-					(reference "#PWR40")
+					(reference "#PWR0226")
+					(unit 1)
+				)
+			)
+		)
+	)
+	(symbol
+		(lib_id "power:VIN")
+		(at 250.19 93.98 0)
+		(unit 1)
+		(body_style 1)
+		(exclude_from_sim no)
+		(in_bom yes)
+		(on_board yes)
+		(in_pos_files yes)
+		(dnp no)
+		(uuid "637ea646-75f0-41c5-ae7a-1c04235ff47e")
+		(property "Reference" "#PWR0225"
+			(at 250.19 97.79 0)
+			(hide yes)
+			(show_name no)
+			(do_not_autoplace no)
+			(effects
+				(font
+					(size 1.27 1.27)
+				)
+			)
+		)
+		(property "Value" "VUSB"
+			(at 250.19 89.916 0)
+			(show_name no)
+			(do_not_autoplace no)
+			(effects
+				(font
+					(size 1.27 1.27)
+				)
+			)
+		)
+		(property "Footprint" ""
+			(at 250.19 93.98 0)
+			(hide yes)
+			(show_name no)
+			(do_not_autoplace no)
+			(effects
+				(font
+					(size 1.27 1.27)
+				)
+			)
+		)
+		(property "Datasheet" ""
+			(at 250.19 93.98 0)
+			(hide yes)
+			(show_name no)
+			(do_not_autoplace no)
+			(effects
+				(font
+					(size 1.27 1.27)
+				)
+			)
+		)
+		(property "Description" "Power symbol creates a global label with name \"+5V\""
+			(at 250.19 93.98 0)
+			(hide yes)
+			(show_name no)
+			(do_not_autoplace no)
+			(effects
+				(font
+					(size 1.27 1.27)
+				)
+			)
+		)
+		(pin "1"
+			(uuid "7c8c6bf0-b778-41a2-b140-e510ff7d63e8")
+		)
+		(instances
+			(project "pelican"
+				(path "/03ccc822-2fac-4029-af97-539e9460fe35/3345064e-ebc3-49d0-bdab-fd2c2db56ccd"
+					(reference "#PWR0225")
 					(unit 1)
 				)
 			)
@@ -13275,7 +13352,7 @@
 		(in_pos_files yes)
 		(dnp no)
 		(uuid "64322603-ebfa-4c61-a630-ef0394b287ff")
-		(property "Reference" "#PWR11"
+		(property "Reference" "#PWR0207"
 			(at 87.63 186.69 0)
 			(hide yes)
 			(show_name no)
@@ -13335,7 +13412,7 @@
 		(instances
 			(project "pelican"
 				(path "/03ccc822-2fac-4029-af97-539e9460fe35/3345064e-ebc3-49d0-bdab-fd2c2db56ccd"
-					(reference "#PWR11")
+					(reference "#PWR0207")
 					(unit 1)
 				)
 			)
@@ -13352,7 +13429,7 @@
 		(in_pos_files yes)
 		(dnp no)
 		(uuid "647de6c4-98ea-46e4-a4ba-e2ec3105109c")
-		(property "Reference" "#PWR37"
+		(property "Reference" "#PWR0216"
 			(at 142.24 97.79 0)
 			(hide yes)
 			(show_name no)
@@ -13412,7 +13489,7 @@
 		(instances
 			(project "pelican"
 				(path "/03ccc822-2fac-4029-af97-539e9460fe35/3345064e-ebc3-49d0-bdab-fd2c2db56ccd"
-					(reference "#PWR37")
+					(reference "#PWR0216")
 					(unit 1)
 				)
 			)
@@ -13430,7 +13507,7 @@
 		(dnp no)
 		(fields_autoplaced yes)
 		(uuid "661c6871-5158-4ecf-b23c-c699e305156b")
-		(property "Reference" "R6"
+		(property "Reference" "R211"
 			(at 187.96 158.7499 90)
 			(show_name no)
 			(do_not_autoplace no)
@@ -13508,7 +13585,7 @@
 		(instances
 			(project "pelican"
 				(path "/03ccc822-2fac-4029-af97-539e9460fe35/3345064e-ebc3-49d0-bdab-fd2c2db56ccd"
-					(reference "R6")
+					(reference "R211")
 					(unit 1)
 				)
 			)
@@ -13526,7 +13603,7 @@
 		(dnp no)
 		(fields_autoplaced yes)
 		(uuid "6cab93ba-93a9-45e6-b8d1-bfe742417865")
-		(property "Reference" "#PWR45"
+		(property "Reference" "#PWR0233"
 			(at 320.04 130.81 0)
 			(hide yes)
 			(show_name no)
@@ -13586,7 +13663,7 @@
 		(instances
 			(project "pelican"
 				(path "/03ccc822-2fac-4029-af97-539e9460fe35/3345064e-ebc3-49d0-bdab-fd2c2db56ccd"
-					(reference "#PWR45")
+					(reference "#PWR0233")
 					(unit 1)
 				)
 			)
@@ -13603,7 +13680,7 @@
 		(in_pos_files yes)
 		(dnp no)
 		(uuid "6d5ab0d9-5886-43bd-a833-b571f622d9a7")
-		(property "Reference" "#PWR46"
+		(property "Reference" "#PWR0229"
 			(at 267.97 125.73 0)
 			(hide yes)
 			(show_name no)
@@ -13663,7 +13740,7 @@
 		(instances
 			(project "pelican"
 				(path "/03ccc822-2fac-4029-af97-539e9460fe35/3345064e-ebc3-49d0-bdab-fd2c2db56ccd"
-					(reference "#PWR46")
+					(reference "#PWR0229")
 					(unit 1)
 				)
 			)
@@ -13680,7 +13757,7 @@
 		(in_pos_files yes)
 		(dnp no)
 		(uuid "6e5c37c1-63ba-4153-a16f-fbd99699a462")
-		(property "Reference" "C7"
+		(property "Reference" "C201"
 			(at 84.582 175.26 90)
 			(show_name no)
 			(do_not_autoplace no)
@@ -13758,7 +13835,7 @@
 		(instances
 			(project "pelican"
 				(path "/03ccc822-2fac-4029-af97-539e9460fe35/3345064e-ebc3-49d0-bdab-fd2c2db56ccd"
-					(reference "C7")
+					(reference "C201")
 					(unit 1)
 				)
 			)
@@ -13775,7 +13852,7 @@
 		(in_pos_files yes)
 		(dnp no)
 		(uuid "6ea644aa-3bce-434d-b1da-3c4c0a62fd87")
-		(property "Reference" "R3"
+		(property "Reference" "R214"
 			(at 326.39 200.66 90)
 			(show_name no)
 			(do_not_autoplace no)
@@ -13851,7 +13928,7 @@
 		(instances
 			(project "pelican"
 				(path "/03ccc822-2fac-4029-af97-539e9460fe35/3345064e-ebc3-49d0-bdab-fd2c2db56ccd"
-					(reference "R3")
+					(reference "R214")
 					(unit 1)
 				)
 			)
@@ -13868,7 +13945,7 @@
 		(in_pos_files yes)
 		(dnp no)
 		(uuid "71f677b6-8631-4708-9b13-fd53a55559d3")
-		(property "Reference" "#PWR36"
+		(property "Reference" "#PWR0213"
 			(at 132.08 74.93 0)
 			(hide yes)
 			(show_name no)
@@ -13928,7 +14005,7 @@
 		(instances
 			(project "pelican"
 				(path "/03ccc822-2fac-4029-af97-539e9460fe35/3345064e-ebc3-49d0-bdab-fd2c2db56ccd"
-					(reference "#PWR36")
+					(reference "#PWR0213")
 					(unit 1)
 				)
 			)
@@ -13945,7 +14022,7 @@
 		(in_pos_files yes)
 		(dnp no)
 		(uuid "743a5fc4-e757-445d-a8b8-af6eeec47de2")
-		(property "Reference" "C11"
+		(property "Reference" "C205"
 			(at 200.152 180.34 90)
 			(show_name no)
 			(do_not_autoplace no)
@@ -14023,7 +14100,7 @@
 		(instances
 			(project "pelican"
 				(path "/03ccc822-2fac-4029-af97-539e9460fe35/3345064e-ebc3-49d0-bdab-fd2c2db56ccd"
-					(reference "C11")
+					(reference "C205")
 					(unit 1)
 				)
 			)
@@ -14041,7 +14118,7 @@
 		(dnp no)
 		(fields_autoplaced yes)
 		(uuid "75067328-6285-4b04-951f-e6479ec61a7a")
-		(property "Reference" "R5"
+		(property "Reference" "R210"
 			(at 114.3 190.4999 90)
 			(show_name no)
 			(do_not_autoplace no)
@@ -14119,7 +14196,7 @@
 		(instances
 			(project "pelican"
 				(path "/03ccc822-2fac-4029-af97-539e9460fe35/3345064e-ebc3-49d0-bdab-fd2c2db56ccd"
-					(reference "R5")
+					(reference "R210")
 					(unit 1)
 				)
 			)
@@ -14137,7 +14214,7 @@
 		(dnp no)
 		(fields_autoplaced yes)
 		(uuid "75743c41-c948-4d92-8196-0d9a8cbdaeb1")
-		(property "Reference" "U1"
+		(property "Reference" "BOOST_U202"
 			(at 299.72 163.83 0)
 			(show_name no)
 			(do_not_autoplace no)
@@ -14225,7 +14302,7 @@
 		(instances
 			(project "pelican"
 				(path "/03ccc822-2fac-4029-af97-539e9460fe35/3345064e-ebc3-49d0-bdab-fd2c2db56ccd"
-					(reference "U1")
+					(reference "BOOST_U202")
 					(unit 1)
 				)
 			)
@@ -14243,7 +14320,7 @@
 		(in_pos_files yes)
 		(dnp no)
 		(uuid "78605efe-05c9-496e-af93-9c1746b5fcc7")
-		(property "Reference" "R11"
+		(property "Reference" "R215"
 			(at 280.67 114.2999 90)
 			(show_name no)
 			(do_not_autoplace no)
@@ -14321,7 +14398,7 @@
 		(instances
 			(project "pelican"
 				(path "/03ccc822-2fac-4029-af97-539e9460fe35/3345064e-ebc3-49d0-bdab-fd2c2db56ccd"
-					(reference "R11")
+					(reference "R215")
 					(unit 1)
 				)
 			)
@@ -14339,7 +14416,7 @@
 		(dnp no)
 		(fields_autoplaced yes)
 		(uuid "78c37367-822f-45f5-94c7-caeffdbe407f")
-		(property "Reference" "Q3"
+		(property "Reference" "Q204"
 			(at 196.85 102.8699 0)
 			(show_name no)
 			(do_not_autoplace no)
@@ -14441,7 +14518,7 @@
 				)
 			)
 		)
-		(property "Sim.Library" "libraries/aviolib/transistors/Q_NDS7002A/Q_NDS7002A.spice"
+		(property "Sim.Library" "libraries/Q_NDS7002A/Q_NDS7002A.spice"
 			(at 185.42 104.14 0)
 			(hide yes)
 			(show_name no)
@@ -14486,7 +14563,7 @@
 		(instances
 			(project "pelican"
 				(path "/03ccc822-2fac-4029-af97-539e9460fe35/3345064e-ebc3-49d0-bdab-fd2c2db56ccd"
-					(reference "Q3")
+					(reference "Q204")
 					(unit 1)
 				)
 			)
@@ -14504,7 +14581,7 @@
 		(in_pos_files yes)
 		(dnp no)
 		(uuid "7a3c65ef-24c3-48de-a443-2edc8c4f8b93")
-		(property "Reference" "Q1"
+		(property "Reference" "Q203"
 			(at 134.62 104.1401 0)
 			(show_name no)
 			(do_not_autoplace no)
@@ -14718,7 +14795,7 @@
 				(justify bottom)
 			)
 		)
-		(property "Sim.Library" "libraries/aviolib/transistors/Q_DMG2305UX-13/Q_DMG2305UX-13.spice"
+		(property "Sim.Library" "libraries/Q_DMG2305UX-13/Q_DMG2305UX-13.spice"
 			(at 129.54 102.87 0)
 			(hide yes)
 			(show_name no)
@@ -14766,7 +14843,7 @@
 		(instances
 			(project "pelican"
 				(path "/03ccc822-2fac-4029-af97-539e9460fe35/3345064e-ebc3-49d0-bdab-fd2c2db56ccd"
-					(reference "Q1")
+					(reference "Q203")
 					(unit 1)
 				)
 			)
@@ -14783,7 +14860,7 @@
 		(in_pos_files yes)
 		(dnp no)
 		(uuid "7a64b254-8870-4f93-aaa9-e6b0637a37fb")
-		(property "Reference" "R17"
+		(property "Reference" "R201"
 			(at 91.186 97.536 90)
 			(show_name no)
 			(do_not_autoplace no)
@@ -14859,7 +14936,7 @@
 		(instances
 			(project "pelican"
 				(path "/03ccc822-2fac-4029-af97-539e9460fe35/3345064e-ebc3-49d0-bdab-fd2c2db56ccd"
-					(reference "R17")
+					(reference "R201")
 					(unit 1)
 				)
 			)
@@ -14877,7 +14954,7 @@
 		(dnp no)
 		(fields_autoplaced yes)
 		(uuid "86cb88e1-226f-46f1-89df-0c9bd2bbfd5b")
-		(property "Reference" "#PWR28"
+		(property "Reference" "#PWR0230"
 			(at 281.94 190.5 0)
 			(hide yes)
 			(show_name no)
@@ -14937,7 +15014,7 @@
 		(instances
 			(project "pelican"
 				(path "/03ccc822-2fac-4029-af97-539e9460fe35/3345064e-ebc3-49d0-bdab-fd2c2db56ccd"
-					(reference "#PWR28")
+					(reference "#PWR0230")
 					(unit 1)
 				)
 			)
@@ -14955,7 +15032,7 @@
 		(dnp no)
 		(fields_autoplaced yes)
 		(uuid "8aa0164f-3d05-440f-af84-60410d60a82f")
-		(property "Reference" "R7"
+		(property "Reference" "R202"
 			(at 100.33 107.9499 90)
 			(show_name no)
 			(do_not_autoplace no)
@@ -15033,7 +15110,7 @@
 		(instances
 			(project "pelican"
 				(path "/03ccc822-2fac-4029-af97-539e9460fe35/3345064e-ebc3-49d0-bdab-fd2c2db56ccd"
-					(reference "R7")
+					(reference "R202")
 					(unit 1)
 				)
 			)
@@ -15050,7 +15127,7 @@
 		(in_pos_files yes)
 		(dnp no)
 		(uuid "8cab4760-378f-4405-a152-049123cad141")
-		(property "Reference" "Q2"
+		(property "Reference" "Q202"
 			(at 134.62 74.9299 0)
 			(show_name no)
 			(do_not_autoplace no)
@@ -15264,7 +15341,7 @@
 				(justify bottom)
 			)
 		)
-		(property "Sim.Library" "libraries/aviolib/transistors/Q_DMG2305UX-13/Q_DMG2305UX-13.spice"
+		(property "Sim.Library" "libraries/Q_DMG2305UX-13/Q_DMG2305UX-13.spice"
 			(at 129.54 76.2 0)
 			(hide yes)
 			(show_name no)
@@ -15312,7 +15389,7 @@
 		(instances
 			(project "pelican"
 				(path "/03ccc822-2fac-4029-af97-539e9460fe35/3345064e-ebc3-49d0-bdab-fd2c2db56ccd"
-					(reference "Q2")
+					(reference "Q202")
 					(unit 1)
 				)
 			)
@@ -15329,7 +15406,7 @@
 		(in_pos_files yes)
 		(dnp no)
 		(uuid "900f8929-450c-4ed0-b3c4-b031bc346bfd")
-		(property "Reference" "#PWR12"
+		(property "Reference" "#PWR0208"
 			(at 87.63 204.47 0)
 			(hide yes)
 			(show_name no)
@@ -15389,7 +15466,7 @@
 		(instances
 			(project "pelican"
 				(path "/03ccc822-2fac-4029-af97-539e9460fe35/3345064e-ebc3-49d0-bdab-fd2c2db56ccd"
-					(reference "#PWR12")
+					(reference "#PWR0208")
 					(unit 1)
 				)
 			)
@@ -15407,7 +15484,7 @@
 		(dnp no)
 		(fields_autoplaced yes)
 		(uuid "9382cbac-170f-4f8a-9fda-fcb8ed261b4a")
-		(property "Reference" "R13"
+		(property "Reference" "R219"
 			(at 307.34 72.3899 90)
 			(show_name no)
 			(do_not_autoplace no)
@@ -15485,7 +15562,7 @@
 		(instances
 			(project "pelican"
 				(path "/03ccc822-2fac-4029-af97-539e9460fe35/3345064e-ebc3-49d0-bdab-fd2c2db56ccd"
-					(reference "R13")
+					(reference "R219")
 					(unit 1)
 				)
 			)
@@ -15502,7 +15579,7 @@
 		(in_pos_files yes)
 		(dnp no)
 		(uuid "96fc629a-86f1-4cbe-ba99-66649ee93d7e")
-		(property "Reference" "#PWR42"
+		(property "Reference" "#PWR0235"
 			(at 332.74 110.49 0)
 			(hide yes)
 			(show_name no)
@@ -15562,7 +15639,7 @@
 		(instances
 			(project "pelican"
 				(path "/03ccc822-2fac-4029-af97-539e9460fe35/3345064e-ebc3-49d0-bdab-fd2c2db56ccd"
-					(reference "#PWR42")
+					(reference "#PWR0235")
 					(unit 1)
 				)
 			)
@@ -15579,7 +15656,7 @@
 		(in_pos_files yes)
 		(dnp no)
 		(uuid "99131244-6403-4a2c-bd72-f7d77119deb0")
-		(property "Reference" "#PWR15"
+		(property "Reference" "#PWR0221"
 			(at 185.42 157.48 0)
 			(hide yes)
 			(show_name no)
@@ -15639,7 +15716,7 @@
 		(instances
 			(project "pelican"
 				(path "/03ccc822-2fac-4029-af97-539e9460fe35/3345064e-ebc3-49d0-bdab-fd2c2db56ccd"
-					(reference "#PWR15")
+					(reference "#PWR0221")
 					(unit 1)
 				)
 			)
@@ -15657,7 +15734,7 @@
 		(in_pos_files yes)
 		(dnp no)
 		(uuid "a39eda1a-5d8f-4faa-96a6-39a1041d09a8")
-		(property "Reference" "R35"
+		(property "Reference" "R218"
 			(at 299.72 72.3899 90)
 			(show_name no)
 			(do_not_autoplace no)
@@ -15735,7 +15812,7 @@
 		(instances
 			(project "pelican"
 				(path "/03ccc822-2fac-4029-af97-539e9460fe35/3345064e-ebc3-49d0-bdab-fd2c2db56ccd"
-					(reference "R35")
+					(reference "R218")
 					(unit 1)
 				)
 			)
@@ -15752,7 +15829,7 @@
 		(in_pos_files yes)
 		(dnp no)
 		(uuid "a6bcb94b-ce59-4218-b682-5a94d95d9f7b")
-		(property "Reference" "#PWR13"
+		(property "Reference" "#PWR0209"
 			(at 111.76 204.47 0)
 			(hide yes)
 			(show_name no)
@@ -15812,84 +15889,7 @@
 		(instances
 			(project "pelican"
 				(path "/03ccc822-2fac-4029-af97-539e9460fe35/3345064e-ebc3-49d0-bdab-fd2c2db56ccd"
-					(reference "#PWR13")
-					(unit 1)
-				)
-			)
-		)
-	)
-	(symbol
-		(lib_id "power:VIN")
-		(at 250.19 93.98 0)
-		(unit 1)
-		(body_style 1)
-		(exclude_from_sim no)
-		(in_bom yes)
-		(on_board yes)
-		(in_pos_files yes)
-		(dnp no)
-		(uuid "ade52e9a-62ac-4ab3-b2e2-d3cc2e204420")
-		(property "Reference" "#PWR39"
-			(at 250.19 97.79 0)
-			(hide yes)
-			(show_name no)
-			(do_not_autoplace no)
-			(effects
-				(font
-					(size 1.27 1.27)
-				)
-			)
-		)
-		(property "Value" "VCC_5V0"
-			(at 250.19 89.916 0)
-			(show_name no)
-			(do_not_autoplace no)
-			(effects
-				(font
-					(size 1.27 1.27)
-				)
-			)
-		)
-		(property "Footprint" ""
-			(at 250.19 93.98 0)
-			(hide yes)
-			(show_name no)
-			(do_not_autoplace no)
-			(effects
-				(font
-					(size 1.27 1.27)
-				)
-			)
-		)
-		(property "Datasheet" ""
-			(at 250.19 93.98 0)
-			(hide yes)
-			(show_name no)
-			(do_not_autoplace no)
-			(effects
-				(font
-					(size 1.27 1.27)
-				)
-			)
-		)
-		(property "Description" "Power symbol creates a global label with name \"+3.3VA\""
-			(at 250.19 93.98 0)
-			(hide yes)
-			(show_name no)
-			(do_not_autoplace no)
-			(effects
-				(font
-					(size 1.27 1.27)
-				)
-			)
-		)
-		(pin "1"
-			(uuid "b4f5dc5c-1d5a-4653-a637-26019a7244de")
-		)
-		(instances
-			(project "pelican"
-				(path "/03ccc822-2fac-4029-af97-539e9460fe35/3345064e-ebc3-49d0-bdab-fd2c2db56ccd"
-					(reference "#PWR39")
+					(reference "#PWR0209")
 					(unit 1)
 				)
 			)
@@ -15907,7 +15907,7 @@
 		(in_pos_files yes)
 		(dnp no)
 		(uuid "b4d5cc1a-03d7-4eeb-a77b-f25ac2472526")
-		(property "Reference" "R1"
+		(property "Reference" "R212"
 			(at 273.05 182.88 0)
 			(show_name no)
 			(do_not_autoplace no)
@@ -15983,7 +15983,7 @@
 		(instances
 			(project "pelican"
 				(path "/03ccc822-2fac-4029-af97-539e9460fe35/3345064e-ebc3-49d0-bdab-fd2c2db56ccd"
-					(reference "R1")
+					(reference "R212")
 					(unit 1)
 				)
 			)
@@ -16000,7 +16000,7 @@
 		(in_pos_files yes)
 		(dnp no)
 		(uuid "b524b7b6-9258-414b-b5ea-4e03f62149ef")
-		(property "Reference" "#PWR14"
+		(property "Reference" "#PWR0220"
 			(at 173.99 196.85 0)
 			(hide yes)
 			(show_name no)
@@ -16060,7 +16060,7 @@
 		(instances
 			(project "pelican"
 				(path "/03ccc822-2fac-4029-af97-539e9460fe35/3345064e-ebc3-49d0-bdab-fd2c2db56ccd"
-					(reference "#PWR14")
+					(reference "#PWR0220")
 					(unit 1)
 				)
 			)
@@ -16078,7 +16078,7 @@
 		(dnp no)
 		(fields_autoplaced yes)
 		(uuid "b8d9acb7-ba03-4257-8cc4-518cc5de9109")
-		(property "Reference" "C1"
+		(property "Reference" "C207"
 			(at 256.54 176.5299 90)
 			(show_name no)
 			(do_not_autoplace no)
@@ -16156,7 +16156,7 @@
 		(instances
 			(project "pelican"
 				(path "/03ccc822-2fac-4029-af97-539e9460fe35/3345064e-ebc3-49d0-bdab-fd2c2db56ccd"
-					(reference "C1")
+					(reference "C207")
 					(unit 1)
 				)
 			)
@@ -16173,7 +16173,7 @@
 		(in_pos_files yes)
 		(dnp no)
 		(uuid "bb1caa8c-aa15-48d5-ac9e-08dc29e67108")
-		(property "Reference" "#PWR48"
+		(property "Reference" "#PWR0232"
 			(at 303.53 71.12 0)
 			(hide yes)
 			(show_name no)
@@ -16233,7 +16233,7 @@
 		(instances
 			(project "pelican"
 				(path "/03ccc822-2fac-4029-af97-539e9460fe35/3345064e-ebc3-49d0-bdab-fd2c2db56ccd"
-					(reference "#PWR48")
+					(reference "#PWR0232")
 					(unit 1)
 				)
 			)
@@ -16250,7 +16250,7 @@
 		(in_pos_files yes)
 		(dnp no)
 		(uuid "be5d356d-c05a-44d7-b229-c2f3e7367402")
-		(property "Reference" "C10"
+		(property "Reference" "C204"
 			(at 97.282 193.04 90)
 			(show_name no)
 			(do_not_autoplace no)
@@ -16328,7 +16328,7 @@
 		(instances
 			(project "pelican"
 				(path "/03ccc822-2fac-4029-af97-539e9460fe35/3345064e-ebc3-49d0-bdab-fd2c2db56ccd"
-					(reference "C10")
+					(reference "C204")
 					(unit 1)
 				)
 			)
@@ -16346,7 +16346,7 @@
 		(dnp no)
 		(fields_autoplaced yes)
 		(uuid "c4b09009-a1cc-492a-9ec3-0fce87701487")
-		(property "Reference" "#PWR47"
+		(property "Reference" "#PWR0228"
 			(at 265.43 113.03 0)
 			(hide yes)
 			(show_name no)
@@ -16406,7 +16406,7 @@
 		(instances
 			(project "pelican"
 				(path "/03ccc822-2fac-4029-af97-539e9460fe35/3345064e-ebc3-49d0-bdab-fd2c2db56ccd"
-					(reference "#PWR47")
+					(reference "#PWR0228")
 					(unit 1)
 				)
 			)
@@ -16423,7 +16423,7 @@
 		(in_pos_files yes)
 		(dnp no)
 		(uuid "c66f5901-a025-410f-8475-5e10931da4f0")
-		(property "Reference" "#PWR53"
+		(property "Reference" "#PWR0205"
 			(at 86.36 96.52 0)
 			(hide yes)
 			(show_name no)
@@ -16483,7 +16483,7 @@
 		(instances
 			(project "pelican"
 				(path "/03ccc822-2fac-4029-af97-539e9460fe35/3345064e-ebc3-49d0-bdab-fd2c2db56ccd"
-					(reference "#PWR53")
+					(reference "#PWR0205")
 					(unit 1)
 				)
 			)
@@ -16501,7 +16501,7 @@
 		(dnp no)
 		(fields_autoplaced yes)
 		(uuid "c6d5e430-cf55-4bf7-9660-333fab0fdac8")
-		(property "Reference" "R4"
+		(property "Reference" "R209"
 			(at 114.3 177.7999 90)
 			(show_name no)
 			(do_not_autoplace no)
@@ -16579,7 +16579,7 @@
 		(instances
 			(project "pelican"
 				(path "/03ccc822-2fac-4029-af97-539e9460fe35/3345064e-ebc3-49d0-bdab-fd2c2db56ccd"
-					(reference "R4")
+					(reference "R209")
 					(unit 1)
 				)
 			)
@@ -16596,7 +16596,7 @@
 		(in_pos_files yes)
 		(dnp no)
 		(uuid "c8dc2b43-3f0a-48d2-9582-e22cd78fef46")
-		(property "Reference" "#PWR10"
+		(property "Reference" "#PWR0202"
 			(at 76.2 194.31 0)
 			(hide yes)
 			(show_name no)
@@ -16656,7 +16656,7 @@
 		(instances
 			(project "pelican"
 				(path "/03ccc822-2fac-4029-af97-539e9460fe35/3345064e-ebc3-49d0-bdab-fd2c2db56ccd"
-					(reference "#PWR10")
+					(reference "#PWR0202")
 					(unit 1)
 				)
 			)
@@ -16674,7 +16674,7 @@
 		(dnp no)
 		(fields_autoplaced yes)
 		(uuid "c920ba17-d15e-471c-9a3f-4b3e2d7816fe")
-		(property "Reference" "R10"
+		(property "Reference" "R220"
 			(at 322.58 116.8399 90)
 			(show_name no)
 			(do_not_autoplace no)
@@ -16752,7 +16752,7 @@
 		(instances
 			(project "pelican"
 				(path "/03ccc822-2fac-4029-af97-539e9460fe35/3345064e-ebc3-49d0-bdab-fd2c2db56ccd"
-					(reference "R10")
+					(reference "R220")
 					(unit 1)
 				)
 			)
@@ -16770,7 +16770,7 @@
 		(dnp no)
 		(fields_autoplaced yes)
 		(uuid "cbe42d1e-9758-46f3-a185-1f48a6492cf9")
-		(property "Reference" "Q4"
+		(property "Reference" "Q201"
 			(at 128.27 116.8399 0)
 			(show_name no)
 			(do_not_autoplace no)
@@ -16872,7 +16872,7 @@
 				)
 			)
 		)
-		(property "Sim.Library" "libraries/aviolib/transistors/Q_NDS7002A/Q_NDS7002A.spice"
+		(property "Sim.Library" "libraries/Q_NDS7002A/Q_NDS7002A.spice"
 			(at 116.84 118.11 0)
 			(hide yes)
 			(show_name no)
@@ -16917,7 +16917,7 @@
 		(instances
 			(project "pelican"
 				(path "/03ccc822-2fac-4029-af97-539e9460fe35/3345064e-ebc3-49d0-bdab-fd2c2db56ccd"
-					(reference "Q4")
+					(reference "Q201")
 					(unit 1)
 				)
 			)
@@ -16934,7 +16934,7 @@
 		(in_pos_files yes)
 		(dnp no)
 		(uuid "ced30bde-cb69-42af-800b-ed47479de8a2")
-		(property "Reference" "C6"
+		(property "Reference" "C211"
 			(at 335.788 109.22 90)
 			(show_name no)
 			(do_not_autoplace no)
@@ -17012,7 +17012,7 @@
 		(instances
 			(project "pelican"
 				(path "/03ccc822-2fac-4029-af97-539e9460fe35/3345064e-ebc3-49d0-bdab-fd2c2db56ccd"
-					(reference "C6")
+					(reference "C211")
 					(unit 1)
 				)
 			)
@@ -17030,7 +17030,7 @@
 		(dnp no)
 		(fields_autoplaced yes)
 		(uuid "d1784ddc-e3d3-4e22-b5ca-b6aa0dc8f20c")
-		(property "Reference" "R32"
+		(property "Reference" "R203"
 			(at 120.65 69.85 0)
 			(show_name no)
 			(do_not_autoplace no)
@@ -17106,7 +17106,7 @@
 		(instances
 			(project "pelican"
 				(path "/03ccc822-2fac-4029-af97-539e9460fe35/3345064e-ebc3-49d0-bdab-fd2c2db56ccd"
-					(reference "R32")
+					(reference "R203")
 					(unit 1)
 				)
 			)
@@ -17123,7 +17123,7 @@
 		(in_pos_files yes)
 		(dnp no)
 		(uuid "d34995c1-776a-4271-a2f7-825622abb90d")
-		(property "Reference" "#PWR41"
+		(property "Reference" "#PWR0237"
 			(at 342.9 107.95 0)
 			(hide yes)
 			(show_name no)
@@ -17183,7 +17183,7 @@
 		(instances
 			(project "pelican"
 				(path "/03ccc822-2fac-4029-af97-539e9460fe35/3345064e-ebc3-49d0-bdab-fd2c2db56ccd"
-					(reference "#PWR41")
+					(reference "#PWR0237")
 					(unit 1)
 				)
 			)
@@ -17200,7 +17200,7 @@
 		(in_pos_files yes)
 		(dnp no)
 		(uuid "d4e1ccbe-56d3-4437-b78b-02f3f951dc33")
-		(property "Reference" "#PWR25"
+		(property "Reference" "#PWR0212"
 			(at 124.46 181.61 0)
 			(hide yes)
 			(show_name no)
@@ -17260,7 +17260,7 @@
 		(instances
 			(project "pelican"
 				(path "/03ccc822-2fac-4029-af97-539e9460fe35/3345064e-ebc3-49d0-bdab-fd2c2db56ccd"
-					(reference "#PWR25")
+					(reference "#PWR0212")
 					(unit 1)
 				)
 			)
@@ -17277,7 +17277,7 @@
 		(in_pos_files yes)
 		(dnp no)
 		(uuid "e3b8a623-d961-4bf6-b228-b5a71f7ef727")
-		(property "Reference" "R9"
+		(property "Reference" "R216"
 			(at 261.874 96.266 0)
 			(show_name no)
 			(do_not_autoplace no)
@@ -17353,7 +17353,7 @@
 		(instances
 			(project "pelican"
 				(path "/03ccc822-2fac-4029-af97-539e9460fe35/3345064e-ebc3-49d0-bdab-fd2c2db56ccd"
-					(reference "R9")
+					(reference "R216")
 					(unit 1)
 				)
 			)
@@ -17371,7 +17371,7 @@
 		(dnp no)
 		(fields_autoplaced yes)
 		(uuid "e5488a20-c932-4ac7-88eb-0dcc89292604")
-		(property "Reference" "#PWR29"
+		(property "Reference" "#PWR0234"
 			(at 322.58 214.63 0)
 			(hide yes)
 			(show_name no)
@@ -17431,7 +17431,7 @@
 		(instances
 			(project "pelican"
 				(path "/03ccc822-2fac-4029-af97-539e9460fe35/3345064e-ebc3-49d0-bdab-fd2c2db56ccd"
-					(reference "#PWR29")
+					(reference "#PWR0234")
 					(unit 1)
 				)
 			)
@@ -17449,7 +17449,7 @@
 		(dnp no)
 		(fields_autoplaced yes)
 		(uuid "e94fcd62-ceaf-4cf0-9c59-f80094b2b915")
-		(property "Reference" "C2"
+		(property "Reference" "C208"
 			(at 340.36 181.6099 90)
 			(show_name no)
 			(do_not_autoplace no)
@@ -17527,7 +17527,7 @@
 		(instances
 			(project "pelican"
 				(path "/03ccc822-2fac-4029-af97-539e9460fe35/3345064e-ebc3-49d0-bdab-fd2c2db56ccd"
-					(reference "C2")
+					(reference "C208")
 					(unit 1)
 				)
 			)
@@ -17544,7 +17544,7 @@
 		(in_pos_files yes)
 		(dnp no)
 		(uuid "ea2362ce-8c40-4c98-a07e-3d5644af3f8f")
-		(property "Reference" "#PWR52"
+		(property "Reference" "#PWR0211"
 			(at 124.46 137.16 0)
 			(hide yes)
 			(show_name no)
@@ -17604,7 +17604,7 @@
 		(instances
 			(project "pelican"
 				(path "/03ccc822-2fac-4029-af97-539e9460fe35/3345064e-ebc3-49d0-bdab-fd2c2db56ccd"
-					(reference "#PWR52")
+					(reference "#PWR0211")
 					(unit 1)
 				)
 			)
@@ -17622,7 +17622,7 @@
 		(dnp no)
 		(fields_autoplaced yes)
 		(uuid "ebbeb4d3-d4b4-4223-b718-e4312117b6b6")
-		(property "Reference" "#PWR51"
+		(property "Reference" "#PWR0223"
 			(at 193.04 115.57 0)
 			(hide yes)
 			(show_name no)
@@ -17682,7 +17682,7 @@
 		(instances
 			(project "pelican"
 				(path "/03ccc822-2fac-4029-af97-539e9460fe35/3345064e-ebc3-49d0-bdab-fd2c2db56ccd"
-					(reference "#PWR51")
+					(reference "#PWR0223")
 					(unit 1)
 				)
 			)
@@ -17699,7 +17699,7 @@
 		(in_pos_files yes)
 		(dnp no)
 		(uuid "f0501e59-ed07-46d4-a590-bd152a68bf1d")
-		(property "Reference" "R12"
+		(property "Reference" "R217"
 			(at 261.112 102.87 0)
 			(show_name no)
 			(do_not_autoplace no)
@@ -17775,7 +17775,7 @@
 		(instances
 			(project "pelican"
 				(path "/03ccc822-2fac-4029-af97-539e9460fe35/3345064e-ebc3-49d0-bdab-fd2c2db56ccd"
-					(reference "R12")
+					(reference "R217")
 					(unit 1)
 				)
 			)
@@ -17793,7 +17793,7 @@
 		(in_pos_files yes)
 		(dnp no)
 		(uuid "f14e933a-e55f-400c-8cb7-264c6dac22c6")
-		(property "Reference" "J2"
+		(property "Reference" "SW_J202"
 			(at 77.47 125.73 0)
 			(show_name no)
 			(do_not_autoplace no)
@@ -17966,7 +17966,7 @@
 		(instances
 			(project "pelican"
 				(path "/03ccc822-2fac-4029-af97-539e9460fe35/3345064e-ebc3-49d0-bdab-fd2c2db56ccd"
-					(reference "J2")
+					(reference "SW_J202")
 					(unit 1)
 				)
 			)
@@ -17984,7 +17984,7 @@
 		(dnp no)
 		(fields_autoplaced yes)
 		(uuid "f1fb59a8-0a95-42b7-940e-75b80c279eb1")
-		(property "Reference" "#PWR33"
+		(property "Reference" "#PWR0231"
 			(at 302.26 125.73 0)
 			(hide yes)
 			(show_name no)
@@ -18044,7 +18044,7 @@
 		(instances
 			(project "pelican"
 				(path "/03ccc822-2fac-4029-af97-539e9460fe35/3345064e-ebc3-49d0-bdab-fd2c2db56ccd"
-					(reference "#PWR33")
+					(reference "#PWR0231")
 					(unit 1)
 				)
 			)
@@ -18061,7 +18061,7 @@
 		(in_pos_files yes)
 		(dnp no)
 		(uuid "f6d639fa-40d0-44b3-bde5-b986b93b4815")
-		(property "Reference" "#PWR31"
+		(property "Reference" "#PWR0203"
 			(at 86.36 76.2 0)
 			(hide yes)
 			(show_name no)
@@ -18121,7 +18121,7 @@
 		(instances
 			(project "pelican"
 				(path "/03ccc822-2fac-4029-af97-539e9460fe35/3345064e-ebc3-49d0-bdab-fd2c2db56ccd"
-					(reference "#PWR31")
+					(reference "#PWR0203")
 					(unit 1)
 				)
 			)
@@ -18139,7 +18139,7 @@
 		(dnp no)
 		(fields_autoplaced yes)
 		(uuid "f7ad4450-f0fb-4f0e-83a0-a8f9a9569943")
-		(property "Reference" "C3"
+		(property "Reference" "C209"
 			(at 353.06 181.6099 90)
 			(show_name no)
 			(do_not_autoplace no)
@@ -18217,7 +18217,7 @@
 		(instances
 			(project "pelican"
 				(path "/03ccc822-2fac-4029-af97-539e9460fe35/3345064e-ebc3-49d0-bdab-fd2c2db56ccd"
-					(reference "C3")
+					(reference "C209")
 					(unit 1)
 				)
 			)

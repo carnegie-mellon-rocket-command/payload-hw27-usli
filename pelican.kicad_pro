@@ -260,32 +260,7 @@
     "equivalence_files": []
   },
   "erc": {
-    "erc_exclusions": [
-      [
-        "pin_to_pin|1282700|533400|2eefa128-fb6a-4aa8-b255-66d9d8415fd6|f1fa561e-728e-40bd-b474-1c7232b62b1d|/03ccc822-2fac-4029-af97-539e9460fe35/676f47cc-81fa-4570-932f-1e8291c2a37f|/03ccc822-2fac-4029-af97-539e9460fe35/676f47cc-81fa-4570-932f-1e8291c2a37f|/03ccc822-2fac-4029-af97-539e9460fe35/676f47cc-81fa-4570-932f-1e8291c2a37f",
-        ""
-      ],
-      [
-        "pin_to_pin|1739900|1778000|aacc87ce-7582-4a52-9705-faa012552000|2b5ed04e-08d2-4627-aae7-ac03be691d0c|/03ccc822-2fac-4029-af97-539e9460fe35/3345064e-ebc3-49d0-bdab-fd2c2db56ccd|/03ccc822-2fac-4029-af97-539e9460fe35/3345064e-ebc3-49d0-bdab-fd2c2db56ccd|/03ccc822-2fac-4029-af97-539e9460fe35/3345064e-ebc3-49d0-bdab-fd2c2db56ccd",
-        ""
-      ],
-      [
-        "pin_to_pin|3200400|1066800|b4a1070b-8eff-4e14-8dbc-f4037ee2a022|11af9b11-ee46-448b-98d9-334634779f10|/03ccc822-2fac-4029-af97-539e9460fe35/3345064e-ebc3-49d0-bdab-fd2c2db56ccd|/03ccc822-2fac-4029-af97-539e9460fe35/3345064e-ebc3-49d0-bdab-fd2c2db56ccd|/03ccc822-2fac-4029-af97-539e9460fe35/3345064e-ebc3-49d0-bdab-fd2c2db56ccd",
-        ""
-      ],
-      [
-        "pin_to_pin|3200400|939800|df70cac0-f22d-4f0f-925a-f622f9f217a7|b5a46711-4462-4b41-97af-d715f2a069d8|/03ccc822-2fac-4029-af97-539e9460fe35/3345064e-ebc3-49d0-bdab-fd2c2db56ccd|/03ccc822-2fac-4029-af97-539e9460fe35/3345064e-ebc3-49d0-bdab-fd2c2db56ccd|/03ccc822-2fac-4029-af97-539e9460fe35/3345064e-ebc3-49d0-bdab-fd2c2db56ccd",
-        ""
-      ],
-      [
-        "power_pin_not_driven|1244600|1778000|aeb91b77-1047-4473-b298-ce37f89758e4|00000000-0000-0000-0000-000000000000|/03ccc822-2fac-4029-af97-539e9460fe35/3345064e-ebc3-49d0-bdab-fd2c2db56ccd|/03ccc822-2fac-4029-af97-539e9460fe35/3345064e-ebc3-49d0-bdab-fd2c2db56ccd|",
-        ""
-      ],
-      [
-        "power_pin_not_driven|419100|1219200|a08cd556-558a-427c-88c8-c75dd7168e5b|00000000-0000-0000-0000-000000000000|/03ccc822-2fac-4029-af97-539e9460fe35/c2f7e557-87bd-48d4-8cf1-e69c1d4630c4|/03ccc822-2fac-4029-af97-539e9460fe35/c2f7e557-87bd-48d4-8cf1-e69c1d4630c4|",
-        ""
-      ]
-    ],
+    "erc_exclusions": [],
     "meta": {
       "version": 0
     },
@@ -563,7 +538,7 @@
   "schematic": {
     "annotate_start_num": 0,
     "annotation": {
-      "method": 0,
+      "method": 1,
       "sort_order": 0
     },
     "bom_export_filename": "${PROJECTNAME}.csv",
@@ -824,6 +799,14 @@
         "CAM_MCLK",
         "CAM_RESET"
       ],
+      "CSI": [
+        "CSI_D0_P",
+        "CSI_D0_N",
+        "CSI_D1_P",
+        "CSI_D1_N",
+        "CSI_CLK_P",
+        "CSI_CLK_N"
+      ],
       "ETH": [
         "ETH_RX_N",
         "ETH_RX_P",
@@ -921,7 +904,7 @@
         "uuid": "03ccc822-2fac-4029-af97-539e9460fe35"
       }
     ],
-    "used_designators": "U1,U3,SW1-3,C1-6,C13-25,Q1-5,D1,#PWR24-100,L1,LED1-9,J1-7,M1,R1-3,R7-35,TP1-2",
+    "used_designators": "LED302_UART301,U203_CHG201,D501_ESD501,SW301_BOOT301,J301_UART301,U202_BOOST201,LED201_BAT201,LED401_STORE401,U301_SOC301,J201_BAT201,D1,D501,J701_ETH701,LED601_CAM601,C1-27,C201-212,C301-302,C401,C501,C601-602,C701-704,C801-802,J501_USBC501,SW302_PROG301,J401_uSD401,U1-4,U201-203,U301,J601_MIPI601,SW1-3,SW301-302,Q1-5,Q201-204,Q601,M801_MIC801,LED301_ALIVE301,#PWR1-103,#PWR201-239,#PWR401-406,#PWR501-508,#PWR601-609,#PWR701-705,#PWR801-802,L1,L201,J202_SW201,R1-37,R201-220,R301-305,R401-402,R501-504,R601-603,R701-702,R801,U201_MUX201,LED1-9,LED201,LED301-303,LED401,LED601,LED303_DEBUG301,J1-7,J201-202,J301,J401,J501,J601,J701,M1,M801,TP1-2,TP301-302",
     "variants": []
   },
   "sheets": [
