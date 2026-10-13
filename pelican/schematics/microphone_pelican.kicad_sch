@@ -1518,7 +1518,7 @@
 				)
 			)
 		)
-		(property "LCSC Part #" "C71629"
+		(property "LCSC Part #" "C1525"
 			(at 92.71 59.69 0)
 			(hide yes)
 			(show_name no)
@@ -1691,7 +1691,7 @@
 				)
 			)
 		)
-		(property "LCSC Part #" "C76999"
+		(property "LCSC Part #" "C52923"
 			(at 119.38 62.23 0)
 			(hide yes)
 			(show_name no)

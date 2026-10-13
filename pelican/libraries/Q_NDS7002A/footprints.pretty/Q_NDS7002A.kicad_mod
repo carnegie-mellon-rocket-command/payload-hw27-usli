@@ -46,9 +46,9 @@
   (fp_line (start 1.524 -0.6985) (end -1.524 -0.6985) (layer "F.Fab") (width 0.0254))
   (fp_line (start -1.524 -0.6985) (end -1.524 0.6985) (layer "F.Fab") (width 0.0254))
   (fp_line (start -0.61674 -0.8255) (end -1.651 -0.8255) (layer "F.SilkS") (width 0.1524))
-  (pad "1" smd rect (at -0.9525 1.0414) (size 0.568 1.258799) (layers "F.Cu" "F.Paste" "F.Mask"))
-  (pad "2" smd rect (at 0.9525 1.0414) (size 0.568 1.258799) (layers "F.Cu" "F.Paste" "F.Mask"))
-  (pad "3" smd rect (at 0 -1.0414) (size 0.568 1.258799) (layers "F.Cu" "F.Paste" "F.Mask"))
+  (pad "G" smd rect (at -0.9525 1.0414) (size 0.568 1.258799) (layers "F.Cu" "F.Paste" "F.Mask"))
+  (pad "S" smd rect (at 0.9525 1.0414) (size 0.568 1.258799) (layers "F.Cu" "F.Paste" "F.Mask"))
+  (pad "D" smd rect (at 0 -1.0414) (size 0.568 1.258799) (layers "F.Cu" "F.Paste" "F.Mask"))
 
   (model "${KIPRJMOD}/libraries/Q_NDS7002A/Q_NDS7002A.step"
     (offset (xyz 0 0 0))

@@ -241,5 +241,16 @@
 		)
 		(uuid "8b0ac1d8-8311-43cb-bb89-8136463f5215")
 	)
+	(model "${KIPRJMOD}/libraries/M_MIC4013-X/M_MIC4013-X.step"
+		(offset
+			(xyz 0 0.3 0)
+		)
+		(scale
+			(xyz 1 1 1)
+		)
+		(rotate
+			(xyz 0 0 0)
+		)
+	)
 	(embedded_fonts no)
 )

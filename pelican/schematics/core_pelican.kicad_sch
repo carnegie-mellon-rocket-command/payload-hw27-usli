@@ -283,382 +283,6 @@
 			)
 			(embedded_fonts no)
 		)
-		(symbol "J_61300411121:61300411121"
-			(pin_names
-				(offset 0.254)
-			)
-			(exclude_from_sim no)
-			(in_bom yes)
-			(on_board yes)
-			(in_pos_files yes)
-			(duplicate_pin_numbers_are_jumpers no)
-			(property "Reference" "J"
-				(at 8.89 6.35 0)
-				(show_name no)
-				(do_not_autoplace no)
-				(effects
-					(font
-						(size 1.524 1.524)
-					)
-				)
-			)
-			(property "Value" "61300411121"
-				(at 0 0 0)
-				(show_name no)
-				(do_not_autoplace no)
-				(effects
-					(font
-						(size 1.524 1.524)
-					)
-				)
-			)
-			(property "Footprint" "J_61300411121:J_61300411121"
-				(at 0 0 0)
-				(show_name no)
-				(do_not_autoplace no)
-				(hide yes)
-				(effects
-					(font
-						(size 1.27 1.27)
-						(italic yes)
-					)
-				)
-			)
-			(property "Datasheet" "https://www.we-online.com/catalog/datasheet/61300411121.pdf"
-				(at 0 0 0)
-				(show_name no)
-				(do_not_autoplace no)
-				(hide yes)
-				(effects
-					(font
-						(size 1.27 1.27)
-						(italic yes)
-					)
-				)
-			)
-			(property "Description" "Connector, Header, 4 Position, 2.54mm Pitch, Through Hole"
-				(at 0 0 0)
-				(show_name no)
-				(do_not_autoplace no)
-				(hide yes)
-				(effects
-					(font
-						(size 1.27 1.27)
-					)
-				)
-			)
-			(property "MF" "Wurth Elektronik"
-				(at 0 0 0)
-				(show_name no)
-				(do_not_autoplace no)
-				(hide yes)
-				(effects
-					(font
-						(size 1.27 1.27)
-					)
-				)
-			)
-			(property "MP" "61300411121"
-				(at 0 0 0)
-				(show_name no)
-				(do_not_autoplace no)
-				(hide yes)
-				(effects
-					(font
-						(size 1.27 1.27)
-					)
-				)
-			)
-			(property "ki_keywords" "61300411121"
-				(at 0 0 0)
-				(show_name no)
-				(do_not_autoplace no)
-				(hide yes)
-				(effects
-					(font
-						(size 1.27 1.27)
-					)
-				)
-			)
-			(property "ki_fp_filters" "J_61300411121"
-				(at 0 0 0)
-				(show_name no)
-				(do_not_autoplace no)
-				(hide yes)
-				(effects
-					(font
-						(size 1.27 1.27)
-					)
-				)
-			)
-			(symbol "61300411121_1_1"
-				(polyline
-					(pts
-						(xy 5.08 2.54) (xy 5.08 -10.16)
-					)
-					(stroke
-						(width 0.127)
-						(type default)
-					)
-					(fill
-						(type none)
-					)
-				)
-				(polyline
-					(pts
-						(xy 5.08 -10.16) (xy 12.7 -10.16)
-					)
-					(stroke
-						(width 0.127)
-						(type default)
-					)
-					(fill
-						(type none)
-					)
-				)
-				(polyline
-					(pts
-						(xy 10.16 0) (xy 5.08 0)
-					)
-					(stroke
-						(width 0.127)
-						(type default)
-					)
-					(fill
-						(type none)
-					)
-				)
-				(polyline
-					(pts
-						(xy 10.16 0) (xy 8.89 0.8467)
-					)
-					(stroke
-						(width 0.127)
-						(type default)
-					)
-					(fill
-						(type none)
-					)
-				)
-				(polyline
-					(pts
-						(xy 10.16 0) (xy 8.89 -0.8467)
-					)
-					(stroke
-						(width 0.127)
-						(type default)
-					)
-					(fill
-						(type none)
-					)
-				)
-				(polyline
-					(pts
-						(xy 10.16 -2.54) (xy 5.08 -2.54)
-					)
-					(stroke
-						(width 0.127)
-						(type default)
-					)
-					(fill
-						(type none)
-					)
-				)
-				(polyline
-					(pts
-						(xy 10.16 -2.54) (xy 8.89 -1.6933)
-					)
-					(stroke
-						(width 0.127)
-						(type default)
-					)
-					(fill
-						(type none)
-					)
-				)
-				(polyline
-					(pts
-						(xy 10.16 -2.54) (xy 8.89 -3.3867)
-					)
-					(stroke
-						(width 0.127)
-						(type default)
-					)
-					(fill
-						(type none)
-					)
-				)
-				(polyline
-					(pts
-						(xy 10.16 -5.08) (xy 5.08 -5.08)
-					)
-					(stroke
-						(width 0.127)
-						(type default)
-					)
-					(fill
-						(type none)
-					)
-				)
-				(polyline
-					(pts
-						(xy 10.16 -5.08) (xy 8.89 -4.2333)
-					)
-					(stroke
-						(width 0.127)
-						(type default)
-					)
-					(fill
-						(type none)
-					)
-				)
-				(polyline
-					(pts
-						(xy 10.16 -5.08) (xy 8.89 -5.9267)
-					)
-					(stroke
-						(width 0.127)
-						(type default)
-					)
-					(fill
-						(type none)
-					)
-				)
-				(polyline
-					(pts
-						(xy 10.16 -7.62) (xy 5.08 -7.62)
-					)
-					(stroke
-						(width 0.127)
-						(type default)
-					)
-					(fill
-						(type none)
-					)
-				)
-				(polyline
-					(pts
-						(xy 10.16 -7.62) (xy 8.89 -6.7733)
-					)
-					(stroke
-						(width 0.127)
-						(type default)
-					)
-					(fill
-						(type none)
-					)
-				)
-				(polyline
-					(pts
-						(xy 10.16 -7.62) (xy 8.89 -8.4667)
-					)
-					(stroke
-						(width 0.127)
-						(type default)
-					)
-					(fill
-						(type none)
-					)
-				)
-				(polyline
-					(pts
-						(xy 12.7 2.54) (xy 5.08 2.54)
-					)
-					(stroke
-						(width 0.127)
-						(type default)
-					)
-					(fill
-						(type none)
-					)
-				)
-				(polyline
-					(pts
-						(xy 12.7 -10.16) (xy 12.7 2.54)
-					)
-					(stroke
-						(width 0.127)
-						(type default)
-					)
-					(fill
-						(type none)
-					)
-				)
-				(pin passive line
-					(at 0 0 0)
-					(length 5.08)
-					(name "1"
-						(effects
-							(font
-								(size 1.27 1.27)
-							)
-						)
-					)
-					(number "1"
-						(effects
-							(font
-								(size 1.27 1.27)
-							)
-						)
-					)
-				)
-				(pin passive line
-					(at 0 -2.54 0)
-					(length 5.08)
-					(name "2"
-						(effects
-							(font
-								(size 1.27 1.27)
-							)
-						)
-					)
-					(number "2"
-						(effects
-							(font
-								(size 1.27 1.27)
-							)
-						)
-					)
-				)
-				(pin passive line
-					(at 0 -5.08 0)
-					(length 5.08)
-					(name "3"
-						(effects
-							(font
-								(size 1.27 1.27)
-							)
-						)
-					)
-					(number "3"
-						(effects
-							(font
-								(size 1.27 1.27)
-							)
-						)
-					)
-				)
-				(pin passive line
-					(at 0 -7.62 0)
-					(length 5.08)
-					(name "4"
-						(effects
-							(font
-								(size 1.27 1.27)
-							)
-						)
-					)
-					(number "4"
-						(effects
-							(font
-								(size 1.27 1.27)
-							)
-						)
-					)
-				)
-			)
-			(embedded_fonts no)
-		)
 		(symbol "LED_150040GS73240:150040GS73240"
 			(body_styles demorgan)
 			(pin_names
@@ -5241,7 +4865,7 @@
 	)
 	(rectangle
 		(start 307.34 160.02)
-		(end 391.16 240.03)
+		(end 391.16 220.98)
 		(stroke
 			(width 0)
 			(type default)
@@ -5424,10 +5048,6 @@
 		(uuid "f662e4f2-890b-4c51-9f40-5e5df4333311")
 	)
 	(no_connect
-		(at 261.62 71.12)
-		(uuid "00c20dc5-deff-4ac8-a368-ad496bab4c21")
-	)
-	(no_connect
 		(at 76.2 45.72)
 		(uuid "0143a3b2-42cb-4ea1-8c48-e342a44cd43c")
 	)
@@ -5446,6 +5066,10 @@
 	(no_connect
 		(at 261.62 182.88)
 		(uuid "0a222ced-d953-4ba0-9522-fa67717525bc")
+	)
+	(no_connect
+		(at 261.62 71.12)
+		(uuid "0d2db83b-2883-4955-b91f-bcec9ac50b61")
 	)
 	(no_connect
 		(at 76.2 134.62)
@@ -5476,10 +5100,6 @@
 		(uuid "3169a931-5b4d-41ce-bbfc-c155343061e9")
 	)
 	(no_connect
-		(at 261.62 93.98)
-		(uuid "3db665d4-c7b3-4d7c-be2d-22456814e4a7")
-	)
-	(no_connect
 		(at 261.62 160.02)
 		(uuid "4cdf8f87-87db-41a6-b589-6a850cb7050e")
 	)
@@ -5500,6 +5120,10 @@
 		(uuid "5713cb71-df59-4ab6-877c-bf1250f067e0")
 	)
 	(no_connect
+		(at 261.62 76.2)
+		(uuid "590ff76b-9258-4f56-b094-101d099e4ada")
+	)
+	(no_connect
 		(at 76.2 144.78)
 		(uuid "5918cf73-3e3d-4e2c-8fc8-3e9bba3889b0")
 	)
@@ -5510,6 +5134,10 @@
 	(no_connect
 		(at 261.62 53.34)
 		(uuid "6e4dab9c-d56a-416c-8fbe-50c91332c119")
+	)
+	(no_connect
+		(at 261.62 73.66)
+		(uuid "763bf99a-de00-418c-aa8d-3ccf2f83a80b")
 	)
 	(no_connect
 		(at 261.62 50.8)
@@ -5548,16 +5176,16 @@
 		(uuid "aeebec12-c297-497c-96eb-279947dcd92b")
 	)
 	(no_connect
+		(at 261.62 81.28)
+		(uuid "b9a460f8-26d0-4e5e-a2c5-2575d6de7c84")
+	)
+	(no_connect
 		(at 261.62 170.18)
 		(uuid "bcf2e0af-e64b-4af6-ac8b-83fb77de4c88")
 	)
 	(no_connect
 		(at 76.2 152.4)
 		(uuid "be0bc982-c5f1-43a4-9286-0269f9e4b15c")
-	)
-	(no_connect
-		(at 261.62 96.52)
-		(uuid "c54edeac-ba00-491c-a7f8-baa1ecf617aa")
 	)
 	(no_connect
 		(at 261.62 175.26)
@@ -5582,6 +5210,10 @@
 	(no_connect
 		(at 76.2 53.34)
 		(uuid "f2c7429a-2498-45a1-8885-07e3fb78caf2")
+	)
+	(no_connect
+		(at 261.62 78.74)
+		(uuid "f42b838d-f3ca-4867-8e8c-8a362258574e")
 	)
 	(no_connect
 		(at 76.2 83.82)
@@ -6015,16 +5647,6 @@
 	)
 	(wire
 		(pts
-			(xy 341.63 227.33) (xy 339.09 227.33)
-		)
-		(stroke
-			(width 0)
-			(type default)
-		)
-		(uuid "3d574673-f6bc-4832-b407-603d4cb87a8f")
-	)
-	(wire
-		(pts
 			(xy 355.6 66.04) (xy 361.95 66.04)
 		)
 		(stroke
@@ -6175,16 +5797,6 @@
 	)
 	(wire
 		(pts
-			(xy 368.3 227.33) (xy 372.11 227.33)
-		)
-		(stroke
-			(width 0)
-			(type default)
-		)
-		(uuid "5b85a3d5-b65d-4ded-af57-85899cb7420b")
-	)
-	(wire
-		(pts
 			(xy 261.62 144.78) (xy 289.56 144.78)
 		)
 		(stroke
@@ -6242,16 +5854,6 @@
 			(type default)
 		)
 		(uuid "68668a22-ee94-4121-b407-f45dda33ef7b")
-	)
-	(wire
-		(pts
-			(xy 358.14 227.33) (xy 354.33 227.33)
-		)
-		(stroke
-			(width 0)
-			(type default)
-		)
-		(uuid "68715066-7bce-49d6-830d-cf2718b18e42")
 	)
 	(bus
 		(pts
@@ -6983,7 +6585,7 @@
 		)
 		(uuid "294a73c8-5d88-4030-b5f1-224926761b16")
 	)
-	(label "CAM_RESET"
+	(label "CAM_RST_N"
 		(at 76.2 76.2 180)
 		(effects
 			(font
@@ -7273,33 +6875,9 @@
 		)
 		(uuid "fcf7c425-83fe-4bb9-b274-e23ae4c88848")
 	)
-	(global_label "LED_STORE"
-		(shape output)
-		(at 261.62 78.74 0)
-		(fields_autoplaced yes)
-		(effects
-			(font
-				(size 1.27 1.27)
-			)
-			(justify left)
-		)
-		(uuid "043741e7-ea36-4403-b09b-df377a1b0b1c")
-		(property "Intersheetrefs" "${INTERSHEET_REFS}"
-			(at 274.9465 78.74 0)
-			(hide yes)
-			(show_name no)
-			(do_not_autoplace no)
-			(effects
-				(font
-					(size 1.27 1.27)
-				)
-				(justify left)
-			)
-		)
-	)
 	(global_label "LED_ETH_YELLOW"
 		(shape output)
-		(at 261.62 91.44 0)
+		(at 261.62 96.52 0)
 		(fields_autoplaced yes)
 		(effects
 			(font
@@ -7309,7 +6887,7 @@
 		)
 		(uuid "07c0b60e-e16e-4eb8-9696-2ce5f31241b2")
 		(property "Intersheetrefs" "${INTERSHEET_REFS}"
-			(at 280.5103 91.44 0)
+			(at 280.5103 96.52 0)
 			(hide yes)
 			(show_name no)
 			(do_not_autoplace no)
@@ -7393,7 +6971,7 @@
 			)
 		)
 	)
-	(global_label "HOLD_PWR"
+	(global_label "PWR_HOLD"
 		(shape output)
 		(at 261.62 58.42 0)
 		(fields_autoplaced yes)
@@ -7443,7 +7021,7 @@
 	)
 	(global_label "LED_ETH_GREEN"
 		(shape output)
-		(at 261.62 88.9 0)
+		(at 261.62 93.98 0)
 		(fields_autoplaced yes)
 		(effects
 			(font
@@ -7453,7 +7031,7 @@
 		)
 		(uuid "487a7bf2-34d3-44c9-8744-12ee6bba5c25")
 		(property "Intersheetrefs" "${INTERSHEET_REFS}"
-			(at 279.6031 88.9 0)
+			(at 279.6031 93.98 0)
 			(hide yes)
 			(show_name no)
 			(do_not_autoplace no)
@@ -7465,7 +7043,7 @@
 			)
 		)
 	)
-	(global_label "LED_DEBUG"
+	(global_label "LED_HEALTH"
 		(shape output)
 		(at 261.62 86.36 0)
 		(fields_autoplaced yes)
@@ -7477,7 +7055,7 @@
 		)
 		(uuid "48a1c2bc-2eb9-4edc-b123-2b313143390a")
 		(property "Intersheetrefs" "${INTERSHEET_REFS}"
-			(at 275.3094 86.36 0)
+			(at 275.9142 86.36 0)
 			(hide yes)
 			(show_name no)
 			(do_not_autoplace no)
@@ -7513,7 +7091,7 @@
 			)
 		)
 	)
-	(global_label "BAT_CHG_STAT"
+	(global_label "CHG_STAT_N"
 		(shape input)
 		(at 261.62 68.58 0)
 		(fields_autoplaced yes)
@@ -7526,30 +7104,6 @@
 		(uuid "5a21b057-13eb-4f20-a906-45f6c06857d0")
 		(property "Intersheetrefs" "${INTERSHEET_REFS}"
 			(at 277.9704 68.58 0)
-			(hide yes)
-			(show_name no)
-			(do_not_autoplace no)
-			(effects
-				(font
-					(size 1.27 1.27)
-				)
-				(justify left)
-			)
-		)
-	)
-	(global_label "LED_UART"
-		(shape output)
-		(at 261.62 76.2 0)
-		(fields_autoplaced yes)
-		(effects
-			(font
-				(size 1.27 1.27)
-			)
-			(justify left)
-		)
-		(uuid "725667e7-e9f1-46ea-bfd1-f77ae256c4e7")
-		(property "Intersheetrefs" "${INTERSHEET_REFS}"
-			(at 273.6766 76.2 0)
 			(hide yes)
 			(show_name no)
 			(do_not_autoplace no)
@@ -7585,33 +7139,9 @@
 			)
 		)
 	)
-	(global_label "LED_DEBUG"
-		(shape input)
-		(at 339.09 227.33 180)
-		(fields_autoplaced yes)
-		(effects
-			(font
-				(size 1.27 1.27)
-			)
-			(justify right)
-		)
-		(uuid "7c6ea138-a0cd-41b4-bf3d-98329324b348")
-		(property "Intersheetrefs" "${INTERSHEET_REFS}"
-			(at 325.4006 227.33 0)
-			(hide yes)
-			(show_name no)
-			(do_not_autoplace no)
-			(effects
-				(font
-					(size 1.27 1.27)
-				)
-				(justify right)
-			)
-		)
-	)
 	(global_label "LED_ALIVE"
 		(shape output)
-		(at 261.62 73.66 0)
+		(at 261.62 83.82 0)
 		(fields_autoplaced yes)
 		(effects
 			(font
@@ -7621,7 +7151,7 @@
 		)
 		(uuid "82eae2f8-d231-4675-90c3-1ab73cc4470b")
 		(property "Intersheetrefs" "${INTERSHEET_REFS}"
-			(at 273.979 73.66 0)
+			(at 273.979 83.82 0)
 			(hide yes)
 			(show_name no)
 			(do_not_autoplace no)
@@ -7635,7 +7165,7 @@
 	)
 	(global_label "LED_REC"
 		(shape output)
-		(at 261.62 83.82 0)
+		(at 261.62 91.44 0)
 		(fields_autoplaced yes)
 		(effects
 			(font
@@ -7645,7 +7175,7 @@
 		)
 		(uuid "89b2ed6d-c9e2-4055-bfd6-c70822f7dbc2")
 		(property "Intersheetrefs" "${INTERSHEET_REFS}"
-			(at 272.7089 83.82 0)
+			(at 272.7089 91.44 0)
 			(hide yes)
 			(show_name no)
 			(do_not_autoplace no)
@@ -7657,7 +7187,7 @@
 			)
 		)
 	)
-	(global_label "PWR_SRC"
+	(global_label "PWR_SRC_STAT"
 		(shape input)
 		(at 261.62 63.5 0)
 		(fields_autoplaced yes)
@@ -7669,7 +7199,7 @@
 		)
 		(uuid "8bafa73c-d973-4eb4-a939-19460274ba24")
 		(property "Intersheetrefs" "${INTERSHEET_REFS}"
-			(at 273.3137 63.5 0)
+			(at 278.5146 63.5 0)
 			(hide yes)
 			(show_name no)
 			(do_not_autoplace no)
@@ -7705,7 +7235,7 @@
 			)
 		)
 	)
-	(global_label "BAT_V_STAT"
+	(global_label "VBAT_SNS"
 		(shape input)
 		(at 76.2 111.76 180)
 		(fields_autoplaced yes)
@@ -7731,7 +7261,7 @@
 	)
 	(global_label "LED_BAT"
 		(shape output)
-		(at 261.62 81.28 0)
+		(at 261.62 88.9 0)
 		(fields_autoplaced yes)
 		(effects
 			(font
@@ -7741,7 +7271,7 @@
 		)
 		(uuid "b31536a3-fc3d-4990-87ec-4819e26b217e")
 		(property "Intersheetrefs" "${INTERSHEET_REFS}"
-			(at 272.3461 81.28 0)
+			(at 272.3461 88.9 0)
 			(hide yes)
 			(show_name no)
 			(do_not_autoplace no)
@@ -7777,7 +7307,7 @@
 			)
 		)
 	)
-	(global_label "BAT_CHG_SRC_STAT"
+	(global_label "CHG_IN_VLD_N"
 		(shape input)
 		(at 261.62 66.04 0)
 		(fields_autoplaced yes)
@@ -7801,7 +7331,7 @@
 			)
 		)
 	)
-	(global_label "LED_UART"
+	(global_label "LED_HEALTH"
 		(shape input)
 		(at 339.09 208.28 180)
 		(fields_autoplaced yes)
@@ -7813,7 +7343,7 @@
 		)
 		(uuid "d5c0e1ce-d455-4324-be29-16b62d8e01ae")
 		(property "Intersheetrefs" "${INTERSHEET_REFS}"
-			(at 327.0334 208.28 0)
+			(at 324.7958 208.28 0)
 			(hide yes)
 			(show_name no)
 			(do_not_autoplace no)
@@ -8159,6 +7689,84 @@
 		)
 	)
 	(symbol
+		(lib_id "testpoint:TestPoint")
+		(at 331.47 179.07 270)
+		(unit 1)
+		(body_style 1)
+		(exclude_from_sim no)
+		(in_bom yes)
+		(on_board yes)
+		(in_pos_files yes)
+		(dnp yes)
+		(uuid "157524c8-8ebd-4e70-bc16-0ac8e6f50ba6")
+		(property "Reference" "UART_TP304"
+			(at 338.582 176.022 90)
+			(show_name no)
+			(do_not_autoplace no)
+			(effects
+				(font
+					(size 1.27 1.27)
+				)
+				(justify left)
+			)
+		)
+		(property "Value" "TestPoint"
+			(at 338.582 178.562 90)
+			(show_name no)
+			(do_not_autoplace no)
+			(effects
+				(font
+					(size 1.27 1.27)
+				)
+				(justify left)
+			)
+		)
+		(property "Footprint" "testpoint:TestPoint_Pad_D1.5mm"
+			(at 331.47 184.15 0)
+			(hide yes)
+			(show_name no)
+			(do_not_autoplace no)
+			(effects
+				(font
+					(size 1.27 1.27)
+				)
+			)
+		)
+		(property "Datasheet" ""
+			(at 331.47 184.15 0)
+			(hide yes)
+			(show_name no)
+			(do_not_autoplace no)
+			(effects
+				(font
+					(size 1.27 1.27)
+				)
+			)
+		)
+		(property "Description" "test point"
+			(at 331.47 179.07 0)
+			(hide yes)
+			(show_name no)
+			(do_not_autoplace no)
+			(effects
+				(font
+					(size 1.27 1.27)
+				)
+			)
+		)
+		(pin "1"
+			(uuid "73d47096-1dad-473b-a74a-00517571549d")
+		)
+		(instances
+			(project "pelican"
+				(path "/03ccc822-2fac-4029-af97-539e9460fe35/c2f7e557-87bd-48d4-8cf1-e69c1d4630c4"
+					(reference "UART_TP304")
+					(unit 1)
+				)
+			)
+		)
+	)
+	(symbol
 		(lib_id "power:VIN")
 		(at 269.24 129.54 0)
 		(unit 1)
@@ -8380,7 +7988,7 @@
 				)
 			)
 		)
-		(property "LCSC Part #" "C60490"
+		(property "LCSC Part #" "C25744"
 			(at 341.63 208.28 0)
 			(hide yes)
 			(show_name no)
@@ -8476,7 +8084,7 @@
 				)
 			)
 		)
-		(property "LCSC Part #" "C60490"
+		(property "LCSC Part #" "C25744"
 			(at 350.52 54.61 0)
 			(hide yes)
 			(show_name no)
@@ -8660,100 +8268,6 @@
 	)
 	(symbol
 		(lib_id "R_RC0402FR:RC0402FR-0710KL")
-		(at 341.63 227.33 0)
-		(unit 1)
-		(body_style 1)
-		(exclude_from_sim no)
-		(in_bom yes)
-		(on_board yes)
-		(in_pos_files yes)
-		(dnp no)
-		(fields_autoplaced yes)
-		(uuid "40fcc35a-a8fc-4a11-8e4b-270b57d144b8")
-		(property "Reference" "R303"
-			(at 347.98 220.98 0)
-			(show_name no)
-			(do_not_autoplace no)
-			(effects
-				(font
-					(size 1.524 1.524)
-				)
-			)
-		)
-		(property "Value" "10K"
-			(at 347.98 223.52 0)
-			(show_name no)
-			(do_not_autoplace no)
-			(effects
-				(font
-					(size 1.524 1.524)
-				)
-			)
-		)
-		(property "Footprint" "R_RC0402FR:R_RC0402FR"
-			(at 341.63 227.33 0)
-			(hide yes)
-			(show_name no)
-			(do_not_autoplace no)
-			(effects
-				(font
-					(size 1.27 1.27)
-					(italic yes)
-				)
-			)
-		)
-		(property "Datasheet" "https://www.yageo.com/en/ProductSearch/PartNumberSearch?part_number=RC0402FR-0710KL"
-			(at 341.63 227.33 0)
-			(hide yes)
-			(show_name no)
-			(do_not_autoplace no)
-			(effects
-				(font
-					(size 1.27 1.27)
-					(italic yes)
-				)
-			)
-		)
-		(property "Description" ""
-			(at 341.63 227.33 0)
-			(hide yes)
-			(show_name no)
-			(do_not_autoplace no)
-			(effects
-				(font
-					(size 1.27 1.27)
-				)
-			)
-		)
-		(property "LCSC Part #" "C60490"
-			(at 341.63 227.33 0)
-			(hide yes)
-			(show_name no)
-			(do_not_autoplace no)
-			(effects
-				(font
-					(size 1.27 1.27)
-					(italic yes)
-				)
-			)
-		)
-		(pin "2"
-			(uuid "ec8f94a6-2a1f-4a06-a150-0c0ac133788e")
-		)
-		(pin "1"
-			(uuid "1cdfbeb7-3021-4f25-b6a8-4ab39d5dacb0")
-		)
-		(instances
-			(project "pelican"
-				(path "/03ccc822-2fac-4029-af97-539e9460fe35/c2f7e557-87bd-48d4-8cf1-e69c1d4630c4"
-					(reference "R303")
-					(unit 1)
-				)
-			)
-		)
-	)
-	(symbol
-		(lib_id "R_RC0402FR:RC0402FR-0710KL")
 		(at 350.52 109.22 90)
 		(unit 1)
 		(body_style 1)
@@ -8821,7 +8335,7 @@
 				)
 			)
 		)
-		(property "LCSC Part #" "C60490"
+		(property "LCSC Part #" "C25744"
 			(at 350.52 109.22 0)
 			(hide yes)
 			(show_name no)
@@ -8843,133 +8357,6 @@
 			(project "pelican"
 				(path "/03ccc822-2fac-4029-af97-539e9460fe35/c2f7e557-87bd-48d4-8cf1-e69c1d4630c4"
 					(reference "R305")
-					(unit 1)
-				)
-			)
-		)
-	)
-	(symbol
-		(lib_id "LED_SZYY0402YG:SZYY0402YG")
-		(at 363.22 228.6 180)
-		(unit 1)
-		(body_style 1)
-		(exclude_from_sim no)
-		(in_bom yes)
-		(on_board yes)
-		(in_pos_files yes)
-		(dnp no)
-		(fields_autoplaced yes)
-		(uuid "47f53b88-8efb-489e-bf5a-8490e4a287f1")
-		(property "Reference" "DEBUG_LED303"
-			(at 363.98 220.98 0)
-			(show_name no)
-			(do_not_autoplace no)
-			(effects
-				(font
-					(size 1.524 1.524)
-				)
-			)
-		)
-		(property "Value" "SZYY0402YG"
-			(at 363.98 223.52 0)
-			(show_name no)
-			(do_not_autoplace no)
-			(effects
-				(font
-					(size 1.524 1.524)
-				)
-			)
-		)
-		(property "Footprint" "LED_SZYY0402YG:LED_SZYY0402YG"
-			(at 363.22 228.6 0)
-			(hide yes)
-			(show_name no)
-			(do_not_autoplace no)
-			(effects
-				(font
-					(size 1.27 1.27)
-					(italic yes)
-				)
-			)
-		)
-		(property "Datasheet" "https://www.lcsc.com/datasheet/C434449.pdf"
-			(at 363.22 228.6 0)
-			(hide yes)
-			(show_name no)
-			(do_not_autoplace no)
-			(effects
-				(font
-					(size 1.27 1.27)
-					(italic yes)
-				)
-			)
-		)
-		(property "Description" ""
-			(at 363.22 228.6 0)
-			(hide yes)
-			(show_name no)
-			(do_not_autoplace no)
-			(effects
-				(font
-					(size 1.27 1.27)
-				)
-			)
-		)
-		(property "LCSC Part #" "C434449"
-			(at 363.22 228.6 0)
-			(hide yes)
-			(show_name no)
-			(do_not_autoplace no)
-			(effects
-				(font
-					(size 1.27 1.27)
-					(italic yes)
-				)
-			)
-		)
-		(property "Manufacturer" "yongyu(永裕光电)"
-			(at 363.22 214.63 0)
-			(hide yes)
-			(show_name no)
-			(do_not_autoplace no)
-			(effects
-				(font
-					(size 1.27 1.27)
-				)
-			)
-		)
-		(property "MPN" "SZYY0402YG"
-			(at 363.22 212.09 0)
-			(hide yes)
-			(show_name no)
-			(do_not_autoplace no)
-			(effects
-				(font
-					(size 1.27 1.27)
-				)
-			)
-		)
-		(property "LCSC Part" "C434449"
-			(at 363.22 209.55 0)
-			(hide yes)
-			(show_name no)
-			(do_not_autoplace no)
-			(effects
-				(font
-					(size 1.27 1.27)
-				)
-			)
-		)
-		(pin "1"
-			(uuid "e020f21d-fdfb-4c87-9511-3d62e7bd3280")
-		)
-		(pin "2"
-			(uuid "5cceaa0f-959c-41bf-bca5-f26a2503d783")
-		)
-		(instances
-			(project "pelican"
-				(path "/03ccc822-2fac-4029-af97-539e9460fe35/c2f7e557-87bd-48d4-8cf1-e69c1d4630c4"
-					(reference "DEBUG_LED303")
 					(unit 1)
 				)
 			)
@@ -9008,7 +8395,7 @@
 				(justify left)
 			)
 		)
-		(property "Footprint" ""
+		(property "Footprint" "testpoint:TestPoint_Pad_D1.5mm"
 			(at 364.49 184.15 0)
 			(hide yes)
 			(show_name no)
@@ -9337,128 +8724,6 @@
 		)
 	)
 	(symbol
-		(lib_id "J_61300411121:61300411121")
-		(at 331.47 176.53 0)
-		(unit 1)
-		(body_style 1)
-		(exclude_from_sim no)
-		(in_bom yes)
-		(on_board yes)
-		(in_pos_files yes)
-		(dnp no)
-		(uuid "73566bb4-7ceb-4d2f-92f3-f0bff8212455")
-		(property "Reference" "UART_J301"
-			(at 336.55 189.484 0)
-			(show_name no)
-			(do_not_autoplace no)
-			(effects
-				(font
-					(size 1.524 1.524)
-				)
-				(justify left)
-			)
-		)
-		(property "Value" "61300411121"
-			(at 336.55 192.024 0)
-			(show_name no)
-			(do_not_autoplace no)
-			(effects
-				(font
-					(size 1.524 1.524)
-				)
-				(justify left)
-			)
-		)
-		(property "Footprint" "J_61300411121:J_61300411121"
-			(at 331.47 176.53 0)
-			(hide yes)
-			(show_name no)
-			(do_not_autoplace no)
-			(effects
-				(font
-					(size 1.27 1.27)
-					(italic yes)
-				)
-			)
-		)
-		(property "Datasheet" "https://www.we-online.com/catalog/datasheet/61300411121.pdf"
-			(at 331.47 176.53 0)
-			(hide yes)
-			(show_name no)
-			(do_not_autoplace no)
-			(effects
-				(font
-					(size 1.27 1.27)
-					(italic yes)
-				)
-			)
-		)
-		(property "Description" "Connector, Header, 4 Position, 2.54mm Pitch, Through Hole"
-			(at 331.47 176.53 0)
-			(hide yes)
-			(show_name no)
-			(do_not_autoplace no)
-			(effects
-				(font
-					(size 1.27 1.27)
-				)
-			)
-		)
-		(property "MF" "Wurth Elektronik"
-			(at 331.47 176.53 0)
-			(hide yes)
-			(show_name no)
-			(do_not_autoplace no)
-			(effects
-				(font
-					(size 1.27 1.27)
-				)
-			)
-		)
-		(property "MP" "61300411121"
-			(at 331.47 176.53 0)
-			(hide yes)
-			(show_name no)
-			(do_not_autoplace no)
-			(effects
-				(font
-					(size 1.27 1.27)
-				)
-			)
-		)
-		(property "LCSC Part #" "C5184785"
-			(at 331.47 176.53 0)
-			(hide yes)
-			(show_name no)
-			(do_not_autoplace no)
-			(effects
-				(font
-					(size 1.27 1.27)
-				)
-			)
-		)
-		(pin "1"
-			(uuid "3baa759e-9645-4e01-bb0a-7a038e58b39c")
-		)
-		(pin "2"
-			(uuid "c99ad7bf-7a09-4bb1-ac52-2cfd13c7d9aa")
-		)
-		(pin "3"
-			(uuid "477dab8e-d38d-49fd-9b3e-6d3e6a6c7f40")
-		)
-		(pin "4"
-			(uuid "91b44bed-6b64-404e-b7b1-36a460fe4f06")
-		)
-		(instances
-			(project "pelican"
-				(path "/03ccc822-2fac-4029-af97-539e9460fe35/c2f7e557-87bd-48d4-8cf1-e69c1d4630c4"
-					(reference "UART_J301")
-					(unit 1)
-				)
-			)
-		)
-	)
-	(symbol
 		(lib_id "power:GND")
 		(at 289.56 104.14 0)
 		(unit 1)
@@ -9609,6 +8874,84 @@
 			(project "pelican"
 				(path "/03ccc822-2fac-4029-af97-539e9460fe35/c2f7e557-87bd-48d4-8cf1-e69c1d4630c4"
 					(reference "#PWR040")
+					(unit 1)
+				)
+			)
+		)
+	)
+	(symbol
+		(lib_id "testpoint:TestPoint")
+		(at 331.47 181.61 270)
+		(unit 1)
+		(body_style 1)
+		(exclude_from_sim no)
+		(in_bom yes)
+		(on_board yes)
+		(in_pos_files yes)
+		(dnp yes)
+		(uuid "886f2b54-b111-4641-a661-a49fe1aa29f0")
+		(property "Reference" "UART_TP305"
+			(at 338.582 181.102 90)
+			(show_name no)
+			(do_not_autoplace no)
+			(effects
+				(font
+					(size 1.27 1.27)
+				)
+				(justify left)
+			)
+		)
+		(property "Value" "TestPoint"
+			(at 338.582 183.642 90)
+			(show_name no)
+			(do_not_autoplace no)
+			(effects
+				(font
+					(size 1.27 1.27)
+				)
+				(justify left)
+			)
+		)
+		(property "Footprint" "testpoint:TestPoint_Pad_D1.5mm"
+			(at 331.47 186.69 0)
+			(hide yes)
+			(show_name no)
+			(do_not_autoplace no)
+			(effects
+				(font
+					(size 1.27 1.27)
+				)
+			)
+		)
+		(property "Datasheet" ""
+			(at 331.47 186.69 0)
+			(hide yes)
+			(show_name no)
+			(do_not_autoplace no)
+			(effects
+				(font
+					(size 1.27 1.27)
+				)
+			)
+		)
+		(property "Description" "test point"
+			(at 331.47 181.61 0)
+			(hide yes)
+			(show_name no)
+			(do_not_autoplace no)
+			(effects
+				(font
+					(size 1.27 1.27)
+				)
+			)
+		)
+		(pin "1"
+			(uuid "4daa2f8d-97ea-4016-ac8d-413ed3dc8a4c")
+		)
+		(instances
+			(project "pelican"
+				(path "/03ccc822-2fac-4029-af97-539e9460fe35/c2f7e557-87bd-48d4-8cf1-e69c1d4630c4"
+					(reference "UART_TP305")
 					(unit 1)
 				)
 			)
@@ -9924,7 +9267,7 @@
 				(justify left)
 			)
 		)
-		(property "Footprint" ""
+		(property "Footprint" "testpoint:TestPoint_Pad_D1.5mm"
 			(at 364.49 186.69 0)
 			(hide yes)
 			(show_name no)
@@ -9964,6 +9307,83 @@
 			(project "pelican"
 				(path "/03ccc822-2fac-4029-af97-539e9460fe35/c2f7e557-87bd-48d4-8cf1-e69c1d4630c4"
 					(reference "JTAG_TP302")
+					(unit 1)
+				)
+			)
+		)
+	)
+	(symbol
+		(lib_id "power:GND")
+		(at 59.69 129.54 0)
+		(unit 1)
+		(body_style 1)
+		(exclude_from_sim no)
+		(in_bom yes)
+		(on_board yes)
+		(in_pos_files yes)
+		(dnp no)
+		(fields_autoplaced yes)
+		(uuid "9efec6dd-28c0-474f-8cc5-e19f0e164093")
+		(property "Reference" "#PWR0450"
+			(at 59.69 135.89 0)
+			(hide yes)
+			(show_name no)
+			(do_not_autoplace no)
+			(effects
+				(font
+					(size 1.27 1.27)
+				)
+			)
+		)
+		(property "Value" "GND"
+			(at 59.69 133.35 0)
+			(show_name no)
+			(do_not_autoplace no)
+			(effects
+				(font
+					(size 1.27 1.27)
+				)
+			)
+		)
+		(property "Footprint" ""
+			(at 59.69 129.54 0)
+			(hide yes)
+			(show_name no)
+			(do_not_autoplace no)
+			(effects
+				(font
+					(size 1.27 1.27)
+				)
+			)
+		)
+		(property "Datasheet" ""
+			(at 59.69 129.54 0)
+			(hide yes)
+			(show_name no)
+			(do_not_autoplace no)
+			(effects
+				(font
+					(size 1.27 1.27)
+				)
+			)
+		)
+		(property "Description" ""
+			(at 59.69 129.54 0)
+			(show_name no)
+			(do_not_autoplace no)
+			(effects
+				(font
+					(size 1.27 1.27)
+				)
+			)
+		)
+		(pin "1"
+			(uuid "1cacafa9-c957-47b1-9f7d-7c84ad4ac70e")
+		)
+		(instances
+			(project "pelican"
+				(path "/03ccc822-2fac-4029-af97-539e9460fe35/c2f7e557-87bd-48d4-8cf1-e69c1d4630c4"
+					(reference "#PWR0450")
 					(unit 1)
 				)
 			)
@@ -10126,84 +9546,6 @@
 		)
 	)
 	(symbol
-		(lib_id "power:GND")
-		(at 372.11 227.33 0)
-		(unit 1)
-		(body_style 1)
-		(exclude_from_sim no)
-		(in_bom yes)
-		(on_board yes)
-		(in_pos_files yes)
-		(dnp no)
-		(fields_autoplaced yes)
-		(uuid "b5989577-a268-400c-979b-5bde708b17dc")
-		(property "Reference" "#PWR063"
-			(at 372.11 233.68 0)
-			(hide yes)
-			(show_name no)
-			(do_not_autoplace no)
-			(effects
-				(font
-					(size 1.27 1.27)
-				)
-			)
-		)
-		(property "Value" "GND"
-			(at 372.11 232.41 0)
-			(show_name no)
-			(do_not_autoplace no)
-			(effects
-				(font
-					(size 1.27 1.27)
-				)
-			)
-		)
-		(property "Footprint" ""
-			(at 372.11 227.33 0)
-			(hide yes)
-			(show_name no)
-			(do_not_autoplace no)
-			(effects
-				(font
-					(size 1.27 1.27)
-				)
-			)
-		)
-		(property "Datasheet" ""
-			(at 372.11 227.33 0)
-			(hide yes)
-			(show_name no)
-			(do_not_autoplace no)
-			(effects
-				(font
-					(size 1.27 1.27)
-				)
-			)
-		)
-		(property "Description" "Power symbol creates a global label with name \"GND\" , ground"
-			(at 372.11 227.33 0)
-			(hide yes)
-			(show_name no)
-			(do_not_autoplace no)
-			(effects
-				(font
-					(size 1.27 1.27)
-				)
-			)
-		)
-		(pin "1"
-			(uuid "93194fc5-9647-45b2-a316-edd6542f684d")
-		)
-		(instances
-			(project "pelican"
-				(path "/03ccc822-2fac-4029-af97-539e9460fe35/c2f7e557-87bd-48d4-8cf1-e69c1d4630c4"
-					(reference "#PWR063")
-					(unit 1)
-				)
-			)
-		)
-	)
-	(symbol
 		(lib_id "LED_SZYY0402YG:SZYY0402YG")
 		(at 361.95 144.78 180)
 		(unit 1)
@@ -10331,6 +9673,84 @@
 		)
 	)
 	(symbol
+		(lib_id "testpoint:TestPoint")
+		(at 331.47 184.15 270)
+		(unit 1)
+		(body_style 1)
+		(exclude_from_sim no)
+		(in_bom yes)
+		(on_board yes)
+		(in_pos_files yes)
+		(dnp yes)
+		(uuid "be664f9a-5f4d-4120-af18-ee2b9bec543c")
+		(property "Reference" "UART_TP306"
+			(at 338.582 186.182 90)
+			(show_name no)
+			(do_not_autoplace no)
+			(effects
+				(font
+					(size 1.27 1.27)
+				)
+				(justify left)
+			)
+		)
+		(property "Value" "TestPoint"
+			(at 338.582 188.722 90)
+			(show_name no)
+			(do_not_autoplace no)
+			(effects
+				(font
+					(size 1.27 1.27)
+				)
+				(justify left)
+			)
+		)
+		(property "Footprint" "testpoint:TestPoint_Pad_D1.5mm"
+			(at 331.47 189.23 0)
+			(hide yes)
+			(show_name no)
+			(do_not_autoplace no)
+			(effects
+				(font
+					(size 1.27 1.27)
+				)
+			)
+		)
+		(property "Datasheet" ""
+			(at 331.47 189.23 0)
+			(hide yes)
+			(show_name no)
+			(do_not_autoplace no)
+			(effects
+				(font
+					(size 1.27 1.27)
+				)
+			)
+		)
+		(property "Description" "test point"
+			(at 331.47 184.15 0)
+			(hide yes)
+			(show_name no)
+			(do_not_autoplace no)
+			(effects
+				(font
+					(size 1.27 1.27)
+				)
+			)
+		)
+		(pin "1"
+			(uuid "27a4c73d-0ce4-4062-a973-83de2ef1ac20")
+		)
+		(instances
+			(project "pelican"
+				(path "/03ccc822-2fac-4029-af97-539e9460fe35/c2f7e557-87bd-48d4-8cf1-e69c1d4630c4"
+					(reference "UART_TP306")
+					(unit 1)
+				)
+			)
+		)
+	)
+	(symbol
 		(lib_id "C_GRM155R71C104KA88D:GRM155R71C104KA88D")
 		(at 361.95 111.76 270)
 		(unit 1)
@@ -10399,7 +9819,7 @@
 				)
 			)
 		)
-		(property "LCSC Part #" "C71629"
+		(property "LCSC Part #" "C1525"
 			(at 361.95 111.76 0)
 			(hide yes)
 			(show_name no)
@@ -10694,7 +10114,7 @@
 				)
 			)
 		)
-		(property "LCSC Part #" "C71629"
+		(property "LCSC Part #" "C1525"
 			(at 361.95 57.15 0)
 			(hide yes)
 			(show_name no)
@@ -10949,6 +10369,84 @@
 			(project "pelican"
 				(path "/03ccc822-2fac-4029-af97-539e9460fe35/c2f7e557-87bd-48d4-8cf1-e69c1d4630c4"
 					(reference "#PWR044")
+					(unit 1)
+				)
+			)
+		)
+	)
+	(symbol
+		(lib_id "testpoint:TestPoint")
+		(at 331.47 176.53 270)
+		(unit 1)
+		(body_style 1)
+		(exclude_from_sim no)
+		(in_bom yes)
+		(on_board yes)
+		(in_pos_files yes)
+		(dnp yes)
+		(uuid "f12be9ca-a2e7-4bd6-a1b0-d90308d6ff38")
+		(property "Reference" "UART_TP303"
+			(at 338.582 170.942 90)
+			(show_name no)
+			(do_not_autoplace no)
+			(effects
+				(font
+					(size 1.27 1.27)
+				)
+				(justify left)
+			)
+		)
+		(property "Value" "TestPoint"
+			(at 338.582 173.482 90)
+			(show_name no)
+			(do_not_autoplace no)
+			(effects
+				(font
+					(size 1.27 1.27)
+				)
+				(justify left)
+			)
+		)
+		(property "Footprint" "testpoint:TestPoint_Pad_D1.5mm"
+			(at 331.47 181.61 0)
+			(hide yes)
+			(show_name no)
+			(do_not_autoplace no)
+			(effects
+				(font
+					(size 1.27 1.27)
+				)
+			)
+		)
+		(property "Datasheet" ""
+			(at 331.47 181.61 0)
+			(hide yes)
+			(show_name no)
+			(do_not_autoplace no)
+			(effects
+				(font
+					(size 1.27 1.27)
+				)
+			)
+		)
+		(property "Description" "test point"
+			(at 331.47 176.53 0)
+			(hide yes)
+			(show_name no)
+			(do_not_autoplace no)
+			(effects
+				(font
+					(size 1.27 1.27)
+				)
+			)
+		)
+		(pin "1"
+			(uuid "6322d0ef-6d7c-4905-97ac-604ea5ad5666")
+		)
+		(instances
+			(project "pelican"
+				(path "/03ccc822-2fac-4029-af97-539e9460fe35/c2f7e557-87bd-48d4-8cf1-e69c1d4630c4"
+					(reference "UART_TP303")
 					(unit 1)
 				)
 			)
@@ -11663,7 +11161,7 @@
 				)
 			)
 		)
-		(property "LCSC Part #" "C60490"
+		(property "LCSC Part #" "C25744"
 			(at 340.36 143.51 0)
 			(hide yes)
 			(show_name no)

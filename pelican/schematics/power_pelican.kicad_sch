@@ -1367,38 +1367,55 @@
 			)
 			(embedded_fonts no)
 		)
-		(symbol "J_436500200:436500200"
-			(pin_names
-				(offset 1.016)
-			)
+		(symbol "J_43045-0401:43045-0401"
 			(exclude_from_sim no)
 			(in_bom yes)
 			(on_board yes)
 			(in_pos_files yes)
 			(duplicate_pin_numbers_are_jumpers no)
-			(property "Reference" "J"
-				(at 4.1656 5.3086 0)
+			(property "Reference" "CN"
+				(at 0 6.35 0)
 				(show_name no)
 				(do_not_autoplace no)
 				(effects
 					(font
 						(size 1.27 1.27)
 					)
-					(justify left bottom)
 				)
 			)
-			(property "Value" "436500200"
-				(at 4.8006 -1.0414 0)
+			(property "Value" "43045-0401"
+				(at 0 -6.35 0)
 				(show_name no)
 				(do_not_autoplace no)
 				(effects
 					(font
 						(size 1.27 1.27)
 					)
-					(justify left bottom)
 				)
 			)
-			(property "Footprint" "J_436500200:J_436500200"
+			(property "Footprint" "J_43045-0401:J_43045-0401_2x02_RA"
+				(at 0 -8.89 0)
+				(show_name no)
+				(do_not_autoplace no)
+				(hide yes)
+				(effects
+					(font
+						(size 1.27 1.27)
+					)
+				)
+			)
+			(property "Datasheet" "https://www.lcsc.com/datasheet/C585880.pdf"
+				(at 0 -11.43 0)
+				(show_name no)
+				(do_not_autoplace no)
+				(hide yes)
+				(effects
+					(font
+						(size 1.27 1.27)
+					)
+				)
+			)
+			(property "Description" ""
 				(at 0 0 0)
 				(show_name no)
 				(do_not_autoplace no)
@@ -1407,10 +1424,42 @@
 					(font
 						(size 1.27 1.27)
 					)
-					(justify bottom)
 				)
 			)
-			(property "Datasheet" "https://www.molex.com/en-us/products/part-detail-pdf/436500200?display=pdf"
+			(property "Manufacturer" "MOLEX"
+				(at 0 -13.97 0)
+				(show_name no)
+				(do_not_autoplace no)
+				(hide yes)
+				(effects
+					(font
+						(size 1.27 1.27)
+					)
+				)
+			)
+			(property "MPN" "430450401"
+				(at 0 -16.51 0)
+				(show_name no)
+				(do_not_autoplace no)
+				(hide yes)
+				(effects
+					(font
+						(size 1.27 1.27)
+					)
+				)
+			)
+			(property "LCSC Part" "C585880"
+				(at 0 -19.05 0)
+				(show_name no)
+				(do_not_autoplace no)
+				(hide yes)
+				(effects
+					(font
+						(size 1.27 1.27)
+					)
+				)
+			)
+			(property "ki_keywords" "Pre-ordered Connectors"
 				(at 0 0 0)
 				(show_name no)
 				(do_not_autoplace no)
@@ -1419,214 +1468,101 @@
 					(font
 						(size 1.27 1.27)
 					)
-					(justify bottom)
 				)
 			)
-			(property "Description" "Connector Header Through Hole, Right Angle 2 position 0.118 (3.00mm)"
-				(at 0 0 0)
-				(show_name no)
-				(do_not_autoplace no)
-				(hide yes)
-				(effects
-					(font
-						(size 1.27 1.27)
-					)
-					(justify bottom)
-				)
-			)
-			(property "DigiKey_Part_Number" "WM1860-ND"
-				(at 0 0 0)
-				(show_name no)
-				(do_not_autoplace no)
-				(hide yes)
-				(effects
-					(font
-						(size 1.27 1.27)
-					)
-					(justify bottom)
-				)
-			)
-			(property "SnapEDA_Link" "https://www.snapeda.com/parts/436500200/Molex/view-part/?ref=snap"
-				(at 0 0 0)
-				(show_name no)
-				(do_not_autoplace no)
-				(hide yes)
-				(effects
-					(font
-						(size 1.27 1.27)
-					)
-					(justify bottom)
-				)
-			)
-			(property "Package" "None"
-				(at 0 0 0)
-				(show_name no)
-				(do_not_autoplace no)
-				(hide yes)
-				(effects
-					(font
-						(size 1.27 1.27)
-					)
-					(justify bottom)
-				)
-			)
-			(property "Check_prices" "https://www.snapeda.com/parts/436500200/Molex/view-part/?ref=eda"
-				(at 0 0 0)
-				(show_name no)
-				(do_not_autoplace no)
-				(hide yes)
-				(effects
-					(font
-						(size 1.27 1.27)
-					)
-					(justify bottom)
-				)
-			)
-			(property "MF" "Molex"
-				(at 0 0 0)
-				(show_name no)
-				(do_not_autoplace no)
-				(hide yes)
-				(effects
-					(font
-						(size 1.27 1.27)
-					)
-					(justify bottom)
-				)
-			)
-			(property "MP" "436500200"
-				(at 0 0 0)
-				(show_name no)
-				(do_not_autoplace no)
-				(hide yes)
-				(effects
-					(font
-						(size 1.27 1.27)
-					)
-					(justify bottom)
-				)
-			)
-			(property "MFR_NAME" "Molex"
-				(at 0 0 0)
-				(show_name no)
-				(do_not_autoplace no)
-				(hide yes)
-				(effects
-					(font
-						(size 1.27 1.27)
-					)
-					(justify bottom)
-				)
-			)
-			(property "MANUFACTURER_PART_NUMBER" "436500200"
-				(at 0 0 0)
-				(show_name no)
-				(do_not_autoplace no)
-				(hide yes)
-				(effects
-					(font
-						(size 1.27 1.27)
-					)
-					(justify bottom)
-				)
-			)
-			(symbol "436500200_0_0"
-				(polyline
-					(pts
-						(xy 5.08 2.54) (xy 5.08 -5.08)
-					)
+			(symbol "43045-0401_0_1"
+				(rectangle
+					(start -5.08 3.81)
+					(end 5.08 -3.81)
 					(stroke
-						(width 0.1524)
+						(width 0)
+						(type default)
+					)
+					(fill
+						(type background)
+					)
+				)
+				(circle
+					(center -3.81 2.54)
+					(radius 0.38)
+					(stroke
+						(width 0)
 						(type default)
 					)
 					(fill
 						(type none)
 					)
 				)
-				(polyline
-					(pts
-						(xy 5.08 -5.08) (xy 12.7 -5.08)
-					)
-					(stroke
-						(width 0.1524)
-						(type default)
-					)
-					(fill
-						(type none)
-					)
-				)
-				(polyline
-					(pts
-						(xy 12.7 2.54) (xy 5.08 2.54)
-					)
-					(stroke
-						(width 0.1524)
-						(type default)
-					)
-					(fill
-						(type none)
-					)
-				)
-				(polyline
-					(pts
-						(xy 12.7 -5.08) (xy 12.7 2.54)
-					)
-					(stroke
-						(width 0.1524)
-						(type default)
-					)
-					(fill
-						(type none)
-					)
-				)
-				(pin passive line
-					(at 0 0 0)
-					(length 5.08)
-					(name ""
+				(pin unspecified line
+					(at -7.62 1.27 0)
+					(length 2.54)
+					(name "1"
 						(effects
 							(font
-								(size 1.016 1.016)
+								(size 1.27 1.27)
 							)
 						)
 					)
 					(number "1"
 						(effects
 							(font
-								(size 1.016 1.016)
+								(size 1.27 1.27)
 							)
 						)
 					)
 				)
-				(pin passive line
-					(at 0 -2.54 0)
-					(length 5.08)
-					(name ""
+				(pin unspecified line
+					(at -7.62 -1.27 0)
+					(length 2.54)
+					(name "2"
 						(effects
 							(font
-								(size 1.016 1.016)
+								(size 1.27 1.27)
 							)
 						)
 					)
 					(number "2"
 						(effects
 							(font
-								(size 1.016 1.016)
+								(size 1.27 1.27)
 							)
 						)
 					)
 				)
-			)
-			(symbol "436500200_1_1"
-				(rectangle
-					(start 5.08 2.54)
-					(end 12.7 -5.08)
-					(stroke
-						(width 0)
-						(type solid)
+				(pin unspecified line
+					(at 7.62 -1.27 180)
+					(length 2.54)
+					(name "3"
+						(effects
+							(font
+								(size 1.27 1.27)
+							)
+						)
 					)
-					(fill
-						(type color)
-						(color 255 255 194 1)
+					(number "3"
+						(effects
+							(font
+								(size 1.27 1.27)
+							)
+						)
+					)
+				)
+				(pin unspecified line
+					(at 7.62 1.27 180)
+					(length 2.54)
+					(name "4"
+						(effects
+							(font
+								(size 1.27 1.27)
+							)
+						)
+					)
+					(number "4"
+						(effects
+							(font
+								(size 1.27 1.27)
+							)
+						)
 					)
 				)
 			)
@@ -6983,7 +6919,7 @@
 						)
 					)
 				)
-				(pin power_out line
+				(pin passive line
 					(at 27.94 5.08 180)
 					(length 5.08)
 					(name "BAT@2"
@@ -7127,7 +7063,7 @@
 						)
 					)
 				)
-				(pin power_out line
+				(pin passive line
 					(at 27.94 17.78 180)
 					(length 5.08)
 					(name "OUT@2"
@@ -7531,7 +7467,7 @@
 						)
 					)
 				)
-				(pin power_out line
+				(pin passive line
 					(at 38.1 -2.54 180)
 					(length 5.08)
 					(name "VOUT"
@@ -8886,7 +8822,7 @@
 	)
 	(text_box "RPP"
 		(exclude_from_sim no)
-		(at 102.87 69.7117 0)
+		(at 106.68 69.7117 0)
 		(size 6.35 3.9483)
 		(margins 0.9525 0.9525 0.9525 0.9525)
 		(stroke
@@ -8978,19 +8914,19 @@
 		(uuid "4504fa37-b43e-4da3-a668-92dbdea0a1e6")
 	)
 	(junction
-		(at 86.36 107.95)
+		(at 90.17 107.95)
 		(diameter 0)
 		(color 0 0 0 0)
 		(uuid "66908589-1da4-4b23-8a44-b779321a5883")
 	)
 	(junction
-		(at 132.08 93.98)
+		(at 135.89 93.98)
 		(diameter 0)
 		(color 0 0 0 0)
 		(uuid "7df3258b-e6e1-4a16-b88c-516b032e2baf")
 	)
 	(junction
-		(at 124.46 130.81)
+		(at 128.27 130.81)
 		(diameter 0)
 		(color 0 0 0 0)
 		(uuid "8c4b5909-528f-4616-a788-d7956f87faa2")
@@ -9002,7 +8938,7 @@
 		(uuid "8dff6bbc-c0e5-40c8-9c52-d0e61848950a")
 	)
 	(junction
-		(at 124.46 102.87)
+		(at 128.27 102.87)
 		(diameter 0)
 		(color 0 0 0 0)
 		(uuid "8f747722-03f5-48f6-a32d-91d8501ca992")
@@ -9038,7 +8974,7 @@
 		(uuid "b1068f30-217b-4318-9134-becd527f19da")
 	)
 	(junction
-		(at 97.79 102.87)
+		(at 101.6 102.87)
 		(diameter 0)
 		(color 0 0 0 0)
 		(uuid "b3ed6715-499a-47e9-a5c2-f5ed0caff925")
@@ -9068,22 +9004,22 @@
 		(uuid "caba2523-91e8-487d-8590-09c5b9e71d89")
 	)
 	(junction
-		(at 162.56 86.36)
+		(at 166.37 86.36)
 		(diameter 0)
 		(color 0 0 0 0)
 		(uuid "d991995c-d4b1-47fa-aea8-570cbd69b605")
 	)
 	(junction
-		(at 116.84 118.11)
+		(at 120.65 118.11)
 		(diameter 0)
 		(color 0 0 0 0)
 		(uuid "da2ce00b-4293-4cb4-b46d-04127709e1aa")
 	)
 	(junction
-		(at 86.36 115.57)
+		(at 90.17 115.57)
 		(diameter 0)
 		(color 0 0 0 0)
-		(uuid "eade3bb7-3fcb-4cb1-a2d3-68ff54603263")
+		(uuid "dbe19361-1fff-4dde-92cc-feff60a9d9d8")
 	)
 	(junction
 		(at 265.43 99.06)
@@ -9148,6 +9084,16 @@
 			(type default)
 		)
 		(uuid "0957b8a6-8d46-4c5e-8592-50c865243264")
+	)
+	(wire
+		(pts
+			(xy 124.46 177.8) (xy 124.46 180.34)
+		)
+		(stroke
+			(width 0)
+			(type default)
+		)
+		(uuid "0b70a1c0-b54c-4326-bd57-fff35d6c1dc4")
 	)
 	(wire
 		(pts
@@ -9241,7 +9187,7 @@
 	)
 	(wire
 		(pts
-			(xy 127 93.98) (xy 132.08 93.98)
+			(xy 130.81 93.98) (xy 135.89 93.98)
 		)
 		(stroke
 			(width 0)
@@ -9271,7 +9217,7 @@
 	)
 	(wire
 		(pts
-			(xy 97.79 102.87) (xy 124.46 102.87)
+			(xy 101.6 102.87) (xy 128.27 102.87)
 		)
 		(stroke
 			(width 0)
@@ -9381,7 +9327,7 @@
 	)
 	(wire
 		(pts
-			(xy 116.84 118.11) (xy 118.11 118.11)
+			(xy 120.65 118.11) (xy 121.92 118.11)
 		)
 		(stroke
 			(width 0)
@@ -9391,7 +9337,7 @@
 	)
 	(wire
 		(pts
-			(xy 97.79 93.98) (xy 114.3 93.98)
+			(xy 101.6 93.98) (xy 118.11 93.98)
 		)
 		(stroke
 			(width 0)
@@ -9411,7 +9357,7 @@
 	)
 	(wire
 		(pts
-			(xy 193.04 86.36) (xy 193.04 83.82)
+			(xy 196.85 86.36) (xy 196.85 83.82)
 		)
 		(stroke
 			(width 0)
@@ -9441,7 +9387,7 @@
 	)
 	(wire
 		(pts
-			(xy 162.56 86.36) (xy 162.56 88.9)
+			(xy 166.37 86.36) (xy 166.37 88.9)
 		)
 		(stroke
 			(width 0)
@@ -9471,7 +9417,7 @@
 	)
 	(wire
 		(pts
-			(xy 132.08 93.98) (xy 142.24 93.98)
+			(xy 135.89 93.98) (xy 146.05 93.98)
 		)
 		(stroke
 			(width 0)
@@ -9541,7 +9487,17 @@
 	)
 	(wire
 		(pts
-			(xy 97.79 102.87) (xy 97.79 93.98)
+			(xy 71.12 72.39) (xy 74.93 72.39)
+		)
+		(stroke
+			(width 0)
+			(type default)
+		)
+		(uuid "643dfca4-36e4-4eff-8e4b-4fed93f19f88")
+	)
+	(wire
+		(pts
+			(xy 101.6 102.87) (xy 101.6 93.98)
 		)
 		(stroke
 			(width 0)
@@ -9591,7 +9547,17 @@
 	)
 	(wire
 		(pts
-			(xy 114.3 118.11) (xy 116.84 118.11)
+			(xy 74.93 74.93) (xy 74.93 115.57)
+		)
+		(stroke
+			(width 0)
+			(type default)
+		)
+		(uuid "8046ba3e-232d-4754-8d20-3a320726e1cf")
+	)
+	(wire
+		(pts
+			(xy 118.11 118.11) (xy 120.65 118.11)
 		)
 		(stroke
 			(width 0)
@@ -9621,7 +9587,7 @@
 	)
 	(wire
 		(pts
-			(xy 124.46 102.87) (xy 127 102.87)
+			(xy 128.27 102.87) (xy 130.81 102.87)
 		)
 		(stroke
 			(width 0)
@@ -9661,7 +9627,7 @@
 	)
 	(wire
 		(pts
-			(xy 193.04 96.52) (xy 193.04 99.06)
+			(xy 196.85 96.52) (xy 196.85 99.06)
 		)
 		(stroke
 			(width 0)
@@ -9671,7 +9637,7 @@
 	)
 	(wire
 		(pts
-			(xy 124.46 130.81) (xy 124.46 123.19)
+			(xy 128.27 130.81) (xy 128.27 123.19)
 		)
 		(stroke
 			(width 0)
@@ -9681,7 +9647,7 @@
 	)
 	(wire
 		(pts
-			(xy 142.24 113.03) (xy 132.08 113.03)
+			(xy 146.05 113.03) (xy 135.89 113.03)
 		)
 		(stroke
 			(width 0)
@@ -9691,7 +9657,7 @@
 	)
 	(wire
 		(pts
-			(xy 132.08 93.98) (xy 132.08 97.79)
+			(xy 135.89 93.98) (xy 135.89 97.79)
 		)
 		(stroke
 			(width 0)
@@ -9711,7 +9677,7 @@
 	)
 	(wire
 		(pts
-			(xy 124.46 113.03) (xy 124.46 102.87)
+			(xy 128.27 113.03) (xy 128.27 102.87)
 		)
 		(stroke
 			(width 0)
@@ -9721,7 +9687,7 @@
 	)
 	(wire
 		(pts
-			(xy 132.08 81.28) (xy 132.08 93.98)
+			(xy 135.89 81.28) (xy 135.89 93.98)
 		)
 		(stroke
 			(width 0)
@@ -9731,7 +9697,7 @@
 	)
 	(wire
 		(pts
-			(xy 86.36 107.95) (xy 86.36 115.57)
+			(xy 90.17 107.95) (xy 90.17 115.57)
 		)
 		(stroke
 			(width 0)
@@ -9741,7 +9707,17 @@
 	)
 	(wire
 		(pts
-			(xy 86.36 105.41) (xy 86.36 107.95)
+			(xy 90.17 115.57) (xy 74.93 115.57)
+		)
+		(stroke
+			(width 0)
+			(type default)
+		)
+		(uuid "a106b396-3c8e-4ad5-b580-d839525e2d37")
+	)
+	(wire
+		(pts
+			(xy 90.17 105.41) (xy 90.17 107.95)
 		)
 		(stroke
 			(width 0)
@@ -9761,7 +9737,7 @@
 	)
 	(wire
 		(pts
-			(xy 162.56 83.82) (xy 162.56 86.36)
+			(xy 166.37 83.82) (xy 166.37 86.36)
 		)
 		(stroke
 			(width 0)
@@ -9821,7 +9797,7 @@
 	)
 	(wire
 		(pts
-			(xy 132.08 113.03) (xy 132.08 107.95)
+			(xy 135.89 113.03) (xy 135.89 107.95)
 		)
 		(stroke
 			(width 0)
@@ -9871,7 +9847,7 @@
 	)
 	(wire
 		(pts
-			(xy 166.37 86.36) (xy 162.56 86.36)
+			(xy 170.18 86.36) (xy 166.37 86.36)
 		)
 		(stroke
 			(width 0)
@@ -9911,7 +9887,7 @@
 	)
 	(wire
 		(pts
-			(xy 116.84 130.81) (xy 124.46 130.81)
+			(xy 120.65 130.81) (xy 128.27 130.81)
 		)
 		(stroke
 			(width 0)
@@ -9931,7 +9907,7 @@
 	)
 	(wire
 		(pts
-			(xy 86.36 115.57) (xy 97.79 115.57)
+			(xy 90.17 115.57) (xy 101.6 115.57)
 		)
 		(stroke
 			(width 0)
@@ -9951,23 +9927,13 @@
 	)
 	(wire
 		(pts
-			(xy 83.82 107.95) (xy 86.36 107.95)
+			(xy 87.63 107.95) (xy 90.17 107.95)
 		)
 		(stroke
 			(width 0)
 			(type default)
 		)
 		(uuid "f0d75320-d88b-4079-a9a9-da81977c2350")
-	)
-	(wire
-		(pts
-			(xy 124.46 177.8) (xy 124.46 180.34)
-		)
-		(stroke
-			(width 0)
-			(type default)
-		)
-		(uuid "f22295fe-2e21-42de-9bf5-6bda3d475654")
 	)
 	(wire
 		(pts
@@ -10019,7 +9985,7 @@
 		)
 		(uuid "4101dc27-76d2-478c-9e90-efe9a2e2eb4a")
 	)
-	(global_label "BAT_CHG_SRC_STAT"
+	(global_label "CHG_IN_VLD_N"
 		(shape output)
 		(at 295.91 82.55 180)
 		(fields_autoplaced yes)
@@ -10045,7 +10011,7 @@
 	)
 	(global_label "LED_BAT"
 		(shape input)
-		(at 186.69 104.14 180)
+		(at 190.5 104.14 180)
 		(fields_autoplaced yes)
 		(effects
 			(font
@@ -10055,7 +10021,7 @@
 		)
 		(uuid "37848ef5-6ccc-4e75-888f-c2a8a414b7bf")
 		(property "Intersheetrefs" "${INTERSHEET_REFS}"
-			(at 175.9639 104.14 0)
+			(at 179.7739 104.14 0)
 			(hide yes)
 			(show_name no)
 			(do_not_autoplace no)
@@ -10067,9 +10033,9 @@
 			)
 		)
 	)
-	(global_label "BAT_V_STAT"
+	(global_label "VBAT_SNS"
 		(shape output)
-		(at 166.37 86.36 0)
+		(at 170.18 86.36 0)
 		(fields_autoplaced yes)
 		(effects
 			(font
@@ -10079,7 +10045,7 @@
 		)
 		(uuid "4ef121fa-b8a7-4c22-9c6a-8abcd226b6e5")
 		(property "Intersheetrefs" "${INTERSHEET_REFS}"
-			(at 179.9385 86.36 0)
+			(at 183.7485 86.36 0)
 			(hide yes)
 			(show_name no)
 			(do_not_autoplace no)
@@ -10093,7 +10059,7 @@
 	)
 	(global_label "SW_STAT"
 		(shape output)
-		(at 83.82 107.95 180)
+		(at 87.63 107.95 180)
 		(fields_autoplaced yes)
 		(effects
 			(font
@@ -10103,7 +10069,7 @@
 		)
 		(uuid "574ba398-921d-40fc-80d7-9e78b073edcb")
 		(property "Intersheetrefs" "${INTERSHEET_REFS}"
-			(at 72.973 107.95 0)
+			(at 76.783 107.95 0)
 			(hide yes)
 			(show_name no)
 			(do_not_autoplace no)
@@ -10115,7 +10081,7 @@
 			)
 		)
 	)
-	(global_label "BAT_CHG_STAT"
+	(global_label "CHG_STAT_N"
 		(shape output)
 		(at 312.42 82.55 0)
 		(fields_autoplaced yes)
@@ -10139,9 +10105,9 @@
 			)
 		)
 	)
-	(global_label "HOLD_PWR"
+	(global_label "PWR_HOLD"
 		(shape input)
-		(at 114.3 118.11 180)
+		(at 118.11 118.11 180)
 		(fields_autoplaced yes)
 		(effects
 			(font
@@ -10151,7 +10117,7 @@
 		)
 		(uuid "82ddfb5f-ec72-4ade-b208-14af4972699a")
 		(property "Intersheetrefs" "${INTERSHEET_REFS}"
-			(at 101.3967 118.11 0)
+			(at 105.2067 118.11 0)
 			(hide yes)
 			(show_name no)
 			(do_not_autoplace no)
@@ -10163,7 +10129,7 @@
 			)
 		)
 	)
-	(global_label "PWR_SRC"
+	(global_label "PWR_SRC_STAT"
 		(shape input)
 		(at 185.42 170.18 180)
 		(fields_autoplaced yes)
@@ -10175,7 +10141,7 @@
 		)
 		(uuid "cca5f205-9065-4376-927c-f7c80ccbb48c")
 		(property "Intersheetrefs" "${INTERSHEET_REFS}"
-			(at 173.7263 170.18 0)
+			(at 168.5254 170.18 0)
 			(hide yes)
 			(show_name no)
 			(do_not_autoplace no)
@@ -10187,7 +10153,7 @@
 			)
 		)
 	)
-	(global_label "PWR_SRC"
+	(global_label "PWR_SRC_STAT"
 		(shape input)
 		(at 173.99 185.42 0)
 		(fields_autoplaced yes)
@@ -10199,7 +10165,7 @@
 		)
 		(uuid "daec8cdb-6ec1-45e7-b1e0-043980176118")
 		(property "Intersheetrefs" "${INTERSHEET_REFS}"
-			(at 185.6837 185.42 0)
+			(at 190.8846 185.42 0)
 			(hide yes)
 			(show_name no)
 			(do_not_autoplace no)
@@ -10280,7 +10246,7 @@
 				)
 			)
 		)
-		(property "LCSC Part #" "C76999"
+		(property "LCSC Part #" "C52923"
 			(at 250.19 93.98 0)
 			(hide yes)
 			(show_name no)
@@ -10302,197 +10268,6 @@
 			(project "pelican"
 				(path "/03ccc822-2fac-4029-af97-539e9460fe35/3345064e-ebc3-49d0-bdab-fd2c2db56ccd"
 					(reference "C210")
-					(unit 1)
-				)
-			)
-		)
-	)
-	(symbol
-		(lib_id "J_436500200:436500200")
-		(at 86.36 72.39 0)
-		(mirror y)
-		(unit 1)
-		(body_style 1)
-		(exclude_from_sim no)
-		(in_bom yes)
-		(on_board yes)
-		(in_pos_files yes)
-		(dnp no)
-		(uuid "00da7c72-fdfe-44b3-87e2-285acaa45f69")
-		(property "Reference" "BAT_J201"
-			(at 77.47 82.55 0)
-			(show_name no)
-			(do_not_autoplace no)
-			(effects
-				(font
-					(size 1.27 1.27)
-				)
-			)
-		)
-		(property "Value" "436500200"
-			(at 77.47 80.01 0)
-			(show_name no)
-			(do_not_autoplace no)
-			(effects
-				(font
-					(size 1.27 1.27)
-				)
-			)
-		)
-		(property "Footprint" "J_436500200:J_436500200"
-			(at 86.36 72.39 0)
-			(hide yes)
-			(show_name no)
-			(do_not_autoplace no)
-			(effects
-				(font
-					(size 1.27 1.27)
-				)
-				(justify bottom)
-			)
-		)
-		(property "Datasheet" "https://www.molex.com/en-us/products/part-detail-pdf/436500200?display=pdf"
-			(at 86.36 72.39 0)
-			(hide yes)
-			(show_name no)
-			(do_not_autoplace no)
-			(effects
-				(font
-					(size 1.27 1.27)
-				)
-				(justify bottom)
-			)
-		)
-		(property "Description" "Connector Header Through Hole, Right Angle 2 position 0.118 (3.00mm)"
-			(at 86.36 72.39 0)
-			(hide yes)
-			(show_name no)
-			(do_not_autoplace no)
-			(effects
-				(font
-					(size 1.27 1.27)
-				)
-				(justify bottom)
-			)
-		)
-		(property "LCSC Part #" "C192562"
-			(at 86.36 72.39 0)
-			(hide yes)
-			(show_name no)
-			(do_not_autoplace no)
-			(effects
-				(font
-					(size 1.27 1.27)
-					(italic yes)
-				)
-			)
-		)
-		(property "DigiKey_Part_Number" "WM1860-ND"
-			(at 86.36 72.39 0)
-			(hide yes)
-			(show_name no)
-			(do_not_autoplace no)
-			(effects
-				(font
-					(size 1.27 1.27)
-				)
-				(justify bottom)
-			)
-		)
-		(property "SnapEDA_Link" "https://www.snapeda.com/parts/436500200/Molex/view-part/?ref=snap"
-			(at 86.36 72.39 0)
-			(hide yes)
-			(show_name no)
-			(do_not_autoplace no)
-			(effects
-				(font
-					(size 1.27 1.27)
-				)
-				(justify bottom)
-			)
-		)
-		(property "Package" "None"
-			(at 86.36 72.39 0)
-			(hide yes)
-			(show_name no)
-			(do_not_autoplace no)
-			(effects
-				(font
-					(size 1.27 1.27)
-				)
-				(justify bottom)
-			)
-		)
-		(property "Check_prices" "https://www.snapeda.com/parts/436500200/Molex/view-part/?ref=eda"
-			(at 86.36 72.39 0)
-			(hide yes)
-			(show_name no)
-			(do_not_autoplace no)
-			(effects
-				(font
-					(size 1.27 1.27)
-				)
-				(justify bottom)
-			)
-		)
-		(property "MF" "Molex"
-			(at 86.36 72.39 0)
-			(hide yes)
-			(show_name no)
-			(do_not_autoplace no)
-			(effects
-				(font
-					(size 1.27 1.27)
-				)
-				(justify bottom)
-			)
-		)
-		(property "MP" "436500200"
-			(at 86.36 72.39 0)
-			(hide yes)
-			(show_name no)
-			(do_not_autoplace no)
-			(effects
-				(font
-					(size 1.27 1.27)
-				)
-				(justify bottom)
-			)
-		)
-		(property "MFR_NAME" "Molex"
-			(at 86.36 72.39 0)
-			(hide yes)
-			(show_name no)
-			(do_not_autoplace no)
-			(effects
-				(font
-					(size 1.27 1.27)
-				)
-				(justify bottom)
-			)
-		)
-		(property "MANUFACTURER_PART_NUMBER" "436500200"
-			(at 86.36 72.39 0)
-			(hide yes)
-			(show_name no)
-			(do_not_autoplace no)
-			(effects
-				(font
-					(size 1.27 1.27)
-				)
-				(justify bottom)
-			)
-		)
-		(pin "2"
-			(uuid "5558ac78-c1ee-428b-88cc-b70893abd1c9")
-		)
-		(pin "1"
-			(uuid "2138550d-53f1-4279-a719-bd3e9a33981f")
-		)
-		(instances
-			(project "pelican"
-				(path "/03ccc822-2fac-4029-af97-539e9460fe35/3345064e-ebc3-49d0-bdab-fd2c2db56ccd"
-					(reference "BAT_J201")
 					(unit 1)
 				)
 			)
@@ -10939,7 +10714,7 @@
 	)
 	(symbol
 		(lib_id "power:GND")
-		(at 86.36 118.11 0)
+		(at 71.12 72.39 0)
 		(unit 1)
 		(body_style 1)
 		(exclude_from_sim no)
@@ -10950,7 +10725,7 @@
 		(fields_autoplaced yes)
 		(uuid "0c788a2b-2da4-4c13-94fc-3381b1fd77db")
 		(property "Reference" "#PWR0206"
-			(at 86.36 124.46 0)
+			(at 71.12 78.74 0)
 			(hide yes)
 			(show_name no)
 			(do_not_autoplace no)
@@ -10961,7 +10736,7 @@
 			)
 		)
 		(property "Value" "GND"
-			(at 86.36 123.19 0)
+			(at 71.12 77.47 0)
 			(show_name no)
 			(do_not_autoplace no)
 			(effects
@@ -10971,7 +10746,7 @@
 			)
 		)
 		(property "Footprint" ""
-			(at 86.36 118.11 0)
+			(at 71.12 72.39 0)
 			(hide yes)
 			(show_name no)
 			(do_not_autoplace no)
@@ -10982,7 +10757,7 @@
 			)
 		)
 		(property "Datasheet" ""
-			(at 86.36 118.11 0)
+			(at 71.12 72.39 0)
 			(hide yes)
 			(show_name no)
 			(do_not_autoplace no)
@@ -10993,7 +10768,7 @@
 			)
 		)
 		(property "Description" "Power symbol creates a global label with name \"GND\" , ground"
-			(at 86.36 118.11 0)
+			(at 71.12 72.39 0)
 			(hide yes)
 			(show_name no)
 			(do_not_autoplace no)
@@ -11017,7 +10792,7 @@
 	)
 	(symbol
 		(lib_id "power:GND")
-		(at 114.3 76.2 0)
+		(at 118.11 76.2 0)
 		(unit 1)
 		(body_style 1)
 		(exclude_from_sim no)
@@ -11028,7 +10803,7 @@
 		(fields_autoplaced yes)
 		(uuid "0ee72a60-5f20-47a3-9bb0-7470354ea568")
 		(property "Reference" "#PWR0210"
-			(at 114.3 82.55 0)
+			(at 118.11 82.55 0)
 			(hide yes)
 			(show_name no)
 			(do_not_autoplace no)
@@ -11039,7 +10814,7 @@
 			)
 		)
 		(property "Value" "GND"
-			(at 114.3 81.28 0)
+			(at 118.11 81.28 0)
 			(show_name no)
 			(do_not_autoplace no)
 			(effects
@@ -11049,7 +10824,7 @@
 			)
 		)
 		(property "Footprint" ""
-			(at 114.3 76.2 0)
+			(at 118.11 76.2 0)
 			(hide yes)
 			(show_name no)
 			(do_not_autoplace no)
@@ -11060,7 +10835,7 @@
 			)
 		)
 		(property "Datasheet" ""
-			(at 114.3 76.2 0)
+			(at 118.11 76.2 0)
 			(hide yes)
 			(show_name no)
 			(do_not_autoplace no)
@@ -11071,7 +10846,7 @@
 			)
 		)
 		(property "Description" "Power symbol creates a global label with name \"GND\" , ground"
-			(at 114.3 76.2 0)
+			(at 118.11 76.2 0)
 			(hide yes)
 			(show_name no)
 			(do_not_autoplace no)
@@ -11095,7 +10870,7 @@
 	)
 	(symbol
 		(lib_id "R_RC0402FR:RC0402FR-07100KL")
-		(at 162.56 88.9 270)
+		(at 166.37 88.9 270)
 		(unit 1)
 		(body_style 1)
 		(exclude_from_sim no)
@@ -11106,7 +10881,7 @@
 		(fields_autoplaced yes)
 		(uuid "12a87917-2791-4d13-ace1-804e301be15a")
 		(property "Reference" "R207"
-			(at 165.1 93.9799 90)
+			(at 168.91 93.9799 90)
 			(show_name no)
 			(do_not_autoplace no)
 			(effects
@@ -11117,7 +10892,7 @@
 			)
 		)
 		(property "Value" "100K"
-			(at 165.1 96.5199 90)
+			(at 168.91 96.5199 90)
 			(show_name no)
 			(do_not_autoplace no)
 			(effects
@@ -11128,7 +10903,7 @@
 			)
 		)
 		(property "Footprint" "R_RC0402FR:R_RC0402FR"
-			(at 162.56 88.9 0)
+			(at 166.37 88.9 0)
 			(hide yes)
 			(show_name no)
 			(do_not_autoplace no)
@@ -11140,7 +10915,7 @@
 			)
 		)
 		(property "Datasheet" "https://www.yageo.com/en/ProductSearch/PartNumberSearch?part_number=RC0402FR-07100KL"
-			(at 162.56 88.9 0)
+			(at 166.37 88.9 0)
 			(hide yes)
 			(show_name no)
 			(do_not_autoplace no)
@@ -11152,7 +10927,7 @@
 			)
 		)
 		(property "Description" ""
-			(at 162.56 88.9 0)
+			(at 166.37 88.9 0)
 			(hide yes)
 			(show_name no)
 			(do_not_autoplace no)
@@ -11162,8 +10937,8 @@
 				)
 			)
 		)
-		(property "LCSC Part #" "C60491"
-			(at 162.56 88.9 0)
+		(property "LCSC Part #" "C25741"
+			(at 166.37 88.9 0)
 			(hide yes)
 			(show_name no)
 			(do_not_autoplace no)
@@ -11258,7 +11033,7 @@
 				)
 			)
 		)
-		(property "LCSC Part #" "C71633"
+		(property "LCSC Part #" "C19666"
 			(at 342.9 93.98 0)
 			(hide yes)
 			(show_name no)
@@ -11287,7 +11062,7 @@
 	)
 	(symbol
 		(lib_id "power:VIN")
-		(at 193.04 71.12 0)
+		(at 196.85 71.12 0)
 		(unit 1)
 		(body_style 1)
 		(exclude_from_sim no)
@@ -11297,7 +11072,7 @@
 		(dnp no)
 		(uuid "164bf94b-6592-45ba-9836-7957c61f2077")
 		(property "Reference" "#PWR0222"
-			(at 193.04 74.93 0)
+			(at 196.85 74.93 0)
 			(hide yes)
 			(show_name no)
 			(do_not_autoplace no)
@@ -11308,7 +11083,7 @@
 			)
 		)
 		(property "Value" "VCC_3V3"
-			(at 193.04 66.802 0)
+			(at 196.85 66.802 0)
 			(show_name no)
 			(do_not_autoplace no)
 			(effects
@@ -11318,7 +11093,7 @@
 			)
 		)
 		(property "Footprint" ""
-			(at 193.04 71.12 0)
+			(at 196.85 71.12 0)
 			(hide yes)
 			(show_name no)
 			(do_not_autoplace no)
@@ -11329,7 +11104,7 @@
 			)
 		)
 		(property "Datasheet" ""
-			(at 193.04 71.12 0)
+			(at 196.85 71.12 0)
 			(hide yes)
 			(show_name no)
 			(do_not_autoplace no)
@@ -11340,7 +11115,7 @@
 			)
 		)
 		(property "Description" "Power symbol creates a global label with name \"+3.3VA\""
-			(at 193.04 71.12 0)
+			(at 196.85 71.12 0)
 			(hide yes)
 			(show_name no)
 			(do_not_autoplace no)
@@ -11430,7 +11205,7 @@
 				)
 			)
 		)
-		(property "LCSC Part #" "C71629"
+		(property "LCSC Part #" "C1525"
 			(at 209.55 177.8 0)
 			(hide yes)
 			(show_name no)
@@ -11585,7 +11360,7 @@
 	)
 	(symbol
 		(lib_id "power:VIN")
-		(at 162.56 71.12 0)
+		(at 166.37 71.12 0)
 		(unit 1)
 		(body_style 1)
 		(exclude_from_sim no)
@@ -11595,7 +11370,7 @@
 		(dnp no)
 		(uuid "1cb23c44-e65e-497a-b005-86867ab13e20")
 		(property "Reference" "#PWR0218"
-			(at 162.56 74.93 0)
+			(at 166.37 74.93 0)
 			(hide yes)
 			(show_name no)
 			(do_not_autoplace no)
@@ -11606,7 +11381,7 @@
 			)
 		)
 		(property "Value" "VBAT"
-			(at 162.56 66.802 0)
+			(at 166.37 66.802 0)
 			(show_name no)
 			(do_not_autoplace no)
 			(effects
@@ -11616,7 +11391,7 @@
 			)
 		)
 		(property "Footprint" ""
-			(at 162.56 71.12 0)
+			(at 166.37 71.12 0)
 			(hide yes)
 			(show_name no)
 			(do_not_autoplace no)
@@ -11627,7 +11402,7 @@
 			)
 		)
 		(property "Datasheet" ""
-			(at 162.56 71.12 0)
+			(at 166.37 71.12 0)
 			(hide yes)
 			(show_name no)
 			(do_not_autoplace no)
@@ -11638,7 +11413,7 @@
 			)
 		)
 		(property "Description" "Power symbol creates a global label with name \"+3.3VA\""
-			(at 162.56 71.12 0)
+			(at 166.37 71.12 0)
 			(hide yes)
 			(show_name no)
 			(do_not_autoplace no)
@@ -11662,7 +11437,7 @@
 	)
 	(symbol
 		(lib_id "R_RC0402FR:RC0402FR-07200KL")
-		(at 162.56 71.12 270)
+		(at 166.37 71.12 270)
 		(unit 1)
 		(body_style 1)
 		(exclude_from_sim no)
@@ -11673,7 +11448,7 @@
 		(fields_autoplaced yes)
 		(uuid "1da4b09b-3d11-4291-9478-49d0f349442e")
 		(property "Reference" "R206"
-			(at 165.1 76.1999 90)
+			(at 168.91 76.1999 90)
 			(show_name no)
 			(do_not_autoplace no)
 			(effects
@@ -11684,7 +11459,7 @@
 			)
 		)
 		(property "Value" "200K"
-			(at 165.1 78.7399 90)
+			(at 168.91 78.7399 90)
 			(show_name no)
 			(do_not_autoplace no)
 			(effects
@@ -11695,7 +11470,7 @@
 			)
 		)
 		(property "Footprint" "R_RC0402FR:R_RC0402FR"
-			(at 162.56 71.12 0)
+			(at 166.37 71.12 0)
 			(hide yes)
 			(show_name no)
 			(do_not_autoplace no)
@@ -11707,7 +11482,7 @@
 			)
 		)
 		(property "Datasheet" "https://www.yageo.com/en/ProductSearch/PartNumberSearch?part_number=RC0402FR-07200KL"
-			(at 162.56 71.12 0)
+			(at 166.37 71.12 0)
 			(hide yes)
 			(show_name no)
 			(do_not_autoplace no)
@@ -11719,7 +11494,7 @@
 			)
 		)
 		(property "Description" ""
-			(at 162.56 71.12 0)
+			(at 166.37 71.12 0)
 			(hide yes)
 			(show_name no)
 			(do_not_autoplace no)
@@ -11729,8 +11504,8 @@
 				)
 			)
 		)
-		(property "LCSC Part #" "C114763"
-			(at 162.56 71.12 0)
+		(property "LCSC Part #" "C25764"
+			(at 166.37 71.12 0)
 			(hide yes)
 			(show_name no)
 			(do_not_autoplace no)
@@ -11758,7 +11533,7 @@
 	)
 	(symbol
 		(lib_id "power:GND")
-		(at 86.36 74.93 0)
+		(at 90.17 74.93 0)
 		(unit 1)
 		(body_style 1)
 		(exclude_from_sim no)
@@ -11769,7 +11544,7 @@
 		(fields_autoplaced yes)
 		(uuid "1ddb4e60-acfe-47c9-a338-8c42ff269d46")
 		(property "Reference" "#PWR0204"
-			(at 86.36 81.28 0)
+			(at 90.17 81.28 0)
 			(hide yes)
 			(show_name no)
 			(do_not_autoplace no)
@@ -11780,7 +11555,7 @@
 			)
 		)
 		(property "Value" "GND"
-			(at 86.36 80.01 0)
+			(at 90.17 80.01 0)
 			(show_name no)
 			(do_not_autoplace no)
 			(effects
@@ -11790,7 +11565,7 @@
 			)
 		)
 		(property "Footprint" ""
-			(at 86.36 74.93 0)
+			(at 90.17 74.93 0)
 			(hide yes)
 			(show_name no)
 			(do_not_autoplace no)
@@ -11801,7 +11576,7 @@
 			)
 		)
 		(property "Datasheet" ""
-			(at 86.36 74.93 0)
+			(at 90.17 74.93 0)
 			(hide yes)
 			(show_name no)
 			(do_not_autoplace no)
@@ -11812,7 +11587,7 @@
 			)
 		)
 		(property "Description" "Power symbol creates a global label with name \"GND\" , ground"
-			(at 86.36 74.93 0)
+			(at 90.17 74.93 0)
 			(hide yes)
 			(show_name no)
 			(do_not_autoplace no)
@@ -11836,7 +11611,7 @@
 	)
 	(symbol
 		(lib_id "R_RC0402FR:RC0402FR-07100KL")
-		(at 114.3 93.98 0)
+		(at 118.11 93.98 0)
 		(unit 1)
 		(body_style 1)
 		(exclude_from_sim no)
@@ -11847,7 +11622,7 @@
 		(fields_autoplaced yes)
 		(uuid "219f5922-27d1-48b1-9ec4-eadb911bb72c")
 		(property "Reference" "R204"
-			(at 120.65 87.63 0)
+			(at 124.46 87.63 0)
 			(show_name no)
 			(do_not_autoplace no)
 			(effects
@@ -11857,7 +11632,7 @@
 			)
 		)
 		(property "Value" "100K"
-			(at 120.65 90.17 0)
+			(at 124.46 90.17 0)
 			(show_name no)
 			(do_not_autoplace no)
 			(effects
@@ -11867,7 +11642,7 @@
 			)
 		)
 		(property "Footprint" "R_RC0402FR:R_RC0402FR"
-			(at 114.3 93.98 0)
+			(at 118.11 93.98 0)
 			(hide yes)
 			(show_name no)
 			(do_not_autoplace no)
@@ -11879,7 +11654,7 @@
 			)
 		)
 		(property "Datasheet" "https://www.yageo.com/en/ProductSearch/PartNumberSearch?part_number=RC0402FR-07100KL"
-			(at 114.3 93.98 0)
+			(at 118.11 93.98 0)
 			(hide yes)
 			(show_name no)
 			(do_not_autoplace no)
@@ -11891,7 +11666,7 @@
 			)
 		)
 		(property "Description" ""
-			(at 114.3 93.98 0)
+			(at 118.11 93.98 0)
 			(hide yes)
 			(show_name no)
 			(do_not_autoplace no)
@@ -11901,8 +11676,8 @@
 				)
 			)
 		)
-		(property "LCSC Part #" "C60491"
-			(at 114.3 93.98 0)
+		(property "LCSC Part #" "C25741"
+			(at 118.11 93.98 0)
 			(hide yes)
 			(show_name no)
 			(do_not_autoplace no)
@@ -11930,7 +11705,7 @@
 	)
 	(symbol
 		(lib_id "power:GND")
-		(at 162.56 101.6 0)
+		(at 166.37 101.6 0)
 		(unit 1)
 		(body_style 1)
 		(exclude_from_sim no)
@@ -11941,7 +11716,7 @@
 		(fields_autoplaced yes)
 		(uuid "2c242e53-884f-4cb6-9c51-b11462d437bc")
 		(property "Reference" "#PWR0219"
-			(at 162.56 107.95 0)
+			(at 166.37 107.95 0)
 			(hide yes)
 			(show_name no)
 			(do_not_autoplace no)
@@ -11952,7 +11727,7 @@
 			)
 		)
 		(property "Value" "GND"
-			(at 162.56 106.68 0)
+			(at 166.37 106.68 0)
 			(show_name no)
 			(do_not_autoplace no)
 			(effects
@@ -11962,7 +11737,7 @@
 			)
 		)
 		(property "Footprint" ""
-			(at 162.56 101.6 0)
+			(at 166.37 101.6 0)
 			(hide yes)
 			(show_name no)
 			(do_not_autoplace no)
@@ -11973,7 +11748,7 @@
 			)
 		)
 		(property "Datasheet" ""
-			(at 162.56 101.6 0)
+			(at 166.37 101.6 0)
 			(hide yes)
 			(show_name no)
 			(do_not_autoplace no)
@@ -11984,7 +11759,7 @@
 			)
 		)
 		(property "Description" "Power symbol creates a global label with name \"GND\" , ground"
-			(at 162.56 101.6 0)
+			(at 166.37 101.6 0)
 			(hide yes)
 			(show_name no)
 			(do_not_autoplace no)
@@ -12074,7 +11849,7 @@
 				)
 			)
 		)
-		(property "LCSC Part #" "C71629"
+		(property "LCSC Part #" "C1525"
 			(at 93.98 172.72 0)
 			(hide yes)
 			(show_name no)
@@ -12180,7 +11955,7 @@
 	)
 	(symbol
 		(lib_id "R_RC0402FR:RC0402FR-07100KL")
-		(at 116.84 118.11 90)
+		(at 120.65 118.11 90)
 		(mirror x)
 		(unit 1)
 		(body_style 1)
@@ -12191,7 +11966,7 @@
 		(dnp no)
 		(uuid "35ac93e5-853c-4f48-86dc-9c46e0e60209")
 		(property "Reference" "R205"
-			(at 114.3 123.1899 90)
+			(at 118.11 123.1899 90)
 			(show_name no)
 			(do_not_autoplace no)
 			(effects
@@ -12202,7 +11977,7 @@
 			)
 		)
 		(property "Value" "100K"
-			(at 114.3 125.7299 90)
+			(at 118.11 125.7299 90)
 			(show_name no)
 			(do_not_autoplace no)
 			(effects
@@ -12213,7 +11988,7 @@
 			)
 		)
 		(property "Footprint" "R_RC0402FR:R_RC0402FR"
-			(at 116.84 118.11 0)
+			(at 120.65 118.11 0)
 			(hide yes)
 			(show_name no)
 			(do_not_autoplace no)
@@ -12225,7 +12000,7 @@
 			)
 		)
 		(property "Datasheet" "https://www.yageo.com/en/ProductSearch/PartNumberSearch?part_number=RC0402FR-07100KL"
-			(at 116.84 118.11 0)
+			(at 120.65 118.11 0)
 			(hide yes)
 			(show_name no)
 			(do_not_autoplace no)
@@ -12237,7 +12012,7 @@
 			)
 		)
 		(property "Description" ""
-			(at 116.84 118.11 0)
+			(at 120.65 118.11 0)
 			(hide yes)
 			(show_name no)
 			(do_not_autoplace no)
@@ -12247,8 +12022,8 @@
 				)
 			)
 		)
-		(property "LCSC Part #" "C60491"
-			(at 116.84 118.11 0)
+		(property "LCSC Part #" "C25741"
+			(at 120.65 118.11 0)
 			(hide yes)
 			(show_name no)
 			(do_not_autoplace no)
@@ -12276,7 +12051,7 @@
 	)
 	(symbol
 		(lib_id "R_RC0402FR:RC0402FR-07100RL")
-		(at 193.04 71.12 270)
+		(at 196.85 71.12 270)
 		(unit 1)
 		(body_style 1)
 		(exclude_from_sim no)
@@ -12287,7 +12062,7 @@
 		(fields_autoplaced yes)
 		(uuid "383d6cbd-b583-4304-a423-070264707480")
 		(property "Reference" "R208"
-			(at 195.58 76.1999 90)
+			(at 199.39 76.1999 90)
 			(show_name no)
 			(do_not_autoplace no)
 			(effects
@@ -12298,7 +12073,7 @@
 			)
 		)
 		(property "Value" "100R"
-			(at 195.58 78.7399 90)
+			(at 199.39 78.7399 90)
 			(show_name no)
 			(do_not_autoplace no)
 			(effects
@@ -12309,7 +12084,7 @@
 			)
 		)
 		(property "Footprint" "R_RC0402FR:R_RC0402FR"
-			(at 193.04 71.12 0)
+			(at 196.85 71.12 0)
 			(hide yes)
 			(show_name no)
 			(do_not_autoplace no)
@@ -12321,7 +12096,7 @@
 			)
 		)
 		(property "Datasheet" "https://www.yageo.com/en/ProductSearch/PartNumberSearch?part_number=RC0402FR-07100RL"
-			(at 193.04 71.12 0)
+			(at 196.85 71.12 0)
 			(hide yes)
 			(show_name no)
 			(do_not_autoplace no)
@@ -12333,7 +12108,7 @@
 			)
 		)
 		(property "Description" ""
-			(at 193.04 71.12 0)
+			(at 196.85 71.12 0)
 			(hide yes)
 			(show_name no)
 			(do_not_autoplace no)
@@ -12343,8 +12118,8 @@
 				)
 			)
 		)
-		(property "LCSC Part #" "C106232"
-			(at 193.04 71.12 0)
+		(property "LCSC Part #" "C25076"
+			(at 196.85 71.12 0)
 			(hide yes)
 			(show_name no)
 			(do_not_autoplace no)
@@ -12372,7 +12147,7 @@
 	)
 	(symbol
 		(lib_id "LED_LTST-C193KGKT-5A:LTST-C193KGKT-5A")
-		(at 193.04 86.36 270)
+		(at 196.85 86.36 270)
 		(unit 1)
 		(body_style 1)
 		(exclude_from_sim no)
@@ -12383,7 +12158,7 @@
 		(fields_autoplaced yes)
 		(uuid "3cf039bd-50dd-469e-9ea1-fa1711073882")
 		(property "Reference" "BAT_LED201"
-			(at 199.39 91.4399 90)
+			(at 203.2 91.4399 90)
 			(show_name no)
 			(do_not_autoplace no)
 			(effects
@@ -12393,8 +12168,8 @@
 				(justify left)
 			)
 		)
-		(property "Value" "LTST-C193KGKT-5A"
-			(at 199.39 93.9799 90)
+		(property "Value" "APTD1608CGCK"
+			(at 203.2 93.9799 90)
 			(show_name no)
 			(do_not_autoplace no)
 			(effects
@@ -12405,7 +12180,7 @@
 			)
 		)
 		(property "Footprint" "LED_LTST-C193KGKT-5A:LED_LTST-C193KGKT-5A"
-			(at 193.04 86.36 0)
+			(at 196.85 86.36 0)
 			(hide yes)
 			(show_name no)
 			(do_not_autoplace no)
@@ -12417,7 +12192,7 @@
 			)
 		)
 		(property "Datasheet" "https://optoelectronics.liteon.com/upload/download/DS22-2007-0094/LTST-C193KGKT-5A.PDF"
-			(at 193.04 86.36 0)
+			(at 196.85 86.36 0)
 			(hide yes)
 			(show_name no)
 			(do_not_autoplace no)
@@ -12429,7 +12204,7 @@
 			)
 		)
 		(property "Description" ""
-			(at 193.04 86.36 0)
+			(at 196.85 86.36 0)
 			(hide yes)
 			(show_name no)
 			(do_not_autoplace no)
@@ -12439,8 +12214,8 @@
 				)
 			)
 		)
-		(property "LCSC Part #" "C125102"
-			(at 193.04 86.36 0)
+		(property "LCSC Part #" "C5121471"
+			(at 196.85 86.36 0)
 			(hide yes)
 			(show_name no)
 			(do_not_autoplace no)
@@ -12545,7 +12320,7 @@
 	)
 	(symbol
 		(lib_id "power:VIN")
-		(at 142.24 113.03 0)
+		(at 146.05 113.03 0)
 		(unit 1)
 		(body_style 1)
 		(exclude_from_sim no)
@@ -12555,7 +12330,7 @@
 		(dnp no)
 		(uuid "4f9c17a9-c05e-418b-8d3c-7aaf9a3121f4")
 		(property "Reference" "#PWR0217"
-			(at 142.24 116.84 0)
+			(at 146.05 116.84 0)
 			(hide yes)
 			(show_name no)
 			(do_not_autoplace no)
@@ -12566,7 +12341,7 @@
 			)
 		)
 		(property "Value" "VBAT_GATE"
-			(at 142.24 108.966 0)
+			(at 146.05 108.966 0)
 			(show_name no)
 			(do_not_autoplace no)
 			(effects
@@ -12576,7 +12351,7 @@
 			)
 		)
 		(property "Footprint" ""
-			(at 142.24 113.03 0)
+			(at 146.05 113.03 0)
 			(hide yes)
 			(show_name no)
 			(do_not_autoplace no)
@@ -12587,7 +12362,7 @@
 			)
 		)
 		(property "Datasheet" ""
-			(at 142.24 113.03 0)
+			(at 146.05 113.03 0)
 			(hide yes)
 			(show_name no)
 			(do_not_autoplace no)
@@ -12598,7 +12373,7 @@
 			)
 		)
 		(property "Description" "Power symbol creates a global label with name \"+3.3V\""
-			(at 142.24 113.03 0)
+			(at 146.05 113.03 0)
 			(hide yes)
 			(show_name no)
 			(do_not_autoplace no)
@@ -13420,7 +13195,7 @@
 	)
 	(symbol
 		(lib_id "power:VOUT")
-		(at 142.24 93.98 0)
+		(at 146.05 93.98 0)
 		(unit 1)
 		(body_style 1)
 		(exclude_from_sim no)
@@ -13430,7 +13205,7 @@
 		(dnp no)
 		(uuid "647de6c4-98ea-46e4-a4ba-e2ec3105109c")
 		(property "Reference" "#PWR0216"
-			(at 142.24 97.79 0)
+			(at 146.05 97.79 0)
 			(hide yes)
 			(show_name no)
 			(do_not_autoplace no)
@@ -13441,7 +13216,7 @@
 			)
 		)
 		(property "Value" "VBAT_PROT"
-			(at 142.24 89.662 0)
+			(at 146.05 89.662 0)
 			(show_name no)
 			(do_not_autoplace no)
 			(effects
@@ -13451,7 +13226,7 @@
 			)
 		)
 		(property "Footprint" ""
-			(at 142.24 93.98 0)
+			(at 146.05 93.98 0)
 			(hide yes)
 			(show_name no)
 			(do_not_autoplace no)
@@ -13462,7 +13237,7 @@
 			)
 		)
 		(property "Datasheet" ""
-			(at 142.24 93.98 0)
+			(at 146.05 93.98 0)
 			(hide yes)
 			(show_name no)
 			(do_not_autoplace no)
@@ -13473,7 +13248,7 @@
 			)
 		)
 		(property "Description" "Power symbol creates a global label with name \"+3.3V\""
-			(at 142.24 93.98 0)
+			(at 146.05 93.98 0)
 			(hide yes)
 			(show_name no)
 			(do_not_autoplace no)
@@ -13564,7 +13339,7 @@
 				)
 			)
 		)
-		(property "LCSC Part #" "C60490"
+		(property "LCSC Part #" "C25744"
 			(at 185.42 166.37 0)
 			(hide yes)
 			(show_name no)
@@ -13907,7 +13682,7 @@
 				)
 			)
 		)
-		(property "LCSC Part #" "C60491"
+		(property "LCSC Part #" "C25741"
 			(at 322.58 195.58 0)
 			(hide yes)
 			(show_name no)
@@ -13936,7 +13711,7 @@
 	)
 	(symbol
 		(lib_id "power:VIN")
-		(at 132.08 71.12 0)
+		(at 135.89 71.12 0)
 		(unit 1)
 		(body_style 1)
 		(exclude_from_sim no)
@@ -13946,7 +13721,7 @@
 		(dnp no)
 		(uuid "71f677b6-8631-4708-9b13-fd53a55559d3")
 		(property "Reference" "#PWR0213"
-			(at 132.08 74.93 0)
+			(at 135.89 74.93 0)
 			(hide yes)
 			(show_name no)
 			(do_not_autoplace no)
@@ -13957,7 +13732,7 @@
 			)
 		)
 		(property "Value" "VBAT"
-			(at 132.08 66.802 0)
+			(at 135.89 66.802 0)
 			(show_name no)
 			(do_not_autoplace no)
 			(effects
@@ -13967,7 +13742,7 @@
 			)
 		)
 		(property "Footprint" ""
-			(at 132.08 71.12 0)
+			(at 135.89 71.12 0)
 			(hide yes)
 			(show_name no)
 			(do_not_autoplace no)
@@ -13978,7 +13753,7 @@
 			)
 		)
 		(property "Datasheet" ""
-			(at 132.08 71.12 0)
+			(at 135.89 71.12 0)
 			(hide yes)
 			(show_name no)
 			(do_not_autoplace no)
@@ -13989,7 +13764,7 @@
 			)
 		)
 		(property "Description" "Power symbol creates a global label with name \"+3.3V\""
-			(at 132.08 71.12 0)
+			(at 135.89 71.12 0)
 			(hide yes)
 			(show_name no)
 			(do_not_autoplace no)
@@ -14175,7 +13950,7 @@
 				)
 			)
 		)
-		(property "LCSC Part #" "C60491"
+		(property "LCSC Part #" "C25741"
 			(at 111.76 198.12 0)
 			(hide yes)
 			(show_name no)
@@ -14377,7 +14152,7 @@
 				)
 			)
 		)
-		(property "LCSC Part #" "C60491"
+		(property "LCSC Part #" "C25741"
 			(at 283.21 109.22 0)
 			(hide yes)
 			(show_name no)
@@ -14406,7 +14181,7 @@
 	)
 	(symbol
 		(lib_id "Q_NDS7002A:NDS7002A")
-		(at 185.42 104.14 0)
+		(at 189.23 104.14 0)
 		(unit 1)
 		(body_style 1)
 		(exclude_from_sim no)
@@ -14417,7 +14192,7 @@
 		(fields_autoplaced yes)
 		(uuid "78c37367-822f-45f5-94c7-caeffdbe407f")
 		(property "Reference" "Q204"
-			(at 196.85 102.8699 0)
+			(at 200.66 102.8699 0)
 			(show_name no)
 			(do_not_autoplace no)
 			(effects
@@ -14428,7 +14203,7 @@
 			)
 		)
 		(property "Value" "NDS7002A"
-			(at 196.85 105.4099 0)
+			(at 200.66 105.4099 0)
 			(show_name no)
 			(do_not_autoplace no)
 			(effects
@@ -14439,7 +14214,7 @@
 			)
 		)
 		(property "Footprint" "Q_NDS7002A:Q_NDS7002A"
-			(at 185.42 104.14 0)
+			(at 189.23 104.14 0)
 			(hide yes)
 			(show_name no)
 			(do_not_autoplace no)
@@ -14451,7 +14226,7 @@
 			)
 		)
 		(property "Datasheet" "https://www.onsemi.com/pdf/datasheet/nds7002a-d.pdf"
-			(at 185.42 104.14 0)
+			(at 189.23 104.14 0)
 			(hide yes)
 			(show_name no)
 			(do_not_autoplace no)
@@ -14463,7 +14238,7 @@
 			)
 		)
 		(property "Description" "MOSFET N-Ch 60V 115mA Logic Level Enhancement SOT-23"
-			(at 185.42 104.14 0)
+			(at 189.23 104.14 0)
 			(hide yes)
 			(show_name no)
 			(do_not_autoplace no)
@@ -14474,7 +14249,7 @@
 			)
 		)
 		(property "LCSC Part #" "C74715"
-			(at 185.42 104.14 0)
+			(at 189.23 104.14 0)
 			(hide yes)
 			(show_name no)
 			(do_not_autoplace no)
@@ -14486,7 +14261,7 @@
 			)
 		)
 		(property "MF" "onsemi"
-			(at 185.42 104.14 0)
+			(at 189.23 104.14 0)
 			(hide yes)
 			(show_name no)
 			(do_not_autoplace no)
@@ -14497,7 +14272,7 @@
 			)
 		)
 		(property "MP" "NDS7002A"
-			(at 185.42 104.14 0)
+			(at 189.23 104.14 0)
 			(hide yes)
 			(show_name no)
 			(do_not_autoplace no)
@@ -14508,7 +14283,7 @@
 			)
 		)
 		(property "Sim.Device" "SUBCKT"
-			(at 185.42 104.14 0)
+			(at 189.23 104.14 0)
 			(hide yes)
 			(show_name no)
 			(do_not_autoplace no)
@@ -14519,7 +14294,7 @@
 			)
 		)
 		(property "Sim.Library" "libraries/Q_NDS7002A/Q_NDS7002A.spice"
-			(at 185.42 104.14 0)
+			(at 189.23 104.14 0)
 			(hide yes)
 			(show_name no)
 			(do_not_autoplace no)
@@ -14530,7 +14305,7 @@
 			)
 		)
 		(property "Sim.Name" "NDS7002A"
-			(at 185.42 104.14 0)
+			(at 189.23 104.14 0)
 			(hide yes)
 			(show_name no)
 			(do_not_autoplace no)
@@ -14541,7 +14316,7 @@
 			)
 		)
 		(property "Sim.Pins" "D=D G=G S=S"
-			(at 185.42 104.14 0)
+			(at 189.23 104.14 0)
 			(hide yes)
 			(show_name no)
 			(do_not_autoplace no)
@@ -14571,7 +14346,7 @@
 	)
 	(symbol
 		(lib_id "Q_DMG2305UX-13:DMG2305UX-13")
-		(at 129.54 102.87 0)
+		(at 133.35 102.87 0)
 		(mirror x)
 		(unit 1)
 		(body_style 1)
@@ -14582,7 +14357,7 @@
 		(dnp no)
 		(uuid "7a3c65ef-24c3-48de-a443-2edc8c4f8b93")
 		(property "Reference" "Q203"
-			(at 134.62 104.1401 0)
+			(at 138.43 104.1401 0)
 			(show_name no)
 			(do_not_autoplace no)
 			(effects
@@ -14593,7 +14368,7 @@
 			)
 		)
 		(property "Value" "DMG2305UX-13"
-			(at 134.62 101.6001 0)
+			(at 138.43 101.6001 0)
 			(show_name no)
 			(do_not_autoplace no)
 			(effects
@@ -14604,7 +14379,7 @@
 			)
 		)
 		(property "Footprint" "Q_DMG2305UX-13:Q_DMG2305UX-13"
-			(at 129.54 102.87 0)
+			(at 133.35 102.87 0)
 			(hide yes)
 			(show_name no)
 			(do_not_autoplace no)
@@ -14616,7 +14391,7 @@
 			)
 		)
 		(property "Datasheet" "https://www.diodes.com/assets/Datasheets/DMG2305UX.pdf"
-			(at 129.54 102.87 0)
+			(at 133.35 102.87 0)
 			(hide yes)
 			(show_name no)
 			(do_not_autoplace no)
@@ -14628,7 +14403,7 @@
 			)
 		)
 		(property "Description" "MOSFET P-Ch 20V 5A Enhancement SOT23 | Diodes Inc DMG2305UX-13"
-			(at 129.54 102.87 0)
+			(at 133.35 102.87 0)
 			(hide yes)
 			(show_name no)
 			(do_not_autoplace no)
@@ -14640,7 +14415,7 @@
 			)
 		)
 		(property "LCSC Part #" "C144153"
-			(at 129.54 102.87 0)
+			(at 133.35 102.87 0)
 			(hide yes)
 			(show_name no)
 			(do_not_autoplace no)
@@ -14652,7 +14427,7 @@
 			)
 		)
 		(property "DigiKey_Part_Number" "DMG2305UX-13DICT-ND"
-			(at 129.54 102.87 0)
+			(at 133.35 102.87 0)
 			(hide yes)
 			(show_name no)
 			(do_not_autoplace no)
@@ -14664,7 +14439,7 @@
 			)
 		)
 		(property "SnapEDA_Link" "https://www.snapeda.com/parts/DMG2305UX-13/Diodes+Inc./view-part/?ref=snap"
-			(at 129.54 102.87 0)
+			(at 133.35 102.87 0)
 			(hide yes)
 			(show_name no)
 			(do_not_autoplace no)
@@ -14676,7 +14451,7 @@
 			)
 		)
 		(property "MAXIMUM_PACKAGE_HEIGHT" "1.1mm"
-			(at 129.54 102.87 0)
+			(at 133.35 102.87 0)
 			(hide yes)
 			(show_name no)
 			(do_not_autoplace no)
@@ -14688,7 +14463,7 @@
 			)
 		)
 		(property "Package" "SOT-23 Diodes Inc."
-			(at 129.54 102.87 0)
+			(at 133.35 102.87 0)
 			(hide yes)
 			(show_name no)
 			(do_not_autoplace no)
@@ -14700,7 +14475,7 @@
 			)
 		)
 		(property "Check_prices" "https://www.snapeda.com/parts/DMG2305UX-13/Diodes+Inc./view-part/?ref=eda"
-			(at 129.54 102.87 0)
+			(at 133.35 102.87 0)
 			(hide yes)
 			(show_name no)
 			(do_not_autoplace no)
@@ -14712,7 +14487,7 @@
 			)
 		)
 		(property "STANDARD" "IPC-7351B"
-			(at 129.54 102.87 0)
+			(at 133.35 102.87 0)
 			(hide yes)
 			(show_name no)
 			(do_not_autoplace no)
@@ -14724,7 +14499,7 @@
 			)
 		)
 		(property "PARTREV" "09/2018"
-			(at 129.54 102.87 0)
+			(at 133.35 102.87 0)
 			(hide yes)
 			(show_name no)
 			(do_not_autoplace no)
@@ -14736,7 +14511,7 @@
 			)
 		)
 		(property "MF" "Diodes Inc."
-			(at 129.54 102.87 0)
+			(at 133.35 102.87 0)
 			(hide yes)
 			(show_name no)
 			(do_not_autoplace no)
@@ -14748,7 +14523,7 @@
 			)
 		)
 		(property "MP" "DMG2305UX-13"
-			(at 129.54 102.87 0)
+			(at 133.35 102.87 0)
 			(hide yes)
 			(show_name no)
 			(do_not_autoplace no)
@@ -14760,7 +14535,7 @@
 			)
 		)
 		(property "Manufacturer" "Diodes Inc."
-			(at 129.54 102.87 0)
+			(at 133.35 102.87 0)
 			(hide yes)
 			(show_name no)
 			(do_not_autoplace no)
@@ -14772,7 +14547,7 @@
 			)
 		)
 		(property "MANUFACTURER" "Diodes Inc."
-			(at 129.54 102.87 0)
+			(at 133.35 102.87 0)
 			(hide yes)
 			(show_name no)
 			(do_not_autoplace no)
@@ -14784,7 +14559,7 @@
 			)
 		)
 		(property "Sim.Device" "SUBCKT"
-			(at 129.54 102.87 0)
+			(at 133.35 102.87 0)
 			(hide yes)
 			(show_name no)
 			(do_not_autoplace no)
@@ -14796,7 +14571,7 @@
 			)
 		)
 		(property "Sim.Library" "libraries/Q_DMG2305UX-13/Q_DMG2305UX-13.spice"
-			(at 129.54 102.87 0)
+			(at 133.35 102.87 0)
 			(hide yes)
 			(show_name no)
 			(do_not_autoplace no)
@@ -14808,7 +14583,7 @@
 			)
 		)
 		(property "Sim.Name" "DMG2305UX"
-			(at 129.54 102.87 0)
+			(at 133.35 102.87 0)
 			(hide yes)
 			(show_name no)
 			(do_not_autoplace no)
@@ -14820,7 +14595,7 @@
 			)
 		)
 		(property "Sim.Pins" "D=10 G=20 S=30"
-			(at 129.54 102.87 0)
+			(at 133.35 102.87 0)
 			(hide yes)
 			(show_name no)
 			(do_not_autoplace no)
@@ -14850,8 +14625,8 @@
 		)
 	)
 	(symbol
-		(lib_id "R_RC0402FR:RC0402FR-07100KL")
-		(at 86.36 92.71 270)
+		(lib_id "R_RC0402FR:RC0402FR-0710KL")
+		(at 90.17 92.71 270)
 		(unit 1)
 		(body_style 1)
 		(exclude_from_sim no)
@@ -14861,7 +14636,7 @@
 		(dnp no)
 		(uuid "7a64b254-8870-4f93-aaa9-e6b0637a37fb")
 		(property "Reference" "R201"
-			(at 91.186 97.536 90)
+			(at 94.996 97.536 90)
 			(show_name no)
 			(do_not_autoplace no)
 			(effects
@@ -14870,8 +14645,8 @@
 				)
 			)
 		)
-		(property "Value" "100K"
-			(at 91.948 100.076 90)
+		(property "Value" "10K"
+			(at 94.234 100.076 90)
 			(show_name no)
 			(do_not_autoplace no)
 			(effects
@@ -14881,7 +14656,7 @@
 			)
 		)
 		(property "Footprint" "R_RC0402FR:R_RC0402FR"
-			(at 86.36 92.71 0)
+			(at 90.17 92.71 0)
 			(hide yes)
 			(show_name no)
 			(do_not_autoplace no)
@@ -14892,8 +14667,8 @@
 				)
 			)
 		)
-		(property "Datasheet" "https://www.yageo.com/en/ProductSearch/PartNumberSearch?part_number=RC0402FR-07100KL"
-			(at 86.36 92.71 0)
+		(property "Datasheet" "https://www.yageo.com/en/ProductSearch/PartNumberSearch?part_number=RC0402FR-0710KL"
+			(at 90.17 92.71 0)
 			(hide yes)
 			(show_name no)
 			(do_not_autoplace no)
@@ -14905,7 +14680,7 @@
 			)
 		)
 		(property "Description" ""
-			(at 86.36 92.71 0)
+			(at 90.17 92.71 0)
 			(hide yes)
 			(show_name no)
 			(do_not_autoplace no)
@@ -14915,8 +14690,8 @@
 				)
 			)
 		)
-		(property "LCSC Part #" "C60490"
-			(at 86.36 92.71 0)
+		(property "LCSC Part #" "C25744"
+			(at 90.17 92.71 0)
 			(hide yes)
 			(show_name no)
 			(do_not_autoplace no)
@@ -15022,7 +14797,7 @@
 	)
 	(symbol
 		(lib_id "R_RC0402FR:RC0402FR-07100RL")
-		(at 97.79 115.57 90)
+		(at 101.6 115.57 90)
 		(unit 1)
 		(body_style 1)
 		(exclude_from_sim no)
@@ -15033,7 +14808,7 @@
 		(fields_autoplaced yes)
 		(uuid "8aa0164f-3d05-440f-af84-60410d60a82f")
 		(property "Reference" "R202"
-			(at 100.33 107.9499 90)
+			(at 104.14 107.9499 90)
 			(show_name no)
 			(do_not_autoplace no)
 			(effects
@@ -15044,7 +14819,7 @@
 			)
 		)
 		(property "Value" "100R"
-			(at 100.33 110.4899 90)
+			(at 104.14 110.4899 90)
 			(show_name no)
 			(do_not_autoplace no)
 			(effects
@@ -15055,7 +14830,7 @@
 			)
 		)
 		(property "Footprint" "R_RC0402FR:R_RC0402FR"
-			(at 97.79 115.57 0)
+			(at 101.6 115.57 0)
 			(hide yes)
 			(show_name no)
 			(do_not_autoplace no)
@@ -15067,7 +14842,7 @@
 			)
 		)
 		(property "Datasheet" "https://www.yageo.com/en/ProductSearch/PartNumberSearch?part_number=RC0402FR-07100RL"
-			(at 97.79 115.57 0)
+			(at 101.6 115.57 0)
 			(hide yes)
 			(show_name no)
 			(do_not_autoplace no)
@@ -15079,7 +14854,7 @@
 			)
 		)
 		(property "Description" ""
-			(at 97.79 115.57 0)
+			(at 101.6 115.57 0)
 			(hide yes)
 			(show_name no)
 			(do_not_autoplace no)
@@ -15089,8 +14864,8 @@
 				)
 			)
 		)
-		(property "LCSC Part #" "C106232"
-			(at 97.79 115.57 0)
+		(property "LCSC Part #" "C25076"
+			(at 101.6 115.57 0)
 			(hide yes)
 			(show_name no)
 			(do_not_autoplace no)
@@ -15118,7 +14893,7 @@
 	)
 	(symbol
 		(lib_id "Q_DMG2305UX-13:DMG2305UX-13")
-		(at 129.54 76.2 0)
+		(at 133.35 76.2 0)
 		(unit 1)
 		(body_style 1)
 		(exclude_from_sim no)
@@ -15128,7 +14903,7 @@
 		(dnp no)
 		(uuid "8cab4760-378f-4405-a152-049123cad141")
 		(property "Reference" "Q202"
-			(at 134.62 74.9299 0)
+			(at 138.43 74.9299 0)
 			(show_name no)
 			(do_not_autoplace no)
 			(effects
@@ -15139,7 +14914,7 @@
 			)
 		)
 		(property "Value" "DMG2305UX-13"
-			(at 134.62 77.4699 0)
+			(at 138.43 77.4699 0)
 			(show_name no)
 			(do_not_autoplace no)
 			(effects
@@ -15150,7 +14925,7 @@
 			)
 		)
 		(property "Footprint" "Q_DMG2305UX-13:Q_DMG2305UX-13"
-			(at 129.54 76.2 0)
+			(at 133.35 76.2 0)
 			(hide yes)
 			(show_name no)
 			(do_not_autoplace no)
@@ -15162,7 +14937,7 @@
 			)
 		)
 		(property "Datasheet" "https://www.diodes.com/assets/Datasheets/DMG2305UX.pdf"
-			(at 129.54 76.2 0)
+			(at 133.35 76.2 0)
 			(hide yes)
 			(show_name no)
 			(do_not_autoplace no)
@@ -15174,7 +14949,7 @@
 			)
 		)
 		(property "Description" "MOSFET P-Ch 20V 5A Enhancement SOT23 | Diodes Inc DMG2305UX-13"
-			(at 129.54 76.2 0)
+			(at 133.35 76.2 0)
 			(hide yes)
 			(show_name no)
 			(do_not_autoplace no)
@@ -15186,7 +14961,7 @@
 			)
 		)
 		(property "LCSC Part #" "C144153"
-			(at 129.54 76.2 0)
+			(at 133.35 76.2 0)
 			(hide yes)
 			(show_name no)
 			(do_not_autoplace no)
@@ -15198,7 +14973,7 @@
 			)
 		)
 		(property "DigiKey_Part_Number" "DMG2305UX-13DICT-ND"
-			(at 129.54 76.2 0)
+			(at 133.35 76.2 0)
 			(hide yes)
 			(show_name no)
 			(do_not_autoplace no)
@@ -15210,7 +14985,7 @@
 			)
 		)
 		(property "SnapEDA_Link" "https://www.snapeda.com/parts/DMG2305UX-13/Diodes+Inc./view-part/?ref=snap"
-			(at 129.54 76.2 0)
+			(at 133.35 76.2 0)
 			(hide yes)
 			(show_name no)
 			(do_not_autoplace no)
@@ -15222,7 +14997,7 @@
 			)
 		)
 		(property "MAXIMUM_PACKAGE_HEIGHT" "1.1mm"
-			(at 129.54 76.2 0)
+			(at 133.35 76.2 0)
 			(hide yes)
 			(show_name no)
 			(do_not_autoplace no)
@@ -15234,7 +15009,7 @@
 			)
 		)
 		(property "Package" "SOT-23 Diodes Inc."
-			(at 129.54 76.2 0)
+			(at 133.35 76.2 0)
 			(hide yes)
 			(show_name no)
 			(do_not_autoplace no)
@@ -15246,7 +15021,7 @@
 			)
 		)
 		(property "Check_prices" "https://www.snapeda.com/parts/DMG2305UX-13/Diodes+Inc./view-part/?ref=eda"
-			(at 129.54 76.2 0)
+			(at 133.35 76.2 0)
 			(hide yes)
 			(show_name no)
 			(do_not_autoplace no)
@@ -15258,7 +15033,7 @@
 			)
 		)
 		(property "STANDARD" "IPC-7351B"
-			(at 129.54 76.2 0)
+			(at 133.35 76.2 0)
 			(hide yes)
 			(show_name no)
 			(do_not_autoplace no)
@@ -15270,7 +15045,7 @@
 			)
 		)
 		(property "PARTREV" "09/2018"
-			(at 129.54 76.2 0)
+			(at 133.35 76.2 0)
 			(hide yes)
 			(show_name no)
 			(do_not_autoplace no)
@@ -15282,7 +15057,7 @@
 			)
 		)
 		(property "MF" "Diodes Inc."
-			(at 129.54 76.2 0)
+			(at 133.35 76.2 0)
 			(hide yes)
 			(show_name no)
 			(do_not_autoplace no)
@@ -15294,7 +15069,7 @@
 			)
 		)
 		(property "MP" "DMG2305UX-13"
-			(at 129.54 76.2 0)
+			(at 133.35 76.2 0)
 			(hide yes)
 			(show_name no)
 			(do_not_autoplace no)
@@ -15306,7 +15081,7 @@
 			)
 		)
 		(property "Manufacturer" "Diodes Inc."
-			(at 129.54 76.2 0)
+			(at 133.35 76.2 0)
 			(hide yes)
 			(show_name no)
 			(do_not_autoplace no)
@@ -15318,7 +15093,7 @@
 			)
 		)
 		(property "MANUFACTURER" "Diodes Inc."
-			(at 129.54 76.2 0)
+			(at 133.35 76.2 0)
 			(hide yes)
 			(show_name no)
 			(do_not_autoplace no)
@@ -15330,7 +15105,7 @@
 			)
 		)
 		(property "Sim.Device" "SUBCKT"
-			(at 129.54 76.2 0)
+			(at 133.35 76.2 0)
 			(hide yes)
 			(show_name no)
 			(do_not_autoplace no)
@@ -15342,7 +15117,7 @@
 			)
 		)
 		(property "Sim.Library" "libraries/Q_DMG2305UX-13/Q_DMG2305UX-13.spice"
-			(at 129.54 76.2 0)
+			(at 133.35 76.2 0)
 			(hide yes)
 			(show_name no)
 			(do_not_autoplace no)
@@ -15354,7 +15129,7 @@
 			)
 		)
 		(property "Sim.Name" "DMG2305UX"
-			(at 129.54 76.2 0)
+			(at 133.35 76.2 0)
 			(hide yes)
 			(show_name no)
 			(do_not_autoplace no)
@@ -15366,7 +15141,7 @@
 			)
 		)
 		(property "Sim.Pins" "D=10 G=20 S=30"
-			(at 129.54 76.2 0)
+			(at 133.35 76.2 0)
 			(hide yes)
 			(show_name no)
 			(do_not_autoplace no)
@@ -15541,7 +15316,7 @@
 				)
 			)
 		)
-		(property "LCSC Part #" "C60490"
+		(property "LCSC Part #" "C25744"
 			(at 304.8 67.31 0)
 			(hide yes)
 			(show_name no)
@@ -15791,7 +15566,7 @@
 				)
 			)
 		)
-		(property "LCSC Part #" "C60490"
+		(property "LCSC Part #" "C25744"
 			(at 302.26 67.31 0)
 			(hide yes)
 			(show_name no)
@@ -15962,7 +15737,7 @@
 				)
 			)
 		)
-		(property "LCSC Part #" "C60491"
+		(property "LCSC Part #" "C25741"
 			(at 266.7 179.07 0)
 			(hide yes)
 			(show_name no)
@@ -16135,7 +15910,7 @@
 				)
 			)
 		)
-		(property "LCSC Part #" "C71633"
+		(property "LCSC Part #" "C19666"
 			(at 252.73 173.99 0)
 			(hide yes)
 			(show_name no)
@@ -16307,7 +16082,7 @@
 				)
 			)
 		)
-		(property "LCSC Part #" "C71629"
+		(property "LCSC Part #" "C1525"
 			(at 93.98 190.5 0)
 			(hide yes)
 			(show_name no)
@@ -16414,7 +16189,7 @@
 	)
 	(symbol
 		(lib_id "power:VIN")
-		(at 86.36 92.71 0)
+		(at 90.17 92.71 0)
 		(unit 1)
 		(body_style 1)
 		(exclude_from_sim no)
@@ -16424,7 +16199,7 @@
 		(dnp no)
 		(uuid "c66f5901-a025-410f-8475-5e10931da4f0")
 		(property "Reference" "#PWR0205"
-			(at 86.36 96.52 0)
+			(at 90.17 96.52 0)
 			(hide yes)
 			(show_name no)
 			(do_not_autoplace no)
@@ -16435,7 +16210,7 @@
 			)
 		)
 		(property "Value" "VCC_3V3"
-			(at 86.36 88.392 0)
+			(at 90.17 88.392 0)
 			(show_name no)
 			(do_not_autoplace no)
 			(effects
@@ -16445,7 +16220,7 @@
 			)
 		)
 		(property "Footprint" ""
-			(at 86.36 92.71 0)
+			(at 90.17 92.71 0)
 			(hide yes)
 			(show_name no)
 			(do_not_autoplace no)
@@ -16456,7 +16231,7 @@
 			)
 		)
 		(property "Datasheet" ""
-			(at 86.36 92.71 0)
+			(at 90.17 92.71 0)
 			(hide yes)
 			(show_name no)
 			(do_not_autoplace no)
@@ -16467,7 +16242,7 @@
 			)
 		)
 		(property "Description" "Power symbol creates a global label with name \"+3.3V\""
-			(at 86.36 92.71 0)
+			(at 90.17 92.71 0)
 			(hide yes)
 			(show_name no)
 			(do_not_autoplace no)
@@ -16731,7 +16506,7 @@
 				)
 			)
 		)
-		(property "LCSC Part #" "C60490"
+		(property "LCSC Part #" "C25744"
 			(at 320.04 111.76 0)
 			(hide yes)
 			(show_name no)
@@ -16759,8 +16534,127 @@
 		)
 	)
 	(symbol
+		(lib_id "J_43045-0401:43045-0401")
+		(at 82.55 73.66 0)
+		(mirror y)
+		(unit 1)
+		(body_style 1)
+		(exclude_from_sim no)
+		(in_bom yes)
+		(on_board yes)
+		(in_pos_files yes)
+		(dnp no)
+		(uuid "cb75507a-706d-422b-92e1-afa9e71e5a66")
+		(property "Reference" "CN201"
+			(at 80.264 80.264 0)
+			(show_name no)
+			(do_not_autoplace no)
+			(effects
+				(font
+					(size 1.27 1.27)
+				)
+			)
+		)
+		(property "Value" "43045-0401"
+			(at 83.312 82.804 0)
+			(show_name no)
+			(do_not_autoplace no)
+			(effects
+				(font
+					(size 1.27 1.27)
+				)
+			)
+		)
+		(property "Footprint" "J_43045-0401:J_43045-0401_2x02_RA"
+			(at 82.55 82.55 0)
+			(hide yes)
+			(show_name no)
+			(do_not_autoplace no)
+			(effects
+				(font
+					(size 1.27 1.27)
+				)
+			)
+		)
+		(property "Datasheet" "https://www.lcsc.com/datasheet/C585880.pdf"
+			(at 82.55 85.09 0)
+			(hide yes)
+			(show_name no)
+			(do_not_autoplace no)
+			(effects
+				(font
+					(size 1.27 1.27)
+				)
+			)
+		)
+		(property "Description" ""
+			(at 82.55 73.66 0)
+			(hide yes)
+			(show_name no)
+			(do_not_autoplace no)
+			(effects
+				(font
+					(size 1.27 1.27)
+				)
+			)
+		)
+		(property "Manufacturer" "MOLEX"
+			(at 82.55 87.63 0)
+			(hide yes)
+			(show_name no)
+			(do_not_autoplace no)
+			(effects
+				(font
+					(size 1.27 1.27)
+				)
+			)
+		)
+		(property "MPN" "430450401"
+			(at 82.55 90.17 0)
+			(hide yes)
+			(show_name no)
+			(do_not_autoplace no)
+			(effects
+				(font
+					(size 1.27 1.27)
+				)
+			)
+		)
+		(property "LCSC Part" "C585880"
+			(at 82.55 92.71 0)
+			(hide yes)
+			(show_name no)
+			(do_not_autoplace no)
+			(effects
+				(font
+					(size 1.27 1.27)
+				)
+			)
+		)
+		(pin "4"
+			(uuid "05ed261a-763a-4ff2-b073-74277ee492a8")
+		)
+		(pin "3"
+			(uuid "9f5c8eeb-b8f9-40e8-af21-f3fd423dedc4")
+		)
+		(pin "2"
+			(uuid "4b5f49e2-ec71-4de4-baf5-605706c0b1e0")
+		)
+		(pin "1"
+			(uuid "14c188ce-f547-4d23-810d-a1a6d0d8a294")
+		)
+		(instances
+			(project "pelican"
+				(path "/03ccc822-2fac-4029-af97-539e9460fe35/3345064e-ebc3-49d0-bdab-fd2c2db56ccd"
+					(reference "CN201")
+					(unit 1)
+				)
+			)
+		)
+	)
+	(symbol
 		(lib_id "Q_NDS7002A:NDS7002A")
-		(at 116.84 118.11 0)
+		(at 120.65 118.11 0)
 		(unit 1)
 		(body_style 1)
 		(exclude_from_sim no)
@@ -16771,7 +16665,7 @@
 		(fields_autoplaced yes)
 		(uuid "cbe42d1e-9758-46f3-a185-1f48a6492cf9")
 		(property "Reference" "Q201"
-			(at 128.27 116.8399 0)
+			(at 132.08 116.8399 0)
 			(show_name no)
 			(do_not_autoplace no)
 			(effects
@@ -16782,7 +16676,7 @@
 			)
 		)
 		(property "Value" "NDS7002A"
-			(at 128.27 119.3799 0)
+			(at 132.08 119.3799 0)
 			(show_name no)
 			(do_not_autoplace no)
 			(effects
@@ -16793,7 +16687,7 @@
 			)
 		)
 		(property "Footprint" "Q_NDS7002A:Q_NDS7002A"
-			(at 116.84 118.11 0)
+			(at 120.65 118.11 0)
 			(hide yes)
 			(show_name no)
 			(do_not_autoplace no)
@@ -16805,7 +16699,7 @@
 			)
 		)
 		(property "Datasheet" "https://www.onsemi.com/pdf/datasheet/nds7002a-d.pdf"
-			(at 116.84 118.11 0)
+			(at 120.65 118.11 0)
 			(hide yes)
 			(show_name no)
 			(do_not_autoplace no)
@@ -16817,7 +16711,7 @@
 			)
 		)
 		(property "Description" "MOSFET N-Ch 60V 115mA Logic Level Enhancement SOT-23"
-			(at 116.84 118.11 0)
+			(at 120.65 118.11 0)
 			(hide yes)
 			(show_name no)
 			(do_not_autoplace no)
@@ -16828,7 +16722,7 @@
 			)
 		)
 		(property "LCSC Part #" "C74715"
-			(at 116.84 118.11 0)
+			(at 120.65 118.11 0)
 			(hide yes)
 			(show_name no)
 			(do_not_autoplace no)
@@ -16840,7 +16734,7 @@
 			)
 		)
 		(property "MF" "onsemi"
-			(at 116.84 118.11 0)
+			(at 120.65 118.11 0)
 			(hide yes)
 			(show_name no)
 			(do_not_autoplace no)
@@ -16851,7 +16745,7 @@
 			)
 		)
 		(property "MP" "NDS7002A"
-			(at 116.84 118.11 0)
+			(at 120.65 118.11 0)
 			(hide yes)
 			(show_name no)
 			(do_not_autoplace no)
@@ -16862,7 +16756,7 @@
 			)
 		)
 		(property "Sim.Device" "SUBCKT"
-			(at 116.84 118.11 0)
+			(at 120.65 118.11 0)
 			(hide yes)
 			(show_name no)
 			(do_not_autoplace no)
@@ -16873,7 +16767,7 @@
 			)
 		)
 		(property "Sim.Library" "libraries/Q_NDS7002A/Q_NDS7002A.spice"
-			(at 116.84 118.11 0)
+			(at 120.65 118.11 0)
 			(hide yes)
 			(show_name no)
 			(do_not_autoplace no)
@@ -16884,7 +16778,7 @@
 			)
 		)
 		(property "Sim.Name" "NDS7002A"
-			(at 116.84 118.11 0)
+			(at 120.65 118.11 0)
 			(hide yes)
 			(show_name no)
 			(do_not_autoplace no)
@@ -16895,7 +16789,7 @@
 			)
 		)
 		(property "Sim.Pins" "D=D G=G S=S"
-			(at 116.84 118.11 0)
+			(at 120.65 118.11 0)
 			(hide yes)
 			(show_name no)
 			(do_not_autoplace no)
@@ -16991,7 +16885,7 @@
 				)
 			)
 		)
-		(property "LCSC Part #" "C71633"
+		(property "LCSC Part #" "C19666"
 			(at 332.74 106.68 0)
 			(hide yes)
 			(show_name no)
@@ -17020,7 +16914,7 @@
 	)
 	(symbol
 		(lib_id "R_RC0402FR:RC0402FR-07100KL")
-		(at 114.3 76.2 0)
+		(at 118.11 76.2 0)
 		(unit 1)
 		(body_style 1)
 		(exclude_from_sim no)
@@ -17031,7 +16925,7 @@
 		(fields_autoplaced yes)
 		(uuid "d1784ddc-e3d3-4e22-b5ca-b6aa0dc8f20c")
 		(property "Reference" "R203"
-			(at 120.65 69.85 0)
+			(at 124.46 69.85 0)
 			(show_name no)
 			(do_not_autoplace no)
 			(effects
@@ -17041,7 +16935,7 @@
 			)
 		)
 		(property "Value" "100K"
-			(at 120.65 72.39 0)
+			(at 124.46 72.39 0)
 			(show_name no)
 			(do_not_autoplace no)
 			(effects
@@ -17051,7 +16945,7 @@
 			)
 		)
 		(property "Footprint" "R_RC0402FR:R_RC0402FR"
-			(at 114.3 76.2 0)
+			(at 118.11 76.2 0)
 			(hide yes)
 			(show_name no)
 			(do_not_autoplace no)
@@ -17063,7 +16957,7 @@
 			)
 		)
 		(property "Datasheet" "https://www.yageo.com/en/ProductSearch/PartNumberSearch?part_number=RC0402FR-07100KL"
-			(at 114.3 76.2 0)
+			(at 118.11 76.2 0)
 			(hide yes)
 			(show_name no)
 			(do_not_autoplace no)
@@ -17075,7 +16969,7 @@
 			)
 		)
 		(property "Description" ""
-			(at 114.3 76.2 0)
+			(at 118.11 76.2 0)
 			(hide yes)
 			(show_name no)
 			(do_not_autoplace no)
@@ -17085,8 +16979,8 @@
 				)
 			)
 		)
-		(property "LCSC Part #" "C60491"
-			(at 114.3 76.2 0)
+		(property "LCSC Part #" "C25741"
+			(at 118.11 76.2 0)
 			(hide yes)
 			(show_name no)
 			(do_not_autoplace no)
@@ -17535,7 +17429,7 @@
 	)
 	(symbol
 		(lib_id "power:GND")
-		(at 124.46 130.81 0)
+		(at 128.27 130.81 0)
 		(unit 1)
 		(body_style 1)
 		(exclude_from_sim no)
@@ -17545,7 +17439,7 @@
 		(dnp no)
 		(uuid "ea2362ce-8c40-4c98-a07e-3d5644af3f8f")
 		(property "Reference" "#PWR0211"
-			(at 124.46 137.16 0)
+			(at 128.27 137.16 0)
 			(hide yes)
 			(show_name no)
 			(do_not_autoplace no)
@@ -17556,7 +17450,7 @@
 			)
 		)
 		(property "Value" "GND"
-			(at 128.524 131.318 0)
+			(at 132.334 131.318 0)
 			(show_name no)
 			(do_not_autoplace no)
 			(effects
@@ -17566,7 +17460,7 @@
 			)
 		)
 		(property "Footprint" ""
-			(at 124.46 130.81 0)
+			(at 128.27 130.81 0)
 			(hide yes)
 			(show_name no)
 			(do_not_autoplace no)
@@ -17577,7 +17471,7 @@
 			)
 		)
 		(property "Datasheet" ""
-			(at 124.46 130.81 0)
+			(at 128.27 130.81 0)
 			(hide yes)
 			(show_name no)
 			(do_not_autoplace no)
@@ -17588,7 +17482,7 @@
 			)
 		)
 		(property "Description" "Power symbol creates a global label with name \"GND\" , ground"
-			(at 124.46 130.81 0)
+			(at 128.27 130.81 0)
 			(hide yes)
 			(show_name no)
 			(do_not_autoplace no)
@@ -17612,7 +17506,7 @@
 	)
 	(symbol
 		(lib_id "power:GND")
-		(at 193.04 109.22 0)
+		(at 196.85 109.22 0)
 		(unit 1)
 		(body_style 1)
 		(exclude_from_sim no)
@@ -17623,7 +17517,7 @@
 		(fields_autoplaced yes)
 		(uuid "ebbeb4d3-d4b4-4223-b718-e4312117b6b6")
 		(property "Reference" "#PWR0223"
-			(at 193.04 115.57 0)
+			(at 196.85 115.57 0)
 			(hide yes)
 			(show_name no)
 			(do_not_autoplace no)
@@ -17634,7 +17528,7 @@
 			)
 		)
 		(property "Value" "GND"
-			(at 193.04 114.3 0)
+			(at 196.85 114.3 0)
 			(show_name no)
 			(do_not_autoplace no)
 			(effects
@@ -17644,7 +17538,7 @@
 			)
 		)
 		(property "Footprint" ""
-			(at 193.04 109.22 0)
+			(at 196.85 109.22 0)
 			(hide yes)
 			(show_name no)
 			(do_not_autoplace no)
@@ -17655,7 +17549,7 @@
 			)
 		)
 		(property "Datasheet" ""
-			(at 193.04 109.22 0)
+			(at 196.85 109.22 0)
 			(hide yes)
 			(show_name no)
 			(do_not_autoplace no)
@@ -17666,7 +17560,7 @@
 			)
 		)
 		(property "Description" "Power symbol creates a global label with name \"GND\" , ground"
-			(at 193.04 109.22 0)
+			(at 196.85 109.22 0)
 			(hide yes)
 			(show_name no)
 			(do_not_autoplace no)
@@ -17782,197 +17676,6 @@
 		)
 	)
 	(symbol
-		(lib_id "J_436500200:436500200")
-		(at 86.36 115.57 0)
-		(mirror y)
-		(unit 1)
-		(body_style 1)
-		(exclude_from_sim no)
-		(in_bom yes)
-		(on_board yes)
-		(in_pos_files yes)
-		(dnp no)
-		(uuid "f14e933a-e55f-400c-8cb7-264c6dac22c6")
-		(property "Reference" "SW_J202"
-			(at 77.47 125.73 0)
-			(show_name no)
-			(do_not_autoplace no)
-			(effects
-				(font
-					(size 1.27 1.27)
-				)
-			)
-		)
-		(property "Value" "436500200"
-			(at 77.47 123.19 0)
-			(show_name no)
-			(do_not_autoplace no)
-			(effects
-				(font
-					(size 1.27 1.27)
-				)
-			)
-		)
-		(property "Footprint" "J_436500200:J_436500200"
-			(at 86.36 115.57 0)
-			(hide yes)
-			(show_name no)
-			(do_not_autoplace no)
-			(effects
-				(font
-					(size 1.27 1.27)
-				)
-				(justify bottom)
-			)
-		)
-		(property "Datasheet" "https://www.molex.com/en-us/products/part-detail-pdf/436500200?display=pdf"
-			(at 86.36 115.57 0)
-			(hide yes)
-			(show_name no)
-			(do_not_autoplace no)
-			(effects
-				(font
-					(size 1.27 1.27)
-				)
-				(justify bottom)
-			)
-		)
-		(property "Description" "Connector Header Through Hole, Right Angle 2 position 0.118 (3.00mm)"
-			(at 86.36 115.57 0)
-			(hide yes)
-			(show_name no)
-			(do_not_autoplace no)
-			(effects
-				(font
-					(size 1.27 1.27)
-				)
-				(justify bottom)
-			)
-		)
-		(property "LCSC Part #" "C192562"
-			(at 86.36 115.57 0)
-			(hide yes)
-			(show_name no)
-			(do_not_autoplace no)
-			(effects
-				(font
-					(size 1.27 1.27)
-					(italic yes)
-				)
-			)
-		)
-		(property "DigiKey_Part_Number" "WM1860-ND"
-			(at 86.36 115.57 0)
-			(hide yes)
-			(show_name no)
-			(do_not_autoplace no)
-			(effects
-				(font
-					(size 1.27 1.27)
-				)
-				(justify bottom)
-			)
-		)
-		(property "SnapEDA_Link" "https://www.snapeda.com/parts/436500200/Molex/view-part/?ref=snap"
-			(at 86.36 115.57 0)
-			(hide yes)
-			(show_name no)
-			(do_not_autoplace no)
-			(effects
-				(font
-					(size 1.27 1.27)
-				)
-				(justify bottom)
-			)
-		)
-		(property "Package" "None"
-			(at 86.36 115.57 0)
-			(hide yes)
-			(show_name no)
-			(do_not_autoplace no)
-			(effects
-				(font
-					(size 1.27 1.27)
-				)
-				(justify bottom)
-			)
-		)
-		(property "Check_prices" "https://www.snapeda.com/parts/436500200/Molex/view-part/?ref=eda"
-			(at 86.36 115.57 0)
-			(hide yes)
-			(show_name no)
-			(do_not_autoplace no)
-			(effects
-				(font
-					(size 1.27 1.27)
-				)
-				(justify bottom)
-			)
-		)
-		(property "MF" "Molex"
-			(at 86.36 115.57 0)
-			(hide yes)
-			(show_name no)
-			(do_not_autoplace no)
-			(effects
-				(font
-					(size 1.27 1.27)
-				)
-				(justify bottom)
-			)
-		)
-		(property "MP" "436500200"
-			(at 86.36 115.57 0)
-			(hide yes)
-			(show_name no)
-			(do_not_autoplace no)
-			(effects
-				(font
-					(size 1.27 1.27)
-				)
-				(justify bottom)
-			)
-		)
-		(property "MFR_NAME" "Molex"
-			(at 86.36 115.57 0)
-			(hide yes)
-			(show_name no)
-			(do_not_autoplace no)
-			(effects
-				(font
-					(size 1.27 1.27)
-				)
-				(justify bottom)
-			)
-		)
-		(property "MANUFACTURER_PART_NUMBER" "436500200"
-			(at 86.36 115.57 0)
-			(hide yes)
-			(show_name no)
-			(do_not_autoplace no)
-			(effects
-				(font
-					(size 1.27 1.27)
-				)
-				(justify bottom)
-			)
-		)
-		(pin "2"
-			(uuid "0824c6db-088f-430d-bc24-478a44ad9074")
-		)
-		(pin "1"
-			(uuid "d9295480-423f-4dfa-9cd3-25af42035467")
-		)
-		(instances
-			(project "pelican"
-				(path "/03ccc822-2fac-4029-af97-539e9460fe35/3345064e-ebc3-49d0-bdab-fd2c2db56ccd"
-					(reference "SW_J202")
-					(unit 1)
-				)
-			)
-		)
-	)
-	(symbol
 		(lib_id "power:GND")
 		(at 302.26 119.38 0)
 		(unit 1)
@@ -18052,7 +17755,7 @@
 	)
 	(symbol
 		(lib_id "power:VIN")
-		(at 86.36 72.39 0)
+		(at 90.17 72.39 0)
 		(unit 1)
 		(body_style 1)
 		(exclude_from_sim no)
@@ -18062,7 +17765,7 @@
 		(dnp no)
 		(uuid "f6d639fa-40d0-44b3-bde5-b986b93b4815")
 		(property "Reference" "#PWR0203"
-			(at 86.36 76.2 0)
+			(at 90.17 76.2 0)
 			(hide yes)
 			(show_name no)
 			(do_not_autoplace no)
@@ -18073,7 +17776,7 @@
 			)
 		)
 		(property "Value" "VBAT"
-			(at 86.36 68.072 0)
+			(at 90.17 68.072 0)
 			(show_name no)
 			(do_not_autoplace no)
 			(effects
@@ -18083,7 +17786,7 @@
 			)
 		)
 		(property "Footprint" ""
-			(at 86.36 72.39 0)
+			(at 90.17 72.39 0)
 			(hide yes)
 			(show_name no)
 			(do_not_autoplace no)
@@ -18094,7 +17797,7 @@
 			)
 		)
 		(property "Datasheet" ""
-			(at 86.36 72.39 0)
+			(at 90.17 72.39 0)
 			(hide yes)
 			(show_name no)
 			(do_not_autoplace no)
@@ -18105,7 +17808,7 @@
 			)
 		)
 		(property "Description" "Power symbol creates a global label with name \"+3.3V\""
-			(at 86.36 72.39 0)
+			(at 90.17 72.39 0)
 			(hide yes)
 			(show_name no)
 			(do_not_autoplace no)

@@ -3767,7 +3767,7 @@
 		)
 		(uuid "e2203dc6-daa3-4dd4-9199-fd02c9e874a4")
 	)
-	(label "CAM_RESET"
+	(label "CAM_RST_N"
 		(at 86.36 63.5 0)
 		(effects
 			(font
@@ -4077,7 +4077,7 @@
 				)
 			)
 		)
-		(property "LCSC Part #" "C71629"
+		(property "LCSC Part #" "C1525"
 			(at 86.36 73.66 0)
 			(hide yes)
 			(show_name no)
@@ -4493,7 +4493,7 @@
 				)
 			)
 		)
-		(property "LCSC Part #" "C105871"
+		(property "LCSC Part #" "C25900"
 			(at 36.83 46.99 0)
 			(hide yes)
 			(show_name no)
@@ -4543,7 +4543,7 @@
 				(justify left)
 			)
 		)
-		(property "Value" "100R"
+		(property "Value" "200R"
 			(at 149.86 46.9899 90)
 			(show_name no)
 			(do_not_autoplace no)
@@ -4589,7 +4589,7 @@
 				)
 			)
 		)
-		(property "LCSC Part #" "C106232"
+		(property "LCSC Part #" "C25087"
 			(at 147.32 39.37 0)
 			(hide yes)
 			(show_name no)
@@ -4717,7 +4717,7 @@
 				(justify left)
 			)
 		)
-		(property "Value" "LTST-C193KRKT-5A"
+		(property "Value" "KT-0603R"
 			(at 153.67 62.2299 90)
 			(show_name no)
 			(do_not_autoplace no)
@@ -4763,7 +4763,7 @@
 				)
 			)
 		)
-		(property "LCSC Part #" "C157741"
+		(property "LCSC Part #" "C2286"
 			(at 147.32 54.61 0)
 			(hide yes)
 			(show_name no)
@@ -4935,7 +4935,7 @@
 				)
 			)
 		)
-		(property "LCSC Part #" "C71629"
+		(property "LCSC Part #" "C1525"
 			(at 71.12 73.66 0)
 			(hide yes)
 			(show_name no)
@@ -5448,7 +5448,7 @@
 				)
 			)
 		)
-		(property "LCSC Part #" "C105871"
+		(property "LCSC Part #" "C25900"
 			(at 123.19 48.26 0)
 			(hide yes)
 			(show_name no)

@@ -13,3 +13,5 @@ __pycache__/
 _autosave-*
 fp-info-cache
 .history/
+
+*.kicad_prl
