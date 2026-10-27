@@ -1,0 +1,388 @@
+(kicad_sch
+	(version 20260306)
+	(generator "eeschema")
+	(generator_version "10.0")
+	(uuid "817f49eb-0105-475d-aa60-c8a0ced591cc")
+	(paper "A5" portrait)
+	(title_block
+		(title "Flamingo")
+		(date "2026-10-27")
+		(company "Payload @ Carnegie Mellon Rocket Command")
+		(comment 1 "Designed by Simon Kaplinsky ")
+	)
+	(lib_symbols)
+	(sheet
+		(at 63.5 52.07)
+		(size 55.88 25.4)
+		(exclude_from_sim no)
+		(in_bom yes)
+		(on_board yes)
+		(dnp no)
+		(fields_autoplaced yes)
+		(stroke
+			(width 0.1524)
+			(type solid)
+		)
+		(fill
+			(color 0 255 0 0.2509803922)
+		)
+		(uuid "40dd17db-c6fb-4a01-a68d-1434f55a08fb")
+		(property "Sheetname" "Camera"
+			(at 63.5 51.3584 0)
+			(show_name no)
+			(do_not_autoplace no)
+			(effects
+				(font
+					(size 1.27 1.27)
+				)
+				(justify left bottom)
+			)
+		)
+		(property "Sheetfile" "schematics\\camera.kicad_sch"
+			(at 63.5 78.0546 0)
+			(show_name no)
+			(do_not_autoplace no)
+			(effects
+				(font
+					(size 1.27 1.27)
+				)
+				(justify left top)
+			)
+		)
+		(instances
+			(project "flamingo"
+				(path "/817f49eb-0105-475d-aa60-c8a0ced591cc"
+					(page "4")
+				)
+			)
+		)
+	)
+	(sheet
+		(at 20.32 102.87)
+		(size 86.36 10.16)
+		(exclude_from_sim no)
+		(in_bom yes)
+		(on_board yes)
+		(dnp no)
+		(fields_autoplaced yes)
+		(stroke
+			(width 0.1524)
+			(type solid)
+		)
+		(fill
+			(color 255 153 0 0.25)
+		)
+		(uuid "6337b098-1641-4c29-8da7-3087c77b8969")
+		(property "Sheetname" "Debug USB"
+			(at 20.32 102.1584 0)
+			(show_name no)
+			(do_not_autoplace no)
+			(effects
+				(font
+					(size 1.27 1.27)
+				)
+				(justify left bottom)
+			)
+		)
+		(property "Sheetfile" "schematics\\usb_debug.kicad_sch"
+			(at 20.32 113.6146 0)
+			(show_name no)
+			(do_not_autoplace no)
+			(effects
+				(font
+					(size 1.27 1.27)
+				)
+				(justify left top)
+			)
+		)
+		(instances
+			(project "flamingo"
+				(path "/817f49eb-0105-475d-aa60-c8a0ced591cc"
+					(page "6")
+				)
+			)
+		)
+	)
+	(sheet
+		(at 20.32 87.63)
+		(size 86.36 10.16)
+		(exclude_from_sim no)
+		(in_bom yes)
+		(on_board yes)
+		(dnp no)
+		(fields_autoplaced yes)
+		(stroke
+			(width 0.1524)
+			(type solid)
+		)
+		(fill
+			(color 255 153 0 0.25)
+		)
+		(uuid "67accfd2-62ce-42a0-ae3b-f1c2dc282989")
+		(property "Sheetname" "Power Program USB"
+			(at 20.32 86.9184 0)
+			(show_name no)
+			(do_not_autoplace no)
+			(effects
+				(font
+					(size 1.27 1.27)
+				)
+				(justify left bottom)
+			)
+		)
+		(property "Sheetfile" "schematics\\usb_power_program.kicad_sch"
+			(at 20.32 98.3746 0)
+			(show_name no)
+			(do_not_autoplace no)
+			(effects
+				(font
+					(size 1.27 1.27)
+				)
+				(justify left top)
+			)
+		)
+		(instances
+			(project "flamingo"
+				(path "/817f49eb-0105-475d-aa60-c8a0ced591cc"
+					(page "5")
+				)
+			)
+		)
+	)
+	(sheet
+		(at 19.05 52.07)
+		(size 29.21 25.4)
+		(exclude_from_sim no)
+		(in_bom yes)
+		(on_board yes)
+		(dnp no)
+		(fields_autoplaced yes)
+		(stroke
+			(width 0.1524)
+			(type solid)
+		)
+		(fill
+			(color 242 119 144 1)
+		)
+		(uuid "91741965-6759-4532-86dd-7c4d063ae6ad")
+		(property "Sheetname" "Core"
+			(at 19.05 51.3584 0)
+			(show_name no)
+			(do_not_autoplace no)
+			(effects
+				(font
+					(size 1.27 1.27)
+				)
+				(justify left bottom)
+			)
+		)
+		(property "Sheetfile" "schematics\\core.kicad_sch"
+			(at 19.05 78.0546 0)
+			(show_name no)
+			(do_not_autoplace no)
+			(effects
+				(font
+					(size 1.27 1.27)
+				)
+				(justify left top)
+			)
+		)
+		(instances
+			(project "flamingo"
+				(path "/817f49eb-0105-475d-aa60-c8a0ced591cc"
+					(page "2")
+				)
+			)
+		)
+	)
+	(sheet
+		(at 57.15 119.38)
+		(size 35.56 15.24)
+		(exclude_from_sim no)
+		(in_bom yes)
+		(on_board yes)
+		(dnp no)
+		(fields_autoplaced yes)
+		(stroke
+			(width 0.1524)
+			(type solid)
+		)
+		(fill
+			(color 255 0 0 1)
+		)
+		(uuid "918c4410-8d7c-4e5e-a307-c1922c92e6c2")
+		(property "Sheetname" "Laser"
+			(at 57.15 118.6684 0)
+			(show_name no)
+			(do_not_autoplace no)
+			(effects
+				(font
+					(size 1.27 1.27)
+				)
+				(justify left bottom)
+			)
+		)
+		(property "Sheetfile" "schematics/laser.kicad_sch"
+			(at 57.15 135.2046 0)
+			(show_name no)
+			(do_not_autoplace no)
+			(effects
+				(font
+					(size 1.27 1.27)
+				)
+				(justify left top)
+			)
+		)
+		(instances
+			(project "flamingo"
+				(path "/817f49eb-0105-475d-aa60-c8a0ced591cc"
+					(page "8")
+				)
+			)
+		)
+	)
+	(sheet
+		(at 97.79 119.38)
+		(size 33.02 15.24)
+		(exclude_from_sim no)
+		(in_bom yes)
+		(on_board yes)
+		(dnp no)
+		(fields_autoplaced yes)
+		(stroke
+			(width 0.1524)
+			(type solid)
+		)
+		(fill
+			(color 255 254 1 1)
+		)
+		(uuid "97bfbb1e-3599-4005-9045-9ecb90c5ad6e")
+		(property "Sheetname" "GPIO"
+			(at 97.79 118.6684 0)
+			(show_name no)
+			(do_not_autoplace no)
+			(effects
+				(font
+					(size 1.27 1.27)
+				)
+				(justify left bottom)
+			)
+		)
+		(property "Sheetfile" "schematics\\GPIO.kicad_sch"
+			(at 97.79 135.2046 0)
+			(show_name no)
+			(do_not_autoplace no)
+			(effects
+				(font
+					(size 1.27 1.27)
+				)
+				(justify left top)
+			)
+		)
+		(instances
+			(project "flamingo"
+				(path "/817f49eb-0105-475d-aa60-c8a0ced591cc"
+					(page "9")
+				)
+			)
+		)
+	)
+	(sheet
+		(at 19.05 24.13)
+		(size 93.98 17.78)
+		(exclude_from_sim no)
+		(in_bom yes)
+		(on_board yes)
+		(dnp no)
+		(fields_autoplaced yes)
+		(stroke
+			(width 0.1524)
+			(type solid)
+		)
+		(fill
+			(color 0 0 255 0.25)
+		)
+		(uuid "c5e44d0c-2cd4-4f2b-9527-a93aaaabc021")
+		(property "Sheetname" "Power"
+			(at 19.05 23.4184 0)
+			(show_name no)
+			(do_not_autoplace no)
+			(effects
+				(font
+					(size 1.27 1.27)
+				)
+				(justify left bottom)
+			)
+		)
+		(property "Sheetfile" "schematics\\power.kicad_sch"
+			(at 19.05 42.4946 0)
+			(show_name no)
+			(do_not_autoplace no)
+			(effects
+				(font
+					(size 1.27 1.27)
+				)
+				(justify left top)
+			)
+		)
+		(instances
+			(project "flamingo"
+				(path "/817f49eb-0105-475d-aa60-c8a0ced591cc"
+					(page "3")
+				)
+			)
+		)
+	)
+	(sheet
+		(at 20.32 119.38)
+		(size 31.75 15.24)
+		(exclude_from_sim no)
+		(in_bom yes)
+		(on_board yes)
+		(dnp no)
+		(fields_autoplaced yes)
+		(stroke
+			(width 0.1524)
+			(type solid)
+		)
+		(fill
+			(color 0 245 255 1)
+		)
+		(uuid "f5208538-69bb-40f0-b5c7-b48ea685c107")
+		(property "Sheetname" "GPS"
+			(at 20.32 118.6684 0)
+			(show_name no)
+			(do_not_autoplace no)
+			(effects
+				(font
+					(size 1.27 1.27)
+				)
+				(justify left bottom)
+			)
+		)
+		(property "Sheetfile" "schematics/GPS.kicad_sch"
+			(at 20.32 135.2046 0)
+			(show_name no)
+			(do_not_autoplace no)
+			(effects
+				(font
+					(size 1.27 1.27)
+				)
+				(justify left top)
+			)
+		)
+		(instances
+			(project "flamingo"
+				(path "/817f49eb-0105-475d-aa60-c8a0ced591cc"
+					(page "7")
+				)
+			)
+		)
+	)
+	(sheet_instances
+		(path "/"
+			(page "1")
+		)
+	)
+	(embedded_fonts no)
+)
