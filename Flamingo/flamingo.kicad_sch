@@ -12,7 +12,7 @@
 	)
 	(lib_symbols)
 	(sheet
-		(at 63.5 52.07)
+		(at 74.93 54.61)
 		(size 55.88 25.4)
 		(exclude_from_sim no)
 		(in_bom yes)
@@ -28,7 +28,7 @@
 		)
 		(uuid "40dd17db-c6fb-4a01-a68d-1434f55a08fb")
 		(property "Sheetname" "Camera"
-			(at 63.5 51.3584 0)
+			(at 74.93 53.8984 0)
 			(show_name no)
 			(do_not_autoplace no)
 			(effects
@@ -39,7 +39,7 @@
 			)
 		)
 		(property "Sheetfile" "schematics\\camera.kicad_sch"
-			(at 63.5 78.0546 0)
+			(at 74.93 80.5946 0)
 			(show_name no)
 			(do_not_autoplace no)
 			(effects
@@ -59,7 +59,7 @@
 	)
 	(sheet
 		(at 20.32 102.87)
-		(size 86.36 10.16)
+		(size 110.49 12.7)
 		(exclude_from_sim no)
 		(in_bom yes)
 		(on_board yes)
@@ -85,7 +85,7 @@
 			)
 		)
 		(property "Sheetfile" "schematics\\usb_debug.kicad_sch"
-			(at 20.32 113.6146 0)
+			(at 20.32 116.1546 0)
 			(show_name no)
 			(do_not_autoplace no)
 			(effects
@@ -105,7 +105,7 @@
 	)
 	(sheet
 		(at 20.32 87.63)
-		(size 86.36 10.16)
+		(size 110.49 11.43)
 		(exclude_from_sim no)
 		(in_bom yes)
 		(on_board yes)
@@ -131,7 +131,7 @@
 			)
 		)
 		(property "Sheetfile" "schematics\\usb_power_program.kicad_sch"
-			(at 20.32 98.3746 0)
+			(at 20.32 99.6446 0)
 			(show_name no)
 			(do_not_autoplace no)
 			(effects
@@ -289,7 +289,7 @@
 	)
 	(sheet
 		(at 19.05 24.13)
-		(size 93.98 17.78)
+		(size 111.76 19.05)
 		(exclude_from_sim no)
 		(in_bom yes)
 		(on_board yes)
@@ -315,7 +315,7 @@
 			)
 		)
 		(property "Sheetfile" "schematics\\power.kicad_sch"
-			(at 19.05 42.4946 0)
+			(at 19.05 43.7646 0)
 			(show_name no)
 			(do_not_autoplace no)
 			(effects
@@ -375,6 +375,52 @@
 			(project "flamingo"
 				(path "/817f49eb-0105-475d-aa60-c8a0ced591cc"
 					(page "7")
+				)
+			)
+		)
+	)
+	(sheet
+		(at 20.32 143.51)
+		(size 110.49 12.7)
+		(exclude_from_sim no)
+		(in_bom yes)
+		(on_board yes)
+		(dnp no)
+		(fields_autoplaced yes)
+		(stroke
+			(width 0.1524)
+			(type solid)
+		)
+		(fill
+			(color 255 106 0 1)
+		)
+		(uuid "fb90ee25-3c1e-4d92-bbd0-6c03b8c2e035")
+		(property "Sheetname" "SD card"
+			(at 20.32 142.7984 0)
+			(show_name no)
+			(do_not_autoplace no)
+			(effects
+				(font
+					(size 1.27 1.27)
+				)
+				(justify left bottom)
+			)
+		)
+		(property "Sheetfile" "schematics\\SD_card.kicad_sch"
+			(at 20.32 156.7946 0)
+			(show_name no)
+			(do_not_autoplace no)
+			(effects
+				(font
+					(size 1.27 1.27)
+				)
+				(justify left top)
+			)
+		)
+		(instances
+			(project "flamingo"
+				(path "/817f49eb-0105-475d-aa60-c8a0ced591cc"
+					(page "10")
 				)
 			)
 		)
