@@ -874,6 +874,48 @@
 			(embedded_fonts no)
 		)
 	)
+	(wire
+		(pts
+			(xy 66.04 45.72) (xy 83.82 45.72)
+		)
+		(stroke
+			(width 0)
+			(type default)
+		)
+		(uuid "1260b140-d6ed-4e73-992f-132f1b9e16e9")
+	)
+	(wire
+		(pts
+			(xy 66.04 48.26) (xy 83.82 48.26)
+		)
+		(stroke
+			(width 0)
+			(type default)
+		)
+		(uuid "c10e9935-5af5-45d4-9cd2-f80e5e21984f")
+	)
+	(hierarchical_label "LASER_RX"
+		(shape input)
+		(at 66.04 48.26 180)
+		(effects
+			(font
+				(size 1.27 1.27)
+			)
+			(justify right)
+		)
+		(uuid "61198337-522c-433a-b4d1-3dec09ba759a")
+	)
+	(hierarchical_label "LASER_TX"
+		(shape output)
+		(at 66.04 45.72 180)
+		(effects
+			(font
+				(size 1.27 1.27)
+			)
+			(justify right)
+		)
+		(uuid "cebd1ae8-1a0f-48bc-9ab1-033ae3a5567f")
+	)
 	(symbol
 		(lib_id "RF_Module:ESP32-S3-WROOM-1")
 		(at 99.06 60.96 0)
