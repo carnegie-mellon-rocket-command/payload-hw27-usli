@@ -1,0 +1,19 @@
+(kicad_sch
+	(version 20260306)
+	(generator "eeschema")
+	(generator_version "10.0")
+	(uuid "4103c8be-3b59-4fb8-b4dc-73b25694ecdd")
+	(paper "A4")
+	(lib_symbols)
+	(text "OPTIONAL UART DEBUG - circuit pending\nExpose GPIO43 TX, GPIO44 RX and GND for a 3.3 V USB-UART adapter.\nNative USB programming/JTAG remains on the USB programming sheet.\nThis header does not provide a second native USB interface."
+		(exclude_from_sim no)
+		(at 20 30 0)
+		(effects
+			(font
+				(size 1.27 1.27)
+			)
+			(justify left top)
+		)
+		(uuid "623f8869-78bd-4f2e-8802-93b28f11376d")
+	)
+)

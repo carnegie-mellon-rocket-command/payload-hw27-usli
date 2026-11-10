@@ -648,7 +648,7 @@
         "uuid": "817f49eb-0105-475d-aa60-c8a0ced591cc"
       }
     ],
-    "used_designators": "U1",
+    "used_designators": "U1,R1",
     "variants": []
   },
   "sheets": [
@@ -658,7 +658,7 @@
     ],
     [
       "91741965-6759-4532-86dd-7c4d063ae6ad",
-      "Core"
+      "ESP32-S3 core"
     ],
     [
       "c5e44d0c-2cd4-4f2b-9527-a93aaaabc021",
@@ -666,27 +666,31 @@
     ],
     [
       "40dd17db-c6fb-4a01-a68d-1434f55a08fb",
-      "Camera"
+      "OV5640 camera"
     ],
     [
       "67accfd2-62ce-42a0-ae3b-f1c2dc282989",
-      "Power Program USB"
+      "USB programming / JTAG"
     ],
     [
       "6337b098-1641-4c29-8da7-3087c77b8969",
-      "Debug USB"
+      "Optional UART debug"
+    ],
+    [
+      "671e9492-476d-4b92-89de-4e4bd604c597",
+      "Flight-controller telemetry"
     ],
     [
       "918c4410-8d7c-4e5e-a307-c1922c92e6c2",
-      "Laser"
+      "STA-M020X laser"
     ],
     [
       "97bfbb1e-3599-4005-9045-9ecb90c5ad6e",
-      "GPIO"
+      "GPIO / I2C / SPI"
     ],
     [
       "fb90ee25-3c1e-4d92-bbd0-6c03b8c2e035",
-      "SD card"
+      "microSD"
     ]
   ],
   "text_variables": {},

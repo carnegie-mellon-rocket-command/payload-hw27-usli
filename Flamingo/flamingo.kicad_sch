@@ -3,48 +3,650 @@
 	(generator "eeschema")
 	(generator_version "10.0")
 	(uuid "817f49eb-0105-475d-aa60-c8a0ced591cc")
-	(paper "A5" portrait)
+	(paper "A4")
 	(title_block
-		(title "Flamingo")
-		(date "2026-10-27")
+		(title "Flamingo - system overview")
+		(date "2026-11-10")
 		(company "Payload @ Carnegie Mellon Rocket Command")
-		(comment 1 "Designed by Simon Kaplinsky ")
+		(comment 1 "Designed by Simon Kaplinsky & Rahim")
 	)
 	(lib_symbols)
+	(polyline
+		(pts
+			(xy 91.5 145.6) (xy 90 146.25) (xy 91.5 146.9)
+		)
+		(stroke
+			(width 0.25)
+			(type default)
+		)
+		(fill
+			(type none)
+		)
+		(uuid "05815d00-c2fd-4c99-84ff-785d2d2883c7")
+	)
+	(polyline
+		(pts
+			(xy 111 96.9) (xy 112.5 96.25) (xy 111 95.6)
+		)
+		(stroke
+			(width 0.25)
+			(type default)
+		)
+		(fill
+			(type none)
+		)
+		(uuid "06f7a85c-3864-430c-80bc-426f3538a31e")
+	)
+	(polyline
+		(pts
+			(xy 175 80) (xy 190 80) (xy 190 47.5) (xy 205 47.5)
+		)
+		(stroke
+			(width 0.25)
+			(type default)
+		)
+		(fill
+			(type none)
+		)
+		(uuid "10b0af75-ce8d-4004-a123-1ef24b043a11")
+	)
+	(polyline
+		(pts
+			(xy 176.5 113.1) (xy 175 113.75) (xy 176.5 114.4)
+		)
+		(stroke
+			(width 0.25)
+			(type default)
+		)
+		(fill
+			(type none)
+		)
+		(uuid "133df014-371e-4cd8-a625-a65d28691d3e")
+	)
+	(polyline
+		(pts
+			(xy 176.5 79.35) (xy 175 80) (xy 176.5 80.65)
+		)
+		(stroke
+			(width 0.25)
+			(type default)
+		)
+		(fill
+			(type none)
+		)
+		(uuid "18194063-31bd-46b2-93d6-f2c68f8af406")
+	)
+	(polyline
+		(pts
+			(xy 281.5 146.85) (xy 280 147.5) (xy 281.5 148.15)
+		)
+		(stroke
+			(width 0.25)
+			(type default)
+		)
+		(fill
+			(type none)
+		)
+		(uuid "26710448-0d67-44d9-8e99-ccfdd0e4ef40")
+	)
+	(polyline
+		(pts
+			(xy 144.4 126.5) (xy 143.75 125) (xy 143.1 126.5)
+		)
+		(stroke
+			(width 0.25)
+			(type default)
+		)
+		(fill
+			(type none)
+		)
+		(uuid "37ce63a4-c88e-4194-9caa-871eee158935")
+	)
+	(polyline
+		(pts
+			(xy 143.1 138.5) (xy 143.75 140) (xy 144.4 138.5)
+		)
+		(stroke
+			(width 0.25)
+			(type default)
+		)
+		(fill
+			(type none)
+		)
+		(uuid "3e673628-f8e4-48ac-b398-861bc7cbde01")
+	)
+	(polyline
+		(pts
+			(xy 82.5 60) (xy 82.5 72.5) (xy 12.5 72.5) (xy 12.5 165) (xy 285 165) (xy 285 147.5) (xy 280 147.5)
+		)
+		(stroke
+			(width 0.25)
+			(type default)
+		)
+		(fill
+			(type none)
+		)
+		(uuid "6368a286-da53-4774-bd31-4c957a8d9111")
+	)
+	(polyline
+		(pts
+			(xy 111 80.65) (xy 112.5 80) (xy 111 79.35)
+		)
+		(stroke
+			(width 0.25)
+			(type default)
+		)
+		(fill
+			(type none)
+		)
+		(uuid "6d07e0d6-ba1e-43d0-ae2d-9f24ad13b8b5")
+	)
+	(polyline
+		(pts
+			(xy 143.1 73.5) (xy 143.75 75) (xy 144.4 73.5)
+		)
+		(stroke
+			(width 0.25)
+			(type default)
+		)
+		(fill
+			(type none)
+		)
+		(uuid "7a6ceb06-c119-449d-894b-166e8700d240")
+	)
+	(polyline
+		(pts
+			(xy 176.5 95.6) (xy 175 96.25) (xy 176.5 96.9)
+		)
+		(stroke
+			(width 0.25)
+			(type default)
+		)
+		(fill
+			(type none)
+		)
+		(uuid "8417856b-9ef5-4da0-842a-adb6842c9557")
+	)
+	(polyline
+		(pts
+			(xy 90 47.5) (xy 100 47.5) (xy 100 80) (xy 112.5 80)
+		)
+		(stroke
+			(width 0.25)
+			(type default)
+		)
+		(fill
+			(type none)
+		)
+		(uuid "932360cc-11dc-4304-b20f-ebd6436610f0")
+	)
+	(polyline
+		(pts
+			(xy 111 114.4) (xy 112.5 113.75) (xy 111 113.1)
+		)
+		(stroke
+			(width 0.25)
+			(type default)
+		)
+		(fill
+			(type none)
+		)
+		(uuid "94c2f87b-6229-4be3-a3e2-79239d5e436c")
+	)
+	(polyline
+		(pts
+			(xy 175 113.75) (xy 190 113.75) (xy 190 146.25) (xy 205 146.25)
+		)
+		(stroke
+			(width 0.25)
+			(type default)
+		)
+		(fill
+			(type none)
+		)
+		(uuid "95c9c05d-f90f-408d-841b-c4969e978c29")
+	)
+	(polyline
+		(pts
+			(xy 203.5 96.9) (xy 205 96.25) (xy 203.5 95.6)
+		)
+		(stroke
+			(width 0.25)
+			(type default)
+		)
+		(fill
+			(type none)
+		)
+		(uuid "966bb8eb-6c07-4c4a-a05e-dddd78084b7e")
+	)
+	(polyline
+		(pts
+			(xy 90 146.25) (xy 102.5 146.25) (xy 102.5 113.75) (xy 112.5 113.75)
+		)
+		(stroke
+			(width 0.25)
+			(type default)
+		)
+		(fill
+			(type none)
+		)
+		(uuid "b12cfe92-cdcb-4612-9e2f-ee6d7cd56b65")
+	)
+	(polyline
+		(pts
+			(xy 30.65 61.5) (xy 30 60) (xy 29.35 61.5)
+		)
+		(stroke
+			(width 0.25)
+			(type default)
+		)
+		(fill
+			(type none)
+		)
+		(uuid "b6023574-5ec6-4f0c-977e-dac33bab88bb")
+	)
+	(polyline
+		(pts
+			(xy 91.5 95.6) (xy 90 96.25) (xy 91.5 96.9)
+		)
+		(stroke
+			(width 0.25)
+			(type default)
+		)
+		(fill
+			(type none)
+		)
+		(uuid "bba42d05-e5eb-42a1-97c2-de29ef360b3a")
+	)
+	(polyline
+		(pts
+			(xy 203.5 146.9) (xy 205 146.25) (xy 203.5 145.6)
+		)
+		(stroke
+			(width 0.25)
+			(type default)
+		)
+		(fill
+			(type none)
+		)
+		(uuid "bc1914b2-0af7-4943-9ca1-f434edb626ed")
+	)
+	(polyline
+		(pts
+			(xy 203.5 48.15) (xy 205 47.5) (xy 203.5 46.85)
+		)
+		(stroke
+			(width 0.25)
+			(type default)
+		)
+		(fill
+			(type none)
+		)
+		(uuid "df428cf5-4405-467b-8047-fe30b6c178a9")
+	)
+	(polyline
+		(pts
+			(xy 144.4 59) (xy 143.75 57.5) (xy 143.1 59)
+		)
+		(stroke
+			(width 0.25)
+			(type default)
+		)
+		(fill
+			(type none)
+		)
+		(uuid "f0692df7-568f-4be9-941c-8eb5379fa76c")
+	)
+	(text "One native USB port\nProgramming, console and JTAG"
+		(exclude_from_sim no)
+		(at 17 94 0)
+		(effects
+			(font
+				(size 1.27 1.27)
+			)
+			(justify left top)
+		)
+		(uuid "04300ab1-0f24-46fb-a316-ba33f0633a21")
+	)
+	(text "DVP / SCCB"
+		(exclude_from_sim no)
+		(at 177 52 0)
+		(effects
+			(font
+				(size 0.9 0.9)
+			)
+			(justify left top)
+		)
+		(uuid "2655648a-70c8-40b0-a698-833a9a1274df")
+	)
+	(text "Shared buses"
+		(exclude_from_sim no)
+		(at 147 131 0)
+		(effects
+			(font
+				(size 0.9 0.9)
+			)
+			(justify left top)
+		)
+		(uuid "2e579172-3c06-4f64-a504-2d1637b9b7e9")
+	)
+	(text "USB 5 V"
+		(exclude_from_sim no)
+		(at 34 68 0)
+		(effects
+			(font
+				(size 1.27 1.27)
+			)
+			(justify left top)
+		)
+		(uuid "2ec55127-a52a-42e6-94c8-d487738422f8")
+	)
+	(text "UART0"
+		(exclude_from_sim no)
+		(at 146 64 0)
+		(effects
+			(font
+				(size 1.27 1.27)
+			)
+			(justify left top)
+		)
+		(uuid "332f3e55-bb5c-4815-8eb5-32b8ee492970")
+	)
+	(text "3V3 power; shared SPI bus\nSeparate SD chip select"
+		(exclude_from_sim no)
+		(at 207 94 0)
+		(effects
+			(font
+				(size 1.27 1.27)
+			)
+			(justify left top)
+		)
+		(uuid "3ee9aac8-ed22-405b-b5d3-5b3311cb5d8b")
+	)
+	(text "BUILD NEXT: power selection + rails; then Core reset/boot and the sheet interfaces. No onboard GPS or charger."
+		(exclude_from_sim no)
+		(at 15 186 0)
+		(effects
+			(font
+				(size 1.27 1.27)
+			)
+			(justify left top)
+		)
+		(uuid "419c9cf1-80cc-4a11-9544-58c3fd46b28a")
+	)
+	(text "5 V input + USB selection\n3V3 regulator; no onboard charger"
+		(exclude_from_sim no)
+		(at 17 44 0)
+		(effects
+			(font
+				(size 1.27 1.27)
+			)
+			(justify left top)
+		)
+		(uuid "4aef6086-42fa-4104-b5e3-4931dbbc427d")
+	)
+	(text "PLANNED ARCHITECTURE: arrows show intended functions, not electrical nets. Subsheet wiring is still pending."
+		(exclude_from_sim no)
+		(at 15 25 0)
+		(effects
+			(font
+				(size 1.27 1.27)
+			)
+			(justify left top)
+		)
+		(uuid "5129592c-a362-4cad-9248-232bf4c51f62")
+	)
+	(text "3V3"
+		(exclude_from_sim no)
+		(at 102 63 0)
+		(effects
+			(font
+				(size 1.27 1.27)
+			)
+			(justify left top)
+		)
+		(uuid "5a3d62e0-e555-403f-b204-0f0e1039f588")
+	)
+	(text "UART"
+		(exclude_from_sim no)
+		(at 191 122 0)
+		(effects
+			(font
+				(size 1.27 1.27)
+			)
+			(justify left top)
+		)
+		(uuid "5cd9afda-9031-41c3-8354-83db5fc7c905")
+	)
+	(text "External 2S pack -> FC battery input + dedicated 5 V buck -> Flamingo / laser. Charge the pack externally."
+		(exclude_from_sim no)
+		(at 15 20 0)
+		(effects
+			(font
+				(size 1.1 1.1)
+			)
+			(justify left top)
+		)
+		(uuid "6ade7324-577e-4cbc-bf7c-6df89eb90199")
+	)
+	(text "SPI"
+		(exclude_from_sim no)
+		(at 185 91.5 0)
+		(effects
+			(font
+				(size 1.27 1.27)
+			)
+			(justify left top)
+		)
+		(uuid "77dd8903-461d-4b51-a5ef-0c4d129e9492")
+	)
+	(text "Dedicated buck 5 V -> laser (bypasses USB power)"
+		(exclude_from_sim no)
+		(at 15 172 0)
+		(effects
+			(font
+				(size 1.27 1.27)
+			)
+			(justify left top)
+		)
+		(uuid "7fba2991-4b4b-4583-a61c-081d9d1d6321")
+	)
+	(text "External FC: GPS / IMU / altitude\n3.3 V UART: TX, RX and GND"
+		(exclude_from_sim no)
+		(at 17 144 0)
+		(effects
+			(font
+				(size 1.27 1.27)
+			)
+			(justify left top)
+		)
+		(uuid "7fd19630-a7f2-4360-a918-b48afc664389")
+	)
+	(text "External Board A: 18-pin DVP\n3V3 power; JPEG output"
+		(exclude_from_sim no)
+		(at 207 44 0)
+		(effects
+			(font
+				(size 1.27 1.27)
+			)
+			(justify left top)
+		)
+		(uuid "896b7eb8-e3ec-405a-ab14-a3d38b7a2b89")
+	)
+	(text "Camera / SD / GPIO use regulated 3V3. All interfaces share ground."
+		(exclude_from_sim no)
+		(at 15 180 0)
+		(effects
+			(font
+				(size 1.27 1.27)
+			)
+			(justify left top)
+		)
+		(uuid "b5e03012-73ed-4ffd-a581-a86d22f853bd")
+	)
+	(text "TX / RX / GND header\nExternal USB-UART adapter"
+		(exclude_from_sim no)
+		(at 114.5 44 0)
+		(effects
+			(font
+				(size 1.27 1.27)
+			)
+			(justify left top)
+		)
+		(uuid "cd941214-4161-474d-8862-2a57554c99af")
+	)
+	(text "D+ / D-"
+		(exclude_from_sim no)
+		(at 92 91.5 0)
+		(effects
+			(font
+				(size 0.9 0.9)
+			)
+			(justify left top)
+		)
+		(uuid "d457a0e4-03a0-4274-b8af-ec8d4403a36c")
+	)
+	(text "ESP32-S3-WROOM-1-N16R8\n8 MB PSRAM / 16 MB flash\nJPEG capture + block decoding\nUART telemetry + laser + SD"
+		(exclude_from_sim no)
+		(at 114.5 84 0)
+		(effects
+			(font
+				(size 1.27 1.27)
+			)
+			(justify left top)
+		)
+		(uuid "e0224874-3369-4591-8aae-733ccd8709fb")
+	)
+	(text "UART"
+		(exclude_from_sim no)
+		(at 91 129 0)
+		(effects
+			(font
+				(size 1.27 1.27)
+			)
+			(justify left top)
+		)
+		(uuid "e053da6c-ae1f-4ff9-8781-eecddb3a5c44")
+	)
+	(text "Shared buses; own SPI chip select\n3.3 V logic"
+		(exclude_from_sim no)
+		(at 114.5 149 0)
+		(effects
+			(font
+				(size 1.27 1.27)
+			)
+			(justify left top)
+		)
+		(uuid "e8e940de-01b2-4c73-9c52-2ba721457acc")
+	)
+	(text "FLAMINGO | shared battery, separate flight and camera processing"
+		(exclude_from_sim no)
+		(at 15 12 0)
+		(effects
+			(font
+				(size 1.8 1.8)
+				(bold yes)
+			)
+			(justify left top)
+		)
+		(uuid "ee22d035-914b-40ed-bb6d-9c1a02277ad9")
+	)
+	(text "5 V power / default 3.3 V UART\nModule: 5 pins; ENO reserved"
+		(exclude_from_sim no)
+		(at 207 144 0)
+		(effects
+			(font
+				(size 1.27 1.27)
+			)
+			(justify left top)
+		)
+		(uuid "fe88e428-e8cd-4366-a7e0-1dfbbe10b4b2")
+	)
+	(polyline
+		(pts
+			(xy 175 96.25) (xy 205 96.25)
+		)
+		(stroke
+			(width 0.25)
+			(type default)
+		)
+		(uuid "16788bcb-c368-49bf-9be4-46b174882b3b")
+	)
+	(polyline
+		(pts
+			(xy 143.75 125) (xy 143.75 140)
+		)
+		(stroke
+			(width 0.25)
+			(type default)
+		)
+		(uuid "21bf446d-97f5-487c-a641-206ddbae6ad5")
+	)
+	(polyline
+		(pts
+			(xy 143.75 57.5) (xy 143.75 75)
+		)
+		(stroke
+			(width 0.25)
+			(type default)
+		)
+		(uuid "2a7fa9dd-4eda-4d78-be6b-79e5ea97aeb7")
+	)
+	(polyline
+		(pts
+			(xy 90 96.25) (xy 112.5 96.25)
+		)
+		(stroke
+			(width 0.25)
+			(type default)
+		)
+		(uuid "4a3b8c45-dd97-43ac-a7a0-2b6b9742473b")
+	)
+	(polyline
+		(pts
+			(xy 30 85) (xy 30 60)
+		)
+		(stroke
+			(width 0.25)
+			(type default)
+		)
+		(uuid "c08d106d-b2a2-4650-871b-c3d978d6e657")
+	)
 	(sheet
-		(at 67.31 52.07)
-		(size 55.88 25.4)
+		(at 205 35)
+		(size 75 25)
 		(exclude_from_sim no)
 		(in_bom yes)
 		(on_board yes)
 		(dnp no)
-		(fields_autoplaced yes)
 		(stroke
 			(width 0.1524)
 			(type solid)
 		)
 		(fill
-			(color 0 255 0 0.2509803922)
+			(color 217 247 222 1)
 		)
 		(uuid "40dd17db-c6fb-4a01-a68d-1434f55a08fb")
-		(property "Sheetname" "Camera"
-			(at 67.31 51.3584 0)
+		(property "Sheetname" "OV5640 camera"
+			(at 207 37 0)
 			(show_name no)
-			(do_not_autoplace no)
+			(do_not_autoplace yes)
 			(effects
 				(font
 					(size 1.27 1.27)
+					(bold yes)
 				)
-				(justify left bottom)
+				(justify left top)
 			)
 		)
 		(property "Sheetfile" "schematics/camera.kicad_sch"
-			(at 67.31 78.0546 0)
+			(at 205 61 0)
+			(hide yes)
 			(show_name no)
-			(do_not_autoplace no)
+			(do_not_autoplace yes)
 			(effects
 				(font
-					(size 1.27 1.27)
+					(size 1 1)
 				)
 				(justify left top)
 			)
@@ -58,39 +660,40 @@
 		)
 	)
 	(sheet
-		(at 20.32 102.87)
-		(size 110.49 12.7)
+		(at 112.5 35)
+		(size 62.5 22.5)
 		(exclude_from_sim no)
 		(in_bom yes)
 		(on_board yes)
 		(dnp no)
-		(fields_autoplaced yes)
 		(stroke
 			(width 0.1524)
 			(type solid)
 		)
 		(fill
-			(color 255 153 0 0.25)
+			(color 237 224 252 1)
 		)
 		(uuid "6337b098-1641-4c29-8da7-3087c77b8969")
-		(property "Sheetname" "Debug USB"
-			(at 20.32 102.1584 0)
+		(property "Sheetname" "Optional UART debug"
+			(at 114.5 37 0)
 			(show_name no)
-			(do_not_autoplace no)
+			(do_not_autoplace yes)
 			(effects
 				(font
 					(size 1.27 1.27)
+					(bold yes)
 				)
-				(justify left bottom)
+				(justify left top)
 			)
 		)
-		(property "Sheetfile" "schematics/usb_debug.kicad_sch"
-			(at 20.32 116.1546 0)
+		(property "Sheetfile" "schematics/uart_debug.kicad_sch"
+			(at 112.5 58.5 0)
+			(hide yes)
 			(show_name no)
-			(do_not_autoplace no)
+			(do_not_autoplace yes)
 			(effects
 				(font
-					(size 1.27 1.27)
+					(size 1 1)
 				)
 				(justify left top)
 			)
@@ -104,39 +707,87 @@
 		)
 	)
 	(sheet
-		(at 20.32 85.09)
-		(size 110.49 11.43)
+		(at 15 135)
+		(size 75 22.5)
 		(exclude_from_sim no)
 		(in_bom yes)
 		(on_board yes)
 		(dnp no)
-		(fields_autoplaced yes)
 		(stroke
 			(width 0.1524)
 			(type solid)
 		)
 		(fill
-			(color 255 153 0 0.25)
+			(color 214 245 250 1)
 		)
-		(uuid "67accfd2-62ce-42a0-ae3b-f1c2dc282989")
-		(property "Sheetname" "Power Program USB"
-			(at 20.32 84.3784 0)
+		(uuid "671e9492-476d-4b92-89de-4e4bd604c597")
+		(property "Sheetname" "Flight-controller telemetry"
+			(at 17 137 0)
 			(show_name no)
-			(do_not_autoplace no)
+			(do_not_autoplace yes)
 			(effects
 				(font
 					(size 1.27 1.27)
+					(bold yes)
 				)
-				(justify left bottom)
+				(justify left top)
+			)
+		)
+		(property "Sheetfile" "schematics/fc_telemetry.kicad_sch"
+			(at 15 158.5 0)
+			(hide yes)
+			(show_name no)
+			(do_not_autoplace yes)
+			(effects
+				(font
+					(size 1 1)
+				)
+				(justify left top)
+			)
+		)
+		(instances
+			(project "flamingo"
+				(path "/817f49eb-0105-475d-aa60-c8a0ced591cc"
+					(page "7")
+				)
+			)
+		)
+	)
+	(sheet
+		(at 15 85)
+		(size 75 22.5)
+		(exclude_from_sim no)
+		(in_bom yes)
+		(on_board yes)
+		(dnp no)
+		(stroke
+			(width 0.1524)
+			(type solid)
+		)
+		(fill
+			(color 255 232 199 1)
+		)
+		(uuid "67accfd2-62ce-42a0-ae3b-f1c2dc282989")
+		(property "Sheetname" "USB programming / JTAG"
+			(at 17 87 0)
+			(show_name no)
+			(do_not_autoplace yes)
+			(effects
+				(font
+					(size 1.27 1.27)
+					(bold yes)
+				)
+				(justify left top)
 			)
 		)
 		(property "Sheetfile" "schematics/usb_power_program.kicad_sch"
-			(at 20.32 97.1046 0)
+			(at 15 108.5 0)
+			(hide yes)
 			(show_name no)
-			(do_not_autoplace no)
+			(do_not_autoplace yes)
 			(effects
 				(font
-					(size 1.27 1.27)
+					(size 1 1)
 				)
 				(justify left top)
 			)
@@ -150,39 +801,40 @@
 		)
 	)
 	(sheet
-		(at 19.05 52.07)
-		(size 29.21 25.4)
+		(at 112.5 75)
+		(size 62.5 50)
 		(exclude_from_sim no)
 		(in_bom yes)
 		(on_board yes)
 		(dnp no)
-		(fields_autoplaced yes)
 		(stroke
 			(width 0.1524)
 			(type solid)
 		)
 		(fill
-			(color 242 119 144 1)
+			(color 255 217 224 1)
 		)
 		(uuid "91741965-6759-4532-86dd-7c4d063ae6ad")
-		(property "Sheetname" "Core"
-			(at 19.05 51.3584 0)
+		(property "Sheetname" "ESP32-S3 core"
+			(at 114.5 77 0)
 			(show_name no)
-			(do_not_autoplace no)
+			(do_not_autoplace yes)
 			(effects
 				(font
 					(size 1.27 1.27)
+					(bold yes)
 				)
-				(justify left bottom)
+				(justify left top)
 			)
 		)
 		(property "Sheetfile" "schematics/core.kicad_sch"
-			(at 19.05 78.0546 0)
+			(at 112.5 126 0)
+			(hide yes)
 			(show_name no)
-			(do_not_autoplace no)
+			(do_not_autoplace yes)
 			(effects
 				(font
-					(size 1.27 1.27)
+					(size 1 1)
 				)
 				(justify left top)
 			)
@@ -196,39 +848,40 @@
 		)
 	)
 	(sheet
-		(at 21.59 121.92)
-		(size 35.56 15.24)
+		(at 205 135)
+		(size 75 22.5)
 		(exclude_from_sim no)
 		(in_bom yes)
 		(on_board yes)
 		(dnp no)
-		(fields_autoplaced yes)
 		(stroke
 			(width 0.1524)
 			(type solid)
 		)
 		(fill
-			(color 255 0 0 1)
+			(color 255 222 214 1)
 		)
 		(uuid "918c4410-8d7c-4e5e-a307-c1922c92e6c2")
-		(property "Sheetname" "Laser"
-			(at 21.59 121.2084 0)
+		(property "Sheetname" "STA-M020X laser"
+			(at 207 137 0)
 			(show_name no)
-			(do_not_autoplace no)
+			(do_not_autoplace yes)
 			(effects
 				(font
 					(size 1.27 1.27)
+					(bold yes)
 				)
-				(justify left bottom)
+				(justify left top)
 			)
 		)
 		(property "Sheetfile" "schematics/laser.kicad_sch"
-			(at 21.59 137.7446 0)
+			(at 205 158.5 0)
+			(hide yes)
 			(show_name no)
-			(do_not_autoplace no)
+			(do_not_autoplace yes)
 			(effects
 				(font
-					(size 1.27 1.27)
+					(size 1 1)
 				)
 				(justify left top)
 			)
@@ -242,39 +895,40 @@
 		)
 	)
 	(sheet
-		(at 90.17 121.92)
-		(size 33.02 15.24)
+		(at 112.5 140)
+		(size 62.5 22.5)
 		(exclude_from_sim no)
 		(in_bom yes)
 		(on_board yes)
 		(dnp no)
-		(fields_autoplaced yes)
 		(stroke
 			(width 0.1524)
 			(type solid)
 		)
 		(fill
-			(color 255 254 1 1)
+			(color 255 250 201 1)
 		)
 		(uuid "97bfbb1e-3599-4005-9045-9ecb90c5ad6e")
-		(property "Sheetname" "GPIO"
-			(at 90.17 121.2084 0)
+		(property "Sheetname" "GPIO / I2C / SPI"
+			(at 114.5 142 0)
 			(show_name no)
-			(do_not_autoplace no)
+			(do_not_autoplace yes)
 			(effects
 				(font
 					(size 1.27 1.27)
+					(bold yes)
 				)
-				(justify left bottom)
+				(justify left top)
 			)
 		)
 		(property "Sheetfile" "schematics/GPIO.kicad_sch"
-			(at 90.17 137.7446 0)
+			(at 112.5 163.5 0)
+			(hide yes)
 			(show_name no)
-			(do_not_autoplace no)
+			(do_not_autoplace yes)
 			(effects
 				(font
-					(size 1.27 1.27)
+					(size 1 1)
 				)
 				(justify left top)
 			)
@@ -288,39 +942,40 @@
 		)
 	)
 	(sheet
-		(at 19.05 24.13)
-		(size 111.76 19.05)
+		(at 15 35)
+		(size 75 25)
 		(exclude_from_sim no)
 		(in_bom yes)
 		(on_board yes)
 		(dnp no)
-		(fields_autoplaced yes)
 		(stroke
 			(width 0.1524)
 			(type solid)
 		)
 		(fill
-			(color 0 0 255 0.25)
+			(color 214 232 255 1)
 		)
 		(uuid "c5e44d0c-2cd4-4f2b-9527-a93aaaabc021")
 		(property "Sheetname" "Power"
-			(at 19.05 23.4184 0)
+			(at 17 37 0)
 			(show_name no)
-			(do_not_autoplace no)
+			(do_not_autoplace yes)
 			(effects
 				(font
 					(size 1.27 1.27)
+					(bold yes)
 				)
-				(justify left bottom)
+				(justify left top)
 			)
 		)
 		(property "Sheetfile" "schematics/power.kicad_sch"
-			(at 19.05 43.7646 0)
+			(at 15 61 0)
+			(hide yes)
 			(show_name no)
-			(do_not_autoplace no)
+			(do_not_autoplace yes)
 			(effects
 				(font
-					(size 1.27 1.27)
+					(size 1 1)
 				)
 				(justify left top)
 			)
@@ -334,39 +989,40 @@
 		)
 	)
 	(sheet
-		(at 20.32 143.51)
-		(size 110.49 12.7)
+		(at 205 85)
+		(size 75 22.5)
 		(exclude_from_sim no)
 		(in_bom yes)
 		(on_board yes)
 		(dnp no)
-		(fields_autoplaced yes)
 		(stroke
 			(width 0.1524)
 			(type solid)
 		)
 		(fill
-			(color 255 106 0 1)
+			(color 255 235 209 1)
 		)
 		(uuid "fb90ee25-3c1e-4d92-bbd0-6c03b8c2e035")
-		(property "Sheetname" "SD card"
-			(at 20.32 142.7984 0)
+		(property "Sheetname" "microSD"
+			(at 207 87 0)
 			(show_name no)
-			(do_not_autoplace no)
+			(do_not_autoplace yes)
 			(effects
 				(font
 					(size 1.27 1.27)
+					(bold yes)
 				)
-				(justify left bottom)
+				(justify left top)
 			)
 		)
 		(property "Sheetfile" "schematics/SD_card.kicad_sch"
-			(at 20.32 156.7946 0)
+			(at 205 108.5 0)
+			(hide yes)
 			(show_name no)
-			(do_not_autoplace no)
+			(do_not_autoplace yes)
 			(effects
 				(font
-					(size 1.27 1.27)
+					(size 1 1)
 				)
 				(justify left top)
 			)
