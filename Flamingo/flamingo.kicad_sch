@@ -52,19 +52,6 @@
 	)
 	(polyline
 		(pts
-			(xy 176.5 113.1) (xy 175 113.75) (xy 176.5 114.4)
-		)
-		(stroke
-			(width 0.25)
-			(type default)
-		)
-		(fill
-			(type none)
-		)
-		(uuid "133df014-371e-4cd8-a625-a65d28691d3e")
-	)
-	(polyline
-		(pts
 			(xy 176.5 79.35) (xy 175 80) (xy 176.5 80.65)
 		)
 		(stroke
@@ -195,19 +182,6 @@
 	)
 	(polyline
 		(pts
-			(xy 175 113.75) (xy 190 113.75) (xy 190 146.25) (xy 205 146.25)
-		)
-		(stroke
-			(width 0.25)
-			(type default)
-		)
-		(fill
-			(type none)
-		)
-		(uuid "95c9c05d-f90f-408d-841b-c4969e978c29")
-	)
-	(polyline
-		(pts
 			(xy 203.5 96.9) (xy 205 96.25) (xy 203.5 95.6)
 		)
 		(stroke
@@ -257,19 +231,6 @@
 			(type none)
 		)
 		(uuid "bba42d05-e5eb-42a1-97c2-de29ef360b3a")
-	)
-	(polyline
-		(pts
-			(xy 203.5 146.9) (xy 205 146.25) (xy 203.5 145.6)
-		)
-		(stroke
-			(width 0.25)
-			(type default)
-		)
-		(fill
-			(type none)
-		)
-		(uuid "bc1914b2-0af7-4943-9ca1-f434edb626ed")
 	)
 	(polyline
 		(pts
@@ -406,17 +367,6 @@
 			(justify left top)
 		)
 		(uuid "5a3d62e0-e555-403f-b204-0f0e1039f588")
-	)
-	(text "UART"
-		(exclude_from_sim no)
-		(at 191 122 0)
-		(effects
-			(font
-				(size 1.27 1.27)
-			)
-			(justify left top)
-		)
-		(uuid "5cd9afda-9031-41c3-8354-83db5fc7c905")
 	)
 	(text "External 2S pack -> FC battery input + dedicated 5 V buck -> Flamingo / laser. Charge the pack externally."
 		(exclude_from_sim no)
@@ -562,6 +512,30 @@
 		)
 		(uuid "fe88e428-e8cd-4366-a7e0-1dfbbe10b4b2")
 	)
+	(junction
+		(at 205 142.24)
+		(diameter 0)
+		(color 0 0 0 0)
+		(uuid "0516d3c7-c89e-46c1-8324-fd7cbf666176")
+	)
+	(junction
+		(at 175 109.22)
+		(diameter 0)
+		(color 0 0 0 0)
+		(uuid "10c91b82-f912-4e41-b200-9cc3e0232029")
+	)
+	(junction
+		(at 205 139.7)
+		(diameter 0)
+		(color 0 0 0 0)
+		(uuid "5ca121d0-1bbb-47dc-b421-8bdb0b431a2b")
+	)
+	(junction
+		(at 175 113.03)
+		(diameter 0)
+		(color 0 0 0 0)
+		(uuid "8bb6ef08-4502-48f6-aada-383945d8f34b")
+	)
 	(polyline
 		(pts
 			(xy 175 96.25) (xy 205 96.25)
@@ -571,6 +545,26 @@
 			(type default)
 		)
 		(uuid "16788bcb-c368-49bf-9be4-46b174882b3b")
+	)
+	(wire
+		(pts
+			(xy 205 142.24) (xy 205.74 142.24)
+		)
+		(stroke
+			(width 0)
+			(type default)
+		)
+		(uuid "1ea94ff5-5bd8-4704-a216-2f5e751cf92b")
+	)
+	(wire
+		(pts
+			(xy 205 139.7) (xy 205.74 139.7)
+		)
+		(stroke
+			(width 0)
+			(type default)
+		)
+		(uuid "1eb1cdbd-a663-44e0-8c5e-d03df033819d")
 	)
 	(polyline
 		(pts
@@ -602,6 +596,36 @@
 		)
 		(uuid "4a3b8c45-dd97-43ac-a7a0-2b6b9742473b")
 	)
+	(wire
+		(pts
+			(xy 175 109.22) (xy 190.5 109.22)
+		)
+		(stroke
+			(width 0)
+			(type default)
+		)
+		(uuid "755389b9-8600-46b0-8103-bd1ffb5bae70")
+	)
+	(wire
+		(pts
+			(xy 173.99 113.03) (xy 175 113.03)
+		)
+		(stroke
+			(width 0)
+			(type default)
+		)
+		(uuid "76b367c6-010f-4388-a64f-82604bd799dd")
+	)
+	(wire
+		(pts
+			(xy 186.69 113.03) (xy 186.69 142.24)
+		)
+		(stroke
+			(width 0)
+			(type default)
+		)
+		(uuid "aedb2148-f032-4c2d-8493-34a8f3861093")
+	)
 	(polyline
 		(pts
 			(xy 30 85) (xy 30 60)
@@ -611,6 +635,56 @@
 			(type default)
 		)
 		(uuid "c08d106d-b2a2-4650-871b-c3d978d6e657")
+	)
+	(wire
+		(pts
+			(xy 190.5 109.22) (xy 190.5 139.7)
+		)
+		(stroke
+			(width 0)
+			(type default)
+		)
+		(uuid "c589501a-88b8-4fc0-8cb4-e7753a39fad0")
+	)
+	(wire
+		(pts
+			(xy 190.5 139.7) (xy 205 139.7)
+		)
+		(stroke
+			(width 0)
+			(type default)
+		)
+		(uuid "d4b0a495-9841-4485-a332-10d6167ea858")
+	)
+	(wire
+		(pts
+			(xy 173.99 109.22) (xy 175 109.22)
+		)
+		(stroke
+			(width 0)
+			(type default)
+		)
+		(uuid "e3fadbc9-a67b-40c7-a533-c8f5fc6589c6")
+	)
+	(wire
+		(pts
+			(xy 186.69 142.24) (xy 205 142.24)
+		)
+		(stroke
+			(width 0)
+			(type default)
+		)
+		(uuid "eacce7e5-0718-4b79-84a9-e4ba583126b1")
+	)
+	(wire
+		(pts
+			(xy 175 113.03) (xy 186.69 113.03)
+		)
+		(stroke
+			(width 0)
+			(type default)
+		)
+		(uuid "eb7a49c8-e484-4597-8c2d-272a06c9a491")
 	)
 	(sheet
 		(at 205 35)
@@ -839,6 +913,26 @@
 				(justify left top)
 			)
 		)
+		(pin "LASER_RX" input
+			(at 175 109.22 0)
+			(uuid "d233d246-1504-4b8e-b457-fef857edcffa")
+			(effects
+				(font
+					(size 1.27 1.27)
+				)
+				(justify right)
+			)
+		)
+		(pin "LASER_TX" output
+			(at 175 113.03 0)
+			(uuid "9af5077e-b779-4dc8-a3d2-5130650d3694")
+			(effects
+				(font
+					(size 1.27 1.27)
+				)
+				(justify right)
+			)
+		)
 		(instances
 			(project "flamingo"
 				(path "/817f49eb-0105-475d-aa60-c8a0ced591cc"
@@ -884,6 +978,36 @@
 					(size 1 1)
 				)
 				(justify left top)
+			)
+		)
+		(pin "5V" input
+			(at 205 137.16 180)
+			(uuid "0af5cc7b-c0a9-4023-9287-7b128da4d7b2")
+			(effects
+				(font
+					(size 1.27 1.27)
+				)
+				(justify left)
+			)
+		)
+		(pin "LASER_RX" input
+			(at 205 139.7 180)
+			(uuid "83a7fa8e-1cfb-4fd4-9b45-0859b2418026")
+			(effects
+				(font
+					(size 1.27 1.27)
+				)
+				(justify left)
+			)
+		)
+		(pin "LASER_TX" input
+			(at 205 142.24 180)
+			(uuid "116ad8d4-d16c-49f6-962a-648dd0209739")
+			(effects
+				(font
+					(size 1.27 1.27)
+				)
+				(justify left)
 			)
 		)
 		(instances
