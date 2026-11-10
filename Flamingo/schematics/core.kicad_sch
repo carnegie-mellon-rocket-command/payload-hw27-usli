@@ -886,7 +886,7 @@
 		(dnp no)
 		(fields_autoplaced yes)
 		(uuid "85993d2b-a08b-4175-950a-e5d71c1a51a0")
-		(property "Reference" "U?"
+		(property "Reference" "U1"
 			(at 101.2033 30.48 0)
 			(show_name no)
 			(do_not_autoplace no)
@@ -1067,7 +1067,7 @@
 		(instances
 			(project "flamingo"
 				(path "/817f49eb-0105-475d-aa60-c8a0ced591cc/91741965-6759-4532-86dd-7c4d063ae6ad"
-					(reference "U?")
+					(reference "U1")
 					(unit 1)
 				)
 			)
