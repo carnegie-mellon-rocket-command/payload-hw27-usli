@@ -886,6 +886,46 @@
 	)
 	(wire
 		(pts
+			(xy 66.04 66.04) (xy 83.82 66.04)
+		)
+		(stroke
+			(width 0)
+			(type default)
+		)
+		(uuid "68c0ad4c-c807-45a8-bd90-e62e1dbb6022")
+	)
+	(wire
+		(pts
+			(xy 66.04 76.2) (xy 83.82 76.2)
+		)
+		(stroke
+			(width 0)
+			(type default)
+		)
+		(uuid "a2184eb6-11f9-4db8-9bbc-e3b2ea618272")
+	)
+	(wire
+		(pts
+			(xy 66.04 55.88) (xy 83.82 55.88)
+		)
+		(stroke
+			(width 0)
+			(type default)
+		)
+		(uuid "a3f2f3a6-34ab-46dd-a74f-884eae2a6edd")
+	)
+	(wire
+		(pts
+			(xy 114.3 78.74) (xy 127 78.74)
+		)
+		(stroke
+			(width 0)
+			(type default)
+		)
+		(uuid "b9580bf8-05f0-421a-8f57-8f83d1ae501b")
+	)
+	(wire
+		(pts
 			(xy 66.04 48.26) (xy 83.82 48.26)
 		)
 		(stroke
@@ -893,6 +933,69 @@
 			(type default)
 		)
 		(uuid "c10e9935-5af5-45d4-9cd2-f80e5e21984f")
+	)
+	(wire
+		(pts
+			(xy 66.04 53.34) (xy 83.82 53.34)
+		)
+		(stroke
+			(width 0)
+			(type default)
+		)
+		(uuid "ca3d8eb7-5ee8-4022-b70c-390daad0a951")
+	)
+	(wire
+		(pts
+			(xy 66.04 68.58) (xy 83.82 68.58)
+		)
+		(stroke
+			(width 0)
+			(type default)
+		)
+		(uuid "d433e6fd-58e5-493f-9fa6-3de89ce6ad2e")
+	)
+	(wire
+		(pts
+			(xy 66.04 58.42) (xy 83.82 58.42)
+		)
+		(stroke
+			(width 0)
+			(type default)
+		)
+		(uuid "e6d6dd64-8646-49f1-979a-06b4b1c87886")
+	)
+	(hierarchical_label "CAM_PCLK"
+		(shape input)
+		(at 127 78.74 0)
+		(effects
+			(font
+				(size 1.27 1.27)
+			)
+			(justify left)
+		)
+		(uuid "12966f11-6d68-42df-ae9e-7df22f3ba19f")
+	)
+	(hierarchical_label "CAM_SIO_DAT"
+		(shape input)
+		(at 66.04 53.34 180)
+		(effects
+			(font
+				(size 1.27 1.27)
+			)
+			(justify right)
+		)
+		(uuid "3b75ed74-1c94-4f6e-bde4-8b4a6ae178b3")
+	)
+	(hierarchical_label "CAM_PWDN"
+		(shape input)
+		(at 66.04 58.42 180)
+		(effects
+			(font
+				(size 1.27 1.27)
+			)
+			(justify right)
+		)
+		(uuid "3bb42ed5-2f84-4624-bb9e-b0905e4f0aa3")
 	)
 	(hierarchical_label "LASER_RX"
 		(shape input)
@@ -904,6 +1007,50 @@
 			(justify right)
 		)
 		(uuid "61198337-522c-433a-b4d1-3dec09ba759a")
+	)
+	(hierarchical_label "CAM_VSYNC"
+		(shape input)
+		(at 66.04 66.04 180)
+		(effects
+			(font
+				(size 1.27 1.27)
+			)
+			(justify right)
+		)
+		(uuid "70934f0b-8055-4414-a0c3-4d17d32a92d6")
+	)
+	(hierarchical_label "CAM_SIO_CLK"
+		(shape input)
+		(at 66.04 55.88 180)
+		(effects
+			(font
+				(size 1.27 1.27)
+			)
+			(justify right)
+		)
+		(uuid "73ce94c6-307b-4cb5-b759-64698046c6b7")
+	)
+	(hierarchical_label "CAM_XCLK"
+		(shape input)
+		(at 66.04 76.2 180)
+		(effects
+			(font
+				(size 1.27 1.27)
+			)
+			(justify right)
+		)
+		(uuid "926d23e8-1a73-4fcf-919d-b8ccbbbd89c5")
+	)
+	(hierarchical_label "CAM_HREF"
+		(shape input)
+		(at 66.04 68.58 180)
+		(effects
+			(font
+				(size 1.27 1.27)
+			)
+			(justify right)
+		)
+		(uuid "a15fb464-c06b-4863-94da-cb1c3039a9b0")
 	)
 	(hierarchical_label "LASER_TX"
 		(shape output)
