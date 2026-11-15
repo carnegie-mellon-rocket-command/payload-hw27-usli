@@ -2,49 +2,41 @@
 	(version 20260306)
 	(generator "eeschema")
 	(generator_version "10.0")
-	(uuid "3778abd7-a763-4b77-bef5-9a032ad1d0f9")
+	(uuid "cb9d4d18-a994-4f7a-a520-28c9a0f44fa4")
 	(paper "A4")
 	(title_block
 		(company "Payload @ Carnegie Mellon Rocket Command")
 		(comment 1 "Designed by Simon Kaplinsky ")
 	)
 	(lib_symbols
-		(symbol "Device:C_Polarized"
-			(pin_numbers
-				(hide yes)
-			)
-			(pin_names
-				(offset 0.254)
-			)
+		(symbol "EasyEDA:EEEFK1V470P"
 			(exclude_from_sim no)
 			(in_bom yes)
 			(on_board yes)
 			(in_pos_files yes)
 			(duplicate_pin_numbers_are_jumpers no)
 			(property "Reference" "C"
-				(at 0.635 2.54 0)
+				(at 0 10.16 0)
 				(show_name no)
 				(do_not_autoplace no)
 				(effects
 					(font
 						(size 1.27 1.27)
 					)
-					(justify left)
 				)
 			)
-			(property "Value" "C_Polarized"
-				(at 0.635 -2.54 0)
+			(property "Value" "EEEFK1V470P"
+				(at 0 -10.16 0)
 				(show_name no)
 				(do_not_autoplace no)
 				(effects
 					(font
 						(size 1.27 1.27)
 					)
-					(justify left)
 				)
 			)
-			(property "Footprint" ""
-				(at 0.9652 -3.81 0)
+			(property "Footprint" "EasyEDA:CAP-SMD_BD6.3-L6.6-W6.6-FD"
+				(at 0 -12.7 0)
 				(show_name no)
 				(do_not_autoplace no)
 				(hide yes)
@@ -54,7 +46,18 @@
 					)
 				)
 			)
-			(property "Datasheet" ""
+			(property "Datasheet" "https://lcsc.com/product-detail/Others_PANASONIC_EEEFK1V470P_PANASONIC-EEEFK1V470P_C178565.html"
+				(at 0 -15.24 0)
+				(show_name no)
+				(do_not_autoplace no)
+				(hide yes)
+				(effects
+					(font
+						(size 1.27 1.27)
+					)
+				)
+			)
+			(property "Description" ""
 				(at 0 0 0)
 				(show_name no)
 				(do_not_autoplace no)
@@ -65,7 +68,40 @@
 					)
 				)
 			)
-			(property "Description" "Polarized capacitor"
+			(property "Manufacturer" "PANASONIC(松下)"
+				(at 0 -17.78 0)
+				(show_name no)
+				(do_not_autoplace no)
+				(hide yes)
+				(effects
+					(font
+						(size 1.27 1.27)
+					)
+				)
+			)
+			(property "MPN" "EEEFK1V470P"
+				(at 0 -20.32 0)
+				(show_name no)
+				(do_not_autoplace no)
+				(hide yes)
+				(effects
+					(font
+						(size 1.27 1.27)
+					)
+				)
+			)
+			(property "LCSC Part" "C178565"
+				(at 0 -22.86 0)
+				(show_name no)
+				(do_not_autoplace no)
+				(hide yes)
+				(effects
+					(font
+						(size 1.27 1.27)
+					)
+				)
+			)
+			(property "ki_keywords" "Aluminum Electrolytic Capacitors - SMD"
 				(at 0 0 0)
 				(show_name no)
 				(do_not_autoplace no)
@@ -76,55 +112,21 @@
 					)
 				)
 			)
-			(property "ki_keywords" "cap capacitor"
-				(at 0 0 0)
-				(show_name no)
-				(do_not_autoplace no)
-				(hide yes)
-				(effects
-					(font
-						(size 1.27 1.27)
-					)
-				)
-			)
-			(property "ki_fp_filters" "CP_*"
-				(at 0 0 0)
-				(show_name no)
-				(do_not_autoplace no)
-				(hide yes)
-				(effects
-					(font
-						(size 1.27 1.27)
-					)
-				)
-			)
-			(symbol "C_Polarized_0_1"
+			(symbol "EEEFK1V470P_0_1"
 				(rectangle
-					(start -2.286 0.508)
-					(end 2.286 1.016)
+					(start -2.54 1.52)
+					(end -1.52 1.5)
 					(stroke
 						(width 0)
 						(type default)
 					)
 					(fill
-						(type none)
+						(type background)
 					)
 				)
 				(polyline
 					(pts
-						(xy -1.778 2.286) (xy -0.762 2.286)
-					)
-					(stroke
-						(width 0)
-						(type default)
-					)
-					(fill
-						(type none)
-					)
-				)
-				(polyline
-					(pts
-						(xy -1.27 2.794) (xy -1.27 1.778)
+						(xy -2.54 0.76) (xy 2.54 0.76)
 					)
 					(stroke
 						(width 0)
@@ -135,22 +137,44 @@
 					)
 				)
 				(rectangle
-					(start 2.286 -0.508)
-					(end -2.286 -1.016)
+					(start -2.03 2.03)
+					(end -2.01 1.02)
 					(stroke
 						(width 0)
 						(type default)
 					)
 					(fill
-						(type outline)
+						(type background)
 					)
 				)
-			)
-			(symbol "C_Polarized_1_1"
-				(pin passive line
-					(at 0 3.81 270)
-					(length 2.794)
-					(name ""
+				(arc
+					(start -2.54 -1.02)
+					(mid -1.332 -0.4306)
+					(end 0 -0.25)
+					(stroke
+						(width 0)
+						(type default)
+					)
+					(fill
+						(type none)
+					)
+				)
+				(arc
+					(start 0 -0.25)
+					(mid 1.3347 -0.4214)
+					(end 2.54 -1.02)
+					(stroke
+						(width 0)
+						(type default)
+					)
+					(fill
+						(type none)
+					)
+				)
+				(pin unspecified line
+					(at 0 5.08 90)
+					(length 3.81)
+					(name "1"
 						(effects
 							(font
 								(size 1.27 1.27)
@@ -165,10 +189,10 @@
 						)
 					)
 				)
-				(pin passive line
-					(at 0 -3.81 90)
-					(length 2.794)
-					(name ""
+				(pin unspecified line
+					(at 0 -5.08 270)
+					(length 5.08)
+					(name "2"
 						(effects
 							(font
 								(size 1.27 1.27)
@@ -815,6 +839,12 @@
 		)
 	)
 	(junction
+		(at 120.65 74.93)
+		(diameter 0)
+		(color 0 0 0 0)
+		(uuid "13eb3d3d-26f9-4a7f-aecc-d469fc9d6dd7")
+	)
+	(junction
 		(at 140.97 85.09)
 		(diameter 0)
 		(color 0 0 0 0)
@@ -827,10 +857,10 @@
 		(uuid "1f40e311-b775-49d3-aa6c-ee8a6bf14b80")
 	)
 	(junction
-		(at 120.65 74.93)
+		(at 120.65 85.09)
 		(diameter 0)
 		(color 0 0 0 0)
-		(uuid "788995fe-c8c0-4297-9283-2244980f8957")
+		(uuid "c9bd27a2-7484-43cf-93c3-7d9825cdef6c")
 	)
 	(wire
 		(pts
@@ -854,6 +884,16 @@
 	)
 	(wire
 		(pts
+			(xy 120.65 74.93) (xy 127 74.93)
+		)
+		(stroke
+			(width 0)
+			(type default)
+		)
+		(uuid "5a6ce0dd-739d-4ffc-8b6d-93fc947c49ba")
+	)
+	(wire
+		(pts
 			(xy 125.73 73.66) (xy 127 73.66)
 		)
 		(stroke
@@ -864,7 +904,7 @@
 	)
 	(wire
 		(pts
-			(xy 120.65 74.93) (xy 127 74.93)
+			(xy 118.11 74.93) (xy 120.65 74.93)
 		)
 		(stroke
 			(width 0)
@@ -881,16 +921,6 @@
 			(type default)
 		)
 		(uuid "94662e3f-840b-4569-ac01-8cfe2239f151")
-	)
-	(wire
-		(pts
-			(xy 118.11 74.93) (xy 120.65 74.93)
-		)
-		(stroke
-			(width 0)
-			(type default)
-		)
-		(uuid "95ba8549-5ed7-4084-8702-e4161cf0ff5e")
 	)
 	(wire
 		(pts
@@ -933,7 +963,7 @@
 		)
 		(uuid "218e6a4f-b486-451f-828e-453b2df52ca4")
 	)
-	(hierarchical_label "Protected out"
+	(hierarchical_label "Protected in"
 		(shape input)
 		(at 125.73 73.66 0)
 		(effects
@@ -955,7 +985,7 @@
 		(in_pos_files yes)
 		(dnp no)
 		(uuid "129933fc-4501-4c23-8326-4d6d9a1cbcb1")
-		(property "Reference" "TVS"
+		(property "Reference" "TVS1"
 			(at 148.59 79.5 0)
 			(show_name no)
 			(do_not_autoplace no)
@@ -1050,7 +1080,7 @@
 		(instances
 			(project "flamingo"
 				(path "/817f49eb-0105-475d-aa60-c8a0ced591cc/c5e44d0c-2cd4-4f2b-9527-a93aaaabc021/5a587846-2e02-44ef-937d-7465c9da06d5"
-					(reference "TVS")
+					(reference "TVS1")
 					(unit 1)
 				)
 			)
@@ -1068,7 +1098,7 @@
 		(dnp no)
 		(fields_autoplaced yes)
 		(uuid "2fa8e54b-4344-442b-9820-ee2d2f67b40a")
-		(property "Reference" "RPolarity"
+		(property "Reference" "RPolarity1"
 			(at 113.285 68.58 0)
 			(show_name no)
 			(do_not_autoplace no)
@@ -1163,89 +1193,7 @@
 		(instances
 			(project "flamingo"
 				(path "/817f49eb-0105-475d-aa60-c8a0ced591cc/c5e44d0c-2cd4-4f2b-9527-a93aaaabc021/5a587846-2e02-44ef-937d-7465c9da06d5"
-					(reference "RPolarity")
-					(unit 1)
-				)
-			)
-		)
-	)
-	(symbol
-		(lib_id "Device:C_Polarized")
-		(at 120.65 78.74 0)
-		(unit 1)
-		(body_style 1)
-		(exclude_from_sim no)
-		(in_bom yes)
-		(on_board yes)
-		(in_pos_files yes)
-		(dnp no)
-		(fields_autoplaced yes)
-		(uuid "53eaea55-a0db-4a99-963a-e6ee8cd210aa")
-		(property "Reference" "C?"
-			(at 124.46 76.5809 0)
-			(show_name no)
-			(do_not_autoplace no)
-			(effects
-				(font
-					(size 1.27 1.27)
-				)
-				(justify left)
-			)
-		)
-		(property "Value" "C_Polarized"
-			(at 124.46 79.1209 0)
-			(show_name no)
-			(do_not_autoplace no)
-			(effects
-				(font
-					(size 1.27 1.27)
-				)
-				(justify left)
-			)
-		)
-		(property "Footprint" ""
-			(at 121.6152 82.55 0)
-			(hide yes)
-			(show_name no)
-			(do_not_autoplace no)
-			(effects
-				(font
-					(size 1.27 1.27)
-				)
-			)
-		)
-		(property "Datasheet" ""
-			(at 120.65 78.74 0)
-			(hide yes)
-			(show_name no)
-			(do_not_autoplace no)
-			(effects
-				(font
-					(size 1.27 1.27)
-				)
-			)
-		)
-		(property "Description" "Polarized capacitor"
-			(at 120.65 78.74 0)
-			(hide yes)
-			(show_name no)
-			(do_not_autoplace no)
-			(effects
-				(font
-					(size 1.27 1.27)
-				)
-			)
-		)
-		(pin "2"
-			(uuid "cfcb7b21-68e3-4c42-9c80-eb18d7325dc2")
-		)
-		(pin "1"
-			(uuid "07919a1b-3c7d-4cd2-8e56-843fab8c53d3")
-		)
-		(instances
-			(project "flamingo"
-				(path "/817f49eb-0105-475d-aa60-c8a0ced591cc/c5e44d0c-2cd4-4f2b-9527-a93aaaabc021/5a587846-2e02-44ef-937d-7465c9da06d5"
-					(reference "C?")
+					(reference "RPolarity1")
 					(unit 1)
 				)
 			)
@@ -1263,7 +1211,7 @@
 		(dnp no)
 		(fields_autoplaced yes)
 		(uuid "5afb2f49-1708-477c-b7a3-9509bf8a808d")
-		(property "Reference" "resetablefuse"
+		(property "Reference" "resetablefuse1"
 			(at 101.6 68.58 0)
 			(show_name no)
 			(do_not_autoplace no)
@@ -1358,7 +1306,7 @@
 		(instances
 			(project "flamingo"
 				(path "/817f49eb-0105-475d-aa60-c8a0ced591cc/c5e44d0c-2cd4-4f2b-9527-a93aaaabc021/5a587846-2e02-44ef-937d-7465c9da06d5"
-					(reference "resetablefuse")
+					(reference "resetablefuse1")
 					(unit 1)
 				)
 			)
@@ -1437,6 +1385,121 @@
 			(project "flamingo"
 				(path "/817f49eb-0105-475d-aa60-c8a0ced591cc/c5e44d0c-2cd4-4f2b-9527-a93aaaabc021/5a587846-2e02-44ef-937d-7465c9da06d5"
 					(reference "#PWR03")
+					(unit 1)
+				)
+			)
+		)
+	)
+	(symbol
+		(lib_id "EasyEDA:EEEFK1V470P")
+		(at 120.65 80.01 0)
+		(unit 1)
+		(body_style 1)
+		(exclude_from_sim no)
+		(in_bom yes)
+		(on_board yes)
+		(in_pos_files yes)
+		(dnp no)
+		(fields_autoplaced yes)
+		(uuid "f51c87e8-5e12-4484-9410-5214b3072fa6")
+		(property "Reference" "47uf1"
+			(at 124.46 79.3749 0)
+			(show_name no)
+			(do_not_autoplace no)
+			(effects
+				(font
+					(size 1.27 1.27)
+				)
+				(justify left)
+			)
+		)
+		(property "Value" "EEEFK1V470P"
+			(at 124.46 81.9149 0)
+			(show_name no)
+			(do_not_autoplace no)
+			(effects
+				(font
+					(size 1.27 1.27)
+				)
+				(justify left)
+			)
+		)
+		(property "Footprint" "EasyEDA:CAP-SMD_BD6.3-L6.6-W6.6-FD"
+			(at 120.65 92.71 0)
+			(hide yes)
+			(show_name no)
+			(do_not_autoplace no)
+			(effects
+				(font
+					(size 1.27 1.27)
+				)
+			)
+		)
+		(property "Datasheet" "https://lcsc.com/product-detail/Others_PANASONIC_EEEFK1V470P_PANASONIC-EEEFK1V470P_C178565.html"
+			(at 120.65 95.25 0)
+			(hide yes)
+			(show_name no)
+			(do_not_autoplace no)
+			(effects
+				(font
+					(size 1.27 1.27)
+				)
+			)
+		)
+		(property "Description" ""
+			(at 120.65 80.01 0)
+			(hide yes)
+			(show_name no)
+			(do_not_autoplace no)
+			(effects
+				(font
+					(size 1.27 1.27)
+				)
+			)
+		)
+		(property "Manufacturer" "PANASONIC(松下)"
+			(at 120.65 97.79 0)
+			(hide yes)
+			(show_name no)
+			(do_not_autoplace no)
+			(effects
+				(font
+					(size 1.27 1.27)
+				)
+			)
+		)
+		(property "MPN" "EEEFK1V470P"
+			(at 120.65 100.33 0)
+			(hide yes)
+			(show_name no)
+			(do_not_autoplace no)
+			(effects
+				(font
+					(size 1.27 1.27)
+				)
+			)
+		)
+		(property "LCSC Part" "C178565"
+			(at 120.65 102.87 0)
+			(hide yes)
+			(show_name no)
+			(do_not_autoplace no)
+			(effects
+				(font
+					(size 1.27 1.27)
+				)
+			)
+		)
+		(pin "2"
+			(uuid "7c69def0-e761-4924-810e-520d6d4233f9")
+		)
+		(pin "1"
+			(uuid "efb5a6e9-4445-4a6d-88ab-6f5c75c81a89")
+		)
+		(instances
+			(project "flamingo"
+				(path "/817f49eb-0105-475d-aa60-c8a0ced591cc/c5e44d0c-2cd4-4f2b-9527-a93aaaabc021/5a587846-2e02-44ef-937d-7465c9da06d5"
+					(reference "47uf1")
 					(unit 1)
 				)
 			)

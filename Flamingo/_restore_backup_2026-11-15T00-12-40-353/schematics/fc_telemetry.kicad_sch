@@ -1,0 +1,25 @@
+(kicad_sch
+	(version 20260306)
+	(generator "eeschema")
+	(generator_version "10.0")
+	(uuid "12be16e6-0c8b-4b97-bcd2-b9e179bb0b86")
+	(paper "A4")
+	(title_block
+		(title "Flamingo")
+		(date "2026-10-27")
+		(company "Payload @ Carnegie Mellon Rocket Command")
+		(comment 1 "Designed by Simon Kaplinsky ")
+	)
+	(lib_symbols)
+	(text "FLIGHT-CONTROLLER TELEMETRY - circuit pending\nExternal MicoAir405v2 supplies navigation, attitude and altitude.\nFC T4 -> ESP32 GPIO2 RX; FC R4 <- GPIO1 TX; shared GND.\n3.3 V UART; start with MAVLink 2 at 115200 baud.\nFlamingo has no onboard GNSS receiver; power arrives separately."
+		(exclude_from_sim no)
+		(at 20 30 0)
+		(effects
+			(font
+				(size 1.27 1.27)
+			)
+			(justify left top)
+		)
+		(uuid "ad78c682-cf7a-40e1-b2cb-d51da16decc0")
+	)
+)

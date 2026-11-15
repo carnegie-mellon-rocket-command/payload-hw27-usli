@@ -1,0 +1,14 @@
+(kicad_sch
+	(version 20260306)
+	(generator "eeschema")
+	(generator_version "10.0")
+	(uuid "61da6ed4-d037-4504-99f4-28b696c31bee")
+	(paper "A4")
+	(title_block
+		(title "Flamingo")
+		(date "2026-10-27")
+		(company "Payload @ Carnegie Mellon Rocket Command")
+		(comment 1 "Designed by Simon Kaplinsky ")
+	)
+	(lib_symbols)
+)

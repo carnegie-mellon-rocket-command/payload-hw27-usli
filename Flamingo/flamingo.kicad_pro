@@ -649,7 +649,7 @@
         "uuid": "817f49eb-0105-475d-aa60-c8a0ced591cc"
       }
     ],
-    "used_designators": "J1-3,#PWR1-4,U1",
+    "used_designators": "resetablefuse1,J1-3,#PWR1-4,#PWR7-8,U1-2,4SPlug1,Buckconverter1,C1,RPolarity1,TVS1,.1uf1,10uf1,10uH1,47uf1",
     "variants": []
   },
   "sheets": [
@@ -696,6 +696,10 @@
     [
       "5a587846-2e02-44ef-937d-7465c9da06d5",
       "Input Protection"
+    ],
+    [
+      "0a5bbc8c-2796-4a7c-ac7a-9c1395654364",
+      "buck4S_5V"
     ]
   ],
   "text_variables": {},
