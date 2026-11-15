@@ -166,6 +166,183 @@
 			)
 			(embedded_fonts no)
 		)
+		(symbol "Device:C_Polarized"
+			(pin_numbers
+				(hide yes)
+			)
+			(pin_names
+				(offset 0.254)
+			)
+			(exclude_from_sim no)
+			(in_bom yes)
+			(on_board yes)
+			(in_pos_files yes)
+			(duplicate_pin_numbers_are_jumpers no)
+			(property "Reference" "C"
+				(at 0.635 2.54 0)
+				(show_name no)
+				(do_not_autoplace no)
+				(effects
+					(font
+						(size 1.27 1.27)
+					)
+					(justify left)
+				)
+			)
+			(property "Value" "C_Polarized"
+				(at 0.635 -2.54 0)
+				(show_name no)
+				(do_not_autoplace no)
+				(effects
+					(font
+						(size 1.27 1.27)
+					)
+					(justify left)
+				)
+			)
+			(property "Footprint" ""
+				(at 0.9652 -3.81 0)
+				(show_name no)
+				(do_not_autoplace no)
+				(hide yes)
+				(effects
+					(font
+						(size 1.27 1.27)
+					)
+				)
+			)
+			(property "Datasheet" ""
+				(at 0 0 0)
+				(show_name no)
+				(do_not_autoplace no)
+				(hide yes)
+				(effects
+					(font
+						(size 1.27 1.27)
+					)
+				)
+			)
+			(property "Description" "Polarized capacitor"
+				(at 0 0 0)
+				(show_name no)
+				(do_not_autoplace no)
+				(hide yes)
+				(effects
+					(font
+						(size 1.27 1.27)
+					)
+				)
+			)
+			(property "ki_keywords" "cap capacitor"
+				(at 0 0 0)
+				(show_name no)
+				(do_not_autoplace no)
+				(hide yes)
+				(effects
+					(font
+						(size 1.27 1.27)
+					)
+				)
+			)
+			(property "ki_fp_filters" "CP_*"
+				(at 0 0 0)
+				(show_name no)
+				(do_not_autoplace no)
+				(hide yes)
+				(effects
+					(font
+						(size 1.27 1.27)
+					)
+				)
+			)
+			(symbol "C_Polarized_0_1"
+				(rectangle
+					(start -2.286 0.508)
+					(end 2.286 1.016)
+					(stroke
+						(width 0)
+						(type default)
+					)
+					(fill
+						(type none)
+					)
+				)
+				(polyline
+					(pts
+						(xy -1.778 2.286) (xy -0.762 2.286)
+					)
+					(stroke
+						(width 0)
+						(type default)
+					)
+					(fill
+						(type none)
+					)
+				)
+				(polyline
+					(pts
+						(xy -1.27 2.794) (xy -1.27 1.778)
+					)
+					(stroke
+						(width 0)
+						(type default)
+					)
+					(fill
+						(type none)
+					)
+				)
+				(rectangle
+					(start 2.286 -0.508)
+					(end -2.286 -1.016)
+					(stroke
+						(width 0)
+						(type default)
+					)
+					(fill
+						(type outline)
+					)
+				)
+			)
+			(symbol "C_Polarized_1_1"
+				(pin passive line
+					(at 0 3.81 270)
+					(length 2.794)
+					(name ""
+						(effects
+							(font
+								(size 1.27 1.27)
+							)
+						)
+					)
+					(number "1"
+						(effects
+							(font
+								(size 1.27 1.27)
+							)
+						)
+					)
+				)
+				(pin passive line
+					(at 0 -3.81 90)
+					(length 2.794)
+					(name ""
+						(effects
+							(font
+								(size 1.27 1.27)
+							)
+						)
+					)
+					(number "2"
+						(effects
+							(font
+								(size 1.27 1.27)
+							)
+						)
+					)
+				)
+			)
+			(embedded_fonts no)
+		)
 		(symbol "Device:L"
 			(pin_numbers
 				(hide yes)
@@ -1345,6 +1522,18 @@
 		(uuid "4fd85a1d-d5f9-4d5a-8249-acdb1fd4ee84")
 	)
 	(junction
+		(at 142.24 69.85)
+		(diameter 0)
+		(color 0 0 0 0)
+		(uuid "680fb6e7-5a91-462a-b6c9-2b8515c82f8a")
+	)
+	(junction
+		(at 146.05 73.66)
+		(diameter 0)
+		(color 0 0 0 0)
+		(uuid "78cb571d-5c55-4528-a1c6-44c389b1ab47")
+	)
+	(junction
 		(at 97.79 107.95)
 		(diameter 0)
 		(color 0 0 0 0)
@@ -1369,6 +1558,12 @@
 		(uuid "c2be076b-de81-4ed7-a8fe-f6b42a96ee96")
 	)
 	(junction
+		(at 172.72 83.82)
+		(diameter 0)
+		(color 0 0 0 0)
+		(uuid "d3c5bbbe-e4f8-4119-91dc-a0bb01a872de")
+	)
+	(junction
 		(at 54.61 109.22)
 		(diameter 0)
 		(color 0 0 0 0)
@@ -1379,6 +1574,16 @@
 		(diameter 0)
 		(color 0 0 0 0)
 		(uuid "e539526f-4ca5-4f9c-bf8f-61dc1daef170")
+	)
+	(wire
+		(pts
+			(xy 146.05 73.66) (xy 152.4 73.66)
+		)
+		(stroke
+			(width 0)
+			(type default)
+		)
+		(uuid "052cfe10-5617-410e-8ad8-eb16a1df98d1")
 	)
 	(wire
 		(pts
@@ -1449,6 +1654,16 @@
 			(type default)
 		)
 		(uuid "15fe8f1c-92e6-456e-be73-58fab338466c")
+	)
+	(wire
+		(pts
+			(xy 140.97 69.85) (xy 142.24 69.85)
+		)
+		(stroke
+			(width 0)
+			(type default)
+		)
+		(uuid "201a2904-6c98-40c4-aa43-ff624c273363")
 	)
 	(wire
 		(pts
@@ -1572,7 +1787,7 @@
 	)
 	(wire
 		(pts
-			(xy 177.8 83.82) (xy 152.4 83.82)
+			(xy 177.8 83.82) (xy 172.72 83.82)
 		)
 		(stroke
 			(width 0)
@@ -1582,7 +1797,27 @@
 	)
 	(wire
 		(pts
-			(xy 115.57 73.66) (xy 152.4 73.66)
+			(xy 142.24 69.85) (xy 152.4 69.85)
+		)
+		(stroke
+			(width 0)
+			(type default)
+		)
+		(uuid "8ee01def-bea9-4d49-bd74-ea97a7cb0b59")
+	)
+	(wire
+		(pts
+			(xy 146.05 81.28) (xy 146.05 83.82)
+		)
+		(stroke
+			(width 0)
+			(type default)
+		)
+		(uuid "9d586a27-1cdb-4235-8405-08a9042b3d72")
+	)
+	(wire
+		(pts
+			(xy 115.57 73.66) (xy 146.05 73.66)
 		)
 		(stroke
 			(width 0)
@@ -1639,6 +1874,16 @@
 			(type default)
 		)
 		(uuid "cec5905f-9a64-4522-a523-c4128d1b1e24")
+	)
+	(wire
+		(pts
+			(xy 172.72 83.82) (xy 152.4 83.82)
+		)
+		(stroke
+			(width 0)
+			(type default)
+		)
+		(uuid "d2071c70-6825-4267-86c6-8cbe42ea711c")
 	)
 	(wire
 		(pts
@@ -1746,7 +1991,7 @@
 	)
 	(global_label "SYS_5V"
 		(shape input)
-		(at 152.4 69.85 180)
+		(at 140.97 69.85 180)
 		(fields_autoplaced yes)
 		(effects
 			(font
@@ -1756,7 +2001,7 @@
 		)
 		(uuid "b8778fea-1aa4-4a03-9881-7ab4fa8da07d")
 		(property "Intersheetrefs" "${INTERSHEET_REFS}"
-			(at 147.1167 69.85 0)
+			(at 135.6867 69.85 0)
 			(hide yes)
 			(show_name no)
 			(do_not_autoplace no)
@@ -1984,6 +2229,99 @@
 		)
 	)
 	(symbol
+		(lib_id "Device:C")
+		(at 54.61 116.84 0)
+		(unit 1)
+		(body_style 1)
+		(exclude_from_sim no)
+		(in_bom yes)
+		(on_board yes)
+		(in_pos_files yes)
+		(dnp no)
+		(fields_autoplaced yes)
+		(uuid "0e1bc691-8417-4710-9da5-80c5268bd0bc")
+		(property "Reference" "C1"
+			(at 58.42 115.5699 0)
+			(show_name no)
+			(do_not_autoplace no)
+			(effects
+				(font
+					(size 1.27 1.27)
+				)
+				(justify left)
+			)
+		)
+		(property "Value" "10uF"
+			(at 58.42 118.1099 0)
+			(show_name no)
+			(do_not_autoplace no)
+			(effects
+				(font
+					(size 1.27 1.27)
+				)
+				(justify left)
+			)
+		)
+		(property "Footprint" "Capacitor_SMD:C_0805_2012Metric"
+			(at 55.5752 120.65 0)
+			(hide yes)
+			(show_name no)
+			(do_not_autoplace no)
+			(effects
+				(font
+					(size 1.27 1.27)
+				)
+			)
+		)
+		(property "Datasheet" ""
+			(at 54.61 116.84 0)
+			(hide yes)
+			(show_name no)
+			(do_not_autoplace no)
+			(effects
+				(font
+					(size 1.27 1.27)
+				)
+			)
+		)
+		(property "Description" "Unpolarized capacitor"
+			(at 54.61 116.84 0)
+			(hide yes)
+			(show_name no)
+			(do_not_autoplace no)
+			(effects
+				(font
+					(size 1.27 1.27)
+				)
+			)
+		)
+		(property "LCSC" "C15850"
+			(at 54.61 116.84 0)
+			(hide yes)
+			(show_name no)
+			(do_not_autoplace no)
+			(effects
+				(font
+					(size 1.27 1.27)
+				)
+			)
+		)
+		(pin "2"
+			(uuid "b68eeb51-4491-4318-b6ad-d39f4f069fb7")
+		)
+		(pin "1"
+			(uuid "36e4a2a0-3cdd-43ac-93b1-a7f83efb5f65")
+		)
+		(instances
+			(project "flamingo"
+				(path "/817f49eb-0105-475d-aa60-c8a0ced591cc/c5e44d0c-2cd4-4f2b-9527-a93aaaabc021"
+					(reference "C1")
+					(unit 1)
+				)
+			)
+		)
+	)
+	(symbol
 		(lib_id "Device:R")
 		(at 189.23 78.74 0)
 		(mirror x)
@@ -1994,10 +2332,9 @@
 		(on_board yes)
 		(in_pos_files yes)
 		(dnp no)
-		(fields_autoplaced yes)
 		(uuid "12b095c3-b90a-43d5-9531-4e28c233ddd9")
 		(property "Reference" "R8"
-			(at 186.69 77.4699 0)
+			(at 193.04 77.47 0)
 			(show_name no)
 			(do_not_autoplace no)
 			(effects
@@ -2008,7 +2345,7 @@
 			)
 		)
 		(property "Value" "10k"
-			(at 186.69 80.0099 0)
+			(at 194.31 80.01 0)
 			(show_name no)
 			(do_not_autoplace no)
 			(effects
@@ -2072,6 +2409,99 @@
 			(project "flamingo"
 				(path "/817f49eb-0105-475d-aa60-c8a0ced591cc/c5e44d0c-2cd4-4f2b-9527-a93aaaabc021"
 					(reference "R8")
+					(unit 1)
+				)
+			)
+		)
+	)
+	(symbol
+		(lib_id "Device:C")
+		(at 146.05 77.47 180)
+		(unit 1)
+		(body_style 1)
+		(exclude_from_sim no)
+		(in_bom yes)
+		(on_board yes)
+		(in_pos_files yes)
+		(dnp no)
+		(fields_autoplaced yes)
+		(uuid "1feefb58-4e1d-479e-8aa3-2f8c1ba04ac7")
+		(property "Reference" "C9"
+			(at 149.86 76.1999 0)
+			(show_name no)
+			(do_not_autoplace no)
+			(effects
+				(font
+					(size 1.27 1.27)
+				)
+				(justify right)
+			)
+		)
+		(property "Value" "4.7uF"
+			(at 149.86 78.7399 0)
+			(show_name no)
+			(do_not_autoplace no)
+			(effects
+				(font
+					(size 1.27 1.27)
+				)
+				(justify right)
+			)
+		)
+		(property "Footprint" "Capacitor_SMD:C_0805_2012Metric"
+			(at 145.0848 73.66 0)
+			(hide yes)
+			(show_name no)
+			(do_not_autoplace no)
+			(effects
+				(font
+					(size 1.27 1.27)
+				)
+			)
+		)
+		(property "Datasheet" ""
+			(at 146.05 77.47 0)
+			(hide yes)
+			(show_name no)
+			(do_not_autoplace no)
+			(effects
+				(font
+					(size 1.27 1.27)
+				)
+			)
+		)
+		(property "Description" "Unpolarized capacitor"
+			(at 146.05 77.47 0)
+			(hide yes)
+			(show_name no)
+			(do_not_autoplace no)
+			(effects
+				(font
+					(size 1.27 1.27)
+				)
+			)
+		)
+		(property "LCSC" "C1779"
+			(at 146.05 77.47 0)
+			(hide yes)
+			(show_name no)
+			(do_not_autoplace no)
+			(effects
+				(font
+					(size 1.27 1.27)
+				)
+			)
+		)
+		(pin "2"
+			(uuid "9754db0f-93a0-447e-8e2d-57e2bb57792e")
+		)
+		(pin "1"
+			(uuid "47c2ce9f-7fdf-46c9-bef0-8ba5bb99d81f")
+		)
+		(instances
+			(project "flamingo"
+				(path "/817f49eb-0105-475d-aa60-c8a0ced591cc/c5e44d0c-2cd4-4f2b-9527-a93aaaabc021"
+					(reference "C9")
 					(unit 1)
 				)
 			)
@@ -2249,7 +2679,7 @@
 	)
 	(symbol
 		(lib_id "Device:C")
-		(at 54.61 116.84 180)
+		(at 172.72 87.63 180)
 		(unit 1)
 		(body_style 1)
 		(exclude_from_sim no)
@@ -2258,9 +2688,9 @@
 		(in_pos_files yes)
 		(dnp no)
 		(fields_autoplaced yes)
-		(uuid "39642338-cc53-4c48-815e-edabc743bae1")
-		(property "Reference" "C1"
-			(at 58.42 115.5699 0)
+		(uuid "3c3a5322-0b1b-4de0-8371-874d11f527fb")
+		(property "Reference" "C10"
+			(at 176.53 86.3599 0)
 			(show_name no)
 			(do_not_autoplace no)
 			(effects
@@ -2270,8 +2700,8 @@
 				(justify right)
 			)
 		)
-		(property "Value" "10uF"
-			(at 58.42 118.1099 0)
+		(property "Value" "4.7uF"
+			(at 176.53 88.8999 0)
 			(show_name no)
 			(do_not_autoplace no)
 			(effects
@@ -2281,8 +2711,8 @@
 				(justify right)
 			)
 		)
-		(property "Footprint" "Capacitor_SMD:C_1206_3216Metric"
-			(at 53.6448 113.03 0)
+		(property "Footprint" "Capacitor_SMD:C_0805_2012Metric"
+			(at 171.7548 83.82 0)
 			(hide yes)
 			(show_name no)
 			(do_not_autoplace no)
@@ -2293,7 +2723,7 @@
 			)
 		)
 		(property "Datasheet" ""
-			(at 54.61 116.84 0)
+			(at 172.72 87.63 0)
 			(hide yes)
 			(show_name no)
 			(do_not_autoplace no)
@@ -2304,7 +2734,7 @@
 			)
 		)
 		(property "Description" "Unpolarized capacitor"
-			(at 54.61 116.84 0)
+			(at 172.72 87.63 0)
 			(hide yes)
 			(show_name no)
 			(do_not_autoplace no)
@@ -2314,8 +2744,8 @@
 				)
 			)
 		)
-		(property "LCSC" "C13585"
-			(at 54.61 116.84 0)
+		(property "LCSC" "C1779"
+			(at 172.72 87.63 0)
 			(hide yes)
 			(show_name no)
 			(do_not_autoplace no)
@@ -2326,15 +2756,15 @@
 			)
 		)
 		(pin "2"
-			(uuid "c74823e5-920f-4dd9-b5d2-7ea30de706fc")
+			(uuid "45ed93b3-31f6-4f9b-81a3-e3092908290d")
 		)
 		(pin "1"
-			(uuid "9b89f00b-0086-4309-9cb1-3e73c3bb8c98")
+			(uuid "1bb0dbe3-4c89-4f5d-9f62-ac9fb76b20fb")
 		)
 		(instances
 			(project "flamingo"
 				(path "/817f49eb-0105-475d-aa60-c8a0ced591cc/c5e44d0c-2cd4-4f2b-9527-a93aaaabc021"
-					(reference "C1")
+					(reference "C10")
 					(unit 1)
 				)
 			)
@@ -2351,10 +2781,9 @@
 		(on_board yes)
 		(in_pos_files yes)
 		(dnp no)
-		(fields_autoplaced yes)
 		(uuid "4a219369-b18f-4f2e-809d-351a641f3b95")
 		(property "Reference" "R9"
-			(at 182.88 68.58 90)
+			(at 182.88 77.47 90)
 			(show_name no)
 			(do_not_autoplace no)
 			(effects
@@ -2364,7 +2793,7 @@
 			)
 		)
 		(property "Value" "33k"
-			(at 182.88 71.12 90)
+			(at 182.88 80.01 90)
 			(show_name no)
 			(do_not_autoplace no)
 			(effects
@@ -2639,6 +3068,84 @@
 			(project "flamingo"
 				(path "/817f49eb-0105-475d-aa60-c8a0ced591cc/c5e44d0c-2cd4-4f2b-9527-a93aaaabc021"
 					(reference "#PWR011")
+					(unit 1)
+				)
+			)
+		)
+	)
+	(symbol
+		(lib_id "power:GND")
+		(at 142.24 62.23 180)
+		(unit 1)
+		(body_style 1)
+		(exclude_from_sim no)
+		(in_bom yes)
+		(on_board yes)
+		(in_pos_files yes)
+		(dnp no)
+		(fields_autoplaced yes)
+		(uuid "8085e925-64a2-4eb9-8a89-c512159ca950")
+		(property "Reference" "#PWR023"
+			(at 142.24 55.88 0)
+			(hide yes)
+			(show_name no)
+			(do_not_autoplace no)
+			(effects
+				(font
+					(size 1.27 1.27)
+				)
+			)
+		)
+		(property "Value" "GND"
+			(at 142.24 57.15 0)
+			(show_name no)
+			(do_not_autoplace no)
+			(effects
+				(font
+					(size 1.27 1.27)
+				)
+			)
+		)
+		(property "Footprint" ""
+			(at 142.24 62.23 0)
+			(hide yes)
+			(show_name no)
+			(do_not_autoplace no)
+			(effects
+				(font
+					(size 1.27 1.27)
+				)
+			)
+		)
+		(property "Datasheet" ""
+			(at 142.24 62.23 0)
+			(hide yes)
+			(show_name no)
+			(do_not_autoplace no)
+			(effects
+				(font
+					(size 1.27 1.27)
+				)
+			)
+		)
+		(property "Description" "Power symbol creates a global label with name \"GND\" , ground"
+			(at 142.24 62.23 0)
+			(hide yes)
+			(show_name no)
+			(do_not_autoplace no)
+			(effects
+				(font
+					(size 1.27 1.27)
+				)
+			)
+		)
+		(pin "1"
+			(uuid "1f42cae1-f4f6-4c26-9d2d-46f975daedfa")
+		)
+		(instances
+			(project "flamingo"
+				(path "/817f49eb-0105-475d-aa60-c8a0ced591cc/c5e44d0c-2cd4-4f2b-9527-a93aaaabc021"
+					(reference "#PWR023")
 					(unit 1)
 				)
 			)
@@ -3068,6 +3575,84 @@
 	)
 	(symbol
 		(lib_id "power:GND")
+		(at 146.05 83.82 0)
+		(unit 1)
+		(body_style 1)
+		(exclude_from_sim no)
+		(in_bom yes)
+		(on_board yes)
+		(in_pos_files yes)
+		(dnp no)
+		(fields_autoplaced yes)
+		(uuid "bc2b6c86-c0b1-45e5-a519-be584fcd3745")
+		(property "Reference" "#PWR021"
+			(at 146.05 90.17 0)
+			(hide yes)
+			(show_name no)
+			(do_not_autoplace no)
+			(effects
+				(font
+					(size 1.27 1.27)
+				)
+			)
+		)
+		(property "Value" "GND"
+			(at 146.05 88.9 0)
+			(show_name no)
+			(do_not_autoplace no)
+			(effects
+				(font
+					(size 1.27 1.27)
+				)
+			)
+		)
+		(property "Footprint" ""
+			(at 146.05 83.82 0)
+			(hide yes)
+			(show_name no)
+			(do_not_autoplace no)
+			(effects
+				(font
+					(size 1.27 1.27)
+				)
+			)
+		)
+		(property "Datasheet" ""
+			(at 146.05 83.82 0)
+			(hide yes)
+			(show_name no)
+			(do_not_autoplace no)
+			(effects
+				(font
+					(size 1.27 1.27)
+				)
+			)
+		)
+		(property "Description" "Power symbol creates a global label with name \"GND\" , ground"
+			(at 146.05 83.82 0)
+			(hide yes)
+			(show_name no)
+			(do_not_autoplace no)
+			(effects
+				(font
+					(size 1.27 1.27)
+				)
+			)
+		)
+		(pin "1"
+			(uuid "181e87fd-deae-46eb-a153-cc263a4159c3")
+		)
+		(instances
+			(project "flamingo"
+				(path "/817f49eb-0105-475d-aa60-c8a0ced591cc/c5e44d0c-2cd4-4f2b-9527-a93aaaabc021"
+					(reference "#PWR021")
+					(unit 1)
+				)
+			)
+		)
+	)
+	(symbol
+		(lib_id "power:GND")
 		(at 189.23 82.55 0)
 		(unit 1)
 		(body_style 1)
@@ -3233,6 +3818,166 @@
 			(project "flamingo"
 				(path "/817f49eb-0105-475d-aa60-c8a0ced591cc/c5e44d0c-2cd4-4f2b-9527-a93aaaabc021"
 					(reference "R10")
+					(unit 1)
+				)
+			)
+		)
+	)
+	(symbol
+		(lib_id "power:GND")
+		(at 172.72 91.44 0)
+		(unit 1)
+		(body_style 1)
+		(exclude_from_sim no)
+		(in_bom yes)
+		(on_board yes)
+		(in_pos_files yes)
+		(dnp no)
+		(fields_autoplaced yes)
+		(uuid "e99a5259-ed49-4fd2-844a-b8e69023b0f5")
+		(property "Reference" "#PWR022"
+			(at 172.72 97.79 0)
+			(hide yes)
+			(show_name no)
+			(do_not_autoplace no)
+			(effects
+				(font
+					(size 1.27 1.27)
+				)
+			)
+		)
+		(property "Value" "GND"
+			(at 172.72 96.52 0)
+			(show_name no)
+			(do_not_autoplace no)
+			(effects
+				(font
+					(size 1.27 1.27)
+				)
+			)
+		)
+		(property "Footprint" ""
+			(at 172.72 91.44 0)
+			(hide yes)
+			(show_name no)
+			(do_not_autoplace no)
+			(effects
+				(font
+					(size 1.27 1.27)
+				)
+			)
+		)
+		(property "Datasheet" ""
+			(at 172.72 91.44 0)
+			(hide yes)
+			(show_name no)
+			(do_not_autoplace no)
+			(effects
+				(font
+					(size 1.27 1.27)
+				)
+			)
+		)
+		(property "Description" "Power symbol creates a global label with name \"GND\" , ground"
+			(at 172.72 91.44 0)
+			(hide yes)
+			(show_name no)
+			(do_not_autoplace no)
+			(effects
+				(font
+					(size 1.27 1.27)
+				)
+			)
+		)
+		(pin "1"
+			(uuid "ab4b63f5-8677-4e49-b959-ef0292ea9ba8")
+		)
+		(instances
+			(project "flamingo"
+				(path "/817f49eb-0105-475d-aa60-c8a0ced591cc/c5e44d0c-2cd4-4f2b-9527-a93aaaabc021"
+					(reference "#PWR022")
+					(unit 1)
+				)
+			)
+		)
+	)
+	(symbol
+		(lib_id "Device:C_Polarized")
+		(at 142.24 66.04 180)
+		(unit 1)
+		(body_style 1)
+		(exclude_from_sim no)
+		(in_bom yes)
+		(on_board yes)
+		(in_pos_files yes)
+		(dnp no)
+		(fields_autoplaced yes)
+		(uuid "ea81b67d-1918-432c-bf95-8ffbdf93d198")
+		(property "Reference" "C11"
+			(at 146.05 65.6589 0)
+			(show_name no)
+			(do_not_autoplace no)
+			(effects
+				(font
+					(size 1.27 1.27)
+				)
+				(justify right)
+			)
+		)
+		(property "Value" "100uF"
+			(at 146.05 68.1989 0)
+			(show_name no)
+			(do_not_autoplace no)
+			(effects
+				(font
+					(size 1.27 1.27)
+				)
+				(justify right)
+			)
+		)
+		(property "Footprint" ""
+			(at 141.2748 62.23 0)
+			(hide yes)
+			(show_name no)
+			(do_not_autoplace no)
+			(effects
+				(font
+					(size 1.27 1.27)
+				)
+			)
+		)
+		(property "Datasheet" ""
+			(at 142.24 66.04 0)
+			(hide yes)
+			(show_name no)
+			(do_not_autoplace no)
+			(effects
+				(font
+					(size 1.27 1.27)
+				)
+			)
+		)
+		(property "Description" "Polarized capacitor"
+			(at 142.24 66.04 0)
+			(hide yes)
+			(show_name no)
+			(do_not_autoplace no)
+			(effects
+				(font
+					(size 1.27 1.27)
+				)
+			)
+		)
+		(pin "2"
+			(uuid "ed778ec2-5d17-4e64-9a43-da99797e6842")
+		)
+		(pin "1"
+			(uuid "3365ed18-b1fd-4812-8006-c65158ebb1f7")
+		)
+		(instances
+			(project "flamingo"
+				(path "/817f49eb-0105-475d-aa60-c8a0ced591cc/c5e44d0c-2cd4-4f2b-9527-a93aaaabc021"
+					(reference "C11")
 					(unit 1)
 				)
 			)

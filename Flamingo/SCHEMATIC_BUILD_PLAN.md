@@ -7,8 +7,8 @@ Updated: 2026-11-15. Checked against the saved active KiCad hierarchy. Checked b
 | Page | Saved state | Remaining work |
 |---|---|---|
 | System overview | Nine functional sheet boxes; USB power and laser links drawn | Connect SD and USB data at the parent; camera, FC and expansion interfaces |
-| Power distribution | J4 XT30 input; protection/buck child sheets; U2 TPS2116 and U3 TPS62162 support | Local mux capacitors, USB protection and complete power review |
-| Battery input protection | F1 MF-R160, D2 SS34, D1 P6KE20A and C8 EEEFK1V470P | Confirm bulk-capacitor selection/assembly plan, fault/transient and thermal ratings |
+| Power distribution | J4 XT30 input; protection/buck child sheets; U2 TPS2116 and U3 TPS62162 support | C9-C11 now added; finish USB protection and complete power review |
+| Battery input protection | F1 MF-R160, D2 SS34, D1 P6KE20A and C8 EEEFK1V470P | C8 selected for factory assembly; verify fault/transient and thermal ratings |
 | 4S to 5 V buck | U4 TPS54302; L2, C3-C7 and R11-R12 | Inductor MPN/value conflict, compensation/feedback and capacitor ratings |
 | ESP32-S3 core | U1 N16R8, power/ground and USB/SD/laser labels | EN/reset, BOOT, decoupling, camera/FC/expansion and remaining parent wiring |
 | USB programming / JTAG | J3 DEALON USB-TYPE-C-017, R6/R7 CC pull-downs, joined D+/D- copies | Shell grounding, ESD, input protection and parent USB data wiring |
@@ -43,8 +43,9 @@ These edits do not add the missing top-level wires or complete unfinished circui
 - [x] U3: global `5V` -> VIN/EN; L1 2.2uH; C1 10uF, C2 22uF; R10 100k PG pull-up. VOS -> global `3V3`; EP/AGND/PGND/FB -> GND.
 - [ ] Resolve L1/L2: both currently cite C1046 despite intended values 2.2uH and 10uH. Select separate rated power inductors with adequate saturation/RMS current and verify footprints; this BOM cannot be ordered as-is.
 - [ ] Validate R11/R12 feedback and all capacitor/inductor ratings against the exact regulator designs.
-- [ ] Add local TPS2116 input/output capacitors and USB input current/inrush protection.
-- [ ] Resolve C8: current CAD uses EEEFK1V470P / C178565; earlier existing-parts hand-soldered capacitor plan is not the same selection.
+- [x] Add TPS2116 C9/C10 input bypass, 1uF / 50V X5R / 0603 / C15849 each, and C11 output bypass, 10uF / 50V X5R / 1206 / C13585. All are intended for JLC assembly; existing net names retained.
+- [ ] Place C9/C10 beside VIN1/VIN2 and C11 beside VOUT/GND on the PCB. Validate effective capacitance, output dip and total startup inrush. USB input current/inrush protection is still required.
+- [x] Retain C8 Panasonic EEEFK1V470P / C178565, 47uF / 35V SMD, for factory assembly. The generic hand-soldered bulk-capacitor plan is superseded.
 - [ ] Validate USB current capability, combined +3V3 peaks, startup, source switching, thermal performance, battery fault protection and undervoltage behavior.
 
 ## Core and USB
