@@ -1996,7 +1996,7 @@
 		(dnp no)
 		(fields_autoplaced yes)
 		(uuid "12b095c3-b90a-43d5-9531-4e28c233ddd9")
-		(property "Reference" "10K?"
+		(property "Reference" "10K1"
 			(at 186.69 77.4699 0)
 			(show_name no)
 			(do_not_autoplace no)
@@ -2071,7 +2071,7 @@
 		(instances
 			(project "flamingo"
 				(path "/817f49eb-0105-475d-aa60-c8a0ced591cc/c5e44d0c-2cd4-4f2b-9527-a93aaaabc021"
-					(reference "10K?")
+					(reference "10K1")
 					(unit 1)
 				)
 			)
@@ -2089,7 +2089,7 @@
 		(dnp no)
 		(fields_autoplaced yes)
 		(uuid "29beff03-0f82-467e-b392-dfa6b56fec5d")
-		(property "Reference" "2.2uH"
+		(property "Reference" "2.2uH1"
 			(at 93.98 102.87 90)
 			(show_name no)
 			(do_not_autoplace no)
@@ -2162,7 +2162,7 @@
 		(instances
 			(project "flamingo"
 				(path "/817f49eb-0105-475d-aa60-c8a0ced591cc/c5e44d0c-2cd4-4f2b-9527-a93aaaabc021"
-					(reference "2.2uH")
+					(reference "2.2uH1")
 					(unit 1)
 				)
 			)
@@ -2259,7 +2259,7 @@
 		(dnp no)
 		(fields_autoplaced yes)
 		(uuid "39642338-cc53-4c48-815e-edabc743bae1")
-		(property "Reference" "10uf?"
+		(property "Reference" "10uf2"
 			(at 58.42 115.5699 0)
 			(show_name no)
 			(do_not_autoplace no)
@@ -2334,7 +2334,7 @@
 		(instances
 			(project "flamingo"
 				(path "/817f49eb-0105-475d-aa60-c8a0ced591cc/c5e44d0c-2cd4-4f2b-9527-a93aaaabc021"
-					(reference "10uf?")
+					(reference "10uf2")
 					(unit 1)
 				)
 			)
@@ -2353,7 +2353,7 @@
 		(dnp no)
 		(fields_autoplaced yes)
 		(uuid "4a219369-b18f-4f2e-809d-351a641f3b95")
-		(property "Reference" "33k"
+		(property "Reference" "33k1"
 			(at 182.88 68.58 90)
 			(show_name no)
 			(do_not_autoplace no)
@@ -2426,7 +2426,7 @@
 		(instances
 			(project "flamingo"
 				(path "/817f49eb-0105-475d-aa60-c8a0ced591cc/c5e44d0c-2cd4-4f2b-9527-a93aaaabc021"
-					(reference "33k")
+					(reference "33k1")
 					(unit 1)
 				)
 			)
@@ -2444,7 +2444,7 @@
 		(dnp no)
 		(fields_autoplaced yes)
 		(uuid "6da4e7f6-9a88-443f-9c95-39f3f09788ef")
-		(property "Reference" "U?"
+		(property "Reference" "U3"
 			(at 76.2 100.33 0)
 			(show_name no)
 			(do_not_autoplace no)
@@ -2560,7 +2560,7 @@
 		(instances
 			(project "flamingo"
 				(path "/817f49eb-0105-475d-aa60-c8a0ced591cc/c5e44d0c-2cd4-4f2b-9527-a93aaaabc021"
-					(reference "U?")
+					(reference "U3")
 					(unit 1)
 				)
 			)
@@ -2908,7 +2908,7 @@
 		(dnp no)
 		(fields_autoplaced yes)
 		(uuid "aa525f1a-e278-4b9f-8361-e1b2028ab2d2")
-		(property "Reference" "22uf?"
+		(property "Reference" "22uf1"
 			(at 101.6 100.33 90)
 			(show_name no)
 			(do_not_autoplace no)
@@ -2981,7 +2981,7 @@
 		(instances
 			(project "flamingo"
 				(path "/817f49eb-0105-475d-aa60-c8a0ced591cc/c5e44d0c-2cd4-4f2b-9527-a93aaaabc021"
-					(reference "22uf?")
+					(reference "22uf1")
 					(unit 1)
 				)
 			)
@@ -3157,7 +3157,7 @@
 		(dnp no)
 		(fields_autoplaced yes)
 		(uuid "d7fb3a49-4595-4f74-bd32-2c721b7baf25")
-		(property "Reference" "100k"
+		(property "Reference" "100k1"
 			(at 95.25 115.5699 0)
 			(show_name no)
 			(do_not_autoplace no)
@@ -3232,7 +3232,7 @@
 		(instances
 			(project "flamingo"
 				(path "/817f49eb-0105-475d-aa60-c8a0ced591cc/c5e44d0c-2cd4-4f2b-9527-a93aaaabc021"
-					(reference "100k")
+					(reference "100k1")
 					(unit 1)
 				)
 			)

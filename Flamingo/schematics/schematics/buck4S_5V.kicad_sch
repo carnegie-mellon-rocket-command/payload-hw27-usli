@@ -1306,7 +1306,7 @@
 		(dnp no)
 		(fields_autoplaced yes)
 		(uuid "36b0bbae-16df-436e-a8a5-f32373054771")
-		(property "Reference" "22uf?"
+		(property "Reference" "22uf2"
 			(at 199.39 97.7899 0)
 			(show_name no)
 			(do_not_autoplace no)
@@ -1381,7 +1381,7 @@
 		(instances
 			(project "flamingo"
 				(path "/817f49eb-0105-475d-aa60-c8a0ced591cc/c5e44d0c-2cd4-4f2b-9527-a93aaaabc021/0a5bbc8c-2796-4a7c-ac7a-9c1395654364"
-					(reference "22uf?")
+					(reference "22uf2")
 					(unit 1)
 				)
 			)
@@ -1478,7 +1478,7 @@
 		(dnp no)
 		(fields_autoplaced yes)
 		(uuid "8cf265f9-f170-4ead-83ee-b34fbc6cab9f")
-		(property "Reference" "10K"
+		(property "Reference" "10K2"
 			(at 166.37 97.7899 0)
 			(show_name no)
 			(do_not_autoplace no)
@@ -1553,7 +1553,7 @@
 		(instances
 			(project "flamingo"
 				(path "/817f49eb-0105-475d-aa60-c8a0ced591cc/c5e44d0c-2cd4-4f2b-9527-a93aaaabc021/0a5bbc8c-2796-4a7c-ac7a-9c1395654364"
-					(reference "10K")
+					(reference "10K2")
 					(unit 1)
 				)
 			)
@@ -1648,7 +1648,7 @@
 		(in_pos_files yes)
 		(dnp no)
 		(uuid "9a30c273-bfcb-4031-a632-0428653bd4cf")
-		(property "Reference" "75K"
+		(property "Reference" "75K1"
 			(at 204.47 119.38 90)
 			(show_name no)
 			(do_not_autoplace yes)
@@ -1721,7 +1721,7 @@
 		(instances
 			(project "flamingo"
 				(path "/817f49eb-0105-475d-aa60-c8a0ced591cc/c5e44d0c-2cd4-4f2b-9527-a93aaaabc021/0a5bbc8c-2796-4a7c-ac7a-9c1395654364"
-					(reference "75K")
+					(reference "75K1")
 					(unit 1)
 				)
 			)
@@ -1817,7 +1817,7 @@
 		(dnp no)
 		(fields_autoplaced yes)
 		(uuid "a742e6ac-d978-46ce-b1db-51610d48d408")
-		(property "Reference" "22uf?"
+		(property "Reference" "22uf3"
 			(at 210.82 97.7899 0)
 			(show_name no)
 			(do_not_autoplace no)
@@ -1892,7 +1892,7 @@
 		(instances
 			(project "flamingo"
 				(path "/817f49eb-0105-475d-aa60-c8a0ced591cc/c5e44d0c-2cd4-4f2b-9527-a93aaaabc021/0a5bbc8c-2796-4a7c-ac7a-9c1395654364"
-					(reference "22uf?")
+					(reference "22uf3")
 					(unit 1)
 				)
 			)
@@ -2003,7 +2003,7 @@
 		(in_pos_files yes)
 		(dnp no)
 		(uuid "cacf41a5-77c4-4ab4-8403-8238236b5c78")
-		(property "Reference" ".1uf"
+		(property "Reference" ".1uf2"
 			(at 181.61 90.1699 0)
 			(show_name no)
 			(do_not_autoplace no)
@@ -2078,7 +2078,7 @@
 		(instances
 			(project "flamingo"
 				(path "/817f49eb-0105-475d-aa60-c8a0ced591cc/c5e44d0c-2cd4-4f2b-9527-a93aaaabc021/0a5bbc8c-2796-4a7c-ac7a-9c1395654364"
-					(reference ".1uf")
+					(reference ".1uf2")
 					(unit 1)
 				)
 			)
