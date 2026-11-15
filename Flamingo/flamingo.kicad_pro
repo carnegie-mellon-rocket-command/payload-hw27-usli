@@ -667,7 +667,7 @@
     ],
     [
       "40dd17db-c6fb-4a01-a68d-1434f55a08fb",
-      "OV5640 camera"
+      "Arducam Mega SPI camera"
     ],
     [
       "67accfd2-62ce-42a0-ae3b-f1c2dc282989",
@@ -699,7 +699,7 @@
     ],
     [
       "0a5bbc8c-2796-4a7c-ac7a-9c1395654364",
-      "buck4S_5V"
+      "4S to 5 V buck"
     ]
   ],
   "text_variables": {},

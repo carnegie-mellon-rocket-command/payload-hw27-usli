@@ -5,10 +5,10 @@
 	(uuid "fbb59c01-5b90-43ee-8190-22d8b348db22")
 	(paper "A4")
 	(title_block
-		(title "Flamingo")
-		(date "2026-10-27")
+		(title "Flamingo - STA-M020X laser")
+		(date "2026-11-15")
 		(company "Payload @ Carnegie Mellon Rocket Command")
-		(comment 1 "Designed by Simon Kaplinsky ")
+		(comment 1 "Designed by Simon Kaplinsky")
 	)
 	(lib_symbols
 		(symbol "Connector:Conn_01x05_Pin"
@@ -481,7 +481,7 @@
 		)
 		(uuid "eae82d9d-125a-430c-b9ec-93ac685d403b")
 	)
-	(global_label "5V"
+	(global_label "SYS_5V"
 		(shape input)
 		(at 96.52 76.2 0)
 		(fields_autoplaced yes)

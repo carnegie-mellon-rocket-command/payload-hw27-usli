@@ -6,7 +6,7 @@
 	(paper "A4")
 	(title_block
 		(company "Payload @ Carnegie Mellon Rocket Command")
-		(comment 1 "Designed by Simon Kaplinsky ")
+		(comment 1 "Designed by Simon Kaplinsky")
 	)
 	(lib_symbols
 		(symbol "Device:C"
@@ -1023,8 +1023,8 @@
 		)
 		(uuid "ee6a4386-9f3e-406f-8dc4-bbcd57c34b07")
 	)
-	(hierarchical_label "5Vout"
-		(shape input)
+	(hierarchical_label "BUCK_5V"
+		(shape output)
 		(at 218.44 95.25 0)
 		(effects
 			(font
@@ -1034,7 +1034,7 @@
 		)
 		(uuid "17eeade3-4877-4b72-b8ae-b3e295ccd84c")
 	)
-	(hierarchical_label "protected_in"
+	(hierarchical_label "VBAT_PROT"
 		(shape input)
 		(at 123.19 88.9 180)
 		(effects

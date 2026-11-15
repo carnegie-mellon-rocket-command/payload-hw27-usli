@@ -4,6 +4,10 @@
 	(generator_version "10.0")
 	(uuid "3bdfecc9-4e8d-4774-b0fd-7b792a023c06")
 	(paper "A4")
+	(title_block
+		(company "Payload @ Carnegie Mellon Rocket Command")
+		(comment 1 "Designed by Simon Kaplinsky")
+	)
 	(lib_symbols
 		(symbol "Device:R"
 			(pin_numbers
@@ -821,7 +825,7 @@
 		(uuid "ee25ff8c-24ea-4112-895f-225748e78e03")
 	)
 	(hierarchical_label "USB_D_P"
-		(shape output)
+		(shape bidirectional)
 		(at 119.38 110.49 180)
 		(effects
 			(font
@@ -843,7 +847,7 @@
 		(uuid "c4508118-c005-486e-8a12-eafa8ff943b3")
 	)
 	(hierarchical_label "USB_D_N"
-		(shape output)
+		(shape bidirectional)
 		(at 118.11 105.41 180)
 		(effects
 			(font

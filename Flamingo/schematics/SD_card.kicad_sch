@@ -8,7 +8,7 @@
 		(title "Flamingo - microSD SPI logging")
 		(date "2026-11-15")
 		(company "Payload @ Carnegie Mellon Rocket Command")
-		(comment 1 "Designed by Simon Kaplinsky ")
+		(comment 1 "Designed by Simon Kaplinsky")
 	)
 	(lib_symbols
 		(symbol "Device:R"
@@ -641,7 +641,7 @@
 		)
 		(uuid "03b8ba09-47fe-4294-a735-6dcbcc70f5c0")
 	)
-	(text "Five 10k pull-ups to 3V3"
+	(text "Five 10k pull-ups to +3V3"
 		(exclude_from_sim no)
 		(at 45.72 45.72 0)
 		(effects
@@ -1062,7 +1062,7 @@
 		)
 		(uuid "ff7fac1e-9221-4cbb-9895-c90c4b0df9aa")
 	)
-	(global_label "3V3"
+	(global_label "+3V3"
 		(shape input)
 		(at 152.4 92.71 180)
 		(effects
@@ -1084,7 +1084,7 @@
 			)
 		)
 	)
-	(global_label "3V3"
+	(global_label "+3V3"
 		(shape input)
 		(at 55.88 55.88 90)
 		(effects

@@ -5,10 +5,10 @@
 	(uuid "924d70d4-6600-4c22-bb7b-d8be91243425")
 	(paper "A4")
 	(title_block
-		(title "Flamingo")
-		(date "2026-10-27")
+		(title "Flamingo - power distribution")
+		(date "2026-11-15")
 		(company "Payload @ Carnegie Mellon Rocket Command")
-		(comment 1 "Designed by Simon Kaplinsky ")
+		(comment 1 "Designed by Simon Kaplinsky")
 	)
 	(lib_symbols
 		(symbol "Device:C"
@@ -1710,7 +1710,7 @@
 		)
 		(uuid "a3714109-2efa-40d3-81a2-83ae4693d59b")
 	)
-	(label "Buck_5V"
+	(label "BUCK_5V"
 		(at 129.54 73.66 0)
 		(effects
 			(font
@@ -1720,7 +1720,7 @@
 		)
 		(uuid "ca118431-e965-43e0-8ade-7f783c61c4bb")
 	)
-	(global_label "5V"
+	(global_label "SYS_5V"
 		(shape input)
 		(at 175.26 69.85 0)
 		(fields_autoplaced yes)
@@ -1744,7 +1744,7 @@
 			)
 		)
 	)
-	(global_label "5V"
+	(global_label "SYS_5V"
 		(shape input)
 		(at 152.4 69.85 180)
 		(fields_autoplaced yes)
@@ -1768,7 +1768,7 @@
 			)
 		)
 	)
-	(global_label "3V3"
+	(global_label "+3V3"
 		(shape input)
 		(at 97.79 107.95 90)
 		(fields_autoplaced yes)
@@ -1792,7 +1792,7 @@
 			)
 		)
 	)
-	(global_label "5V"
+	(global_label "SYS_5V"
 		(shape input)
 		(at 44.45 107.95 180)
 		(fields_autoplaced yes)
@@ -2142,7 +2142,7 @@
 				)
 			)
 		)
-		(property "LCSC" "C1046"
+		(property "LCSC" "C1043"
 			(at 93.98 107.95 90)
 			(hide yes)
 			(show_name no)
@@ -3254,7 +3254,7 @@
 			(color 0 0 0 0)
 		)
 		(uuid "0a5bbc8c-2796-4a7c-ac7a-9c1395654364")
-		(property "Sheetname" "buck4S_5V"
+		(property "Sheetname" "4S to 5 V buck"
 			(at 97.79 67.8684 0)
 			(show_name no)
 			(do_not_autoplace no)
@@ -3276,7 +3276,7 @@
 				(justify left top)
 			)
 		)
-		(pin "5Vout" input
+		(pin "BUCK_5V" output
 			(at 115.57 73.66 0)
 			(uuid "c5d43f8a-a0f0-4225-b260-a3ac9a1ffbfb")
 			(effects
@@ -3286,7 +3286,7 @@
 				(justify right)
 			)
 		)
-		(pin "protected_in" input
+		(pin "VBAT_PROT" input
 			(at 97.79 69.85 180)
 			(uuid "be673181-5a74-428b-9882-522a74beee4d")
 			(effects
@@ -3343,7 +3343,7 @@
 				(justify left top)
 			)
 		)
-		(pin "Unprotected In" input
+		(pin "VBAT_4S" input
 			(at 57.15 68.58 180)
 			(uuid "9cb1b5d3-f377-49ce-a778-e82e8163e52a")
 			(effects
@@ -3353,7 +3353,7 @@
 				(justify left)
 			)
 		)
-		(pin "Protected in" input
+		(pin "VBAT_PROT" output
 			(at 73.66 74.93 0)
 			(uuid "9fa48341-8c99-413d-b676-319830887c88")
 			(effects
