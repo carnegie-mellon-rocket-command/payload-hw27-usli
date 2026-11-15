@@ -1,0 +1,43 @@
+--- a/impart_action.py
++++ b/impart_action.py
+@@ -293,6 +293,14 @@
+             self.print_to_buffer("")
+ 
+ 
++def _project_easyeda_location(project_dir, lib_name="EasyEDA"):
++    """Use a project's existing libraries/EasyEDA folder for C-number imports."""
++    nested = Path(project_dir) / "libraries" / "EasyEDA"
++    if lib_name == "EasyEDA" and nested.is_dir():
++        return nested, "${KIPRJMOD}/libraries/EasyEDA"
++    return Path(project_dir), "${KIPRJMOD}"
++
++
+ def check_library_import(backend: ImpartBackend, add_if_possible: bool = True) -> str:
+     """Check and potentially add libraries to KiCad settings."""
+     msg = ""
+@@ -320,7 +328,12 @@
+         else ImpartBackend.SUPPORTED_LIBRARIES
+     )
+     for lib_name in libs_to_check:
+-        msg += _check_single_library(kicad_settings, lib_name, dest_path, add_if_possible)
++        if backend.local_lib and lib_name == "EasyEDA":
++            easyeda_dest, easyeda_prefix = _project_easyeda_location(project_dir, lib_name)
++            easyeda_settings = KiCad_Settings(str(project_dir), path_prefix=easyeda_prefix)
++            msg += _check_single_library(easyeda_settings, lib_name, str(easyeda_dest), add_if_possible)
++        else:
++            msg += _check_single_library(kicad_settings, lib_name, dest_path, add_if_possible)
+ 
+     return msg
+ 
+@@ -870,8 +883,9 @@
+                 logging.error(f"KiCad project directory invalid: {self.kicad_project}")
+                 return
+ 
+-            path_variable = "${KIPRJMOD}"
+-            base_folder = project_path
++            base_folder, path_variable = _project_easyeda_location(
++                project_path, self.backend.importer.lib_name or "EasyEDA"
++            )
+         else:
+             path_variable = "${KICAD_3RD_PARTY}"
+             base_folder = Path(self.backend.config.get_DEST_PATH())

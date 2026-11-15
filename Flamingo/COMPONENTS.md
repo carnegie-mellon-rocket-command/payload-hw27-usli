@@ -2,6 +2,8 @@
 
 Updated: 2026-11-14.
 
+Start with the [sheet-by-sheet schematic build plan](SCHEMATIC_BUILD_PLAN.md). Library import instructions: [EasyEDA project library](libraries/EasyEDA/README.md).
+
 Flamingo detects a colored 16 x 16 m tarp from approximately 1 km. It handles the camera, laser and payload logging; a separate flight controller supplies navigation and flight control. This document records the selected architecture and proposed parts. Schematic work and hardware validation are still pending.
 
 ## Current decisions
@@ -11,13 +13,13 @@ Flamingo detects a colored 16 x 16 m tarp from approximately 1 km. It handles th
 - **Flight controller and ESCs:** [MicoAir743v2-AIO-45A](https://store.micoair.com/product/micoair743v2-aio-45a/), with an external M10G-5883 GPS/compass. Replaces the NxtPX4 V2 and separate ESC board.
 - **Motors:** four [Happymodel EX1404 2750KV](https://www.happymodel.cn/index.php/2021/01/07/happymodel-ex1404-kv2750-kv3500-kv4800-brushless-motor/) brushless motors. Propellers remain to select; thrust and runtime need validation.
 - **Laser:** module described as STA-M020X in the supplied SAT-M020X PDF; 5 V supply and default 3.3 V UART.
-- **Power:** one removable **4S LiPo** shared by the AIO and Flamingo. An external 4S-to-5 V buck supplies Flamingo and the laser; motor power stays off Flamingo. Charge the pack externally; no built-in charging.
+- **Power:** one removable **4S LiPo** shared by the AIO and Flamingo. An onboard 4S-to-5 V buck on Flamingo supplies its electronics and the laser; motor power stays off Flamingo. Charge the pack externally; no built-in charging.
 - **Images:** capture JPEG and decode sequential blocks into a reusable buffer.
 - **Size:** plan around 50 x 80 mm for Flamingo; maximum 50 x 100 mm. This is an allowance, not a completed placement.
 
 ## Power
 
-Use a standard **4S LiPo: 14.8 V nominal, 16.8 V fully charged**. The selected AIO accepts 3-6S. Split battery power outside Flamingo between the AIO and the dedicated external 5 V buck. Battery capacity, discharge rating, connectors and runtime must include all four motors and electronics.
+Use a standard **4S LiPo: 14.8 V nominal, 16.8 V fully charged**. The selected AIO accepts 3-6S. Split battery power outside Flamingo between the AIO and Flamingo's 4S input. Flamingo's Power sheet will include input protection and the 4S-to-5 V converter. Battery capacity, discharge rating, connectors and runtime must include all four motors and electronics.
 
 ```mermaid
 flowchart TD
@@ -26,9 +28,10 @@ flowchart TD
     FC --> M[Four EX1404 2750KV motors]
     FC --> GPS[External GPS and compass]
     FC -. UART and ground .-> E
-    P --> V5[External 4S-to-5 V buck regulator]
-    V5 --> L[Laser]
-    V5 --> S[USB / external power selection]
+    P --> FIN[Flamingo 4S input and protection]
+    FIN --> V5[Onboard 4S-to-5 V buck regulator]
+    S --> L[Laser]
+    V5 --> S[Power selector - USB preferred - SYS_5V]
     U[USB 5 V] --> S
     S --> V3[Flamingo 3.3 V regulator]
     V3 --> E[ESP32 and microSD]
@@ -42,31 +45,73 @@ All boards share ground. Motor battery and return currents use the AIO's rated p
 |---|---|
 | Battery and charging | Removable standard 4S pack and a compatible external 4S balance charger. No charger on Flamingo. |
 | Flight controller and motors | 4S branch to AIO VBAT/GND; its four ESC channels drive the motors. The AIO 5 V / 2 A output supplies suitable FC peripherals. No separate ESC board is needed. |
-| Flamingo input | External 4S-to-5 V buck, then regulated EXT_5V/GND into Flamingo. Operating input rating must exceed 16.8 V with transient margin; target a 24 V-or-higher maximum operating input rating with suitable protection. Exact module and current rating remain to select from the payload load budget; motor current bypasses this regulator. |
+| Flamingo input | Raw 4S/GND enters Flamingo as VBAT_4S, then input protection and an onboard buck produce BUCK_5V. All battery-side parts must withstand 16.8 V plus transients; target a regulator operating input rating of at least 24 V with suitable protection. Exact regulator/support parts and current budget need review; motor current bypasses Flamingo. |
 | Main 3.3 V rail | ESP32, microSD and appropriate interface circuitry. Approximately 1 A is an initial capability target; recalculate the full camera/regulator load and peaks. The flex camera is not a single-3.3 V-input carrier board. |
 | Camera rails and logic | Add camera-specific low-voltage supplies, decoupling and signal-level matching. Confirm the received module revision before selecting rail values or connecting it to 3.3 V GPIO. |
-| Laser rail | Dedicated buck's 5 V output. Datasheet specifies 3-5 V input, recommends 5 V and lists peak power <=0.55 W, equivalent to 110 mA at 5 V. Size with margin and verify startup pulses and voltage tolerance. |
-| USB power | Select USB_VBUS or EXT_5V with reverse-current blocking to produce SYS_5V for Flamingo. Power the laser from EXT_5V before this selector, so USB-only programming leaves the laser off. Do not tie USB and external positive outputs directly together. |
-| Protection | Select connector, switch, branch protection, reverse-polarity protection and battery low-voltage handling with the actual pack and loads. |
+| Laser rail | SYS_5V after the source selector, available from USB or the onboard buck. Datasheet specifies 3-5 V input, recommends 5 V and lists peak power <=0.55 W, equivalent to 110 mA at 5 V. Size with margin and verify startup pulses and voltage tolerance. |
+| USB power | Select USB_VBUS or BUCK_5V with reverse-current blocking to produce SYS_5V. Prefer USB when present; otherwise use the onboard buck. SYS_5V supplies the laser, main 3.3 V regulator and camera regulators, with no physical payload switch. Size the USB source, current/inrush protection and selector for the combined load; full operation is conditional on adequate USB current. Keep USB from backfeeding the battery/buck or AIO. USB does not power the flight controller or motors. |
+| Protection | Select connector, branch protection, reverse-polarity protection and battery low-voltage handling with the actual pack and loads. |
 
 **Remove from the planned BOM:** BQ24074 charger, its charging-current/termination/timer/NTC network, and charging-status circuitry. The old single-cell battery-to-charger-OUT power path is superseded. Existing copied CAD has not been edited.
 
-The TPS63070 remains a **candidate only for the downstream 5 V to 3.3 V stage**. Its maximum operating input is 16 V, below a full 4S pack: **do not connect it directly to 4S or use it as the 4S-to-5 V buck**. A buck-only regulator may be simpler for 5 V to 3.3 V. Review support circuits and the load budget before selecting either regulator. Pelican's TPS61023 boost is not required for the laser rail.
+The current downstream 3.3 V candidate is TPS62162DSGR; see POWER_PARTS.md. The earlier TPS63070 option was **only for the downstream 5 V to 3.3 V stage**. Its maximum operating input is 16 V, below a full 4S pack: **do not connect it directly to 4S or use it as the 4S-to-5 V buck**. A buck-only regulator may be simpler for 5 V to 3.3 V. Review support circuits and the load budget before selecting either regulator. Pelican's TPS61023 boost is not required for the laser rail.
 
 Sources: [AIO manual](https://micoair.com/en/docs/flight-controller/micoair743-aio-series/micoair743v2-aio-45a-manual), [motor specifications](https://www.happymodel.cn/index.php/2021/01/07/happymodel-ex1404-kv2750-kv3500-kv4800-brushless-motor/), [TPS63070 specifications](https://www.ti.com/product/TPS63070), and the supplied laser manual, pp. 2-3.
 
 ### Single battery connector
 
-Use a **parallel Y harness** matching the battery's main connector. Split both positive and negative wires: one pair to AIO BATTERY+/BATTERY-, the other to the external buck input. Both legs carry full battery voltage (up to 16.8 V); the buck alone reduces its output to 5 V. A second battery or custom distribution PCB is not required.
+Use an **XT30 parallel Y harness** matching the battery's main connector. XT30 is the selected cable connector family; verify mating genders and polarity against the actual pack and harness. Split both positive and negative wires: one pair to AIO BATTERY+/BATTERY-, the other to Flamingo's 4S input connector. Both legs carry full battery voltage (up to 16.8 V); Flamingo's onboard buck reduces its branch to 5 V. A second battery or custom distribution PCB is not required.
 
 ```text
-Battery main connector -> parallel Y harness
+Battery XT30 connector -> XT30 parallel Y harness
                          |-> AIO battery pads -> four motors
                          |                     -> 5 V for GPS/receiver
-                         |-> external 5 V buck -> Flamingo and laser
+                         |-> Flamingo 4S input -> onboard buck -> electronics/laser
 ```
 
-Match connector polarity and rate the inlet/AIO leg for the motor load; size and protect the buck leg separately. Use the main discharge connector, not the balance lead. Keep motor current out of Flamingo. Do not assume the AIO current sensor includes the separate buck branch when estimating total battery consumption.
+Match connector polarity and rate the inlet/AIO leg for the motor load; size and protect the Flamingo leg separately. Use the main discharge connector, not the balance lead. Keep motor current out of Flamingo. Do not assume the AIO current sensor includes the separate Flamingo branch when estimating total battery consumption.
+
+### Candidate 4S input protection BOM
+
+For the first prototype, use one Basic SMT part assembled by JLCPCB and three through-hole parts soldered by hand. This replaces the earlier AO3401A MOSFET, gate-zener and gate-resistor proposal with a series Schottky diode. These are candidate parts, pending the load, fault-current and transient review.
+
+| Function | Part / specification | JLCPCB / LCSC | Assembly plan |
+|---|---|---|---|
+| Resettable fuse | Bourns MF-R160; 30 V, 1.6 A hold / 3.2 A trip at 23 C | [C208483](https://jlcpcb.com/partdetail/C208483) | Extended listing; radial through-hole, hand-solder. |
+| Reverse-polarity diode | MDD SS34; 40 V, 3 A, SMA/DO-214AC | [C8678](https://jlcpcb.com/partdetail/C8678) | Basic; have JLCPCB assemble. |
+| Surge suppressor | SMC P6KE20A; unidirectional, 17.1 V standoff, rated clamp 27.7 V, DO-15 | [C499762](https://jlcpcb.com/partdetail/C499762) | Extended listing; axial through-hole, hand-solder. |
+| Input bulk capacitor | Generic 47 uF, 35 V aluminum electrolytic from existing parts; higher voltage rating is acceptable | Existing parts; no specific MPN or purchase link required | Hand-solder. Choose the footprint after measuring the actual capacitor diameter and lead spacing; observe polarity. |
+
+```text
+XT30 positive -> MF-R160 -> SS34 -> VBAT_PROT -> TPS54302 VIN
+                                      |-> P6KE20A -> GND
+                                      |-> 47 uF / 35 V -> GND
+XT30 negative --------------------------> GND
+```
+
+Use `Device:C_Polarized` for the generic electrolytic in KiCad. Keep the electrolytic for input bulk capacitance and damping; a ceramic capacitor is not an automatic substitute. The buck still needs its separate ceramic input capacitors.
+
+SS34's cathode/banded end faces VBAT_PROT. The TVS cathode/banded end also connects to VBAT_PROT; its anode connects to GND. The capacitor positive terminal connects to VBAT_PROT. Keep the buck's required ceramic input capacitors as well; the electrolytic supplements them.
+
+**Assembly cost:** leave the hand-fitted fuse, TVS and bulk capacitor out of JLC's assembly selection. Source the fuse and TVS separately if needed; use existing parts for the bulk capacitor. The fuse and TVS retain their Extended catalog classification but incur no Extended assembly setup fees if JLC does not fit them. JLC's assembly inventory cannot be shipped as loose parts.
+
+**DigiKey purchasing links for the hand-soldered protection parts:**
+
+| Function | Exact part link | Purchasing note |
+|---|---|---|
+| Resettable fuse | [Bourns MF-R160](https://www.digikey.com/en/products/detail/bourns-inc/MF-R160/259972) | Exact BOM part; listed in stock when checked 2026-11-14. |
+| TVS | [SMC P6KE20A](https://www.digikey.com/en/products/detail/smc-diode-solutions/P6KE20A/5993387) | Exact BOM manufacturer/part, but not normally stocked at DigiKey. [Littelfuse P6KE20A](https://www.digikey.com/en/products/detail/littelfuse-inc/P6KE20A/285930) was listed in stock in single quantities; alternate manufacturer, same listed 17.1 V standoff / 27.7 V clamp and DO-15 family. Confirm its dimensions and transient ratings before substitution. |
+| Bulk capacitor | Use an existing generic 47 uF, 35 V (or higher voltage) aluminum electrolytic | No new purchase planned. Confirm its marked value, voltage rating and dimensions before assigning the footprint. |
+
+These links supplement the JLC/LCSC references; the alternates have not silently replaced the original BOM entries. Availability is subject to change. Use DigiKey for these individual electronic components; an Adafruit module is not needed for this circuit.
+
+**Availability checked 2026-11-14:** the fuse, SS34 and TVS JLC listings showed positive assembly stock; C499762 had only nine available. This is a dated stock observation, not a reservation or confirmation of separately shippable distributor stock. Recheck before ordering. The bulk capacitor is now a generic existing-parts item; its availability has not been inventoried.
+
+**Tradeoff and remaining work:** the SS34 drops some voltage and dissipates heat (for example, 0.5 A x 0.4 V = 0.2 W). Finalize battery-side load current, PTC temperature derating, diode cooling and TVS/layout behavior. The PTC has a 40 A maximum fault-current rating and is not automatically a substitute for a properly rated fuse near the LiPo in Flamingo's branch. The TVS's rated clamp is not a guarantee that every transient stays below the buck's limit. This circuit does not provide battery undervoltage cutoff or controlled inrush; those remain separate design decisions.
+
+**Do not use the earlier quoted C-number substitutions:** C369156 is a 160 mA-hold PTC, C70072 is a 350 mA/16 V PTC, C8056 is a 3.3 V zener, C72482 is a 10 uF/100 V capacitor, and C134738 is a 470 uF/6.3 V capacitor. They do not match the originally quoted descriptions. SMAJ22A is not an interchangeable TVS choice: its rated clamp is about 35.5 V, above the TPS54302's 30 V absolute maximum input.
+
+References: [Bourns MF-R datasheet](https://www.bourns.com/docs/product-datasheets/mfr.pdf), [SS34 listing and specifications](https://jlcpcb.com/partdetail/C8678), [SMC P6KE20A specifications](https://www.lcsc.com/product-detail/C499762.html), and [TPS54302 limits](https://www.ti.com/lit/ds/symlink/tps54302.pdf).
 
 ## Components
 
@@ -84,11 +129,11 @@ JLC links identify catalog entries. Recheck stock, price and assembly eligibilit
 | microSD socket | XUNPU TF-115-BCP9 - [C720505](https://jlcpcb.com/partdetail/Xunpu-TF_115BCP9/C720505) | Proposed Pelican reuse; 3.3 V SPI. Check symbol/pad mapping and shell grounds. |
 | USB-C | GCT USB4120-03-C - [C3445864](https://jlcpcb.com/partdetail/GCT-USB4120_03C/C3445864) | Proposed native programming/console/JTAG. Vertical connector; check cable access and footprint. |
 | USB ESD | ST USBLC6-2SC6 - [C7519](https://jlcpcb.com/partdetail/C7519) | Proposed; check ST pinout and VBUS/ground treatment. |
-| Battery splitter/harness | Parallel Y harness; exact connector to match the pack | One battery input, separate AIO and buck branches; verify polarity, current ratings and branch protection. |
-| External 5 V buck | To select | 4S battery (up to 16.8 V) to 5 V for Flamingo and laser only. Check operating input/transient margin and combined peak-current capability. |
-| Main 3.3 V regulator | Candidate TPS63070RNMR - [C109322](https://jlcpcb.com/partdetail/TexasInstruments-TPS63070RNMR/C109322) | Fed only from selected 5 V; not directly from 4S (16 V maximum operating input). Exact topology/support parts pending. |
-| USB/external power selector | To select | Two 5 V sources; reverse-current blocking required. Copied TPS2116 library is only a candidate. |
-| Connectors | Camera, laser, FC telemetry, 5 V input and expansion | Exact mating parts, footprints, contact order and cable orientation still to select. |
+| Battery splitter/harness | XT30 parallel Y harness; mating genders to match the actual pack/cables | One battery input, separate AIO and Flamingo 4S branches; verify polarity, current ratings and branch protection. |
+| Onboard 5 V buck | TPS54302DDCR - [C311983](https://jlcpcb.com/partdetail/C311983) | Placed in the Power sheet; support circuit still to draw. 4.5-28 V input, up to 3 A. Prior positive JLC stock check; recheck before ordering. |
+| Main 3.3 V regulator | Current candidate TPS62162DSGR - [C40256](https://jlcpcb.com/partdetail/C40256) | Fixed 3.3 V, 1 A from SYS_5V, conditional on the combined load budget. Supersedes TPS63070 as the current placement candidate; see POWER_PARTS.md. |
+| USB/buck power selector | TPS2116DRLR - [C3235557](https://jlcpcb.com/partdetail/C3235557) | Current placement choice: protected USB_5V to VIN1, BUCK_5V to VIN2, USB priority. All Flamingo loads are downstream on SYS_5V. Support network and USB input protection still to draw. |
+| Connectors | Camera, laser, FC telemetry, 4S input and expansion | Flamingo 4S input: XT30PW-M30.G.Y, [C431092](https://jlcpcb.com/partdetail/C431092), through-hole/right-angle. Imported as `EasyEDA:XT30PW-M` with `EasyEDA:CONN-TH_XT30PW-M`. Confirm actual harness polarity/mating gender. Other connector choices and contact order remain to settle. |
 
 ## GPS compatibility and wiring
 
@@ -225,16 +270,16 @@ References: [AIO manual and port mapping](https://micoair.com/en/docs/flight-con
 ## Schematic work remaining
 
 - Select propellers and validate total vehicle thrust; size the 4S battery, distribution harness, connectors and protection for simultaneous motor and electronics loads. Select the external balance charger and runtime target.
-- Select the external 4S-rated 5 V buck, downstream 3.3 V regulator, USB power selector, protection and support components. Check 16.8 V full charge plus transients; keep raw battery voltage off 5 V/3.3 V rails. Add EXT_5V/GND input, USB_VBUS selection to SYS_5V and a laser branch before the selector.
+- Design the onboard 4S-to-5 V buck, downstream 3.3 V regulator, USB power selector, protection and support components. Start with VBAT_4S/GND input, protection, then BUCK_5V; select USB_VBUS/BUCK_5V into SYS_5V. Take laser and camera-regulator power from SYS_5V after the selector; use USB priority and verify the combined USB load budget. Check 16.8 V full charge plus transients; keep raw battery voltage off low-voltage rails.
 - Confirm camera flex revision and select its supply rails, FPC socket and signal-level interface before wiring; do not use the obsolete 18-pin map.
 - Add power inputs, decoupling, EN reset network, BOOT/RESET buttons and antenna clearance. Candidate S3 starting values: 10 uF + 100 nF supply decoupling; EN 10 kohm / 1 uF RC, subject to reference-design review.
 - Add USB with one 5.1 kohm pull-down on each CC pin; check ESD wiring, connector mapping and any D+/D- series resistors.
 - Confirm camera and laser hardware revisions, cable mappings and connector footprints. Verify laser I/O voltage and ENO treatment.
 - Check every symbol pin against its footprint and datasheet, then review the complete pin allocation and startup states.
-- Measure power peaks, brownout behavior, USB/external source switching, 5 MP capture/decode memory and detection performance.
+- Measure power peaks, brownout behavior, USB/buck source switching, 5 MP capture/decode memory and detection performance.
 - Test timestamped FC telemetry, laser validity handling and link loss during camera capture and SD writes.
 
-Keep 50 x 80 mm as the preliminary PCB allowance, within the 50 x 100 mm maximum. The battery, external buck, camera, laser, AIO and GPS need separate mechanical space. The AIO is 36 x 36 x 8 mm, about 10 g, with 25.5 mm mounting spacing; follow its orientation and cooling guidance. Routing has not been measured.
+Keep 50 x 80 mm as the preliminary PCB allowance, within the 50 x 100 mm maximum. The battery, camera, laser, AIO and GPS need separate mechanical space. The onboard buck, inductor and input protection consume Flamingo PCB area; placement and thermal performance need review. The AIO is 36 x 36 x 8 mm, about 10 g, with 25.5 mm mounting spacing; follow its orientation and cooling guidance. Routing has not been measured.
 
 ## Pelican reuse
 

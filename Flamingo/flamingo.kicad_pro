@@ -649,7 +649,7 @@
         "uuid": "817f49eb-0105-475d-aa60-c8a0ced591cc"
       }
     ],
-    "used_designators": "J1-3,#PWR1-2,U1",
+    "used_designators": "J1-3,#PWR1-4,U1",
     "variants": []
   },
   "sheets": [
@@ -692,6 +692,10 @@
     [
       "fb90ee25-3c1e-4d92-bbd0-6c03b8c2e035",
       "microSD"
+    ],
+    [
+      "5a587846-2e02-44ef-937d-7465c9da06d5",
+      "Input Protection"
     ]
   ],
   "text_variables": {},

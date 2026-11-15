@@ -17,4 +17,5 @@
 	(lib (name "J_0.5K-A-20PB") (type "KiCad") (uri "${KIPRJMOD}/libraries/J_0.5K-A-20PB/footprints.pretty") (options "") (descr ""))
 	(lib (name "J_TF-115-BCP9") (type "KiCad") (uri "${KIPRJMOD}/libraries/J_TF-115-BCP9/footprints.pretty") (options "") (descr ""))
 	(lib (name "LED_LTST-C193KRKT-5A") (type "KiCad") (uri "${KIPRJMOD}/libraries/LED_LTST-C193KRKT-5A/footprints.pretty") (options "") (descr ""))
+	(lib (name "EasyEDA") (type "KiCad") (uri "${KIPRJMOD}/libraries/EasyEDA/EasyEDA.pretty") (options "") (descr ""))
 )
