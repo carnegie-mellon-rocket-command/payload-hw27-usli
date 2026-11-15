@@ -1,6 +1,6 @@
 # Flamingo components and design plan
 
-Updated: 2026-11-14.
+Updated: 2026-11-15.
 
 Start with the [sheet-by-sheet schematic build plan](SCHEMATIC_BUILD_PLAN.md). Library import instructions: [EasyEDA project library](libraries/EasyEDA/README.md).
 
@@ -9,7 +9,7 @@ Flamingo detects a colored 16 x 16 m tarp from approximately 1 km. It handles th
 ## Current decisions
 
 - **Processor:** ESP32-S3-WROOM-1-N16R8, with 8 MB PSRAM and 16 MB flash.
-- **Camera:** [Seeed Studio OV5640 Camera for XIAO ESP32S3 Sense, with heat sink](https://www.seeedstudio.com/OV5640-Camera-for-XIAO-ESP32S3-Sense-With-Heat-Sink-p-5739.html), **SKU 114993115**: standalone 5 MP autofocus camera with a 24-contact flex tail. Flamingo supplies its camera-specific rails and I/O interface.
+- **Camera:** [Arducam Mega 5 MP autofocus SPI camera, B0401](https://www.amazon.com/clp/B0BW7MDVHK). Capture JPEG still images through four-wire SPI; the external module handles sensor timing and buffering.
 - **Flight controller and ESCs:** [MicoAir743v2-AIO-45A](https://store.micoair.com/product/micoair743v2-aio-45a/), with an external M10G-5883 GPS/compass. Replaces the NxtPX4 V2 and separate ESC board.
 - **Motors:** four [Happymodel EX1404 2750KV](https://www.happymodel.cn/index.php/2021/01/07/happymodel-ex1404-kv2750-kv3500-kv4800-brushless-motor/) brushless motors. Propellers remain to select; thrust and runtime need validation.
 - **Laser:** module described as STA-M020X in the supplied SAT-M020X PDF; 5 V supply and default 3.3 V UART.
@@ -35,8 +35,7 @@ flowchart TD
     U[USB 5 V] --> S
     S --> V3[Flamingo 3.3 V regulator]
     V3 --> E[ESP32 and microSD]
-    S --> CP[Camera supply rails and signal-level matching]
-    CP --> C[OV5640 flex camera]
+    V3 --> C[Arducam Mega SPI camera]
 ```
 
 All boards share ground. Motor battery and return currents use the AIO's rated power wiring, not Flamingo traces or signal cables. The AIO and Flamingo use separate regulator branches; Flamingo does not depend on the AIO's accessory output. A shared battery is still a common point of failure.
@@ -46,10 +45,10 @@ All boards share ground. Motor battery and return currents use the AIO's rated p
 | Battery and charging | Removable standard 4S pack and a compatible external 4S balance charger. No charger on Flamingo. |
 | Flight controller and motors | 4S branch to AIO VBAT/GND; its four ESC channels drive the motors. The AIO 5 V / 2 A output supplies suitable FC peripherals. No separate ESC board is needed. |
 | Flamingo input | Raw 4S/GND enters Flamingo as VBAT_4S, then input protection and an onboard buck produce BUCK_5V. All battery-side parts must withstand 16.8 V plus transients; target a regulator operating input rating of at least 24 V with suitable protection. Exact regulator/support parts and current budget need review; motor current bypasses Flamingo. |
-| Main 3.3 V rail | ESP32, microSD and appropriate interface circuitry. Approximately 1 A is an initial capability target; recalculate the full camera/regulator load and peaks. The flex camera is not a single-3.3 V-input carrier board. |
-| Camera rails and logic | Add camera-specific low-voltage supplies, decoupling and signal-level matching. Confirm the received module revision before selecting rail values or connecting it to 3.3 V GPIO. |
+| Main 3.3 V rail | ESP32, microSD and Arducam Mega. The 1 A regulator candidate requires a combined peak-load review including camera startup; conservatively reserve about 0.31 A for a 1 W camera load at 3.3 V, then verify actual demand. |
+| Camera rails and logic | Supply the complete Mega module from +3V3 with 3.3 V SPI logic. Sensor supplies are handled on the module. Add local 100 nF + 10 uF at J2 and a 10 kohm CAM_CS pull-up to +3V3; these support parts remain to be drawn. |
 | Laser rail | SYS_5V after the source selector, available from USB or the onboard buck. Datasheet specifies 3-5 V input, recommends 5 V and lists peak power <=0.55 W, equivalent to 110 mA at 5 V. Size with margin and verify startup pulses and voltage tolerance. |
-| USB power | Select USB_VBUS or BUCK_5V with reverse-current blocking to produce SYS_5V. Prefer USB when present; otherwise use the onboard buck. SYS_5V supplies the laser, main 3.3 V regulator and camera regulators, with no physical payload switch. Size the USB source, current/inrush protection and selector for the combined load; full operation is conditional on adequate USB current. Keep USB from backfeeding the battery/buck or AIO. USB does not power the flight controller or motors. |
+| USB power | Select USB_VBUS or BUCK_5V with reverse-current blocking to produce SYS_5V. Prefer USB when present; otherwise use the onboard buck. SYS_5V supplies the laser, main 3.3 V regulator (including camera load), with no physical payload switch. Size the USB source, current/inrush protection and selector for the combined load; full operation is conditional on adequate USB current. Keep USB from backfeeding the battery/buck or AIO. USB does not power the flight controller or motors. |
 | Protection | Select connector, branch protection, reverse-polarity protection and battery low-voltage handling with the actual pack and loads. |
 
 **Remove from the planned BOM:** BQ24074 charger, its charging-current/termination/timer/NTC network, and charging-status circuitry. The old single-cell battery-to-charger-OUT power path is superseded. Existing copied CAD has not been edited.
@@ -123,8 +122,8 @@ JLC links identify catalog entries. Recheck stock, price and assembly eligibilit
 | Flight controller + ESCs | [MicoAir743v2-AIO-45A](https://store.micoair.com/product/micoair743v2-aio-45a/) | Selected. H743, dual BMI088/BMI270 IMUs, SPL06 barometer, microSD; four 45 A AM32 ESCs (cooling dependent). Listed $74.99 before shipping/tax on 2026-11-14; stock/delivery not confirmed. ArduPilot/PX4; no onboard GPS/compass. |
 | Motors | Four [Happymodel EX1404 2750KV](https://www.happymodel.cn/index.php/2021/01/07/happymodel-ex1404-kv2750-kv3500-kv4800-brushless-motor/) | Selected 4S brushless motors; three phase wires per motor connect to its AIO ESC channel. Props and total vehicle thrust remain unvalidated. |
 | GPS/compass | [MicoAir M10G-5883](https://store.micoair.com/product/m9-m10-gps-module/) | Retained: 5 V module with UBX UART GPS and QMC5883L I2C compass. Connect to AIO UART3 / GPS1 (ArduPilot SERIAL3) plus I2C. See wiring below; Flamingo gets navigation over telemetry. |
-| Camera | [Seeed Studio OV5640 AF camera with heat sink, SKU 114993115](https://www.seeedstudio.com/OV5640-Camera-for-XIAO-ESP32S3-Sense-With-Heat-Sink-p-5739.html) | Selected standalone flex camera, purchased separately; no XIAO development board is required in Flamingo. 5 MP, autofocus, DVP; design for a 24-contact 0.5 mm-pitch FPC connection. Replaces Waveshare Board A and its 18-pin header. |
-| Camera connector / supplies | Exact socket, regulators and level-matching parts to select | Match the actual flex revision, contact side, cable thickness, voltage domains and high-speed DVP timing. No camera rail/translator part is selected yet. |
+| Camera | [Arducam Mega 5 MP AF, B0401 / ASIN B0BW7MDVHK](https://www.amazon.com/clp/B0BW7MDVHK) | Selected external SPI module; 2592 x 1944, autofocus, JPEG output. No video streaming required. |
+| Camera connector / supplies | J2: 1x6, 2.54 mm-pitch vertical male through-hole header | KiCad `Connector_Generic:Conn_01x06`; footprint `Connector_PinHeader_2.54mm:PinHeader_1x06_P2.54mm_Vertical`. Supplied camera jumper harness mates at the board via female sockets; verify the received cable. +3V3 power and logic; no separate sensor rails. |
 | Laser | STA-M020X per supplied manual | External module; confirm actual label matches the manual. About 14 g, diameter 23 x 47 mm. |
 | microSD socket | XUNPU TF-115-BCP9 - [C720505](https://jlcpcb.com/partdetail/Xunpu-TF_115BCP9/C720505) | Proposed Pelican reuse; 3.3 V SPI. Check symbol/pad mapping and shell grounds. |
 | USB-C | GCT USB4120-03-C - [C3445864](https://jlcpcb.com/partdetail/GCT-USB4120_03C/C3445864) | Proposed native programming/console/JTAG. Vertical connector; check cable access and footprint. |
@@ -180,9 +179,9 @@ Protocol starting point: frames are `SlaveID + command + parameters + checksum`.
 
 ## Camera and image processing
 
-Use **Seeed OV5640 flex camera -> required power and signal-level interface -> 8-bit DVP -> ESP32-S3**, configured for JPEG. Seeed documents this camera with an ESP32-S3 and Espressif supports the OV5640 sensor. The exact Flamingo carrier is not electrically validated.
+Use **Arducam Mega 5 MP AF -> dedicated SPI -> ESP32-S3**, configured for JPEG still capture. Send a capture command, wait for completion and burst-read the compressed image from the module frame buffer. Continuous video streaming is not needed. Use the Arducam Mega SDK/protocol rather than the parallel `esp32-camera` driver.
 
-The selected retail part is **SKU 114993115**, not the XIAO development board. [Seeed listing](https://www.seeedstudio.com/OV5640-Camera-for-XIAO-ESP32S3-Sense-With-Heat-Sink-p-5739.html) showed $12.99 and in stock when checked on 2026-11-10; recheck before ordering. Keep the included flex and avoid extra extensions for initial testing.
+The selected item is [Amazon B0BW7MDVHK](https://www.amazon.com/clp/B0BW7MDVHK), corresponding to the B0401 autofocus Mega family. Confirm the received revision and cable labels. Manufacturer documentation specifies 2592 x 1944, JPEG/RGB/YUV output, 3.3 V or 5 V module power and SPI up to 8 MHz. Flamingo uses 3.3 V power and logic; start at a lower SPI clock during bring-up.
 
 Start with one JPEG frame buffer in PSRAM and sequential decoding into a reusable strip/block buffer. Detect tarp color, retain positions/results, merge detections across block boundaries and reuse the buffer. Espressif's [esp_new_jpeg](https://components.espressif.com/components/espressif/esp_new_jpeg/versions/1.0.2/readme) supports block decoding.
 
@@ -196,44 +195,22 @@ Quarter-image processing is a memory-budget example; use sequential blocks with 
 
 ### Camera connector and power
 
-Use a **24-contact, 0.5 mm-pitch FPC/FFC socket**, with the contact orientation and thickness matched to the received camera. The previous Waveshare P1 18-pin map is superseded. The copied Pelican 20-pin connector is also not a substitute.
+Fit **J2: single-row 1x6, 2.54 mm-pitch, vertical male through-hole pin header** on Flamingo. Use `Connector_Generic:Conn_01x06` and `Connector_PinHeader_2.54mm:PinHeader_1x06_P2.54mm_Vertical`. Hand-solder it. This board header mates with the female socket ends of the supplied jumper harness; the camera-side connector is listed by Arducam as XH2.54-6P. Do not assume a JST-XH board socket mates with the supplied board-side jumper ends. Inspect the received harness before ordering.
 
-**Revision check before wiring:** Seeed publishes two module drawings and a carrier schematic with differing power configurations. The [MJY5OAF-F3M-V1 drawing](https://files.seeedstudio.com/wiki/SeeedStudio-XIAO-ESP32S3/new-res/OV5640_Camera_Module_Specification.pdf) identifies 2.8 V analog/AF power, 1.8 V I/O and a 1.5 V internal-core supply; the [new drawing](https://files.seeedstudio.com/wiki/xiaos3-sscma/OV5640-8225N-120.pdf) permits 1.7-3.0 V I/O, and the [reference carrier](https://files.seeedstudio.com/wiki/SeeedStudio-XIAO-ESP32S3/res/XIAO_ESP32S3_Exp_Board_v1.2_SCH_PDF_260810.pdf) uses 2.8 V I/O and an external core supply. Confirm which profile applies to SKU 114993115 as received. Do not merge those profiles or apply the old carrier board's single 3.3 V input assumption.
-
-The following is the **MJY5OAF-F3M-V1 reference drawing**, not a released pin assignment for an unverified replacement revision. These contact numbers must be compared with the physical unit before selecting a socket or wiring the schematic.
-
-| Flex contact | Reference signal | Proposed S3-side role / treatment |
+| J2 pad | Net | Connection |
 |---|---|---|
-| 1 | STROBE | Unused initially |
-| 2 | AGND | Analog ground; follow module grounding guidance |
-| 3 | SDA | GPIO4 SCCB data through appropriate I/O interface |
-| 4 | AVDD 2.8 V | Camera analog rail; not 3.3 V |
-| 5 | SCL | GPIO5 SCCB clock through appropriate I/O interface |
-| 6 | RST | GPIO6 reset, active low; match camera I/O voltage |
-| 7 | VSYNC | GPIO17 input, with signal-level matching as required |
-| 8 | PWDN | Active high; hold low in the correct I/O domain initially; final pull/control circuit pending |
-| 9 | HSYNC / HREF | GPIO18 input |
-| 10 | DVDD 1.5 V / internal supply | Confirm internal-LDO/external-supply configuration; do not drive this pin from 3.3 V |
-| 11 | DOVDD 1.8 V in this drawing | Camera I/O supply; verify revision and level matching |
-| 12 | Y9 | GPIO15 / driver D7 |
-| 13 | MCLK / XCLK | GPIO21 clock output, through appropriate I/O interface |
-| 14 | Y8 | GPIO14 / driver D6 |
-| 15 | GND | Digital ground |
-| 16 | Y7 | GPIO13 / driver D5 |
-| 17 | PCLK | GPIO16 input |
-| 18 | Y6 | GPIO12 / driver D4 |
-| 19 | Y2 | GPIO8 / driver D0 |
-| 20 | Y5 | GPIO11 / driver D3 |
-| 21 | Y3 | GPIO9 / driver D1 |
-| 22 | Y4 | GPIO10 / driver D2 |
-| 23 | AF-GND | Autofocus ground in this revision |
-| 24 | AFVDD 2.8 V | Autofocus supply in this revision |
+| 1 | +3V3 | Camera VCC |
+| 2 | GND | Camera GND |
+| 3 | CAM_SCK | GPIO8 -> camera SCK |
+| 4 | CAM_MISO | Camera MISO -> GPIO10 |
+| 5 | CAM_MOSI | GPIO9 -> camera MOSI |
+| 6 | CAM_CS | GPIO6 -> camera CS, active low |
 
-For 1.8 V I/O, provide suitable high-speed level translation for the DVP data/timing signals and voltage-compatible control/clock signals. SCCB pull-ups belong to the correct camera I/O domain; do not automatically pull them to 3.3 V. Translation direction, delays and reset/power sequencing need review. Contacts 23/24 are NC in the newer drawing, so AF wiring is revision dependent.
+This is Flamingo's assigned pad order: verify each wire against the camera signal labels and continuity, not cable colors or an assumed connector viewing direction. Mark pin 1, +3V3 and GND on silkscreen. Keep the harness short and strain-relieved; secure the jumper sockets for the flight installation or replace the board connection with a positively locking harness and a reviewed footprint/pinout before release.
 
-Flamingo must provide the supply filtering, regulator support and reset/PWDN treatment previously handled by the carrier. Start with one JPEG buffer, Octal PSRAM enabled and a small resolution, then validate 5 MP capture, autofocus at the intended distance, image sharpness and heat. Do not carry over Board A's PWDN workaround or assume its pull-ups exist on the flex module.
+Add a 10 kohm CAM_CS pull-up and local 100 nF + 10 uF decoupling before release. These are currently notes, not placed components. No external SCCB/I2C, XCLK, parallel data, reset/PWDN lines, FPC socket or separate sensor regulators are required by this module interface.
 
-References: [selected camera](https://www.seeedstudio.com/OV5640-Camera-for-XIAO-ESP32S3-Sense-With-Heat-Sink-p-5739.html), [ESP32-S3 usage](https://wiki.seeedstudio.com/xiao_esp32s3_camera_usage/), [Seeed reference schematic](https://files.seeedstudio.com/wiki/SeeedStudio-XIAO-ESP32S3/res/XIAO_ESP32S3_Exp_Board_v1.2_SCH_PDF_260810.pdf), [Espressif camera driver](https://github.com/espressif/esp32-camera).
+References: [Mega 5MP specifications](https://docs.arducam.com/Arduino-SPI-camera/MEGA-SPI/MEGA-5MP/), [Mega wiring and SDK quick start](https://docs.arducam.com/Arduino-SPI-camera/MEGA-SPI/MEGA-Quick-Start-Guide/), [B0401 connector and product details](https://www.arducam.com/presale-mega-5mp-color-rolling-shutter-camera-module-with-autofocus-lens-for-any-microcontroller.html).
 
 ## Proposed GPIO allocation
 
@@ -241,7 +218,7 @@ These are candidate assignments for the exact N16R8 module, not implemented sche
 
 | Interface | GPIOs / notes |
 |---|---|
-| Camera | S3 side: 4/5 SCCB, 6 RESET, 8-15 D0-D7, 16 PCLK, 17 VSYNC, 18 HREF, 21 XCLK. FPC mapping and camera-side voltage matching must follow the verified module revision. |
+| Camera | [Arducam Mega 5 MP AF, B0401 / ASIN B0BW7MDVHK](https://www.amazon.com/clp/B0BW7MDVHK) | Selected external SPI module; 2592 x 1944, autofocus, JPEG output. No video streaming required. |
 | USB Serial/JTAG | 19 D-, 20 D+ |
 | FC telemetry | 1 TX -> AIO UART4 RX; 2 RX <- UART4 TX; common ground. PX4 TELEM2 / ArduPilot SERIAL4. |
 | Laser UART | 38 TX -> laser RXD; 39 RX <- laser TXD |
@@ -249,11 +226,11 @@ These are candidate assignments for the exact N16R8 module, not implemented sche
 | microSD CS | 47; pull up for startup |
 | Expansion SPI CS | 48; separate pull-up |
 | Optional UART0 debug | 43 TX, 44 RX |
-| Spare | 7; additional control signals may consume it |
+| Available / expansion | 4/5 available for 3.3 V I2C; 7, 11-18 and 21 released from the old camera allocation; review before use. |
 | Boot/strapping | 0, 3, 45, 46; review startup loads, reserve GPIO0 for BOOT |
 | PSRAM occupied | 35, 36, 37 unavailable |
 
-GPIO47/48 are 3.3 V in this N16R8 plan. Use USB JTAG; GPIO39-42 are already assigned elsewhere. An I2C header can share GPIO4/5 if addresses, pull-ups and SCCB/I2C ownership are coordinated. Initialize SD into SPI mode before other devices use the shared bus; each device needs its own CS and must release MISO. [SD/SPI sharing guide](https://docs.espressif.com/projects/esp-idf/en/stable/esp32s3/api-reference/peripherals/sdspi_share.html)
+GPIO47/48 are 3.3 V in this N16R8 plan. Use USB JTAG; GPIO39-42 are already assigned elsewhere. An I2C header can use GPIO4/5 with suitable 3.3 V pull-ups; the Mega does not use them. Initialize SD into SPI mode before other devices use the shared bus; each device needs its own CS and must release MISO. [SD/SPI sharing guide](https://docs.espressif.com/projects/esp-idf/en/stable/esp32s3/api-reference/peripherals/sdspi_share.html)
 
 ## Flight-controller link
 
@@ -270,8 +247,8 @@ References: [AIO manual and port mapping](https://micoair.com/en/docs/flight-con
 ## Schematic work remaining
 
 - Select propellers and validate total vehicle thrust; size the 4S battery, distribution harness, connectors and protection for simultaneous motor and electronics loads. Select the external balance charger and runtime target.
-- Design the onboard 4S-to-5 V buck, downstream 3.3 V regulator, USB power selector, protection and support components. Start with VBAT_4S/GND input, protection, then BUCK_5V; select USB_VBUS/BUCK_5V into SYS_5V. Take laser and camera-regulator power from SYS_5V after the selector; use USB priority and verify the combined USB load budget. Check 16.8 V full charge plus transients; keep raw battery voltage off low-voltage rails.
-- Confirm camera flex revision and select its supply rails, FPC socket and signal-level interface before wiring; do not use the obsolete 18-pin map.
+- Design the onboard 4S-to-5 V buck, downstream 3.3 V regulator, USB power selector, protection and support components. Start with VBAT_4S/GND input, protection, then BUCK_5V; select USB_VBUS/BUCK_5V into SYS_5V. Take laser power from SYS_5V after the selector and camera power from downstream +3V3; use USB priority and verify the combined USB load budget. Check 16.8 V full charge plus transients; keep raw battery voltage off low-voltage rails.
+- Verify J2 pin order against the received Mega harness, add its CS pull-up/decoupling and secure the cable for flight.
 - Add power inputs, decoupling, EN reset network, BOOT/RESET buttons and antenna clearance. Candidate S3 starting values: 10 uF + 100 nF supply decoupling; EN 10 kohm / 1 uF RC, subject to reference-design review.
 - Add USB with one 5.1 kohm pull-down on each CC pin; check ESD wiring, connector mapping and any D+/D- series resistors.
 - Confirm camera and laser hardware revisions, cable mappings and connector footprints. Verify laser I/O voltage and ENO treatment.
@@ -291,6 +268,6 @@ Reuse only circuits and libraries that match the final design. Copied libraries 
 | TPS2116 source selector | Candidate for USB/external 5 V selection; review its complete circuit before reuse. |
 | BQ24074 charger and charge-specific support | Excluded from the new design. Copied library files may remain unused. |
 | TPS61023 boost, 1 uH inductor, battery-gating circuit and battery/switch connector | Historical circuits; not automatically part of the new power plan. |
-| 20-pin camera FFC | Not the selected 24-contact flex-camera connector. |
+| 20-pin camera FFC | Unused; the Mega uses the six-wire SPI harness. |
 
 Key design references: [S3 module datasheet](https://documentation.espressif.com/esp32-s3-wroom-1_wroom-1u_datasheet_en.pdf), [S3 hardware guidelines](https://docs.espressif.com/projects/esp-hardware-design-guidelines/en/latest/esp32s3/index.html), [USB Serial/JTAG](https://docs.espressif.com/projects/esp-idf/en/stable/esp32s3/api-guides/usb-serial-jtag-console.html), [antenna layout](https://docs.espressif.com/projects/esp-hardware-design-guidelines/en/latest/esp32s3/pcb-layout-design.html).

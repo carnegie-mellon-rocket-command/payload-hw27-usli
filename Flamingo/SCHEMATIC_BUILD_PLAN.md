@@ -1,13 +1,13 @@
 # Flamingo schematic build plan
 
-Updated: 2026-11-14. This is the work list for drawing the schematic. Detailed electrical checks come afterward.
+Updated: 2026-11-15. This is the work list for drawing the schematic. Detailed electrical checks come afterward.
 
 Use [COMPONENTS.md](COMPONENTS.md) for architecture, proposed pin assignments and external modules; use [POWER_PARTS.md](POWER_PARTS.md) for the power parts. Tick items as they are drawn, not just because a library exists.
 
 ## What we are building
 
 - ESP32-S3-WROOM-1-N16R8: 8 MB PSRAM, 16 MB flash.
-- OV5640 ribbon camera, microSD logging and STA-M020X UART laser.
+- Arducam Mega 5 MP AF SPI camera, microSD logging and STA-M020X UART laser.
 - MicoAir743v2-AIO-45A flight controller with four ESCs; external M10G-5883 GPS/compass connects to the flight controller.
 - One 4S battery, split externally with an XT30 parallel Y harness. One branch feeds the AIO/motors; the other feeds Flamingo.
 - Flamingo converts 4S to 5 V onboard. USB takes priority when connected and powers all Flamingo loads through SYS_5V. No onboard charging or physical camera/laser power switch.
@@ -18,8 +18,7 @@ Use [COMPONENTS.md](COMPONENTS.md) for architecture, proposed pin assignments an
                            -> Flamingo protection -> 5 V buck --+
 USB-C -> USB input protection --------------------------------+-> selector -> SYS_5V
                                                                          |-> laser
-                                                                         |-> 3.3 V -> ESP32 + microSD
-                                                                         |-> camera supplies -> camera
+                                                                         |-> 3.3 V -> ESP32 + microSD + camera
 AIO UART + GND <---------------------------------------------------------> ESP32
 ```
 
@@ -30,7 +29,7 @@ AIO UART + GND <---------------------------------------------------------> ESP32
 | Power | TPS54302 symbol, value, footprint and C-number | Input, support components, selector and downstream supplies |
 | USB programming / JTAG | Sheet placeholder | Entire circuit |
 | ESP32-S3 core | Module and preliminary camera/laser wiring | Power, reset, boot and remaining interfaces |
-| OV5640 camera | 24-pin symbol, preliminary wiring and provisional footprint | Confirm exact module pinout, socket, voltage domains and supplies |
+| Arducam Mega camera | Six-pin J2 header and dedicated SPI wiring | Verify harness; add CS pull-up/decoupling and review power budget |
 | microSD | Sheet placeholder | Entire circuit |
 | STA-M020X laser | Five-pin connector and preliminary wiring | Final cable/connector choice and supply naming |
 | Flight-controller telemetry | Sheet placeholder | Connector and UART wiring |
@@ -44,7 +43,7 @@ Imported XT30 CAD is available as `EasyEDA:XT30PW-M`; it is not placed in the sa
 
 1. Power main path and USB input.
 2. Core power/reset/boot and USB data.
-3. Camera interface and its supply circuits together, after settling the camera revision.
+3. Camera SPI interface, connector and decoupling.
 4. microSD, laser and flight-controller telemetry.
 5. Expansion and optional debug headers.
 6. Finish top-level connections, then review the complete schematic.
@@ -65,14 +64,14 @@ Imported XT30 CAD is available as `EasyEDA:XT30PW-M`; it is not placed in the sa
 - [ ] Place TPS2116DRLR / C3235557 using `Power_Management:TPS2116DRL`, or the existing imported TPS2116 symbol. Use one version.
 - [ ] Connect protected `USB_5V` to VIN1 and `BUCK_5V` to VIN2. Tie both VOUT pins to `SYS_5V`.
 - [ ] Configure USB priority: MODE to VIN1, PR1 to a divider sensing VIN1, plus the input/output capacitors. ST can stay unused.
-- [ ] Feed the laser, main 3.3 V regulator and camera regulators from `SYS_5V`.
+- [ ] Feed the laser, main 3.3 V regulator and camera load through the main 3.3 V regulator from `SYS_5V`.
 - [ ] Use the [TPS2116 datasheet](https://www.ti.com/lit/ds/symlink/tps2116.pdf) for the divider and capacitor circuit. USB current/inrush protection belongs ahead of VIN1; the mux does not provide a USB current budget.
 
 ### Low-voltage supplies
 
 - [ ] Add the main `+3V3` supply. Current candidate: TPS62162DSGR / C40256, subject to the combined load budget.
 - [ ] Add its inductor and capacitors following the fixed-3.3 V circuit in the [TPS6216x datasheet](https://www.ti.com/lit/ds/symlink/tps62160.pdf).
-- [ ] Add camera-specific supplies after the camera voltage profile is settled. Do not assume the flex module accepts a single 3.3 V input.
+- [ ] Include the complete Mega camera module in the +3V3 current budget; no separate sensor supplies are required.
 - [ ] Add convenient test points for GND, protected battery, BUCK_5V, SYS_5V and +3V3.
 
 Do not copy Pelican's charger, single-cell battery gating or laser boost into this design. Motor current stays off Flamingo.
@@ -101,35 +100,30 @@ Reference: [Espressif USB Serial/JTAG](https://docs.espressif.com/projects/esp-i
 
 | Function | Proposed ESP32 GPIOs |
 |---|---|
-| Camera SCCB | 4 SDA, 5 SCL |
-| Camera control | 6 RESET; PWDN treatment still to finalize |
-| Camera data | 8 through 15 = driver D0 through D7 |
-| Camera timing | 16 PCLK, 17 VSYNC, 18 HREF, 21 XCLK |
+| Camera SPI | 8 SCK, 9 MOSI, 10 MISO, 6 CS |
+| Available I2C | 4 SDA, 5 SCL |
 | Native USB | 19 D-, 20 D+ |
 | FC telemetry | 1 TX, 2 RX |
 | Laser | 38 TX, 39 RX |
 | Shared SPI | 40 SCLK, 41 MOSI, 42 MISO |
 | SD / expansion chip select | 47 SD_CS, 48 EXT_CS |
 | Optional UART0 debug | 43 TX, 44 RX |
-| Spare | 7, potentially needed for camera control |
+| Available | 7, 11-18, 21; review before assigning |
 
 Reference: [S3 module datasheet](https://documentation.espressif.com/esp32-s3-wroom-1_wroom-1u_datasheet_en.pdf) and [hardware guidelines](https://docs.espressif.com/projects/esp-hardware-design-guidelines/en/latest/esp32s3/index.html).
 
-## 4. OV5640 camera — `schematics/camera.kicad_sch`
+## 4. Arducam Mega SPI camera - `schematics/camera.kicad_sch`
 
-This is the main unresolved interface. Keep the OV5640 DVP ribbon-camera goal, but the existing Seeed 24-contact drawing is provisional because published revisions differ. The assigned Amphenol footprint is also provisional.
+- [x] Replace the parallel flex-camera interface with six-wire SPI for JPEG still capture.
+- [x] Set J2 to a 1x6, 2.54 mm vertical male through-hole header, with `Connector_PinHeader_2.54mm:PinHeader_1x06_P2.54mm_Vertical`.
+- [x] Assign J2 pads 1 +3V3, 2 GND, 3 SCK, 4 MISO, 5 MOSI, 6 CS.
+- [x] Assign dedicated core SPI: GPIO8 SCK, GPIO9 MOSI, GPIO10 MISO, GPIO6 CS.
+- [ ] Verify the supplied harness female sockets mate with J2; camera end is XH2.54-6P. Check continuity by signal label.
+- [ ] Add 10 kohm CAM_CS pull-up to +3V3 and local 100 nF + 10 uF supply decoupling.
+- [ ] Review combined 3.3 V peak current, cable retention and pin-1 silkscreen.
+- [ ] Bring up the Mega SDK at low SPI speed, then validate JPEG capture/readout up to the documented 8 MHz limit. Test autofocus, capture latency and detection performance.
 
-- [ ] Settle the exact purchasable camera revision and obtain one matching flex pinout/supply drawing. Seeed SKU 114993115 is the documented starting choice.
-- [ ] Select the matching 24-contact FPC socket: pitch, contact side and flex thickness must match the camera.
-- [ ] Map every flex contact using that drawing. Do not substitute the old Pelican 20-pin or Waveshare 18-pin map.
-- [ ] Connect eight DVP data lines, PCLK, VSYNC, HREF and XCLK to the core interfaces.
-- [ ] Add SCCB SDA/SCL, reset and a defined PWDN state. Decide whether PWDN needs a spare GPIO or a fixed bias.
-- [ ] Add the required camera supplies/decoupling and any autofocus supply. Coordinate these with the Power sheet.
-- [ ] Add suitable signal-level matching between camera I/O and the 3.3 V ESP32 where required, including clock/control signals. The voltage printed on a camera power rail does not establish GPIO compatibility.
-- [ ] Give AGND and any autofocus ground an intentional return to system ground; separate label names do not connect themselves.
-- [ ] Remove or mark unused STROBE/AF contacts according to the chosen revision, and update the top-level camera pins accordingly.
-
-Use [COMPONENTS.md: camera connector and power](COMPONENTS.md#camera-connector-and-power) for the provisional contact table and conflicting revision sources. Do not treat that table as final wiring until the module is settled.
+See [camera connector and power](COMPONENTS.md#camera-connector-and-power) for the board connector and pin table. Sensor rails and internal parallel timing are handled by the Mega module.
 
 ## 5. microSD — `schematics/SD_card.kicad_sch`
 
@@ -170,8 +164,8 @@ GPS stays on the AIO's UART3/GPS1 plus I2C for its compass. Do not add a GPS mod
 - [ ] Break out +3V3, GND and available GPIO. Add a voltage/current label so this header is not mistaken for a motor-power output.
 - [ ] Expose shared SPI SCLK/MOSI/MISO and separate GPIO48 `EXT_CS`.
 - [ ] Add a default-high pull-up on EXT_CS so an external device stays deselected during startup.
-- [ ] If exposing I2C on GPIO4/5, share only the correct ESP32-side voltage domain. Coordinate pull-ups and camera SCCB use; do not expose a camera 1.8 V domain as generic 3.3 V I2C.
-- [ ] Reserve GPIO7 until the camera PWDN decision is made. Keep boot straps and PSRAM pins off general expansion.
+- [ ] If exposing I2C on GPIO4/5, share only the correct ESP32-side voltage domain. Use 3.3 V pull-ups; the Mega camera has no external SCCB connection.
+- [ ] GPIO7 is available after removing the parallel camera interface. Keep boot straps and PSRAM pins off general expansion.
 - [ ] Put ground contacts beside the cable's signals where practical and document the final contact order.
 
 ## 9. Optional UART debug — `schematics/uart_debug.kicad_sch`
@@ -187,7 +181,7 @@ GPS stays on the AIO's UART3/GPS1 plus I2C for its compass. Do not add a GPS mod
 - [ ] Connect Power to USB, core, SD, camera and laser. Use unambiguous rail names: VBAT_4S, VBAT_PROT, BUCK_5V, USB_5V, SYS_5V and +3V3.
 - [ ] Connect core to USB data, SD SPI, camera, laser, FC UART, expansion and optional UART debug.
 - [ ] Use hierarchical labels for module interfaces and local labels inside a sheet. GND and deliberately shared power symbols can be global; avoid also creating disconnected hierarchical nets with slightly different names.
-- [ ] Account for the currently exposed camera PWDN, STROBE and camera supply pins. They need intentional connections or removal according to the final camera circuit.
+- [ ] Use only CAM_SCK, CAM_MOSI, CAM_MISO and CAM_CS for the camera signal interfaces; power is +3V3/GND.
 - [ ] Keep the architecture drawing readable and add short connector/voltage notes. Remove obsolete copied notes and annotate references normally.
 - [ ] Update COMPONENTS.md with final connectors, camera revision and regulator/support parts as choices are settled.
 
@@ -203,4 +197,4 @@ Every fitted part eventually needs a value, correct footprint and purchase refer
 - [ ] Check symbols against package pads, run ERC and resolve findings.
 - [ ] Complete the BOM, then start PCB outline, mounting and connector placement.
 
-Open decisions carried forward: exact camera revision/socket/rails/translation; 4S protection/cutoff; complete regulator support BOM and current budget; USB input protection/current capability; laser harness; FC/expansion/debug connectors; battery capacity, propellers and mechanical layout.
+Open decisions carried forward: camera harness verification/retention and SPI support parts; 4S protection/cutoff; complete regulator support BOM and current budget; USB input protection/current capability; laser harness; FC/expansion/debug connectors; battery capacity, propellers and mechanical layout.
