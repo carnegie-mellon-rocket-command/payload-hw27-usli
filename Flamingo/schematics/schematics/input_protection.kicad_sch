@@ -952,7 +952,7 @@
 		)
 		(uuid "cf92b9b5-c2d1-4782-82d5-13c6a0db4f8c")
 	)
-	(hierarchical_label "Unprotected In"
+	(hierarchical_label "VBAT_4S"
 		(shape input)
 		(at 96.52 78.74 0)
 		(effects
@@ -963,8 +963,8 @@
 		)
 		(uuid "218e6a4f-b486-451f-828e-453b2df52ca4")
 	)
-	(hierarchical_label "Protected in"
-		(shape input)
+	(hierarchical_label "VBAT_PROT"
+		(shape output)
 		(at 125.73 73.66 0)
 		(effects
 			(font
@@ -985,7 +985,7 @@
 		(in_pos_files yes)
 		(dnp no)
 		(uuid "129933fc-4501-4c23-8326-4d6d9a1cbcb1")
-		(property "Reference" "TVS1"
+		(property "Reference" "D1"
 			(at 148.59 79.5 0)
 			(show_name no)
 			(do_not_autoplace no)
@@ -995,7 +995,7 @@
 				)
 			)
 		)
-		(property "Value" "P6KE20A_C499762"
+		(property "Value" "P6KE20A"
 			(at 146.05 79.5 0)
 			(show_name no)
 			(do_not_autoplace no)
@@ -1080,7 +1080,7 @@
 		(instances
 			(project "flamingo"
 				(path "/817f49eb-0105-475d-aa60-c8a0ced591cc/c5e44d0c-2cd4-4f2b-9527-a93aaaabc021/5a587846-2e02-44ef-937d-7465c9da06d5"
-					(reference "TVS1")
+					(reference "D1")
 					(unit 1)
 				)
 			)
@@ -1098,7 +1098,7 @@
 		(dnp no)
 		(fields_autoplaced yes)
 		(uuid "2fa8e54b-4344-442b-9820-ee2d2f67b40a")
-		(property "Reference" "RPolarity1"
+		(property "Reference" "D2"
 			(at 113.285 68.58 0)
 			(show_name no)
 			(do_not_autoplace no)
@@ -1108,7 +1108,7 @@
 				)
 			)
 		)
-		(property "Value" "SS34_C8678"
+		(property "Value" "SS34"
 			(at 113.285 71.12 0)
 			(show_name no)
 			(do_not_autoplace no)
@@ -1193,7 +1193,7 @@
 		(instances
 			(project "flamingo"
 				(path "/817f49eb-0105-475d-aa60-c8a0ced591cc/c5e44d0c-2cd4-4f2b-9527-a93aaaabc021/5a587846-2e02-44ef-937d-7465c9da06d5"
-					(reference "RPolarity1")
+					(reference "D2")
 					(unit 1)
 				)
 			)
@@ -1211,7 +1211,7 @@
 		(dnp no)
 		(fields_autoplaced yes)
 		(uuid "5afb2f49-1708-477c-b7a3-9509bf8a808d")
-		(property "Reference" "resetablefuse1"
+		(property "Reference" "F1"
 			(at 101.6 68.58 0)
 			(show_name no)
 			(do_not_autoplace no)
@@ -1306,7 +1306,7 @@
 		(instances
 			(project "flamingo"
 				(path "/817f49eb-0105-475d-aa60-c8a0ced591cc/c5e44d0c-2cd4-4f2b-9527-a93aaaabc021/5a587846-2e02-44ef-937d-7465c9da06d5"
-					(reference "resetablefuse1")
+					(reference "F1")
 					(unit 1)
 				)
 			)
@@ -1402,7 +1402,7 @@
 		(dnp no)
 		(fields_autoplaced yes)
 		(uuid "f51c87e8-5e12-4484-9410-5214b3072fa6")
-		(property "Reference" "47uf1"
+		(property "Reference" "C8"
 			(at 124.46 79.3749 0)
 			(show_name no)
 			(do_not_autoplace no)
@@ -1499,7 +1499,7 @@
 		(instances
 			(project "flamingo"
 				(path "/817f49eb-0105-475d-aa60-c8a0ced591cc/c5e44d0c-2cd4-4f2b-9527-a93aaaabc021/5a587846-2e02-44ef-937d-7465c9da06d5"
-					(reference "47uf1")
+					(reference "C8")
 					(unit 1)
 				)
 			)

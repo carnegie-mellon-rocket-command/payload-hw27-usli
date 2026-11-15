@@ -1023,8 +1023,8 @@
 		)
 		(uuid "ee6a4386-9f3e-406f-8dc4-bbcd57c34b07")
 	)
-	(hierarchical_label "5Vout"
-		(shape input)
+	(hierarchical_label "BUCK_5V"
+		(shape output)
 		(at 218.44 95.25 0)
 		(effects
 			(font
@@ -1034,7 +1034,7 @@
 		)
 		(uuid "17eeade3-4877-4b72-b8ae-b3e295ccd84c")
 	)
-	(hierarchical_label "protected_in"
+	(hierarchical_label "VBAT_PROT"
 		(shape input)
 		(at 123.19 88.9 180)
 		(effects
@@ -1213,7 +1213,7 @@
 		(dnp no)
 		(fields_autoplaced yes)
 		(uuid "205822ce-fade-4163-a628-1a86356d39f9")
-		(property "Reference" "10uf1"
+		(property "Reference" "C3"
 			(at 137.16 91.4399 0)
 			(show_name no)
 			(do_not_autoplace no)
@@ -1224,7 +1224,7 @@
 				(justify left)
 			)
 		)
-		(property "Value" "C"
+		(property "Value" "10uF"
 			(at 137.16 93.9799 0)
 			(show_name no)
 			(do_not_autoplace no)
@@ -1288,7 +1288,7 @@
 		(instances
 			(project "flamingo"
 				(path "/817f49eb-0105-475d-aa60-c8a0ced591cc/c5e44d0c-2cd4-4f2b-9527-a93aaaabc021/0a5bbc8c-2796-4a7c-ac7a-9c1395654364"
-					(reference "10uf1")
+					(reference "C3")
 					(unit 1)
 				)
 			)
@@ -1306,7 +1306,7 @@
 		(dnp no)
 		(fields_autoplaced yes)
 		(uuid "36b0bbae-16df-436e-a8a5-f32373054771")
-		(property "Reference" "22uf2"
+		(property "Reference" "C4"
 			(at 199.39 97.7899 0)
 			(show_name no)
 			(do_not_autoplace no)
@@ -1317,7 +1317,7 @@
 				(justify left)
 			)
 		)
-		(property "Value" "C"
+		(property "Value" "22uF"
 			(at 199.39 100.3299 0)
 			(show_name no)
 			(do_not_autoplace no)
@@ -1381,7 +1381,7 @@
 		(instances
 			(project "flamingo"
 				(path "/817f49eb-0105-475d-aa60-c8a0ced591cc/c5e44d0c-2cd4-4f2b-9527-a93aaaabc021/0a5bbc8c-2796-4a7c-ac7a-9c1395654364"
-					(reference "22uf2")
+					(reference "C4")
 					(unit 1)
 				)
 			)
@@ -1478,7 +1478,7 @@
 		(dnp no)
 		(fields_autoplaced yes)
 		(uuid "8cf265f9-f170-4ead-83ee-b34fbc6cab9f")
-		(property "Reference" "10K2"
+		(property "Reference" "R11"
 			(at 166.37 97.7899 0)
 			(show_name no)
 			(do_not_autoplace no)
@@ -1489,7 +1489,7 @@
 				(justify right)
 			)
 		)
-		(property "Value" "R"
+		(property "Value" "10k"
 			(at 166.37 100.3299 0)
 			(show_name no)
 			(do_not_autoplace no)
@@ -1553,7 +1553,7 @@
 		(instances
 			(project "flamingo"
 				(path "/817f49eb-0105-475d-aa60-c8a0ced591cc/c5e44d0c-2cd4-4f2b-9527-a93aaaabc021/0a5bbc8c-2796-4a7c-ac7a-9c1395654364"
-					(reference "10K2")
+					(reference "R11")
 					(unit 1)
 				)
 			)
@@ -1648,7 +1648,7 @@
 		(in_pos_files yes)
 		(dnp no)
 		(uuid "9a30c273-bfcb-4031-a632-0428653bd4cf")
-		(property "Reference" "75K1"
+		(property "Reference" "R12"
 			(at 204.47 119.38 90)
 			(show_name no)
 			(do_not_autoplace yes)
@@ -1658,7 +1658,7 @@
 				)
 			)
 		)
-		(property "Value" "R"
+		(property "Value" "75k"
 			(at 204.47 116.84 90)
 			(show_name no)
 			(do_not_autoplace no)
@@ -1721,7 +1721,7 @@
 		(instances
 			(project "flamingo"
 				(path "/817f49eb-0105-475d-aa60-c8a0ced591cc/c5e44d0c-2cd4-4f2b-9527-a93aaaabc021/0a5bbc8c-2796-4a7c-ac7a-9c1395654364"
-					(reference "75K1")
+					(reference "R12")
 					(unit 1)
 				)
 			)
@@ -1817,7 +1817,7 @@
 		(dnp no)
 		(fields_autoplaced yes)
 		(uuid "a742e6ac-d978-46ce-b1db-51610d48d408")
-		(property "Reference" "22uf3"
+		(property "Reference" "C5"
 			(at 210.82 97.7899 0)
 			(show_name no)
 			(do_not_autoplace no)
@@ -1828,7 +1828,7 @@
 				(justify left)
 			)
 		)
-		(property "Value" "C"
+		(property "Value" "22uF"
 			(at 210.82 100.3299 0)
 			(show_name no)
 			(do_not_autoplace no)
@@ -1892,7 +1892,7 @@
 		(instances
 			(project "flamingo"
 				(path "/817f49eb-0105-475d-aa60-c8a0ced591cc/c5e44d0c-2cd4-4f2b-9527-a93aaaabc021/0a5bbc8c-2796-4a7c-ac7a-9c1395654364"
-					(reference "22uf3")
+					(reference "C5")
 					(unit 1)
 				)
 			)
@@ -1910,7 +1910,7 @@
 		(dnp no)
 		(fields_autoplaced yes)
 		(uuid "af1cbcaa-ac51-4d1e-90b5-b3b53cbaea7a")
-		(property "Reference" ".1uf1"
+		(property "Reference" "C6"
 			(at 127 91.4399 0)
 			(show_name no)
 			(do_not_autoplace no)
@@ -1921,7 +1921,7 @@
 				(justify left)
 			)
 		)
-		(property "Value" "C"
+		(property "Value" "0.1uF"
 			(at 127 93.9799 0)
 			(show_name no)
 			(do_not_autoplace no)
@@ -1985,7 +1985,7 @@
 		(instances
 			(project "flamingo"
 				(path "/817f49eb-0105-475d-aa60-c8a0ced591cc/c5e44d0c-2cd4-4f2b-9527-a93aaaabc021/0a5bbc8c-2796-4a7c-ac7a-9c1395654364"
-					(reference ".1uf1")
+					(reference "C6")
 					(unit 1)
 				)
 			)
@@ -2003,7 +2003,7 @@
 		(in_pos_files yes)
 		(dnp no)
 		(uuid "cacf41a5-77c4-4ab4-8403-8238236b5c78")
-		(property "Reference" ".1uf2"
+		(property "Reference" "C7"
 			(at 181.61 90.1699 0)
 			(show_name no)
 			(do_not_autoplace no)
@@ -2014,7 +2014,7 @@
 				(justify left)
 			)
 		)
-		(property "Value" "C"
+		(property "Value" "0.1uF"
 			(at 181.61 92.7099 0)
 			(show_name no)
 			(do_not_autoplace no)
@@ -2078,7 +2078,7 @@
 		(instances
 			(project "flamingo"
 				(path "/817f49eb-0105-475d-aa60-c8a0ced591cc/c5e44d0c-2cd4-4f2b-9527-a93aaaabc021/0a5bbc8c-2796-4a7c-ac7a-9c1395654364"
-					(reference ".1uf2")
+					(reference "C7")
 					(unit 1)
 				)
 			)
@@ -2096,7 +2096,7 @@
 		(dnp no)
 		(fields_autoplaced yes)
 		(uuid "cbb2d808-d182-4bff-8430-879435766ec0")
-		(property "Reference" "10uH1"
+		(property "Reference" "L2"
 			(at 191.77 90.17 90)
 			(show_name no)
 			(do_not_autoplace no)
@@ -2106,7 +2106,7 @@
 				)
 			)
 		)
-		(property "Value" "L"
+		(property "Value" "10uH"
 			(at 191.77 92.71 90)
 			(show_name no)
 			(do_not_autoplace no)
@@ -2169,7 +2169,7 @@
 		(instances
 			(project "flamingo"
 				(path "/817f49eb-0105-475d-aa60-c8a0ced591cc/c5e44d0c-2cd4-4f2b-9527-a93aaaabc021/0a5bbc8c-2796-4a7c-ac7a-9c1395654364"
-					(reference "10uH1")
+					(reference "L2")
 					(unit 1)
 				)
 			)
@@ -2187,7 +2187,7 @@
 		(dnp no)
 		(fields_autoplaced yes)
 		(uuid "ed670b97-942d-4129-896f-039eca2e8fe2")
-		(property "Reference" "Buckconverter1"
+		(property "Reference" "U4"
 			(at 152.4 81.28 0)
 			(show_name no)
 			(do_not_autoplace no)
@@ -2273,7 +2273,7 @@
 		(instances
 			(project "flamingo"
 				(path "/817f49eb-0105-475d-aa60-c8a0ced591cc/c5e44d0c-2cd4-4f2b-9527-a93aaaabc021/0a5bbc8c-2796-4a7c-ac7a-9c1395654364"
-					(reference "Buckconverter1")
+					(reference "U4")
 					(unit 1)
 				)
 			)

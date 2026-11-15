@@ -125,13 +125,13 @@ JLC links identify catalog entries. Recheck stock, price and assembly eligibilit
 | Camera | [Arducam Mega 5 MP AF, B0401 / ASIN B0BW7MDVHK](https://www.amazon.com/clp/B0BW7MDVHK) | Selected external SPI module; 2592 x 1944, autofocus, JPEG output. No video streaming required. |
 | Camera connector / supplies | J2: 1x6, 2.54 mm-pitch vertical male through-hole header | KiCad `Connector_Generic:Conn_01x06`; footprint `Connector_PinHeader_2.54mm:PinHeader_1x06_P2.54mm_Vertical`. Supplied camera jumper harness mates at the board via female sockets; verify the received cable. +3V3 power and logic; no separate sensor rails. |
 | Laser | STA-M020X per supplied manual | External module; confirm actual label matches the manual. About 14 g, diameter 23 x 47 mm. |
-| microSD socket | XUNPU TF-115-BCP9 - [C720505](https://jlcpcb.com/partdetail/Xunpu-TF_115BCP9/C720505) | Proposed Pelican reuse; 3.3 V SPI. Check symbol/pad mapping and shell grounds. |
-| USB-C | GCT USB4120-03-C - [C3445864](https://jlcpcb.com/partdetail/GCT-USB4120_03C/C3445864) | Proposed native programming/console/JTAG. Vertical connector; check cable access and footprint. |
+| microSD socket | XUNPU TF-115-BCP9 - [C720505](https://jlcpcb.com/partdetail/Xunpu-TF_115BCP9/C720505) | Placed as J2, 3.3 V SPI. `EasyEDA:TF-SMD_TF-115-BCP9`; R1-R5 are five 10k pull-ups, 0805 / C17414. CD pin 9 intentionally unused; VSS and shell contacts grounded. Local decoupling and parent-sheet SPI connections remain. |
+| USB-C | DEALON USB-TYPE-C-017 - [C2927037](https://jlcpcb.com/partdetail/DEALON-USB_TYPE_C017/C2927037) | Placed on USB programming / JTAG sheet; right-angle SMT, 16 contacts. Assigned footprint `EasyEDA:USB-TYPE-C-SMD_C9900008089` must be checked against this exact MPN. CC pull-downs and paired D+/D- contacts are drawn; ESD/input protection remain. |
 | USB ESD | ST USBLC6-2SC6 - [C7519](https://jlcpcb.com/partdetail/C7519) | Proposed; check ST pinout and VBUS/ground treatment. |
 | Battery splitter/harness | XT30 parallel Y harness; mating genders to match the actual pack/cables | One battery input, separate AIO and Flamingo 4S branches; verify polarity, current ratings and branch protection. |
-| Onboard 5 V buck | TPS54302DDCR - [C311983](https://jlcpcb.com/partdetail/C311983) | Placed in the Power sheet; support circuit still to draw. 4.5-28 V input, up to 3 A. Prior positive JLC stock check; recheck before ordering. |
-| Main 3.3 V regulator | Current candidate TPS62162DSGR - [C40256](https://jlcpcb.com/partdetail/C40256) | Fixed 3.3 V, 1 A from SYS_5V, conditional on the combined load budget. Supersedes TPS63070 as the current placement candidate; see POWER_PARTS.md. |
-| USB/buck power selector | TPS2116DRLR - [C3235557](https://jlcpcb.com/partdetail/C3235557) | Current placement choice: protected USB_5V to VIN1, BUCK_5V to VIN2, USB priority. All Flamingo loads are downstream on SYS_5V. Support network and USB input protection still to draw. |
+| Onboard 5 V buck | TPS54302DDCR - [C311983](https://jlcpcb.com/partdetail/C311983) | Placed in `schematics/schematics/buck4S_5V.kicad_sch` with a preliminary support circuit; electrical/part-rating validation remains. 4.5-28 V input, up to 3 A. Prior positive JLC stock check; recheck before ordering. |
+| Main 3.3 V regulator | Current candidate TPS62162DSGR - [C40256](https://jlcpcb.com/partdetail/C40256) | Placed as U3, fixed 3.3 V, 1 A from global `5V` to global `3V3`, with preliminary 2.2 uH, 10 uF, 22 uF and 100k PG support. EP, AGND, PGND and FB are grounded. Verify passive Value fields, inductor current rating and combined peak-load budget. Supersedes TPS63070 as the current placement candidate; see POWER_PARTS.md. |
+| USB/buck power selector | TPS2116DRLR - [C3235557](https://jlcpcb.com/partdetail/C3235557) | Placed as U2: USB_5V to VIN1, Buck_5V to VIN2, MODE to VIN1; PR1 divider drawn with intended 33k/10k values. Both outputs join global `5V`. USB protection and local mux capacitors remain to draw; passive Value fields/part numbers need review. |
 | Connectors | Camera, laser, FC telemetry, 4S input and expansion | Flamingo 4S input: XT30PW-M30.G.Y, [C431092](https://jlcpcb.com/partdetail/C431092), through-hole/right-angle. Imported as `EasyEDA:XT30PW-M` with `EasyEDA:CONN-TH_XT30PW-M`. Confirm actual harness polarity/mating gender. Other connector choices and contact order remain to settle. |
 
 ## GPS compatibility and wiring
@@ -195,9 +195,9 @@ Quarter-image processing is a memory-budget example; use sequential blocks with 
 
 ### Camera connector and power
 
-Fit **J2: single-row 1x6, 2.54 mm-pitch, vertical male through-hole pin header** on Flamingo. Use `Connector_Generic:Conn_01x06` and `Connector_PinHeader_2.54mm:PinHeader_1x06_P2.54mm_Vertical`. Hand-solder it. This board header mates with the female socket ends of the supplied jumper harness; the camera-side connector is listed by Arducam as XH2.54-6P. Do not assume a JST-XH board socket mates with the supplied board-side jumper ends. Inspect the received harness before ordering.
+Planned camera connection (not drawn): **single-row 1x6, 2.54 mm-pitch, vertical male through-hole pin header** on Flamingo. Use `Connector_Generic:Conn_01x06` and `Connector_PinHeader_2.54mm:PinHeader_1x06_P2.54mm_Vertical`. Hand-solder it. This board header mates with the female socket ends of the supplied jumper harness; the camera-side connector is listed by Arducam as XH2.54-6P. Do not assume a JST-XH board socket mates with the supplied board-side jumper ends. Inspect the received harness before ordering.
 
-| J2 pad | Net | Connection |
+| Proposed camera header pad | Net | Connection |
 |---|---|---|
 | 1 | +3V3 | Camera VCC |
 | 2 | GND | Camera GND |
@@ -206,9 +206,9 @@ Fit **J2: single-row 1x6, 2.54 mm-pitch, vertical male through-hole pin header**
 | 5 | CAM_MOSI | GPIO9 -> camera MOSI |
 | 6 | CAM_CS | GPIO6 -> camera CS, active low |
 
-This is Flamingo's assigned pad order: verify each wire against the camera signal labels and continuity, not cable colors or an assumed connector viewing direction. Mark pin 1, +3V3 and GND on silkscreen. Keep the harness short and strain-relieved; secure the jumper sockets for the flight installation or replace the board connection with a positively locking harness and a reviewed footprint/pinout before release.
+This is the proposed camera header pad order (J2 is now the microSD socket): verify each wire against the camera signal labels and continuity, not cable colors or an assumed connector viewing direction. Mark pin 1, +3V3 and GND on silkscreen. Keep the harness short and strain-relieved; secure the jumper sockets for the flight installation or replace the board connection with a positively locking harness and a reviewed footprint/pinout before release.
 
-Add a 10 kohm CAM_CS pull-up and local 100 nF + 10 uF decoupling before release. These are currently notes, not placed components. No external SCCB/I2C, XCLK, parallel data, reset/PWDN lines, FPC socket or separate sensor regulators are required by this module interface.
+Draw the camera connector and SPI interface, then add a 10 kohm CAM_CS pull-up and local 100 nF + 10 uF decoupling. The current camera sheet is empty; these are design requirements, not placed components. No external SCCB/I2C, XCLK, parallel data, reset/PWDN lines, FPC socket or separate sensor regulators are required by this module interface.
 
 References: [Mega 5MP specifications](https://docs.arducam.com/Arduino-SPI-camera/MEGA-SPI/MEGA-5MP/), [Mega wiring and SDK quick start](https://docs.arducam.com/Arduino-SPI-camera/MEGA-SPI/MEGA-Quick-Start-Guide/), [B0401 connector and product details](https://www.arducam.com/presale-mega-5mp-color-rolling-shutter-camera-module-with-autofocus-lens-for-any-microcontroller.html).
 
@@ -218,7 +218,7 @@ These are candidate assignments for the exact N16R8 module, not implemented sche
 
 | Interface | GPIOs / notes |
 |---|---|
-| Camera | [Arducam Mega 5 MP AF, B0401 / ASIN B0BW7MDVHK](https://www.amazon.com/clp/B0BW7MDVHK) | Selected external SPI module; 2592 x 1944, autofocus, JPEG output. No video streaming required. |
+| Camera SPI (planned) | 8 SCK, 9 MOSI, 10 MISO, 6 CS; not drawn in the current camera/core sheets. |
 | USB Serial/JTAG | 19 D-, 20 D+ |
 | FC telemetry | 1 TX -> AIO UART4 RX; 2 RX <- UART4 TX; common ground. PX4 TELEM2 / ArduPilot SERIAL4. |
 | Laser UART | 38 TX -> laser RXD; 39 RX <- laser TXD |
@@ -244,11 +244,42 @@ GPS/barometric altitude is not automatically height above terrain; laser distanc
 
 References: [AIO manual and port mapping](https://micoair.com/en/docs/flight-controller/micoair743-aio-series/micoair743v2-aio-45a-manual), [official ArduCopter firmware](https://firmware.ardupilot.org/Copter/stable/MicoAir743v2/), [GPS manual](https://micoair.com/en/docs/gps-rtk/gps), [ArduPilot serial configuration](https://ardupilot.org/copter/docs/common-serial-options.html), [message requests](https://ardupilot.org/dev/docs/mavlink-requesting-data.html).
 
+## Saved KiCad state - 2026-11-15
+
+The saved diagram is the source for this implementation snapshot; planned architecture elsewhere is not a completed circuit. Current global rails are `5V` (planned SYS_5V) and `3V3` (planned +3V3). `Buck_5V` is local to Power. Do not introduce the alternative spellings as separate disconnected nets.
+
+| Block | Drawn | Still required |
+|---|---|---|
+| Input / buck | XT30, MF-R160, SS34, P6KE20A, EEEFK1V470P bulk-capacitor symbol; TPS54302 with preliminary support | Review exact protection/capacitor selection, ratings, feedback values and startup/cutoff behavior |
+| Source selector | TPS2116, USB on VIN1 and buck on VIN2; MODE/PR1 priority network | Local capacitors, USB input protection, passive Value/MPN validation |
+| 3.3 V | TPS62162 and preliminary support; EP grounded | Validate C1046 inductor candidate against required inductance, saturation/RMS current and DCR; finish load/transient review |
+| USB | DEALON connector, two CC pull-downs, joined D+ and D- copies | Shell pins 1-4 still unconnected; ESD, input protection and top-level data wiring. CC resistors currently use `R_01005_0402Metric` with C25905: verify package/MPN match and enter 5.1k in Value fields |
+| Core | ESP32, 3V3/GND, SD/USB/laser signal labels | EN/BOOT/reset support and decoupling; finish parent-sheet interfaces. USB data ports must be bidirectional |
+| Camera | Empty placeholder, still titled OV5640 at top level | Draw selected Arducam Mega SPI interface; prior FPC architecture is superseded |
+| microSD | J2 socket; R1 DAT2, R2 CS, R3 MOSI, R4 MISO, R5 DAT1; all 10k / C17414 | Local decoupling and top-level SD wiring; SPI sharing with expansion remains planned |
+
+### microSD connection record
+
+| Socket pin | Signal | Saved sheet connection |
+|---|---|---|
+| 1 | DAT2 | R1 pull-up to 3V3; no core GPIO |
+| 2 | CD/DAT3 | SD_CS input; R2 pull-up; intended GPIO47 |
+| 3 | CMD | SD_MOSI input; R3 pull-up; intended GPIO41 |
+| 4 | VDD | 3V3 |
+| 5 | CLK | SD_CLK input, no pull-up; intended GPIO40 |
+| 6 | VSS | GND |
+| 7 | DAT0 | SD_MISO output; R4 pull-up; intended GPIO42 |
+| 8 | DAT1 | R5 pull-up to 3V3; no core GPIO |
+| 9 | Mechanical CD | Explicit no-connect; card detection by initialization |
+| 10-13 | Shell / ground | GND |
+
+The five pull-ups retain their existing 0805 footprints and C17414 purchasing fields. The SD sheet is readable and locally connected, but its hierarchical SPI labels are not yet connected to the core through the parent sheet.
+
 ## Schematic work remaining
 
 - Select propellers and validate total vehicle thrust; size the 4S battery, distribution harness, connectors and protection for simultaneous motor and electronics loads. Select the external balance charger and runtime target.
 - Design the onboard 4S-to-5 V buck, downstream 3.3 V regulator, USB power selector, protection and support components. Start with VBAT_4S/GND input, protection, then BUCK_5V; select USB_VBUS/BUCK_5V into SYS_5V. Take laser power from SYS_5V after the selector and camera power from downstream +3V3; use USB priority and verify the combined USB load budget. Check 16.8 V full charge plus transients; keep raw battery voltage off low-voltage rails.
-- Verify J2 pin order against the received Mega harness, add its CS pull-up/decoupling and secure the cable for flight.
+- Draw the Mega camera sheet and core/top-level SPI connections; verify the proposed header order against the received harness, add CS pull-up/decoupling and secure the cable for flight.
 - Add power inputs, decoupling, EN reset network, BOOT/RESET buttons and antenna clearance. Candidate S3 starting values: 10 uF + 100 nF supply decoupling; EN 10 kohm / 1 uF RC, subject to reference-design review.
 - Add USB with one 5.1 kohm pull-down on each CC pin; check ESD wiring, connector mapping and any D+/D- series resistors.
 - Confirm camera and laser hardware revisions, cable mappings and connector footprints. Verify laser I/O voltage and ENO treatment.

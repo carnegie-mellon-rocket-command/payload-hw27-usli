@@ -26,18 +26,18 @@ AIO UART + GND <---------------------------------------------------------> ESP32
 
 | Sheet | Already present | Work remaining |
 |---|---|---|
-| Power | TPS54302 symbol, value, footprint and C-number | Input, support components, selector and downstream supplies |
-| USB programming / JTAG | Sheet placeholder | Entire circuit |
+| Power | XT30/input protection, TPS54302 support circuit, TPS2116 priority network, TPS62162 support circuit | Validate passive values/ratings, add mux decoupling and USB protection |
+| USB programming / JTAG | DEALON USB-TYPE-C-017, paired D+/D- contacts, CC pull-downs | Shell grounding, ESD/input protection, package/value checks and top-level data wiring |
 | ESP32-S3 core | Module and preliminary camera/laser wiring | Power, reset, boot and remaining interfaces |
-| Arducam Mega camera | Six-pin J2 header and dedicated SPI wiring | Verify harness; add CS pull-up/decoupling and review power budget |
-| microSD | Sheet placeholder | Entire circuit |
+| Arducam Mega camera | Empty placeholder; top-level title still OV5640 | Entire SPI interface; camera header reference to assign (J2 is microSD) |
+| microSD | J2 TF-115-BCP9, five 10k pull-ups R1-R5, grounded shell, unused CD marked | Local decoupling and top-level SPI connections |
 | STA-M020X laser | Five-pin connector and preliminary wiring | Final cable/connector choice and supply naming |
 | Flight-controller telemetry | Sheet placeholder | Connector and UART wiring |
 | GPIO / I2C / SPI | Sheet placeholder | Headers and wiring |
 | Optional UART debug | Sheet placeholder | Header and wiring |
-| Top level | All nine sheet boxes and some camera/laser wiring | Add remaining interfaces and connect the system |
+| Top level | All nine sheet boxes and laser/USB-power wiring | Add SD and USB-data parent interfaces/wires; camera and remaining interfaces |
 
-Imported XT30 CAD is available as `EasyEDA:XT30PW-M`; it is not placed in the saved schematic yet. Existing wires and assigned footprints are starting points, not completed validation.
+XT30 CAD is placed on the Power sheet as `EasyEDA:XT30PW-M`. Existing wires and assigned footprints are starting points, not completed validation.
 
 ## Build order
 
@@ -52,7 +52,7 @@ Imported XT30 CAD is available as `EasyEDA:XT30PW-M`; it is not placed in the sa
 
 ### Battery input and 5 V conversion
 
-- [ ] Place `EasyEDA:XT30PW-M`, value `XT30PW-M30.G.Y`, LCSC `C431092`. This is the original through-hole, right-angle PCB connector.
+- [x] Place `EasyEDA:XT30PW-M`, value `XT30PW-M30.G.Y`, LCSC `C431092`. This is the original through-hole, right-angle PCB connector.
 - [ ] Label the input `VBAT_4S` and `GND`; map the contacts to the actual harness polarity.
 - [ ] Add Flamingo branch protection and reverse-polarity protection; call the protected battery net `VBAT_PROT`. Exact protection parts remain to select.
 - [ ] Keep the already placed TPS54302DDCR / C311983. Give it a normal `U` reference during annotation.
@@ -61,7 +61,7 @@ Imported XT30 CAD is available as `EasyEDA:XT30PW-M`; it is not placed in the sa
 
 ### USB/battery source selection
 
-- [ ] Place TPS2116DRLR / C3235557 using `Power_Management:TPS2116DRL`, or the existing imported TPS2116 symbol. Use one version.
+- [x] Place TPS2116DRLR / C3235557 using `Power_Management:TPS2116DRL`, or the existing imported TPS2116 symbol. Use one version.
 - [ ] Connect protected `USB_5V` to VIN1 and `BUCK_5V` to VIN2. Tie both VOUT pins to `SYS_5V`.
 - [ ] Configure USB priority: MODE to VIN1, PR1 to a divider sensing VIN1, plus the input/output capacitors. ST can stay unused.
 - [ ] Feed the laser, main 3.3 V regulator and camera load through the main 3.3 V regulator from `SYS_5V`.
@@ -78,13 +78,13 @@ Do not copy Pelican's charger, single-cell battery gating or laser boost into th
 
 ## 2. USB programming / JTAG — `schematics/usb_power_program.kicad_sch`
 
-- [ ] Place USB-C connector; current candidate GCT USB4120-03-C / C3445864. Its orientation must suit cable access.
-- [ ] Join the connector's duplicated USB 2.0 D+ contacts and duplicated D- contacts into one D+/D- pair.
-- [ ] Add one 5.1 kohm pull-down from each CC pin to GND; do not join CC1 and CC2.
+- [x] Place DEALON USB-TYPE-C-017 / C2927037, right-angle SMT. Verify imported footprint against the exact connector drawing.
+- [x] Join the connector's duplicated USB 2.0 D+ contacts and duplicated D- contacts into one D+/D- pair.
+- [x] Draw separate CC pull-downs to GND. Before release, enter 5.1k in Value fields and check C25905 against the assigned 01005 footprint.
 - [ ] Add USB ESD protection; current candidate USBLC6-2SC6 / C7519. Follow its actual pinout.
 - [ ] Add the selected USB current/inrush protection between VBUS and the `USB_5V` output to Power. This part remains to select.
 - [ ] Expose `USB_D_P`, `USB_D_N` and `USB_5V` as sheet interfaces. Connect D+ to core GPIO20 and D- to GPIO19 at the top level.
-- [ ] Handle connector ground/shield and unused contacts deliberately. No separate USB-to-UART chip is needed for native USB Serial/JTAG.
+- [ ] Ground connector shell pads 1-4; USB ground contacts are already grounded. Handle unused contacts deliberately. No separate USB-to-UART chip is needed for native USB Serial/JTAG.
 
 Reference: [Espressif USB Serial/JTAG](https://docs.espressif.com/projects/esp-idf/en/stable/esp32s3/api-guides/usb-serial-jtag-console.html).
 
@@ -114,25 +114,25 @@ Reference: [S3 module datasheet](https://documentation.espressif.com/esp32-s3-wr
 
 ## 4. Arducam Mega SPI camera - `schematics/camera.kicad_sch`
 
-- [x] Replace the parallel flex-camera interface with six-wire SPI for JPEG still capture.
-- [x] Set J2 to a 1x6, 2.54 mm vertical male through-hole header, with `Connector_PinHeader_2.54mm:PinHeader_1x06_P2.54mm_Vertical`.
-- [x] Assign J2 pads 1 +3V3, 2 GND, 3 SCK, 4 MISO, 5 MOSI, 6 CS.
-- [x] Assign dedicated core SPI: GPIO8 SCK, GPIO9 MOSI, GPIO10 MISO, GPIO6 CS.
-- [ ] Verify the supplied harness female sockets mate with J2; camera end is XH2.54-6P. Check continuity by signal label.
-- [ ] Add 10 kohm CAM_CS pull-up to +3V3 and local 100 nF + 10 uF supply decoupling.
-- [ ] Review combined 3.3 V peak current, cable retention and pin-1 silkscreen.
-- [ ] Bring up the Mega SDK at low SPI speed, then validate JPEG capture/readout up to the documented 8 MHz limit. Test autofocus, capture latency and detection performance.
+Current saved sheet is empty. The top-level box still says OV5640; rename when drawing the selected Mega interface.
 
-See [camera connector and power](COMPONENTS.md#camera-connector-and-power) for the board connector and pin table. Sensor rails and internal parallel timing are handled by the Mega module.
+- [ ] Draw a six-wire SPI connector for the Mega; assign an unused reference (J2 is the SD socket).
+- [ ] Use the proposed connector/pin plan in COMPONENTS.md after verifying the harness. A Micro-Fit locking alternative has been discussed but is not implemented.
+- [ ] Draw core SPI: GPIO8 SCK, GPIO9 MOSI, GPIO10 MISO, GPIO6 CS, and parent connections.
+- [ ] Add 10k CS pull-up and local 100 nF + 10 uF; review the 3V3 load budget.
+- [ ] Validate JPEG capture/readout and harness retention on hardware.
 
-## 5. microSD — `schematics/SD_card.kicad_sch`
+## 5. microSD - `schematics/SD_card.kicad_sch`
 
-- [ ] Place TF-115-BCP9 / C720505 using the existing copied library after comparing its contacts with the datasheet.
-- [ ] Power the card from +3V3 with local capacitors; connect socket grounds and shell appropriately.
-- [ ] Wire SPI: CLK -> GPIO40, CMD/MOSI -> GPIO41, DAT0/MISO -> GPIO42, DAT3/CS -> GPIO47.
-- [ ] Add the required pull-ups using Espressif's SD guidance. Handle unused DAT1/DAT2 and any card-detect switch explicitly.
-- [ ] Expose `SPI_SCLK`, `SPI_MOSI`, `SPI_MISO`, `SD_CS` and the supply as sheet interfaces.
-- [ ] Share SPI with the expansion connector using separate chip selects. Note in the design that firmware initializes SD into SPI mode before using other bus devices.
+- [x] Place J2 TF-115-BCP9 / C720505 with `EasyEDA:TF-SMD_TF-115-BCP9`.
+- [x] Connect VDD to global `3V3`, VSS and shell pins 10-13 to GND.
+- [x] Draw `SD_CLK`, `SD_MOSI`, `SD_CS` inputs and `SD_MISO` output.
+- [x] Add five 10k pull-ups: R1 DAT2, R2 CS, R3 MOSI, R4 MISO, R5 DAT1; existing 0805 / C17414 selection retained. CLK has no pull-up.
+- [x] Mark mechanical CD pin 9 intentionally unconnected. DAT1/DAT2 are biased high without core GPIOs.
+- [x] Separate pull-up bank, socket, labels and notes; enter 10k Value fields and unique references.
+- [ ] Add local supply decoupling close to the socket in the eventual PCB layout.
+- [ ] Add parent sheet pins and wire core to SD: CLK GPIO40, MOSI GPIO41, MISO GPIO42, CS GPIO47. These core labels exist but do not yet connect to the SD sheet through the parent.
+- [ ] Draw expansion SPI sharing only with independent CS; initialize SD into SPI mode before other devices use the bus.
 
 References: [SD pull-ups](https://docs.espressif.com/projects/esp-idf/en/stable/esp32s3/api-reference/peripherals/sd_pullup_requirements.html), [sharing SD SPI](https://docs.espressif.com/projects/esp-idf/en/stable/esp32s3/api-reference/peripherals/sdspi_share.html).
 
@@ -198,3 +198,7 @@ Every fitted part eventually needs a value, correct footprint and purchase refer
 - [ ] Complete the BOM, then start PCB outline, mounting and connector placement.
 
 Open decisions carried forward: camera harness verification/retention and SPI support parts; 4S protection/cutoff; complete regulator support BOM and current budget; USB input protection/current capability; laser harness; FC/expansion/debug connectors; battery capacity, propellers and mechanical layout.
+
+## Saved-diagram reconciliation - 2026-11-15
+
+Use the implementation snapshot in COMPONENTS.md for the current saved state. Existing unchecked build items can include review/verification of preliminary drawing, not necessarily absent symbols. Current CAD rail names are `5V`, `3V3` and local `Buck_5V`; the planned SYS_5V/+3V3 names must be reconciled consistently across sheets. The current USB sheet data ports and corresponding core ports are incorrectly one-directional for USB: change both D+ and D- to bidirectional when finishing those interfaces. Parent wiring remains incomplete. Passives outside the SD sheet often contain values in their reference names while Value remains R/C/L; normalize them before BOM generation. This update does not certify the power circuitry or full-board ERC.

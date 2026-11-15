@@ -6,7 +6,7 @@
 	(paper "A4")
 	(title_block
 		(title "Flamingo - system overview")
-		(date "2026-11-10")
+		(date "2026-11-15")
 		(company "Payload @ Carnegie Mellon Rocket Command")
 		(comment 1 "Designed by Simon Kaplinsky & Rahim")
 	)
@@ -743,7 +743,7 @@
 			(color 217 247 222 1)
 		)
 		(uuid "40dd17db-c6fb-4a01-a68d-1434f55a08fb")
-		(property "Sheetname" "OV5640 camera"
+		(property "Sheetname" "Arducam Mega SPI camera"
 			(at 225.022 28.702 0)
 			(show_name no)
 			(do_not_autoplace yes)
@@ -918,7 +918,7 @@
 				(justify right)
 			)
 		)
-		(pin "USB_D_P" output
+		(pin "USB_D_P" bidirectional
 			(at 90 96.52 0)
 			(uuid "d5a7fa3a-11f4-4221-a0a8-a0615c8b962b")
 			(effects
@@ -928,7 +928,7 @@
 				(justify right)
 			)
 		)
-		(pin "USB_D_N" output
+		(pin "USB_D_N" bidirectional
 			(at 90 99.06 0)
 			(uuid "ecec711f-769e-4224-83e2-f30f0c3f11be")
 			(effects
@@ -1005,7 +1005,7 @@
 				(justify right)
 			)
 		)
-		(pin "USB_D_P" input
+		(pin "USB_D_P" bidirectional
 			(at 112.5 96.52 180)
 			(uuid "669e24c2-af2a-49dd-8c2f-a1bbd5215a2a")
 			(effects
@@ -1015,7 +1015,7 @@
 				(justify left)
 			)
 		)
-		(pin "USB_D_N" input
+		(pin "USB_D_N" bidirectional
 			(at 112.5 99.06 180)
 			(uuid "ba2d208a-45ed-4d9e-91fb-99620183bb9b")
 			(effects
@@ -1055,7 +1055,7 @@
 				(justify right)
 			)
 		)
-		(pin "SD_MOSI" input
+		(pin "SD_MOSI" output
 			(at 175 105.41 0)
 			(uuid "4eca442e-31a4-44e3-ab3d-bce5b4ea23e8")
 			(effects
