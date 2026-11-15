@@ -72,14 +72,14 @@ Match connector polarity and rate the inlet/AIO leg for the motor load; size and
 
 ### Candidate 4S input protection BOM
 
-For the first prototype, have JLCPCB assemble the SS34 and the selected Panasonic SMD bulk capacitor C8; hand-solder the through-hole fuse and TVS. This replaces the earlier AO3401A MOSFET, gate-zener and gate-resistor proposal with a series Schottky diode. These are candidate parts, pending the load, fault-current and transient review.
+For the first prototype, have JLCPCB assemble the SS34; hand-solder the fuse, TVS and the 47uF capacitor C8. This replaces the earlier AO3401A MOSFET, gate-zener and gate-resistor proposal with a series Schottky diode. These are candidate parts, pending the load, fault-current and transient review.
 
 | Function | Part / specification | JLCPCB / LCSC | Assembly plan |
 |---|---|---|---|
 | Resettable fuse | Bourns MF-R160; 30 V, 1.6 A hold / 3.2 A trip at 23 C | [C208483](https://jlcpcb.com/partdetail/C208483) | Extended listing; radial through-hole, hand-solder. |
 | Reverse-polarity diode | MDD SS34; 40 V, 3 A, SMA/DO-214AC | [C8678](https://jlcpcb.com/partdetail/C8678) | Basic; have JLCPCB assemble. |
 | Surge suppressor | SMC P6KE20A; unidirectional, 17.1 V standoff, rated clamp 27.7 V, DO-15 | [C499762](https://jlcpcb.com/partdetail/C499762) | Extended listing; axial through-hole, hand-solder. |
-| Input bulk capacitor | C8 Panasonic EEEFK1V470P, 47 uF, 35 V SMD aluminum electrolytic | [C178565](https://jlcpcb.com/partdetail/PANASONIC-EEEFK1V470P/C178565) | Factory assembled by JLCPCB; retain the selected SMD footprint and observe polarity. Replaces the earlier generic hand-soldered capacitor plan. |
+| Input bulk capacitor | C8: existing 47uF capacitor, at least 35V | User-supplied; no exact purchase MPN required | Hand-solder; omit from JLC assembly selection. Match its actual package during layout and observe polarity if electrolytic. |
 
 ```text
 XT30 positive -> MF-R160 -> SS34 -> VBAT_PROT -> TPS54302 VIN
@@ -88,11 +88,11 @@ XT30 positive -> MF-R160 -> SS34 -> VBAT_PROT -> TPS54302 VIN
 XT30 negative --------------------------> GND
 ```
 
-Keep the existing imported EEEFK1V470P symbol and SMD footprint for C8. It provides input bulk capacitance and damping; the buck still needs its separate ceramic input capacitors. C8 is 47 uF / 35 V, not a TPS2116 local bypass capacitor.
+C8 will use the user's existing 47uF capacitor; match the physical part during layout rather than requiring the earlier Panasonic SMD candidate. It provides input bulk capacitance and damping; the buck still needs its separate ceramic input capacitors. C8 is 47 uF / 35 V, not a TPS2116 local bypass capacitor.
 
 SS34's cathode/banded end faces VBAT_PROT. The TVS cathode/banded end also connects to VBAT_PROT; its anode connects to GND. The capacitor positive terminal connects to VBAT_PROT. Keep the buck's required ceramic input capacitors as well; the electrolytic supplements them.
 
-**Assembly cost:** leave the hand-fitted fuse and TVS out of JLC's assembly selection. Source those separately if needed. Include C8 EEEFK1V470P in JLC's assembly BOM/CPL; no hand soldering is planned for this capacitor. The fuse and TVS retain their Extended catalog classification but incur no Extended assembly setup fees if JLC does not fit them. JLC's assembly inventory cannot be shipped as loose parts.
+**Assembly cost:** among the capacitors, only C8 (47uF) is hand-soldered and excluded from JLC assembly selection/BOM/CPL. Keep C8 in the full BOM and retain its PCB pads. C11 is the user-selected 100uF non-polarized part and is not excluded on hand-soldering grounds. The earlier separate fuse/TVS assembly plan is unchanged. The fuse and TVS retain their Extended catalog classification but incur no Extended assembly setup fees if JLC does not fit them. JLC's assembly inventory cannot be shipped as loose parts.
 
 **DigiKey purchasing links for the hand-soldered protection parts:**
 
@@ -100,11 +100,11 @@ SS34's cathode/banded end faces VBAT_PROT. The TVS cathode/banded end also conne
 |---|---|---|
 | Resettable fuse | [Bourns MF-R160](https://www.digikey.com/en/products/detail/bourns-inc/MF-R160/259972) | Exact BOM part; listed in stock when checked 2026-11-14. |
 | TVS | [SMC P6KE20A](https://www.digikey.com/en/products/detail/smc-diode-solutions/P6KE20A/5993387) | Exact BOM manufacturer/part, but not normally stocked at DigiKey. [Littelfuse P6KE20A](https://www.digikey.com/en/products/detail/littelfuse-inc/P6KE20A/285930) was listed in stock in single quantities; alternate manufacturer, same listed 17.1 V standoff / 27.7 V clamp and DO-15 family. Confirm its dimensions and transient ratings before substitution. |
-| Bulk capacitor | Panasonic EEEFK1V470P / C178565, 47 uF / 35 V SMD | Purchase and assemble through JLCPCB; no separate hand-soldered capacitor purchase planned. |
+| Bulk capacitor | Existing 47uF capacitor, at least 35V | User-supplied and hand-soldered; no purchase MPN required. |
 
 These links supplement the JLC/LCSC references; the alternates have not silently replaced the original BOM entries. Availability is subject to change. Use DigiKey for these individual electronic components; an Adafruit module is not needed for this circuit.
 
-**Availability checked 2026-11-14:** the fuse, SS34 and TVS JLC listings showed positive assembly stock; C499762 had only nine available. This is a dated stock observation, not a reservation or confirmation of separately shippable distributor stock. Recheck before ordering. The current bulk-capacitor selection is now C8 EEEFK1V470P / C178565 for JLC assembly; the earlier stock observation does not verify its present assembly inventory.
+**Availability checked 2026-11-14:** the fuse, SS34 and TVS JLC listings showed positive assembly stock; C499762 had only nine available. This is a dated stock observation, not a reservation or confirmation of separately shippable distributor stock. Recheck before ordering. C8 now uses an existing user-supplied 47uF capacitor; the earlier Panasonic candidate is no longer a required purchase.
 
 **Tradeoff and remaining work:** the SS34 drops some voltage and dissipates heat (for example, 0.5 A x 0.4 V = 0.2 W). Finalize battery-side load current, PTC temperature derating, diode cooling and TVS/layout behavior. The PTC has a 40 A maximum fault-current rating and is not automatically a substitute for a properly rated fuse near the LiPo in Flamingo's branch. The TVS's rated clamp is not a guarantee that every transient stays below the buck's limit. This circuit does not provide battery undervoltage cutoff or controlled inrush; those remain separate design decisions.
 
@@ -250,8 +250,8 @@ The saved diagram is the source for this implementation snapshot; planned archit
 
 | Block | Drawn | Still required |
 |---|---|---|
-| Input / buck | J4 XT30, F1 MF-R160, D2 SS34, D1 P6KE20A, C8 EEEFK1V470P; U4 TPS54302 with preliminary support | Review exact protection/capacitor selection, ratings, feedback values and startup/cutoff behavior |
-| Source selector | TPS2116, USB on VIN1 and buck on VIN2; MODE/PR1 priority network; C9/C10 1uF and C11 10uF local bypass | USB input protection, close PCB placement, inrush/switchover validation |
+| Input / buck | J4 XT30, F1 MF-R160, D2 SS34, D1 P6KE20A, C8 47uF; U4 TPS54302 with preliminary support | Review exact protection/capacitor selection, ratings, feedback values and startup/cutoff behavior |
+| Source selector | TPS2116, USB on VIN1 and buck on VIN2; MODE/PR1 priority network; C9/C10 4.7uF and C11 100uF local bypass (C11 non-polarized, selected by user) | USB input protection, close PCB placement, inrush/switchover validation |
 | 3.3 V | TPS62162 and preliminary support; EP grounded | Resolve L1/L2: both cite C1046 despite intended values of 2.2uH and 10uH; select correctly rated separate power inductors. Finish load/transient review |
 | USB | DEALON connector, two CC pull-downs, joined D+ and D- copies | Shell pins 1-4 still unconnected; ESD, input protection and top-level data wiring. R6/R7 now have explicit 5.1k values and `R_0402_1005Metric` footprints matching C25905 |
 | Core | ESP32, 3V3/GND, SD/USB/laser signal labels | EN/BOOT/reset support and decoupling; finish parent-sheet interfaces. USB data ports still need bidirectional definitions when that interface is finished |
@@ -273,26 +273,32 @@ All populated active sheets now use unique component references and explicit pas
 | L1 / L2 | Intended 2.2uH / 10uH; conflicting C1046 selection needs correction |
 | C1-C2 | 3.3 V stage 10uF / 22uF |
 | C3-C7 | Buck 10uF, 22uF, 22uF, 0.1uF, 0.1uF |
-| C8 / F1 / D1 / D2 | Factory-assembled Panasonic 47uF/35V bulk capacitor / fuse / TVS / polarity diode |
-| C9-C10 / C11 | TPS2116 inputs 1uF each / output 10uF; factory-assembled Basic ceramics |
+| C8 / F1 / D1 / D2 | User-supplied, hand-soldered 47uF bulk capacitor / fuse / TVS / polarity diode |
+| C9-C10 / C11 | TPS2116 inputs 4.7uF each, Basic 0805 / output 100uF non-polarized, selected by user |
 
 **Laser wiring discrepancy to resolve:** LASER_TX/GPIO38 currently reaches J1 pin 3, while the supplied manual identifies pin 3 as module TXD. LASER_RX/GPIO39 reaches J1 pin 4, identified as module RXD. Review/cross those connections before hardware release; naming cleanup preserved the existing topology.
 
-### TPS2116 local capacitors - added 2026-11-15
+### Capacitor audit - 2026-11-15
 
-| Reference | Connection | Value / rating | Exact part / footprint |
-|---|---|---|---|
-| C9 | USB_5V / VIN1 pin 3 to GND | 1 uF, 50 V, X5R, +/-10% | Samsung CL10A105KB8NNNC, [C15849](https://jlcpcb.com/partdetail/C15849), 0603 |
-| C10 | BUCK_5V / VIN2 pin 6 to GND | 1 uF, 50 V, X5R, +/-10% | Same C15849 / 0603 as C9 |
-| C11 | Joined VOUT pins 2/7 to GND | 10 uF, 50 V, X5R, +/-10% | Samsung CL31A106KBHNNNE, [C13585](https://jlcpcb.com/partdetail/C13585), 1206; reuses the existing 10uF part type |
+Preference: use 0805 ceramics where electrically suitable. Checked against the current saved drawing and JLC part specifications; no net names or capacitor values changed during this audit. The user has corrected C6/C7 and C3, and selected a non-polarized 100uF C11. Power verification is recorded as complete by the user, pending one final electrical check and layout.
 
-JLC lists both ceramic selections as Basic and compatible with Economic PCBA; check assembly stock when ordering. The existing net names were preserved. C9/C10 bypass the two input supplies; C11 supports the output during switching/load steps. Place all three close to U2 on the PCB with short ground returns.
+| Reference | Current value | Selected part | Rating / package | Audit result |
+|---|---|---|---|---|
+| C1 | 10uF | Samsung CL21A106KAYNNNE / [C15850](https://jlcpcb.com/partdetail/C15850) | 25V X5R, +/-10%, 0805 | Value/package match; 5V rail |
+| C2, C4, C5 | 22uF | Samsung CL21A226MAQNNNE / [C45783](https://jlcpcb.com/partdetail/C45783) | 25V X5R, +/-20%, 0805 | Value/package match; 3.3V/5V outputs |
+| C3 | 10uF | Replacement selected and corrected by user | User-verified | Resolved; include in final electrical check |
+| C6, C7 | 0.1uF | Samsung CL21B104KCFNNNE / [C28233](https://jlcpcb.com/partdetail/C28233) | 100V X7R, +/-10%, 0805 | User correction verified; replaces incorrect 1uF C28323 assignment |
+| C8 | 47uF | Existing user-supplied part; no required purchase MPN | At least 35V; actual package during layout | Only capacitor planned for hand soldering |
+| C9, C10 | 4.7uF | Samsung CL21A475KAQNNNE / [C1779](https://jlcpcb.com/partdetail/C1779) | 25V X5R, +/-10%, 0805 | Match; user's current TPS2116 input bypass values retained |
+| C11 | 100uF non-polarized | User has found/selected the part | Match selected part during layout | Not hand-soldered; include in factory assembly selection |
 
-TI specifies that 1uF input capacitance is sufficient in most cases. The 10uF output is an initial engineering selection, not a guaranteed hold-up result. Include existing downstream capacitance and operating load when checking inrush and switchover voltage dip; validate by measurement. The TPS2116's typical 5V soft-start time is 1.7ms, so C11 alone contributes about 29mA of ideal capacitive charging current during startup, excluding load and other capacitance.
+The verified ceramic selections above are listed Basic by JLC. These checks establish nominal value/rating/package agreement, not measured regulator stability or current assembly stock. C3 replacement is resolved per the user; confirm the final saved part/voltage rating in the last electrical check.
 
-C8 is separate: keep the already drawn Panasonic EEEFK1V470P / C178565, 47uF/35V SMD electrolytic on the protected 4S input, included for JLC assembly. Preserve the user's current input-protection drawing.
+TPS2116 C9/C10 connect VIN1/VIN2 to GND. C11 connects the joined VOUT pins to GND; the selected part is non-polarized. Reconcile the symbol and selected package during the final schematic/layout pass. Keep the capacitors physically close to U2. The user's latest 100uF output replaces the earlier 10uF proposal. TI's typical application also uses 100uF; its ideal capacitive startup current at 5V with 1.7ms soft-start is about 294mA before other downstream capacitance and load. Verify USB inrush and switchover droop with the complete load.
 
-References: [TPS2116 datasheet, sections 8-10](https://www.ti.com/lit/ds/symlink/tps2116.pdf), [Panasonic C8 specifications](https://industrial.panasonic.com/ww/products/pt/aluminum-cap-smd/models/EEEFK1V470P).
+The 22uF and 10uF ceramic effective values decrease with DC bias. Check manufacturer characteristic data and regulator minimum capacitance before final release. C8 remains the only hand-soldered capacitor, using an existing 47uF part rated at least 35V. C11 is the selected 100uF non-polarized factory-assembled part.
+
+References: [TPS2116 datasheet, sections 8-10](https://www.ti.com/lit/ds/symlink/tps2116.pdf).
 
 ### microSD connection record
 
@@ -309,12 +315,28 @@ References: [TPS2116 datasheet, sections 8-10](https://www.ti.com/lit/ds/symlink
 | 9 | Mechanical CD | Explicit no-connect; card detection by initialization |
 | 10-13 | Shell / ground | GND |
 
-The five pull-ups retain their existing 0805 footprints and C17414 purchasing fields. The SD sheet is readable and locally connected, but its hierarchical SPI labels are not yet connected to the core through the parent sheet.
+The five pull-ups retain their existing 0805 footprints and C17414 purchasing fields. The parent-sheet grid correction now connects all four SD signals to the intended ESP32 pads; checked in the exported netlist.
+
+## Unfinished interface build instructions
+
+Detailed sheet-by-sheet work has been restored in [SCHEMATIC_BUILD_PLAN.md](SCHEMATIC_BUILD_PLAN.md):
+
+| Block | Completed decisions / existing work | Still to draw |
+|---|---|---|
+| Camera | Mega 5MP AF, JPEG still capture; planned dedicated SPI GPIO8/9/10/6 | Connector/harness choice, numbered map, CS pull-up, 100nF + 10uF bypass, core/child/parent connections |
+| FC telemetry | MicoAir743v2-AIO-45A, UART4; Flamingo GPIO1 TX / GPIO2 RX | Three-contact TX/RX/GND connector, direction notes, core/child/parent ports and wiring |
+| GPIO / expansion | Shared SD SPI GPIO40/41/42, separate CS GPIO48; possible I2C GPIO4/5 | Headers/contact order, external CS pull-up, I2C pull-up coordination, interfaces and load allocation |
+| Optional UART debug | Native USB retained; optional UART0 GPIO43 TX / GPIO44 RX | Fit/omit decision, TX/RX/GND header, 3.3V label, core/child/parent wiring |
+| Core / USB / SD / laser | Components and preliminary connections are present as recorded above | Finish supporting components and outstanding interface/parent connections; verify laser contact directions |
+
+The build plan includes pin/port-direction tables, connector options, support-component requirements and separate bring-up notes. Planned hardware is not marked drawn. Power remains consolidated to final electrical check and layout per the user's review; this restoration does not reopen its completed checklist.
+
+C8 is the user's existing **radial 47uF capacitor**, hand-soldered. Select its through-hole radial footprint during layout from measured can diameter and lead pitch; no fixed footprint or purchase MPN is implied.
 
 ## Schematic work remaining
 
 - Select propellers and validate total vehicle thrust; size the 4S battery, distribution harness, connectors and protection for simultaneous motor and electronics loads. Select the external balance charger and runtime target.
-- Design the onboard 4S-to-5 V buck, downstream 3.3 V regulator, USB power selector, protection and support components. Start with VBAT_4S/GND input, protection, then BUCK_5V; select USB_VBUS/BUCK_5V into SYS_5V. Take laser power from SYS_5V after the selector and camera power from downstream +3V3; use USB priority and verify the combined USB load budget. Check 16.8 V full charge plus transients; keep raw battery voltage off low-voltage rails.
+- Power circuits and component checks are complete per the user; perform the final electrical check and then layout. C3 is resolved; C8 is the sole hand-soldered capacitor and C11 is the selected non-polarized 100uF part.
 - Draw the Mega camera sheet and core/top-level SPI connections; verify the proposed header order against the received harness, add CS pull-up/decoupling and secure the cable for flight.
 - Add power inputs, decoupling, EN reset network, BOOT/RESET buttons and antenna clearance. Candidate S3 starting values: 10 uF + 100 nF supply decoupling; EN 10 kohm / 1 uF RC, subject to reference-design review.
 - Finish USB: CC resistors R6/R7 are drawn with 5.1k values and corrected 0402 footprints; add ESD/input protection, shell grounds and parent USB data wiring.
@@ -338,3 +360,9 @@ Reuse only circuits and libraries that match the final design. Copied libraries 
 | 20-pin camera FFC | Unused; the Mega uses the six-wire SPI harness. |
 
 Key design references: [S3 module datasheet](https://documentation.espressif.com/esp32-s3-wroom-1_wroom-1u_datasheet_en.pdf), [S3 hardware guidelines](https://docs.espressif.com/projects/esp-hardware-design-guidelines/en/latest/esp32s3/index.html), [USB Serial/JTAG](https://docs.espressif.com/projects/esp-idf/en/stable/esp32s3/api-guides/usb-serial-jtag-console.html), [antenna layout](https://docs.espressif.com/projects/esp-hardware-design-guidelines/en/latest/esp32s3/pcb-layout-design.html).
+
+Assembly decision: only C8 (47uF input bulk) is hand-soldered among the capacitors. Use the existing user-supplied part and omit C8 from JLC assembly selection/BOM/CPL, while retaining its full BOM entry and PCB pads. C11 is the user-selected 100uF non-polarized capacitor for factory assembly.
+
+Power status: user verification complete; remaining power tasks are the final electrical check and PCB layout. Earlier audit notes describe historical findings and do not reopen user-resolved selections. This records user verification rather than an additional independent certification.
+
+Top-level grid correction: all nine sheet boxes, sheet pins and electrical wire/junction coordinates are on the 50mil (1.27mm) grid. Four zero-length stubs created by snapping were removed. Net names were preserved. SD CLK/CS/MISO/MOSI connections to U1 were verified independently by netlist.
