@@ -952,7 +952,7 @@
 		)
 		(uuid "cf92b9b5-c2d1-4782-82d5-13c6a0db4f8c")
 	)
-	(hierarchical_label "VBAT_4S"
+	(hierarchical_label "Unprotected In"
 		(shape input)
 		(at 96.52 78.74 0)
 		(effects
@@ -963,8 +963,8 @@
 		)
 		(uuid "218e6a4f-b486-451f-828e-453b2df52ca4")
 	)
-	(hierarchical_label "VBAT_PROT"
-		(shape output)
+	(hierarchical_label "Protected in"
+		(shape input)
 		(at 125.73 73.66 0)
 		(effects
 			(font

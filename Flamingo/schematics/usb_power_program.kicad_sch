@@ -821,7 +821,7 @@
 		(uuid "ee25ff8c-24ea-4112-895f-225748e78e03")
 	)
 	(hierarchical_label "USB_D_P"
-		(shape bidirectional)
+		(shape output)
 		(at 119.38 110.49 180)
 		(effects
 			(font
@@ -843,7 +843,7 @@
 		(uuid "c4508118-c005-486e-8a12-eafa8ff943b3")
 	)
 	(hierarchical_label "USB_D_N"
-		(shape bidirectional)
+		(shape output)
 		(at 118.11 105.41 180)
 		(effects
 			(font

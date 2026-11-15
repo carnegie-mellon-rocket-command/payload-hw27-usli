@@ -130,8 +130,8 @@ JLC links identify catalog entries. Recheck stock, price and assembly eligibilit
 | USB ESD | ST USBLC6-2SC6 - [C7519](https://jlcpcb.com/partdetail/C7519) | Proposed; check ST pinout and VBUS/ground treatment. |
 | Battery splitter/harness | XT30 parallel Y harness; mating genders to match the actual pack/cables | One battery input, separate AIO and Flamingo 4S branches; verify polarity, current ratings and branch protection. |
 | Onboard 5 V buck | TPS54302DDCR - [C311983](https://jlcpcb.com/partdetail/C311983) | Placed in `schematics/schematics/buck4S_5V.kicad_sch` with a preliminary support circuit; electrical/part-rating validation remains. 4.5-28 V input, up to 3 A. Prior positive JLC stock check; recheck before ordering. |
-| Main 3.3 V regulator | Current candidate TPS62162DSGR - [C40256](https://jlcpcb.com/partdetail/C40256) | Placed as U3, fixed 3.3 V, 1 A from global `5V` to global `3V3`, with preliminary 2.2 uH, 10 uF, 22 uF and 100k PG support. EP, AGND, PGND and FB are grounded. Verify passive Value fields, inductor current rating and combined peak-load budget. Supersedes TPS63070 as the current placement candidate; see POWER_PARTS.md. |
-| USB/buck power selector | TPS2116DRLR - [C3235557](https://jlcpcb.com/partdetail/C3235557) | Placed as U2: USB_5V to VIN1, Buck_5V to VIN2, MODE to VIN1; PR1 divider drawn with intended 33k/10k values. Both outputs join global `5V`. USB protection and local mux capacitors remain to draw; passive Value fields/part numbers need review. |
+| Main 3.3 V regulator | Current candidate TPS62162DSGR - [C40256](https://jlcpcb.com/partdetail/C40256) | Placed as U3, fixed 3.3 V, 1 A from global `5V` to global `3V3`, with preliminary 2.2 uH, 10 uF, 22 uF and 100k PG support. EP, AGND, PGND and FB are grounded. Verify inductor selection and combined peak-load budget. Supersedes TPS63070 as the current placement candidate; see POWER_PARTS.md. |
+| USB/buck power selector | TPS2116DRLR - [C3235557](https://jlcpcb.com/partdetail/C3235557) | Placed as U2: USB_5V to VIN1, Buck_5V to VIN2, MODE to VIN1; PR1 divider drawn with intended 33k/10k values. Both outputs join global `5V`. USB protection and local mux capacitors remain to draw; passive values are now explicit; part numbers/ratings still need review. |
 | Connectors | Camera, laser, FC telemetry, 4S input and expansion | Flamingo 4S input: XT30PW-M30.G.Y, [C431092](https://jlcpcb.com/partdetail/C431092), through-hole/right-angle. Imported as `EasyEDA:XT30PW-M` with `EasyEDA:CONN-TH_XT30PW-M`. Confirm actual harness polarity/mating gender. Other connector choices and contact order remain to settle. |
 
 ## GPS compatibility and wiring
@@ -214,7 +214,7 @@ References: [Mega 5MP specifications](https://docs.arducam.com/Arduino-SPI-camer
 
 ## Proposed GPIO allocation
 
-These are candidate assignments for the exact N16R8 module, not implemented schematic or firmware connections.
+USB, SD and laser core labels are drawn; camera, telemetry and expansion remain planned. Parent USB-data/SD links and hardware/firmware validation are still pending.
 
 | Interface | GPIOs / notes |
 |---|---|
@@ -246,17 +246,36 @@ References: [AIO manual and port mapping](https://micoair.com/en/docs/flight-con
 
 ## Saved KiCad state - 2026-11-15
 
-The saved diagram is the source for this implementation snapshot; planned architecture elsewhere is not a completed circuit. Current global rails are `5V` (planned SYS_5V) and `3V3` (planned +3V3). `Buck_5V` is local to Power. Do not introduce the alternative spellings as separate disconnected nets.
+The saved diagram is the source for this implementation snapshot; planned architecture elsewhere is not a completed circuit. Net names and port definitions have been preserved as requested. Actual saved global rails are `5V` and `3V3`, with local `Buck_5V` and the existing battery/buck child port names. Architecture names SYS_5V/+3V3 elsewhere describe their intended roles, not additional connected CAD nets.
 
 | Block | Drawn | Still required |
 |---|---|---|
-| Input / buck | XT30, MF-R160, SS34, P6KE20A, EEEFK1V470P bulk-capacitor symbol; TPS54302 with preliminary support | Review exact protection/capacitor selection, ratings, feedback values and startup/cutoff behavior |
-| Source selector | TPS2116, USB on VIN1 and buck on VIN2; MODE/PR1 priority network | Local capacitors, USB input protection, passive Value/MPN validation |
-| 3.3 V | TPS62162 and preliminary support; EP grounded | Validate C1046 inductor candidate against required inductance, saturation/RMS current and DCR; finish load/transient review |
-| USB | DEALON connector, two CC pull-downs, joined D+ and D- copies | Shell pins 1-4 still unconnected; ESD, input protection and top-level data wiring. CC resistors currently use `R_01005_0402Metric` with C25905: verify package/MPN match and enter 5.1k in Value fields |
-| Core | ESP32, 3V3/GND, SD/USB/laser signal labels | EN/BOOT/reset support and decoupling; finish parent-sheet interfaces. USB data ports must be bidirectional |
+| Input / buck | J4 XT30, F1 MF-R160, D2 SS34, D1 P6KE20A, C8 EEEFK1V470P; U4 TPS54302 with preliminary support | Review exact protection/capacitor selection, ratings, feedback values and startup/cutoff behavior |
+| Source selector | TPS2116, USB on VIN1 and buck on VIN2; MODE/PR1 priority network | Local capacitors, USB input protection, MPN/rating validation |
+| 3.3 V | TPS62162 and preliminary support; EP grounded | Resolve L1/L2: both cite C1046 despite intended values of 2.2uH and 10uH; select correctly rated separate power inductors. Finish load/transient review |
+| USB | DEALON connector, two CC pull-downs, joined D+ and D- copies | Shell pins 1-4 still unconnected; ESD, input protection and top-level data wiring. R6/R7 now have explicit 5.1k values and `R_0402_1005Metric` footprints matching C25905 |
+| Core | ESP32, 3V3/GND, SD/USB/laser signal labels | EN/BOOT/reset support and decoupling; finish parent-sheet interfaces. USB data ports still need bidirectional definitions when that interface is finished |
 | Camera | Empty placeholder, still titled OV5640 at top level | Draw selected Arducam Mega SPI interface; prior FPC architecture is superseded |
 | microSD | J2 socket; R1 DAT2, R2 CS, R3 MOSI, R4 MISO, R5 DAT1; all 10k / C17414 | Local decoupling and top-level SD wiring; SPI sharing with expansion remains planned |
+
+### Reference and naming cleanup
+
+All populated active sheets now use unique component references and explicit passive values. Net names, hierarchical port names/directions and sheet names are preserved. The original component UUIDs were preserved; update the PCB from the schematic to apply reference changes. The USB CC resistor footprint mismatch was corrected to match the retained C25905 part; other footprint choices still require review.
+
+| References | Function / value |
+|---|---|
+| U1 / U2 / U3 / U4 | ESP32-S3 / TPS2116 / TPS62162DSGR / TPS54302DDCR |
+| J1 / J2 / J3 / J4 | Laser / microSD / USB-C / XT30 battery input |
+| R1-R5 | microSD pull-ups, 10k |
+| R6-R7 | USB CC pull-downs, 5.1k |
+| R8 / R9 / R10 | PR1 bottom 10k / PR1 top 33k / PG pull-up 100k |
+| R11-R12 | Buck feedback 10k / 75k; verify final output setting |
+| L1 / L2 | Intended 2.2uH / 10uH; conflicting C1046 selection needs correction |
+| C1-C2 | 3.3 V stage 10uF / 22uF |
+| C3-C7 | Buck 10uF, 22uF, 22uF, 0.1uF, 0.1uF |
+| C8 / F1 / D1 / D2 | Input bulk capacitor / fuse / TVS / polarity diode |
+
+**Laser wiring discrepancy to resolve:** LASER_TX/GPIO38 currently reaches J1 pin 3, while the supplied manual identifies pin 3 as module TXD. LASER_RX/GPIO39 reaches J1 pin 4, identified as module RXD. Review/cross those connections before hardware release; naming cleanup preserved the existing topology.
 
 ### microSD connection record
 
@@ -281,7 +300,7 @@ The five pull-ups retain their existing 0805 footprints and C17414 purchasing fi
 - Design the onboard 4S-to-5 V buck, downstream 3.3 V regulator, USB power selector, protection and support components. Start with VBAT_4S/GND input, protection, then BUCK_5V; select USB_VBUS/BUCK_5V into SYS_5V. Take laser power from SYS_5V after the selector and camera power from downstream +3V3; use USB priority and verify the combined USB load budget. Check 16.8 V full charge plus transients; keep raw battery voltage off low-voltage rails.
 - Draw the Mega camera sheet and core/top-level SPI connections; verify the proposed header order against the received harness, add CS pull-up/decoupling and secure the cable for flight.
 - Add power inputs, decoupling, EN reset network, BOOT/RESET buttons and antenna clearance. Candidate S3 starting values: 10 uF + 100 nF supply decoupling; EN 10 kohm / 1 uF RC, subject to reference-design review.
-- Add USB with one 5.1 kohm pull-down on each CC pin; check ESD wiring, connector mapping and any D+/D- series resistors.
+- Finish USB: CC resistors R6/R7 are drawn with 5.1k values and corrected 0402 footprints; add ESD/input protection, shell grounds and parent USB data wiring.
 - Confirm camera and laser hardware revisions, cable mappings and connector footprints. Verify laser I/O voltage and ENO treatment.
 - Check every symbol pin against its footprint and datasheet, then review the complete pin allocation and startup states.
 - Measure power peaks, brownout behavior, USB/buck source switching, 5 MP capture/decode memory and detection performance.
