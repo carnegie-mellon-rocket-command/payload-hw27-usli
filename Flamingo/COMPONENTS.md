@@ -6,10 +6,14 @@ Start with the [sheet-by-sheet schematic build plan](SCHEMATIC_BUILD_PLAN.md). L
 
 Flamingo detects a colored 16 x 16 m tarp from approximately 1 km. It handles the camera, laser and payload logging; a separate flight controller supplies navigation and flight control. This document records the selected architecture and proposed parts. Schematic work and hardware validation are still pending.
 
+Camera: Arducam Mega 5MP autofocus SPI; see [camera wiring](COMPONENTS.md#camera-and-image-processing).
+
 ## Current decisions
 
+**Camera update, 2026-11-15:** Arducam Mega SPI replaces Adafruit DVP.
+
 - **Processor:** ESP32-S3-WROOM-1-N16R8, with 8 MB PSRAM and 16 MB flash.
-- **Camera:** [Arducam Mega 5 MP autofocus SPI camera, B0401](https://www.amazon.com/clp/B0BW7MDVHK). Capture JPEG still images through four-wire SPI; the external module handles sensor timing and buffering.
+- **Camera:** Arducam Mega 5MP autofocus, Amazon B0BW7MDVHK, off-board six-wire SPI connection.
 - **Flight controller and ESCs:** [MicoAir743v2-AIO-45A](https://store.micoair.com/product/micoair743v2-aio-45a/), with an external M10G-5883 GPS/compass. Replaces the NxtPX4 V2 and separate ESC board.
 - **Motors:** four [Happymodel EX1404 2750KV](https://www.happymodel.cn/index.php/2021/01/07/happymodel-ex1404-kv2750-kv3500-kv4800-brushless-motor/) brushless motors. Propellers remain to select; thrust and runtime need validation.
 - **Laser:** module described as STA-M020X in the supplied SAT-M020X PDF; 5 V supply and default 3.3 V UART.
@@ -35,7 +39,7 @@ flowchart TD
     U[USB 5 V] --> S
     S --> V3[Flamingo 3.3 V regulator]
     V3 --> E[ESP32 and microSD]
-    V3 --> C[Arducam Mega SPI camera]
+    V3 --> C[Arducam Mega camera]
 ```
 
 All boards share ground. Motor battery and return currents use the AIO's rated power wiring, not Flamingo traces or signal cables. The AIO and Flamingo use separate regulator branches; Flamingo does not depend on the AIO's accessory output. A shared battery is still a common point of failure.
@@ -45,8 +49,8 @@ All boards share ground. Motor battery and return currents use the AIO's rated p
 | Battery and charging | Removable standard 4S pack and a compatible external 4S balance charger. No charger on Flamingo. |
 | Flight controller and motors | 4S branch to AIO VBAT/GND; its four ESC channels drive the motors. The AIO 5 V / 2 A output supplies suitable FC peripherals. No separate ESC board is needed. |
 | Flamingo input | Raw 4S/GND enters Flamingo as VBAT_4S, then input protection and an onboard buck produce BUCK_5V. All battery-side parts must withstand 16.8 V plus transients; target a regulator operating input rating of at least 24 V with suitable protection. Exact regulator/support parts and current budget need review; motor current bypasses Flamingo. |
-| Main 3.3 V rail | ESP32, microSD and Arducam Mega. The 1 A regulator candidate requires a combined peak-load review including camera startup; conservatively reserve about 0.31 A for a 1 W camera load at 3.3 V, then verify actual demand. |
-| Camera rails and logic | Supply the complete Mega module from +3V3 with 3.3 V SPI logic. Sensor supplies are handled on the module. Add local 100 nF + 10 uF at J2 and a 10 kohm CAM_CS pull-up to +3V3; these support parts remain to be drawn. |
+| Main 3.3 V rail | ESP32 and microSD; camera supply/regulator load must be added after the restored DVP power interface is specified. |
+| Camera rails and logic | Complete breakout handles sensor supplies; host uses regulated 3.3V and direct CAM_* nets. |
 | Laser rail | SYS_5V after the source selector, available from USB or the onboard buck. Datasheet specifies 3-5 V input, recommends 5 V and lists peak power <=0.55 W, equivalent to 110 mA at 5 V. Size with margin and verify startup pulses and voltage tolerance. |
 | USB power | Select USB_VBUS or BUCK_5V with reverse-current blocking to produce SYS_5V. Prefer USB when present; otherwise use the onboard buck. SYS_5V supplies the laser, main 3.3 V regulator (including camera load), with no physical payload switch. Size the USB source, current/inrush protection and selector for the combined load; full operation is conditional on adequate USB current. Keep USB from backfeeding the battery/buck or AIO. USB does not power the flight controller or motors. |
 | Protection | Select connector, branch protection, reverse-polarity protection and battery low-voltage handling with the actual pack and loads. |
@@ -122,8 +126,8 @@ JLC links identify catalog entries. Recheck stock, price and assembly eligibilit
 | Flight controller + ESCs | [MicoAir743v2-AIO-45A](https://store.micoair.com/product/micoair743v2-aio-45a/) | Selected. H743, dual BMI088/BMI270 IMUs, SPL06 barometer, microSD; four 45 A AM32 ESCs (cooling dependent). Listed $74.99 before shipping/tax on 2026-11-14; stock/delivery not confirmed. ArduPilot/PX4; no onboard GPS/compass. |
 | Motors | Four [Happymodel EX1404 2750KV](https://www.happymodel.cn/index.php/2021/01/07/happymodel-ex1404-kv2750-kv3500-kv4800-brushless-motor/) | Selected 4S brushless motors; three phase wires per motor connect to its AIO ESC channel. Props and total vehicle thrust remain unvalidated. |
 | GPS/compass | [MicoAir M10G-5883](https://store.micoair.com/product/m9-m10-gps-module/) | Retained: 5 V module with UBX UART GPS and QMC5883L I2C compass. Connect to AIO UART3 / GPS1 (ArduPilot SERIAL3) plus I2C. See wiring below; Flamingo gets navigation over telemetry. |
-| Camera | [Arducam Mega 5 MP AF, B0401 / ASIN B0BW7MDVHK](https://www.amazon.com/clp/B0BW7MDVHK) | Selected external SPI module; 2592 x 1944, autofocus, JPEG output. No video streaming required. |
-| Camera connector / supplies | J2: 1x6, 2.54 mm-pitch vertical male through-hole header | KiCad `Connector_Generic:Conn_01x06`; footprint `Connector_PinHeader_2.54mm:PinHeader_1x06_P2.54mm_Vertical`. Supplied camera jumper harness mates at the board via female sockets; verify the received cable. +3V3 power and logic; no separate sensor rails. |
+| Camera | Arducam Mega 5MP autofocus B0BW7MDVHK | Dedicated SPI GPIO7-10, off-board |
+| Camera connector / supplies | J5 1x6 2.54mm, +3V3/GND, R20 | Connect by module labels |
 | Laser | STA-M020X per supplied manual | External module; confirm actual label matches the manual. About 14 g, diameter 23 x 47 mm. |
 | microSD socket | XUNPU TF-115-BCP9 - [C720505](https://jlcpcb.com/partdetail/Xunpu-TF_115BCP9/C720505) | Placed as J2, 3.3 V SPI. `EasyEDA:TF-SMD_TF-115-BCP9`; R1-R5 are five 10k pull-ups, 0805 / C17414. CD pin 9 intentionally unused; VSS and shell contacts grounded. Local decoupling and parent-sheet SPI connections remain. |
 | USB-C | DEALON USB-TYPE-C-017 - [C2927037](https://jlcpcb.com/partdetail/DEALON-USB_TYPE_C017/C2927037) | Placed on USB programming / JTAG sheet; right-angle SMT, 16 contacts. Assigned footprint `EasyEDA:USB-TYPE-C-SMD_C9900008089` must be checked against this exact MPN. CC pull-downs and paired D+/D- contacts are drawn; ESD/input protection remain. |
@@ -179,60 +183,81 @@ Protocol starting point: frames are `SlaveID + command + parameters + checksum`.
 
 ## Camera and image processing
 
-Use **Arducam Mega 5 MP AF -> dedicated SPI -> ESP32-S3**, configured for JPEG still capture. Send a capture command, wait for completion and burst-read the compressed image from the module frame buffer. Continuous video streaming is not needed. Use the Arducam Mega SDK/protocol rather than the parallel `esp32-camera` driver.
 
-The selected item is [Amazon B0BW7MDVHK](https://www.amazon.com/clp/B0BW7MDVHK), corresponding to the B0401 autofocus Mega family. Confirm the received revision and cable labels. Manufacturer documentation specifies 2592 x 1944, JPEG/RGB/YUV output, 3.3 V or 5 V module power and SPI up to 8 MHz. Flamingo uses 3.3 V power and logic; start at a lower SPI clock during bring-up.
+Selected camera: [Arducam Mega 5MP autofocus, Amazon B0BW7MDVHK](https://www.amazon.com/dp/B0BW7MDVHK). User reports $35 and available on 2026-11-15. This replaces the Adafruit DVP and Seeed bare-flex designs.
 
-Start with one JPEG frame buffer in PSRAM and sequential decoding into a reusable strip/block buffer. Detect tarp color, retain positions/results, merge detections across block boundaries and reuse the buffer. Espressif's [esp_new_jpeg](https://components.espressif.com/components/espressif/esp_new_jpeg/versions/1.0.2/readme) supports block decoding.
+### Wiring
 
-| Decoded RGB565 buffer, 2592 x 1944 source | Memory |
-|---|---:|
-| Full image | 10,077,696 bytes; exceeds 8 MB PSRAM |
-| Quarter of the pixels | 2,519,424 bytes, about 2.52 MB |
-| Full-width strip, 64 rows | 331,776 bytes, about 0.33 MB |
+J5 is a standard 1x6 2.54mm host header. Use a short detachable six-wire cable and connect to the camera's printed labels. Host pin numbers below do not establish the physical camera connector order; verify the supplied cable/module before power.
 
-Quarter-image processing is a memory-budget example; use sequential blocks with the decoder's required alignment. Budget the compressed JPEG, decoder workspace and detection state as well. Flash does not add working RAM. Validate peak memory, decoding time and color accuracy on hardware.
+| J5 host pin | Net | Camera label | ESP32 GPIO |
+|---|---|---|---|
+| 1 | +3V3 | VCC | - |
+| 2 | GND | GND | - |
+| 3 | CAM_SCK | SCK | 8 |
+| 4 | CAM_MISO | MISO | 9 |
+| 5 | CAM_MOSI | MOSI | 10 |
+| 6 | CAM_CS | CS | 7 |
 
-### Camera connector and power
+Dedicated SPI keeps camera traffic separate from the SD bus. R20 (10k) pulls CS to +3V3 while the MCU boots. J5 and R20 are the entire camera sheet. The breakout provides its own decoupling; host camera capacitors are omitted. No external sensor regulators, level translators, SCCB pull-ups, reset or XCLK circuits remain. Exact locking connector purchasing part is not selected; the assigned footprint is a standard 1x6 2.54mm pin header.
 
-Planned camera connection (not drawn): **single-row 1x6, 2.54 mm-pitch, vertical male through-hole pin header** on Flamingo. Use `Connector_Generic:Conn_01x06` and `Connector_PinHeader_2.54mm:PinHeader_1x06_P2.54mm_Vertical`. Hand-solder it. This board header mates with the female socket ends of the supplied jumper harness; the camera-side connector is listed by Arducam as XH2.54-6P. Do not assume a JST-XH board socket mates with the supplied board-side jumper ends. Inspect the received harness before ordering.
+### GPIO available
 
-| Proposed camera header pad | Net | Connection |
-|---|---|---|
-| 1 | +3V3 | Camera VCC |
-| 2 | GND | Camera GND |
-| 3 | CAM_SCK | GPIO8 -> camera SCK |
-| 4 | CAM_MISO | Camera MISO -> GPIO10 |
-| 5 | CAM_MOSI | GPIO9 -> camera MOSI |
-| 6 | CAM_CS | GPIO6 -> camera CS, active low |
+Camera uses GPIO7-10. Freed from DVP: GPIO4,5,6,11-18,21 (12 pins). Including43/44/48, unrestricted unallocated pins total15. Reserve43/44 for UART0 debug if desired. GPIO0/3/45/46 have strapping constraints;35-37 are occupied by N16R8 PSRAM. USB19/20, telemetry1/2, laser38/39 and SD40/41/42/47 keep their allocations. Freed core pins are intentionally left unconnected for future use.
 
-This is the proposed camera header pad order (J2 is now the microSD socket): verify each wire against the camera signal labels and continuity, not cable colors or an assumed connector viewing direction. Mark pin 1, +3V3 and GND on silkscreen. Keep the harness short and strain-relieved; secure the jumper sockets for the flight installation or replace the board connection with a positively locking harness and a reviewed footprint/pinout before release.
+### Firmware and verification
 
-Draw the camera connector and SPI interface, then add a 10 kohm CAM_CS pull-up and local 100 nF + 10 uF decoupling. The current camera sheet is empty; these are design requirements, not placed components. No external SCCB/I2C, XCLK, parallel data, reset/PWDN lines, FPC socket or separate sensor regulators are required by this module interface.
+Use the Arducam Mega SDK, not the esp32-camera DVP driver. SPI mode0; start slowly and validate up to the manufacturer-recommended8MHz. Observe its CS transaction and burst-read dummy-byte rules. Test identity, JPEG capture/readout and autofocus. Read compressed JPEG into PSRAM or stream it; decode blocks using a reusable buffer. Full5MP RGB565 requires10,077,696 bytes and exceeds8MiB PSRAM.
 
-References: [Mega 5MP specifications](https://docs.arducam.com/Arduino-SPI-camera/MEGA-SPI/MEGA-5MP/), [Mega wiring and SDK quick start](https://docs.arducam.com/Arduino-SPI-camera/MEGA-SPI/MEGA-Quick-Start-Guide/), [B0401 connector and product details](https://www.arducam.com/presale-mega-5mp-color-rolling-shutter-camera-module-with-autofocus-lens-for-any-microcontroller.html).
+Check total3.3V current including autofocus, ESP32 and SD. Secure and strain-relieve the cable. Capture/transfer latency, hardware operation and PCB routing remain unverified. The four SPI signals use hierarchical ports through the parent schematic; camera power and ground also enter through hierarchical ports. Whole-project ERC remains unfinished.
 
-## Proposed GPIO allocation
+### Sources
 
-USB, SD and laser core labels are drawn; camera, telemetry and expansion remain planned. Parent USB-data/SD links and hardware/firmware validation are still pending.
+- [Arducam Mega5MP](https://docs.arducam.com/Arduino-SPI-camera/MEGA-SPI/MEGA-5MP/)
+- [3.3V wiring examples](https://docs.arducam.com/Arduino-SPI-camera/MEGA-SPI/MEGA-Quick-Start-Guide/)
+- [Manufacturer SPI application note](https://cdn.arducam.com/downloads/datasheet/Arducam_MEGA_SPI_Camera_Application_Note.pdf)
+
+## GPIO allocation
+
+Unallocated GPIOs: 4/5/6,11-18,21,43/44/48. Reserve43 TX /44 RX for UART0 debug if desired. GPIO0/3/45/46 are strapping pins, not unrestricted spares. See [Camera interface](COMPONENTS.md#camera-and-image-processing).
+
+Camera SPI hierarchical connections and USB, SD and laser core labels are drawn; telemetry and expansion remain planned. Parent USB-data/SD links and hardware/firmware validation are still pending.
 
 | Interface | GPIOs / notes |
 |---|---|
-| Camera SPI (planned) | 8 SCK, 9 MOSI, 10 MISO, 6 CS; not drawn in the current camera/core sheets. |
+| Camera SPI | GPIO7 CS,8 SCK,9 MISO,10 MOSI; hierarchical connections through the parent sheet. |
 | USB Serial/JTAG | 19 D-, 20 D+ |
 | FC telemetry | 1 TX -> AIO UART4 RX; 2 RX <- UART4 TX; common ground. PX4 TELEM2 / ArduPilot SERIAL4. |
 | Laser UART | 38 TX -> laser RXD; 39 RX <- laser TXD |
 | Shared SPI | 40 SCLK, 41 MOSI, 42 MISO |
 | microSD CS | 47; pull up for startup |
-| Expansion SPI CS | 48; separate pull-up |
+| Expansion SPI CS | 48 available; currently unconnected |
 | Optional UART0 debug | 43 TX, 44 RX |
-| Available / expansion | 4/5 available for 3.3 V I2C; 7, 11-18 and 21 released from the old camera allocation; review before use. |
+| Expansion constraints | GPIO4/5 are camera SCCB; GPIO6-18 and21 are camera signals. Recheck all spare allocations. |
 | Boot/strapping | 0, 3, 45, 46; review startup loads, reserve GPIO0 for BOOT |
 | PSRAM occupied | 35, 36, 37 unavailable |
 
-GPIO47/48 are 3.3 V in this N16R8 plan. Use USB JTAG; GPIO39-42 are already assigned elsewhere. An I2C header can use GPIO4/5 with suitable 3.3 V pull-ups; the Mega does not use them. Initialize SD into SPI mode before other devices use the shared bus; each device needs its own CS and must release MISO. [SD/SPI sharing guide](https://docs.espressif.com/projects/esp-idf/en/stable/esp32s3/api-reference/peripherals/sdspi_share.html)
+GPIO47/48 are 3.3 V in this N16R8 plan. Use USB JTAG; GPIO39-42 are already assigned elsewhere. GPIO4/5 now carry camera SCCB; shared I2C needs a compatible voltage interface and coordinated pull-ups. Initialize SD into SPI mode before other devices use the shared bus; each device needs its own CS and must release MISO. [SD/SPI sharing guide](https://docs.espressif.com/projects/esp-idf/en/stable/esp32s3/api-reference/peripherals/sdspi_share.html)
 
 ## Flight-controller link
+
+### AIO UART4 socket wiring and power
+
+Use the FC's UART4 socket shown in the manufacturer's port diagram. Its displayed contact order is RX4, TX4, 5V, GND; this is a diagram-view order, not a verified numbered mating-cable drawing.
+
+| FC socket label | Connect on Flamingo |
+|---|---|
+| RX4 | GPIO1 TX / FC_UART_TX |
+| TX4 | GPIO2 RX / FC_UART_RX |
+| 5V | Leave unconnected; omit this conductor or insulate the unused end |
+| GND | GND |
+
+The 4S pack powers the FC at its main battery input; the FC generates its own regulated 5V peripheral output. Flamingo continues to use its own 4S-to-5V buck and USB/buck selector. Do not join the FC socket's 5V to Flamingo's regulated rails: that would parallel separate supplies and could backfeed the FC when Flamingo is USB-powered. The UART cable carries TX, RX and a dedicated ground return only. Shared ground through the battery harness does not eliminate the planned signal-ground conductor.
+
+Use the planned four-contact Flamingo socket and matching cable, leaving the contact corresponding to FC 5V unconnected on Flamingo; see the connector section below. The included packing-list confirms SH1.0-4P cable family; verify pin-1/view orientation, cable continuity and the other-end termination before final wiring. UART4 is SERIAL4 in ArduPilot and TELEM2 in PX4.
+
+Source: [manufacturer board specifications and UART mapping](https://micoair.com/flightcontroller_micoair743v2_aio_45a/), plus the UART4 port diagram supplied in this conversation. No change to schematic net names or board power architecture.
+
 
 Use **AIO UART4** and non-inverted 3.3 V UART; verify the actual pads/connector and logic levels before wiring. In ArduPilot use **`SERIAL4`**, with MAVLink 2 (`SERIAL4_PROTOCOL = 2`), initially 115200 baud, 8N1. PX4 calls UART4 TELEM2; configure its MAVLink instance if using PX4.
 
@@ -243,6 +268,34 @@ Keep GPS on **AIO UART3 / GPS1 (ArduPilot SERIAL3)**, with compass on external I
 GPS/barometric altitude is not automatically height above terrain; laser distance is along its beam. Locating the tarp also needs camera calibration, mounting alignment, attitude, geometry and synchronized measurements. Validate the vehicle-specific ArduPilot build and features; board support alone does not establish suitability for rocket ascent or deployment.
 
 References: [AIO manual and port mapping](https://micoair.com/en/docs/flight-controller/micoair743-aio-series/micoair743v2-aio-45a-manual), [official ArduCopter firmware](https://firmware.ardupilot.org/Copter/stable/MicoAir743v2/), [GPS manual](https://micoair.com/en/docs/gps-rtk/gps), [ArduPilot serial configuration](https://ardupilot.org/copter/docs/common-serial-options.html), [message requests](https://ardupilot.org/dev/docs/mavlink-requesting-data.html).
+
+### Four-contact UART4 connector and cable selection
+
+This supersedes the earlier three-contact Micro-Fit proposal. Use the confirmed four-contact JST-SH 1.0mm-pitch connection, with only TX, RX and GND electrically used. The 5V position is deliberately unconnected on Flamingo.
+
+| Item | Selection |
+|---|---|
+| Flamingo PCB socket | JST **SM04B-SRSS-TB(LF)(SN)**, four contacts, 1.0mm pitch, right-angle SMT; [JLC C160404](https://jlcpcb.com/partdetail/JST-SM04B_SRSS_TB_LF_SN/C160404), Extended, Economic/Standard SMT assembly |
+| KiCad symbol | `Connector_Generic:Conn_01x04`; assign a free reference |
+| KiCad footprint | `Connector_JST:JST_SH_SM04B-SRSS-TB_1x04-1MP_P1.00mm_Horizontal` (available in the installed library) |
+| Cable | Included **SH1.0-4P cable, 15cm**, identified in the user-supplied FC packing-list image. Reuse this cable; no separate cable purchase planned. Inspect whether its Flamingo end is already terminated or needs an SH four-contact housing/contacts |
+| Plug housing if making a harness | JST SHR-04V-S family, with matching SH crimp contacts sized for the chosen wire; a finished cable avoids hand-crimping tiny contacts |
+
+**Connector family confirmed:** the user-supplied packing-list image explicitly identifies the included lead as **SH1.0-4P Cable 15cm (For FC) x1**. This confirms the SH 1.0mm / four-contact family for the included cable and supports the selected JST SM04B-SRSS-TB socket. Use the supplied lead. Its end-to-end contact numbering and termination at the Flamingo end still need inspection; the packing-list text alone does not prove both ends are preterminated or give a pin map.
+
+| FC UART4 signal | Flamingo connection |
+|---|---|
+| RX4 | GPIO1 TX / FC_UART_TX |
+| TX4 | GPIO2 RX / FC_UART_RX |
+| 5V | Corresponding Flamingo pad no-connect; never tie to Flamingo's power rails |
+| GND | GND |
+
+Do not assign numbered Flamingo pads from the screenshot's vertical order alone. Use a continuity test on the actual cable to map the FC contacts to the selected PCB connector's pad numbers. Preserve TX-to-RX crossing electrically. Qwiic/STEMMA QT is the cable's usual application, not the UART wiring standard: do not use its usual power/I2C color convention as the FC pinout. With this socket/cable used for UART, clearly label it UART so it is not mistaken for an I2C expansion port.
+
+JST-SH uses friction retention rather than the positive latch of Micro-Fit. Use suitable cable restraint during layout/mechanical work. The SH board socket is 1mm SMT and is best factory-assembled; it is not the earlier easy-through-hole-solder option. JLC assembly stock was not exposed by the readable listing; the cable stock observation is not JLC inventory confirmation. A separate Adafruit cable is no longer required; use the included 150mm lead.
+
+Sources: [JST SH family](https://www.jst-mfg.com/product/index.php?lang=en&series=231), [FC manual](https://micoair.com/en/docs/flight-controller/micoair743-aio-series/micoair743v2-aio-45a-manual), [JLC socket](https://jlcpcb.com/partdetail/JST-SM04B_SRSS_TB_LF_SN/C160404), [finished cable](https://www.adafruit.com/product/5384).
+
 
 ## Saved KiCad state - 2026-11-15
 
@@ -255,7 +308,7 @@ The saved diagram is the source for this implementation snapshot; planned archit
 | 3.3 V | TPS62162 and preliminary support; EP grounded | Resolve L1/L2: both cite C1046 despite intended values of 2.2uH and 10uH; select correctly rated separate power inductors. Finish load/transient review |
 | USB | DEALON connector, two CC pull-downs, joined D+ and D- copies | Shell pins 1-4 still unconnected; ESD, input protection and top-level data wiring. R6/R7 now have explicit 5.1k values and `R_0402_1005Metric` footprints matching C25905 |
 | Core | ESP32, 3V3/GND, SD/USB/laser signal labels | EN/BOOT/reset support and decoupling; finish parent-sheet interfaces. USB data ports still need bidirectional definitions when that interface is finished |
-| Camera | Empty placeholder, still titled OV5640 at top level | Draw selected Arducam Mega SPI interface; prior FPC architecture is superseded |
+| Camera | Arducam Mega 5MP autofocus B0BW7MDVHK | Dedicated SPI GPIO7-10, off-board |
 | microSD | J2 socket; R1 DAT2, R2 CS, R3 MOSI, R4 MISO, R5 DAT1; all 10k / C17414 | Local decoupling and top-level SD wiring; SPI sharing with expansion remains planned |
 
 ### Reference and naming cleanup
@@ -323,9 +376,9 @@ Detailed sheet-by-sheet work has been restored in [SCHEMATIC_BUILD_PLAN.md](SCHE
 
 | Block | Completed decisions / existing work | Still to draw |
 |---|---|---|
-| Camera | Mega 5MP AF, JPEG still capture; planned dedicated SPI GPIO8/9/10/6 | Connector/harness choice, numbered map, CS pull-up, 100nF + 10uF bypass, core/child/parent connections |
-| FC telemetry | MicoAir743v2-AIO-45A, UART4; Flamingo GPIO1 TX / GPIO2 RX | Three-contact TX/RX/GND connector, direction notes, core/child/parent ports and wiring |
-| GPIO / expansion | Shared SD SPI GPIO40/41/42, separate CS GPIO48; possible I2C GPIO4/5 | Headers/contact order, external CS pull-up, I2C pull-up coordination, interfaces and load allocation |
+| Camera | Arducam Mega 5MP autofocus B0BW7MDVHK | Dedicated SPI GPIO7-10, off-board |
+| FC telemetry | MicoAir743v2-AIO-45A UART4, GPIO1 TX / GPIO2 RX; four-contact JST-SH socket selected; included SH1.0-4P 15cm cable confirmed | Place connector, add direction notes and core/child/parent ports/wiring |
+| GPIO / expansion | Shared SD SPI GPIO40/41/42, separate CS GPIO48; GPIO4/5 occupied by camera SCCB | Headers/contact order, external CS pull-up, I2C pull-up coordination, interfaces and load allocation |
 | Optional UART debug | Native USB retained; optional UART0 GPIO43 TX / GPIO44 RX | Fit/omit decision, TX/RX/GND header, 3.3V label, core/child/parent wiring |
 | Core / USB / SD / laser | Components and preliminary connections are present as recorded above | Finish supporting components and outstanding interface/parent connections; verify laser contact directions |
 
@@ -337,7 +390,7 @@ C8 is the user's existing **radial 47uF capacitor**, hand-soldered. Select its t
 
 - Select propellers and validate total vehicle thrust; size the 4S battery, distribution harness, connectors and protection for simultaneous motor and electronics loads. Select the external balance charger and runtime target.
 - Power circuits and component checks are complete per the user; perform the final electrical check and then layout. C3 is resolved; C8 is the sole hand-soldered capacitor and C11 is the selected non-polarized 100uF part.
-- Draw the Mega camera sheet and core/top-level SPI connections; verify the proposed header order against the received harness, add CS pull-up/decoupling and secure the cable for flight.
+- Complete restored DVP camera supplies, ground ties, level interface, SCCB pull-ups and reset/PWDN bias; verify exact module/FPC revision.
 - Add power inputs, decoupling, EN reset network, BOOT/RESET buttons and antenna clearance. Candidate S3 starting values: 10 uF + 100 nF supply decoupling; EN 10 kohm / 1 uF RC, subject to reference-design review.
 - Finish USB: CC resistors R6/R7 are drawn with 5.1k values and corrected 0402 footprints; add ESD/input protection, shell grounds and parent USB data wiring.
 - Confirm camera and laser hardware revisions, cable mappings and connector footprints. Verify laser I/O voltage and ENO treatment.
@@ -357,7 +410,7 @@ Reuse only circuits and libraries that match the final design. Copied libraries 
 | TPS2116 source selector | Candidate for USB/external 5 V selection; review its complete circuit before reuse. |
 | BQ24074 charger and charge-specific support | Excluded from the new design. Copied library files may remain unused. |
 | TPS61023 boost, 1 uH inductor, battery-gating circuit and battery/switch connector | Historical circuits; not automatically part of the new power plan. |
-| 20-pin camera FFC | Unused; the Mega uses the six-wire SPI harness. |
+| 20-pin camera FFC | Does not match restored 24-contact camera interface. |
 
 Key design references: [S3 module datasheet](https://documentation.espressif.com/esp32-s3-wroom-1_wroom-1u_datasheet_en.pdf), [S3 hardware guidelines](https://docs.espressif.com/projects/esp-hardware-design-guidelines/en/latest/esp32s3/index.html), [USB Serial/JTAG](https://docs.espressif.com/projects/esp-idf/en/stable/esp32s3/api-guides/usb-serial-jtag-console.html), [antenna layout](https://docs.espressif.com/projects/esp-hardware-design-guidelines/en/latest/esp32s3/pcb-layout-design.html).
 
