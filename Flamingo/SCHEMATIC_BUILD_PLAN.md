@@ -10,7 +10,7 @@ Selected: Arducam Mega 5MP autofocus, Amazon B0BW7MDVHK ($35 per user). Camera s
 
 | Page | Saved state | Remaining work |
 |---|---|---|
-| System overview | Nine functional sheet boxes; USB power and laser links drawn | Connect SD and USB data at the parent; camera, FC and expansion interfaces |
+| System overview | Eight functional sheet boxes; USB power and laser links drawn | Connect SD and USB data at the parent; camera, FC and expansion interfaces |
 | Power distribution | Circuit and component verification complete per user | Final electrical check and layout |
 | Battery input protection | Circuit verified per user; C8 existing 47uF part for hand soldering | Included in final power check and layout |
 | 4S to 5 V buck | Circuit verified per user; C3 replacement resolved | Included in final power check and layout |
@@ -21,7 +21,6 @@ Selected: Arducam Mega 5MP autofocus, Amazon B0BW7MDVHK ($35 per user). Camera s
 | STA-M020X laser | J1 five-contact connector, supply/ground and UART labels | Resolve TX/RX pin assignment against module manual, verify harness and ENO |
 | Flight-controller telemetry | Empty placeholder | Connector, GPIO1/2 UART and ground interfaces |
 | GPIO / I2C / SPI expansion | Empty placeholder | Headers, I2C pull-ups as needed, SPI sharing and EXT_CS bias |
-| Optional UART debug | Empty placeholder | Optional GPIO43/44 and GND header |
 
 Inactive camera_tarpfinder, power_tarpfinder, usb_tarpfinder, GPS and usb_debug files are not in the active hierarchy; they have not been treated as implemented circuits or renamed.
 
@@ -155,35 +154,16 @@ Bring-up: MAVLink 2, initially 115200 baud / 8N1, non-inverted 3.3V logic. ArduP
 - [ ] Add a 10k pull-up on the external CS to keep the peripheral deselected during startup; SD keeps its own independent CS pull-up.
 - [ ] If fitting I2C, add/coordinate one effective pull-up per SDA/SCL line to 3.3V. Pick values for the actual devices, cable/bus capacitance and clock rate; 4.7k is a candidate, not an additional mandatory set if devices already provide suitable pull-ups.
 - [ ] Add core/child/parent sheet ports and wires, and record the final pin allocation. Keep GPIO35/36/37 reserved for N16R8 memory and boot-strapping pins out of casual expansion use.
-- [ ] Reassess expansion: GPIO4-18 and GPIO21 are now allocated to DVP/SCCB; they are not spare pins.
+- [ ] Use the SPI-camera allocation: GPIO7-10 occupied; GPIO4/5/6,11-18,21,43/44/48 available before diagnostics allocation.
 
 Later layout/bring-up: aim for a short SPI cable (initial plan below 5cm), provide nearby ground returns, initialize SD into SPI mode before other shared devices, and verify unselected devices release MISO. Check the 3.3V load allocation before powering external modules.
 
-## Optional UART debug - `schematics/uart_debug.kicad_sch`
-
-**Decided:** optional 3.3V UART0 access for an external USB-UART adapter. Native USB remains the main programming/console/JTAG port.
-
-**Drawn:** explanatory placeholder note only; no connector or ports yet.
-
-| Header signal | Connection | Debug-sheet direction |
-|---|---|---|
-| TX from Flamingo | GPIO43 / UART0 TX | Input |
-| RX into Flamingo | GPIO44 / UART0 RX | Output |
-| GND | Common ground | Ground connection |
-
-- [ ] Decide to fit or explicitly omit the optional header. If fitted, choose a simple 1x3 2.54mm THT header or a suitable locking connector and assign an unused reference.
-- [ ] Define/label the numbered pin order, then wire GPIO43 TX -> adapter RX, adapter TX -> GPIO44 RX and GND -> GND.
-- [ ] Label the header `3.3V TTL UART` and show TX/RX from Flamingo's perspective.
-- [ ] Add core, debug-child and parent sheet ports/wires. This header does not add another native USB interface.
-- [ ] Omit an adapter power contact for the basic TX/RX/GND connection; do not connect the adapter's 5V output to the ESP32 3.3V rail.
-
-Bring-up: use an adapter with verified 3.3V logic; check firmware UART0 pin/console settings. Manual download recovery still depends on correct EN/BOOT support on the core sheet.
 
 ## Parent-sheet integration still to draw
 
 - [ ] Connect USB data between the existing USB/core sheet pins; retain USB_D_P and USB_D_N names and finish their bidirectional port definitions.
 - [x] Connect SD_CLK, SD_MOSI, SD_MISO and SD_CS between existing SD/core parent pins; verified by netlist after the grid correction. Review direction metadata in the final ERC pass.
-- [ ] Add the planned camera, FC telemetry, expansion and optional debug ports to their child and core sheets, then add matching parent pins and wires.
+- [ ] Add the planned camera, FC telemetry, expansion ports to their child and core sheets, then add matching parent pins and wires.
 - [ ] Check that each connector's TX/RX labels use the documented viewpoint; port direction is relative to its child sheet, not the external device.
 - [ ] Reconcile obsolete architecture notes with the restored DVP camera and MicoAir743v2-AIO-45A as those pages are completed. Drawn arrows/notes alone do not connect electrical nets.
 
@@ -200,3 +180,52 @@ References: [SD pull-ups](https://docs.espressif.com/projects/esp-idf/en/stable/
 Assembly decision: only C8 (47uF) is hand-soldered among the capacitors. C11 is the selected 100uF non-polarized capacitor for factory assembly; remove its former hand-solder exclusion.
 
 Top-level grid correction: all nine sheet boxes, sheet pins and electrical wire/junction coordinates are on the 50mil (1.27mm) grid. Four zero-length stubs created by snapping were removed. Net names were preserved. SD CLK/CS/MISO/MOSI connections to U1 were verified independently by netlist.
+
+## Native USB programming and debugging
+
+One USB-C port provides board power, flashing, serial console and built-in USB JTAG. The optional UART debug sheet/header has been removed; GPIO43/44 remain free.
+
+Saved netlist review: J3 A6/B6 join USB_D_P and reach U1 pad14 (GPIO20); A7/B7 join USB_D_N and reach U1 pad13 (GPIO19). R7 is CC1-to-GND and R6 is CC2-to-GND, each5.1k. USB VBUS reaches the power selector. No additional USB/UART bridge or external JTAG connector is required.
+
+Remaining manual work:
+- Connect J3 shell pads1-4 to the chosen shield/ground network (currently unconnected); for this board, use short GND connections unless a deliberate chassis scheme is designed.
+- Add low-capacitance USB data ESD protection next to J3; finish VBUS protection/current budget review.
+- Reserve22/33-ohm series resistor footprints on D+/D- near the ESP32 per Espressif guidance; tune/populate based on the reference design and signal validation.
+- Preserve GPIO19/20 for USB and ensure BOOT(GPIO0)/EN reset access for recovery.
+- Route D+/D- as a short90-ohm differential pair over continuous ground.
+- In firmware, use the USB Serial/JTAG console; use Espressif OpenOCD for breakpoint debugging. Avoid reassigning USB pins or disabling USB JTAG through eFuses. Install the Espressif USB JTAG driver on Windows.
+
+References: [USB JTAG setup](https://docs.espressif.com/projects/esp-idf/en/stable/esp32s3/api-guides/jtag-debugging/configure-builtin-jtag.html), [hardware checklist](https://docs.espressif.com/projects/esp-hardware-design-guidelines/en/latest/esp32s3/schematic-checklist.html).
+
+## Planned diagnostics / recovery sheet
+
+Requested 2026-11-16. This replaces the former UART-only debug-sheet concept. Native USB remains the single programming/console/JTAG port. The following is a design plan, not drawn or verified hardware; choose exact parts and references during implementation.
+
+| Function | Proposed circuit | Meaning / constraint |
+|---|---|---|
+| 3.3V power LED | 3V3 -> resistor -> LED -> GND | Indicates rail presence, not valid regulation or firmware operation. Start at about1mA; calculate resistance from the selected LED forward voltage. |
+| Core heartbeat LED | GPIO21 -> resistor -> LED -> GND | Reserve GPIO21; flash from the main application health loop. A stuck task must stop the heartbeat; an independent timer alone does not prove application health. |
+| Optional fault LED | GPIO18 -> resistor -> LED -> GND, DNP initially | Reserve18 only if fitted; use fault codes for camera/SD/link errors. |
+| RESET button | Normally-open switch EN to GND | Reuse the existing EN pull-up/RC; do not duplicate its timing network on this sheet. |
+| BOOT button | Normally-open switch GPIO0 to GND | Boot strap/recovery control; review strap pull-up and GPIO46 state against Espressif guidance. Hold BOOT, pulse RESET, then release BOOT for download recovery. |
+| Recovery header | 1x6:1 GND,2 3V3 reference,3 UART0 TX(GPIO43),4 UART0 RX(GPIO44),5 EN,6 GPIO0 | 3.3V logic only. Adapter RX connects to TX and adapter TX to RX. Pin2 is voltage reference, not an authorized power input. No adapter5V connection. Firmware download uses UART0 plus BOOT/RESET control. |
+
+- [ ] Create diagnostics child sheet and connect matching hierarchical core/parent ports for HEARTBEAT, optional FAULT, EN, BOOT, UART0_TX/RX and power/ground.
+- [ ] Keep EN and boot traces short; avoid long button leads and unintended startup loads. No external pin-JTAG header planned: GPIO39-42 are already assigned to laser/SD; use USB JTAG.
+- [ ] Select LED colors/brightness and resistor values; account for continuous power-LED load and GPIO drive limits.
+- [ ] Add power and signal test pads if space permits. Keep recovery connector accessible without removing the camera or battery.
+- [ ] Verify LED meaning in firmware, manual USB/UART recovery and boot-strapping on hardware.
+
+GPIO21 is proposed for heartbeat; GPIO18 is optional fault. GPIO43/44 become reserved for recovery access. These are reservations in the plan, not changes to the core schematic.
+
+## Proposed south-edge expansion connectors
+
+South refers to a proposed physical PCB edge; placement, antenna keepout and final connector orientation remain to be checked. Prefer keyed connectors for field wiring. Define mating-side orientation and printed pin1 before release.
+
+| Connector | Proposed contact order | Use |
+|---|---|---|
+| I2C,1x4 | GND,3V3,SDA(GPIO4),SCL(GPIO5) | Low-speed sensor expansion; coordinate one effective set of bus pull-ups. This is a custom pinout, not a claim of Qwiic compatibility. |
+| SPI,1x6 | GND,3V3,SCK(GPIO40),MOSI(GPIO41),MISO(GPIO42),CS(GPIO48) | Shared with SD; independent CS and device-specific SPI settings. Not the camera bus. |
+| General GPIO,2x5 | Row pairs:1 GND/2 3V3;3 IO6/4 IO11;5 IO12/6 IO13;7 IO14/8 IO15;9 IO16/10 IO17 | Eight flexible3.3V GPIOs; firmware can assign PWM, interrupts, UART or other routed peripheral functions. Analog capability/noise must be checked for the selected pin and use. |
+
+GPIO18 can remain spare if the fault LED is omitted. GPIO21 is reserved for heartbeat. GPIO43/44 stay on the recovery header. Exclude strapping GPIO0/3/45/46 and PSRAM GPIO35-37 from casual expansion. Do not expose raw battery or5V on these3.3V headers. Check available3.3V current before supplying accessories; these are short internal-cable interfaces, not external long-wire buses. Shared SPI devices must release MISO when deselected; initialize SD appropriately and serialize bus access.

@@ -1,0 +1,12 @@
+(kicad_sch
+	(version 20260306)
+	(generator "eeschema")
+	(generator_version "10.0")
+	(uuid "9293cf3f-3d29-4eaf-beda-afb8dfe49bef")
+	(paper "A4")
+	(title_block
+		(company "Payload @ Carnegie Mellon Rocket Command")
+		(comment 1 "Designed by Simon Kaplinsky")
+	)
+	(lib_symbols)
+)

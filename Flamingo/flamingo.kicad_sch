@@ -52,19 +52,6 @@
 	)
 	(polyline
 		(pts
-			(xy 143.1 73.5) (xy 143.75 75) (xy 144.4 73.5)
-		)
-		(stroke
-			(width 0.25)
-			(type default)
-		)
-		(fill
-			(type none)
-		)
-		(uuid "7a6ceb06-c119-449d-894b-166e8700d240")
-	)
-	(polyline
-		(pts
 			(xy 90 47.5) (xy 100 47.5) (xy 100 80) (xy 112.5 80)
 		)
 		(stroke
@@ -75,19 +62,6 @@
 			(type none)
 		)
 		(uuid "932360cc-11dc-4304-b20f-ebd6436610f0")
-	)
-	(polyline
-		(pts
-			(xy 144.4 59) (xy 143.75 57.5) (xy 143.1 59)
-		)
-		(stroke
-			(width 0.25)
-			(type default)
-		)
-		(fill
-			(type none)
-		)
-		(uuid "f0692df7-568f-4be9-941c-8eb5379fa76c")
 	)
 	(text "One native USB port\nProgramming, console and JTAG"
 		(exclude_from_sim no)
@@ -110,17 +84,6 @@
 			(justify left top)
 		)
 		(uuid "2e579172-3c06-4f64-a504-2d1637b9b7e9")
-	)
-	(text "UART0"
-		(exclude_from_sim no)
-		(at 146 64 0)
-		(effects
-			(font
-				(size 1.27 1.27)
-			)
-			(justify left top)
-		)
-		(uuid "332f3e55-bb5c-4815-8eb5-32b8ee492970")
 	)
 	(text "3V3 power; shared SPI bus\nSeparate SD chip select"
 		(exclude_from_sim no)
@@ -242,17 +205,6 @@
 			(justify left top)
 		)
 		(uuid "b5e03012-73ed-4ffd-a581-a86d22f853bd")
-	)
-	(text "TX / RX / GND header\nExternal USB-UART adapter"
-		(exclude_from_sim no)
-		(at 114.5 44 0)
-		(effects
-			(font
-				(size 1.27 1.27)
-			)
-			(justify left top)
-		)
-		(uuid "cd941214-4161-474d-8862-2a57554c99af")
 	)
 	(text "Differential Pair\n"
 		(exclude_from_sim no)
@@ -592,16 +544,6 @@
 		)
 		(uuid "28dcd7e3-5ada-41b9-a5ca-ce7aae0eb2ba")
 	)
-	(polyline
-		(pts
-			(xy 143.75 57.5) (xy 143.75 75)
-		)
-		(stroke
-			(width 0.25)
-			(type default)
-		)
-		(uuid "2a7fa9dd-4eda-4d78-be6b-79e5ea97aeb7")
-	)
 	(wire
 		(pts
 			(xy 175 70.08) (xy 189 70.08)
@@ -651,16 +593,6 @@
 			(type default)
 		)
 		(uuid "47645055-4e63-4eac-b0ff-541861edd5de")
-	)
-	(wire
-		(pts
-			(xy 204.47 51) (xy 199 51)
-		)
-		(stroke
-			(width 0)
-			(type default)
-		)
-		(uuid "4e68abf0-7a80-40f8-a277-6939643ad2f5")
 	)
 	(wire
 		(pts
@@ -731,16 +663,6 @@
 			(type default)
 		)
 		(uuid "73c28f75-c8d9-44be-bf3c-9d283138df97")
-	)
-	(wire
-		(pts
-			(xy 204.47 48) (xy 199 48)
-		)
-		(stroke
-			(width 0)
-			(type default)
-		)
-		(uuid "7518f8e5-7d30-41c6-b75f-cd3fc2d6c800")
 	)
 	(wire
 		(pts
@@ -1012,50 +934,6 @@
 		)
 		(uuid "f59b9912-d664-407b-b971-4e4d72253182")
 	)
-	(global_label "+3V3"
-		(shape input)
-		(at 199 48 180)
-		(effects
-			(font
-				(size 1 1)
-			)
-			(justify right)
-		)
-		(uuid "409a6f35-e64d-4619-a1fa-49aab76998d0")
-		(property "Intersheetrefs" "${INTERSHEET_REFS}"
-			(at 199 48 0)
-			(hide yes)
-			(show_name no)
-			(do_not_autoplace no)
-			(effects
-				(font
-					(size 1.27 1.27)
-				)
-			)
-		)
-	)
-	(global_label "GND"
-		(shape input)
-		(at 199 51 180)
-		(effects
-			(font
-				(size 1 1)
-			)
-			(justify right)
-		)
-		(uuid "8e1cecb2-0b62-4c2b-8f1a-89eaea0ebfc8")
-		(property "Intersheetrefs" "${INTERSHEET_REFS}"
-			(at 199 51 0)
-			(hide yes)
-			(show_name no)
-			(do_not_autoplace no)
-			(effects
-				(font
-					(size 1.27 1.27)
-				)
-			)
-		)
-	)
 	(sheet
 		(at 204.47 21.03)
 		(size 75.53 55.88)
@@ -1135,77 +1013,10 @@
 				(justify left)
 			)
 		)
-		(pin "+3V3" input
-			(at 204.47 48 180)
-			(uuid "7d0c1827-fedb-48f3-af74-40b3400ac6f3")
-			(effects
-				(font
-					(size 0.9 0.9)
-				)
-				(justify left)
-			)
-		)
-		(pin "GND" input
-			(at 204.47 51 180)
-			(uuid "1d5fd034-0fc8-42b6-adad-6a37b6b8c2d8")
-			(effects
-				(font
-					(size 0.9 0.9)
-				)
-				(justify left)
-			)
-		)
 		(instances
 			(project "flamingo"
 				(path "/817f49eb-0105-475d-aa60-c8a0ced591cc"
 					(page "4")
-				)
-			)
-		)
-	)
-	(sheet
-		(at 112.5 35)
-		(size 62.5 22.5)
-		(exclude_from_sim no)
-		(in_bom yes)
-		(on_board yes)
-		(dnp no)
-		(stroke
-			(width 0.1524)
-			(type solid)
-		)
-		(fill
-			(color 237 224 252 1)
-		)
-		(uuid "6337b098-1641-4c29-8da7-3087c77b8969")
-		(property "Sheetname" "Optional UART debug"
-			(at 114.5 37 0)
-			(show_name no)
-			(do_not_autoplace yes)
-			(effects
-				(font
-					(size 1.27 1.27)
-					(bold yes)
-				)
-				(justify left top)
-			)
-		)
-		(property "Sheetfile" "schematics/uart_debug.kicad_sch"
-			(at 112.5 58.5 0)
-			(hide yes)
-			(show_name no)
-			(do_not_autoplace yes)
-			(effects
-				(font
-					(size 1 1)
-				)
-				(justify left top)
-			)
-		)
-		(instances
-			(project "flamingo"
-				(path "/817f49eb-0105-475d-aa60-c8a0ced591cc"
-					(page "6")
 				)
 			)
 		)
@@ -1651,6 +1462,53 @@
 			(project "flamingo"
 				(path "/817f49eb-0105-475d-aa60-c8a0ced591cc"
 					(page "9")
+				)
+			)
+		)
+	)
+	(sheet
+		(at 113.03 29.21)
+		(size 62.23 24.13)
+		(exclude_from_sim no)
+		(in_bom yes)
+		(on_board yes)
+		(dnp no)
+		(fields_autoplaced yes)
+		(stroke
+			(width 0.1524)
+			(type solid)
+			(color 172 38 9 1)
+		)
+		(fill
+			(color 255 17 0 1)
+		)
+		(uuid "b98617b6-6c9d-4483-a53f-ec57a6d822e6")
+		(property "Sheetname" "Debug"
+			(at 113.03 28.4984 0)
+			(show_name no)
+			(do_not_autoplace no)
+			(effects
+				(font
+					(size 1.27 1.27)
+				)
+				(justify left bottom)
+			)
+		)
+		(property "Sheetfile" "schematics\\Debug.kicad_sch"
+			(at 113.03 53.9246 0)
+			(show_name no)
+			(do_not_autoplace no)
+			(effects
+				(font
+					(size 1.27 1.27)
+				)
+				(justify left top)
+			)
+		)
+		(instances
+			(project "flamingo"
+				(path "/817f49eb-0105-475d-aa60-c8a0ced591cc"
+					(page "6")
 				)
 			)
 		)

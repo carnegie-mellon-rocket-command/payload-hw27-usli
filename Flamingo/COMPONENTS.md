@@ -203,7 +203,7 @@ Dedicated SPI keeps camera traffic separate from the SD bus. R20 (10k) pulls CS 
 
 ### GPIO available
 
-Camera uses GPIO7-10. Freed from DVP: GPIO4,5,6,11-18,21 (12 pins). Including43/44/48, unrestricted unallocated pins total15. Reserve43/44 for UART0 debug if desired. GPIO0/3/45/46 have strapping constraints;35-37 are occupied by N16R8 PSRAM. USB19/20, telemetry1/2, laser38/39 and SD40/41/42/47 keep their allocations. Freed core pins are intentionally left unconnected for future use.
+Camera uses GPIO7-10. Freed from DVP: GPIO4,5,6,11-18,21 (12 pins). Including43/44/48, unrestricted unallocated pins total15. GPIO43/44 remain available for general use. GPIO0/3/45/46 have strapping constraints;35-37 are occupied by N16R8 PSRAM. USB19/20, telemetry1/2, laser38/39 and SD40/41/42/47 keep their allocations. Freed core pins are intentionally left unconnected for future use.
 
 ### Firmware and verification
 
@@ -219,7 +219,7 @@ Check total3.3V current including autofocus, ESP32 and SD. Secure and strain-rel
 
 ## GPIO allocation
 
-Unallocated GPIOs: 4/5/6,11-18,21,43/44/48. Reserve43 TX /44 RX for UART0 debug if desired. GPIO0/3/45/46 are strapping pins, not unrestricted spares. See [Camera interface](COMPONENTS.md#camera-and-image-processing).
+Unallocated GPIOs: 4/5/6,11-18,21,43/44/48. GPIO43/44 remain available for general use. GPIO0/3/45/46 are strapping pins, not unrestricted spares. See [Camera interface](COMPONENTS.md#camera-and-image-processing).
 
 Camera SPI hierarchical connections and USB, SD and laser core labels are drawn; telemetry and expansion remain planned. Parent USB-data/SD links and hardware/firmware validation are still pending.
 
@@ -232,12 +232,11 @@ Camera SPI hierarchical connections and USB, SD and laser core labels are drawn;
 | Shared SPI | 40 SCLK, 41 MOSI, 42 MISO |
 | microSD CS | 47; pull up for startup |
 | Expansion SPI CS | 48 available; currently unconnected |
-| Optional UART0 debug | 43 TX, 44 RX |
-| Expansion constraints | GPIO4/5 are camera SCCB; GPIO6-18 and21 are camera signals. Recheck all spare allocations. |
+| Expansion constraints | Camera uses GPIO7-10. Proposed diagnostics reserves21,43/44 and optionally18; see build plan. |
 | Boot/strapping | 0, 3, 45, 46; review startup loads, reserve GPIO0 for BOOT |
 | PSRAM occupied | 35, 36, 37 unavailable |
 
-GPIO47/48 are 3.3 V in this N16R8 plan. Use USB JTAG; GPIO39-42 are already assigned elsewhere. GPIO4/5 now carry camera SCCB; shared I2C needs a compatible voltage interface and coordinated pull-ups. Initialize SD into SPI mode before other devices use the shared bus; each device needs its own CS and must release MISO. [SD/SPI sharing guide](https://docs.espressif.com/projects/esp-idf/en/stable/esp32s3/api-reference/peripherals/sdspi_share.html)
+GPIO47/48 are 3.3 V in this N16R8 plan. Use USB JTAG; GPIO39-42 are already assigned elsewhere. GPIO4/5 are available for3.3V expansion I2C; coordinate bus pull-ups. Initialize SD into SPI mode before other devices use the shared bus; each device needs its own CS and must release MISO. [SD/SPI sharing guide](https://docs.espressif.com/projects/esp-idf/en/stable/esp32s3/api-reference/peripherals/sdspi_share.html)
 
 ## Flight-controller link
 
@@ -378,8 +377,7 @@ Detailed sheet-by-sheet work has been restored in [SCHEMATIC_BUILD_PLAN.md](SCHE
 |---|---|---|
 | Camera | Arducam Mega 5MP autofocus B0BW7MDVHK | Dedicated SPI GPIO7-10, off-board |
 | FC telemetry | MicoAir743v2-AIO-45A UART4, GPIO1 TX / GPIO2 RX; four-contact JST-SH socket selected; included SH1.0-4P 15cm cable confirmed | Place connector, add direction notes and core/child/parent ports/wiring |
-| GPIO / expansion | Shared SD SPI GPIO40/41/42, separate CS GPIO48; GPIO4/5 occupied by camera SCCB | Headers/contact order, external CS pull-up, I2C pull-up coordination, interfaces and load allocation |
-| Optional UART debug | Native USB retained; optional UART0 GPIO43 TX / GPIO44 RX | Fit/omit decision, TX/RX/GND header, 3.3V label, core/child/parent wiring |
+| GPIO / expansion | Shared SD SPI GPIO40/41/42, separate CS GPIO48; GPIO4/5 available for expansion I2C | Headers/contact order, external CS pull-up, I2C pull-up coordination, interfaces and load allocation |
 | Core / USB / SD / laser | Components and preliminary connections are present as recorded above | Finish supporting components and outstanding interface/parent connections; verify laser contact directions |
 
 The build plan includes pin/port-direction tables, connector options, support-component requirements and separate bring-up notes. Planned hardware is not marked drawn. Power remains consolidated to final electrical check and layout per the user's review; this restoration does not reopen its completed checklist.
@@ -419,3 +417,9 @@ Assembly decision: only C8 (47uF input bulk) is hand-soldered among the capacito
 Power status: user verification complete; remaining power tasks are the final electrical check and PCB layout. Earlier audit notes describe historical findings and do not reopen user-resolved selections. This records user verification rather than an additional independent certification.
 
 Top-level grid correction: all nine sheet boxes, sheet pins and electrical wire/junction coordinates are on the 50mil (1.27mm) grid. Four zero-length stubs created by snapping were removed. Net names were preserved. SD CLK/CS/MISO/MOSI connections to U1 were verified independently by netlist.
+
+## Diagnostics and expansion decisions - 2026-11-16
+
+Plan a diagnostics/recovery sheet with a3.3V power LED, firmware heartbeat on GPIO21, optional fault LED on GPIO18, EN RESET and GPIO0 BOOT buttons, plus a six-pin3.3V UART0/EN/BOOT recovery header using GPIO43/44. The former UART-only sheet is not being reinstated unchanged. Native USB handles normal power/programming/serial/JTAG. These functions are planned, not drawn.
+
+The [build plan](SCHEMATIC_BUILD_PLAN.md#planned-diagnostics--recovery-sheet) records circuits, recovery pinout and implementation checks. Its south-edge proposal groups I2C(GPIO4/5), shared SD SPI(GPIO40/41/42 plus CS48) and eight general GPIOs(6,11-17). Exact connectors and physical placement remain unselected. USB finishing work is recorded under Native USB programming and debugging in the same plan.

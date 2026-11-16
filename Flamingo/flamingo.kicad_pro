@@ -685,7 +685,7 @@
         "uuid": "817f49eb-0105-475d-aa60-c8a0ced591cc"
       }
     ],
-    "used_designators": "resetablefuse1,10K1-2,J1-3,#PWR1-4,#PWR7-29,U1-3,4SPlug1,75K1,Buckconverter1,C1,C12-13,RPolarity1,TVS1,.1uf1-2,10uf1-2,10uH1,47uf1,100k1,2.2uH1,22uf1-3,33k1,4pinJST1",
+    "used_designators": "10K1-2,J1-3,resetablefuse1,#PWR1-4,#PWR7-33,U1-3,4SPlug1,75K1,Buckconverter1,C1,C12-13,RPolarity1,TVS1,.1uf1-2,10uf1-2,10uH1,47uf1,100k1,2.2uH1,22uf1-3,33k1,4pinJST1",
     "variants": []
   },
   "sheets": [
@@ -710,8 +710,8 @@
       "USB programming / JTAG"
     ],
     [
-      "6337b098-1641-4c29-8da7-3087c77b8969",
-      "Optional UART debug"
+      "b98617b6-6c9d-4483-a53f-ec57a6d822e6",
+      "Debug"
     ],
     [
       "671e9492-476d-4b92-89de-4e4bd604c597",
