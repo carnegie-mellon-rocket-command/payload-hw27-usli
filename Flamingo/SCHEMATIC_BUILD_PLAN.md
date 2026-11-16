@@ -203,9 +203,9 @@ Requested 2026-11-16. This replaces the former UART-only debug-sheet concept. Na
 
 | Function | Proposed circuit | Meaning / constraint |
 |---|---|---|
-| 3.3V power LED | 3V3 -> resistor -> LED -> GND | Indicates rail presence, not valid regulation or firmware operation. Start at about1mA; calculate resistance from the selected LED forward voltage. |
-| Core heartbeat LED | GPIO21 -> resistor -> LED -> GND | Reserve GPIO21; flash from the main application health loop. A stuck task must stop the heartbeat; an independent timer alone does not prove application health. |
-| Optional fault LED | GPIO18 -> resistor -> LED -> GND, DNP initially | Reserve18 only if fitted; use fault codes for camera/SD/link errors. |
+| Gated 3.3V power LED | 3V3 -> resistor -> LED -> shared LED_RETURN | Indicates rail presence only while diagnostics are enabled; not proof of valid regulation or firmware health. Calculate resistance for about1mA with the selected LED. |
+| Core heartbeat LED | GPIO21 -> resistor -> LED -> shared LED_RETURN | Reserve GPIO21; flash from the main application health loop. A stuck task must stop the heartbeat; an independent timer alone does not prove application health. |
+| Optional fault LED | GPIO18 -> resistor -> LED -> shared LED_RETURN, DNP initially | Reserve18 only if fitted; use fault codes for camera/SD/link errors. |
 | RESET button | Normally-open switch EN to GND | Reuse the existing EN pull-up/RC; do not duplicate its timing network on this sheet. |
 | BOOT button | Normally-open switch GPIO0 to GND | Boot strap/recovery control; review strap pull-up and GPIO46 state against Espressif guidance. Hold BOOT, pulse RESET, then release BOOT for download recovery. |
 | Recovery header | 1x6:1 GND,2 3V3 reference,3 UART0 TX(GPIO43),4 UART0 RX(GPIO44),5 EN,6 GPIO0 | 3.3V logic only. Adapter RX connects to TX and adapter TX to RX. Pin2 is voltage reference, not an authorized power input. No adapter5V connection. Firmware download uses UART0 plus BOOT/RESET control. |
@@ -216,7 +216,7 @@ Requested 2026-11-16. This replaces the former UART-only debug-sheet concept. Na
 - [ ] Add power and signal test pads if space permits. Keep recovery connector accessible without removing the camera or battery.
 - [ ] Verify LED meaning in firmware, manual USB/UART recovery and boot-strapping on hardware.
 
-GPIO21 is proposed for heartbeat; GPIO18 is optional fault. GPIO43/44 become reserved for recovery access. These are reservations in the plan, not changes to the core schematic.
+GPIO21 is proposed for heartbeat; GPIO18 is optional fault. GPIO43/44 become reserved for recovery access. GPIO17 is reserved for DIAG_LED_EN. These are reservations in the plan, not changes to the core schematic.
 
 ## Proposed south-edge expansion connectors
 
@@ -226,6 +226,16 @@ South refers to a proposed physical PCB edge; placement, antenna keepout and fin
 |---|---|---|
 | I2C,1x4 | GND,3V3,SDA(GPIO4),SCL(GPIO5) | Low-speed sensor expansion; coordinate one effective set of bus pull-ups. This is a custom pinout, not a claim of Qwiic compatibility. |
 | SPI,1x6 | GND,3V3,SCK(GPIO40),MOSI(GPIO41),MISO(GPIO42),CS(GPIO48) | Shared with SD; independent CS and device-specific SPI settings. Not the camera bus. |
-| General GPIO,2x5 | Row pairs:1 GND/2 3V3;3 IO6/4 IO11;5 IO12/6 IO13;7 IO14/8 IO15;9 IO16/10 IO17 | Eight flexible3.3V GPIOs; firmware can assign PWM, interrupts, UART or other routed peripheral functions. Analog capability/noise must be checked for the selected pin and use. |
+| General GPIO,2x5 | Row pairs:1 GND/2 3V3;3 IO6/4 IO11;5 IO12/6 IO13;7 IO14/8 IO15;9 IO16/10 GND | Seven flexible3.3V GPIOs; firmware can assign PWM, interrupts, UART or other routed peripheral functions. Analog capability/noise must be checked for the selected pin and use. |
 
 GPIO18 can remain spare if the fault LED is omitted. GPIO21 is reserved for heartbeat. GPIO43/44 stay on the recovery header. Exclude strapping GPIO0/3/45/46 and PSRAM GPIO35-37 from casual expansion. Do not expose raw battery or5V on these3.3V headers. Check available3.3V current before supplying accessories; these are short internal-cable interfaces, not external long-wire buses. Shared SPI devices must release MISO when deselected; initialize SD appropriately and serialize bus access.
+
+### Firmware-controlled diagnostic LED enable
+
+All diagnostic LEDs must remain off during normal operation when firmware disables them, including the power indicator. Reserve GPIO17 as DIAG_LED_EN. Use one logic-level N-channel MOSFET as a shared low-side switch: drain to LED_RETURN, source to GND, gate driven from GPIO17 with an approximately100k gate-to-source pull-down. Select a MOSFET specified at2.5/3.3V gate drive. A series gate resistor may be added if needed; exact device and footprints remain to select.
+
+All three LED cathodes return to LED_RETURN rather than directly to GND. Each LED retains its own current-limiting resistor. Power-LED anode is fed from3.3V; heartbeat/fault anodes are driven by GPIO21/GPIO18 through their resistors. GPIO17 LOW disables every LED; HIGH enables the power indicator and permits firmware to control heartbeat/fault independently. The gate pull-down defaults the switch off during reset/unprogrammed boot; avoid bootloader/peripheral use of GPIO17 that could defeat this policy.
+
+Firmware defaults DIAG_LED_EN LOW, initializes status outputs LOW, and enables diagnostics only when explicitly requested. On disable, drive status outputs LOW and then deassert DIAG_LED_EN. Do not implement an always-on rail indicator elsewhere. With diagnostics disabled there is intentionally no visible power indication; use test pads/meter during bring-up. Verify off-state leakage/ghosting and LED behavior through reset, boot and firmware update. This gate controls only LEDs, not ESP32 reset, camera power or programmer signals.
+
+GPIO17 is removed from general expansion: the proposed2x5 GPIO header now exposes6,11-16 (seven GPIOs), with pin10 reassigned to GND. Diagnostics reservations:17 enable,21 heartbeat, optional18 fault,43/44 recovery UART. Planned only; schematic implementation pending.
