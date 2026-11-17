@@ -853,6 +853,10 @@
 		(color 0 0 0 0)
 		(uuid "df67e2d7-7e48-4764-a161-d98b4fd82043")
 	)
+	(no_connect
+		(at 142.24 93.98)
+		(uuid "8b9aaeb6-9c5b-4e99-90e6-812aa2002efa")
+	)
 	(wire
 		(pts
 			(xy 123.19 88.9) (xy 133.35 88.9)
@@ -862,6 +866,16 @@
 			(type default)
 		)
 		(uuid "02877b53-14ac-49b5-837f-6718bc9ea462")
+	)
+	(wire
+		(pts
+			(xy 172.6889 102.87) (xy 168.91 102.87)
+		)
+		(stroke
+			(width 0)
+			(type default)
+		)
+		(uuid "05376cf8-71d0-4fbd-9ca4-eeb26882baa9")
 	)
 	(wire
 		(pts
@@ -892,6 +906,16 @@
 			(type default)
 		)
 		(uuid "32a1535b-dcbc-40bc-be43-c218e1ff618a")
+	)
+	(wire
+		(pts
+			(xy 184.15 102.87) (xy 180.3089 102.87)
+		)
+		(stroke
+			(width 0)
+			(type default)
+		)
+		(uuid "4bebfc9c-c16d-4874-95d1-2f5a78894d15")
 	)
 	(wire
 		(pts
@@ -975,6 +999,16 @@
 	)
 	(wire
 		(pts
+			(xy 152.4 97.79) (xy 152.4 99.06)
+		)
+		(stroke
+			(width 0)
+			(type default)
+		)
+		(uuid "c1a3cc67-bde4-44a6-b157-402e4b6a4340")
+	)
+	(wire
+		(pts
 			(xy 162.56 93.98) (xy 162.56 95.25)
 		)
 		(stroke
@@ -1047,7 +1081,7 @@
 	)
 	(symbol
 		(lib_id "power:GND")
-		(at 168.91 102.87 0)
+		(at 184.15 102.87 0)
 		(unit 1)
 		(body_style 1)
 		(exclude_from_sim no)
@@ -1058,7 +1092,7 @@
 		(fields_autoplaced yes)
 		(uuid "16f8e976-91e2-4f68-b14a-ccaecaacdec0")
 		(property "Reference" "#PWR07"
-			(at 168.91 109.22 0)
+			(at 184.15 109.22 0)
 			(hide yes)
 			(show_name no)
 			(do_not_autoplace no)
@@ -1069,7 +1103,7 @@
 			)
 		)
 		(property "Value" "GND"
-			(at 168.91 107.95 0)
+			(at 184.15 107.95 0)
 			(show_name no)
 			(do_not_autoplace no)
 			(effects
@@ -1079,7 +1113,7 @@
 			)
 		)
 		(property "Footprint" ""
-			(at 168.91 102.87 0)
+			(at 184.15 102.87 0)
 			(hide yes)
 			(show_name no)
 			(do_not_autoplace no)
@@ -1090,7 +1124,7 @@
 			)
 		)
 		(property "Datasheet" ""
-			(at 168.91 102.87 0)
+			(at 184.15 102.87 0)
 			(hide yes)
 			(show_name no)
 			(do_not_autoplace no)
@@ -1101,7 +1135,7 @@
 			)
 		)
 		(property "Description" "Power symbol creates a global label with name \"GND\" , ground"
-			(at 168.91 102.87 0)
+			(at 184.15 102.87 0)
 			(hide yes)
 			(show_name no)
 			(do_not_autoplace no)
@@ -1289,6 +1323,98 @@
 			(project "flamingo"
 				(path "/817f49eb-0105-475d-aa60-c8a0ced591cc/c5e44d0c-2cd4-4f2b-9527-a93aaaabc021/0a5bbc8c-2796-4a7c-ac7a-9c1395654364"
 					(reference "C3")
+					(unit 1)
+				)
+			)
+		)
+	)
+	(symbol
+		(lib_id "Device:R")
+		(at 176.4989 102.87 270)
+		(mirror x)
+		(unit 1)
+		(body_style 1)
+		(exclude_from_sim no)
+		(in_bom yes)
+		(on_board yes)
+		(in_pos_files yes)
+		(dnp no)
+		(fields_autoplaced yes)
+		(uuid "25a7ddf4-3b8c-4247-80ac-115c1b29c655")
+		(property "Reference" "R12"
+			(at 176.4989 96.52 90)
+			(show_name no)
+			(do_not_autoplace no)
+			(effects
+				(font
+					(size 1.27 1.27)
+				)
+			)
+		)
+		(property "Value" "3.3k"
+			(at 176.4989 99.06 90)
+			(show_name no)
+			(do_not_autoplace no)
+			(effects
+				(font
+					(size 1.27 1.27)
+				)
+			)
+		)
+		(property "Footprint" "Resistor_SMD:R_0805_2012Metric"
+			(at 176.4989 104.648 90)
+			(hide yes)
+			(show_name no)
+			(do_not_autoplace no)
+			(effects
+				(font
+					(size 1.27 1.27)
+				)
+			)
+		)
+		(property "Datasheet" ""
+			(at 176.4989 102.87 0)
+			(hide yes)
+			(show_name no)
+			(do_not_autoplace no)
+			(effects
+				(font
+					(size 1.27 1.27)
+				)
+			)
+		)
+		(property "Description" "Resistor"
+			(at 176.4989 102.87 0)
+			(hide yes)
+			(show_name no)
+			(do_not_autoplace no)
+			(effects
+				(font
+					(size 1.27 1.27)
+				)
+			)
+		)
+		(property "LCSC" "C26010"
+			(at 176.4989 102.87 0)
+			(hide yes)
+			(show_name no)
+			(do_not_autoplace no)
+			(effects
+				(font
+					(size 1.27 1.27)
+				)
+			)
+		)
+		(pin "1"
+			(uuid "23b07c86-f428-485c-8678-b29d5e433341")
+		)
+		(pin "2"
+			(uuid "2644af57-1694-4a9f-aba5-bbca52c4c015")
+		)
+		(instances
+			(project "flamingo"
+				(path "/817f49eb-0105-475d-aa60-c8a0ced591cc/c5e44d0c-2cd4-4f2b-9527-a93aaaabc021/0a5bbc8c-2796-4a7c-ac7a-9c1395654364"
+					(reference "R12")
 					(unit 1)
 				)
 			)
@@ -1632,96 +1758,6 @@
 			(project "flamingo"
 				(path "/817f49eb-0105-475d-aa60-c8a0ced591cc/c5e44d0c-2cd4-4f2b-9527-a93aaaabc021/0a5bbc8c-2796-4a7c-ac7a-9c1395654364"
 					(reference "#PWR08")
-					(unit 1)
-				)
-			)
-		)
-	)
-	(symbol
-		(lib_id "Device:R")
-		(at 204.47 113.03 90)
-		(unit 1)
-		(body_style 1)
-		(exclude_from_sim no)
-		(in_bom yes)
-		(on_board yes)
-		(in_pos_files yes)
-		(dnp no)
-		(uuid "9a30c273-bfcb-4031-a632-0428653bd4cf")
-		(property "Reference" "R12"
-			(at 204.47 119.38 90)
-			(show_name no)
-			(do_not_autoplace yes)
-			(effects
-				(font
-					(size 1.27 1.27)
-				)
-			)
-		)
-		(property "Value" "75k"
-			(at 204.47 116.84 90)
-			(show_name no)
-			(do_not_autoplace no)
-			(effects
-				(font
-					(size 1.27 1.27)
-				)
-			)
-		)
-		(property "Footprint" "Resistor_SMD:R_0201_0603Metric"
-			(at 204.47 114.808 90)
-			(hide yes)
-			(show_name no)
-			(do_not_autoplace no)
-			(effects
-				(font
-					(size 1.27 1.27)
-				)
-			)
-		)
-		(property "Datasheet" ""
-			(at 204.47 113.03 0)
-			(hide yes)
-			(show_name no)
-			(do_not_autoplace no)
-			(effects
-				(font
-					(size 1.27 1.27)
-				)
-			)
-		)
-		(property "Description" "Resistor"
-			(at 204.47 113.03 0)
-			(hide yes)
-			(show_name no)
-			(do_not_autoplace no)
-			(effects
-				(font
-					(size 1.27 1.27)
-				)
-			)
-		)
-		(property "LCSC" "C23242"
-			(at 204.47 113.03 90)
-			(hide yes)
-			(show_name no)
-			(do_not_autoplace no)
-			(effects
-				(font
-					(size 1.27 1.27)
-				)
-			)
-		)
-		(pin "1"
-			(uuid "c2e64bfe-9014-4b03-88b4-491b663b2f7f")
-		)
-		(pin "2"
-			(uuid "91fb200a-7d61-470c-8f88-06b6fa86fa00")
-		)
-		(instances
-			(project "flamingo"
-				(path "/817f49eb-0105-475d-aa60-c8a0ced591cc/c5e44d0c-2cd4-4f2b-9527-a93aaaabc021/0a5bbc8c-2796-4a7c-ac7a-9c1395654364"
-					(reference "R12")
 					(unit 1)
 				)
 			)
@@ -2170,6 +2206,98 @@
 			(project "flamingo"
 				(path "/817f49eb-0105-475d-aa60-c8a0ced591cc/c5e44d0c-2cd4-4f2b-9527-a93aaaabc021/0a5bbc8c-2796-4a7c-ac7a-9c1395654364"
 					(reference "L2")
+					(unit 1)
+				)
+			)
+		)
+	)
+	(symbol
+		(lib_id "Device:R")
+		(at 204.47 113.03 270)
+		(mirror x)
+		(unit 1)
+		(body_style 1)
+		(exclude_from_sim no)
+		(in_bom yes)
+		(on_board yes)
+		(in_pos_files yes)
+		(dnp no)
+		(fields_autoplaced yes)
+		(uuid "d80e22fd-8e5a-4256-a0e6-83c54909f425")
+		(property "Reference" "R18"
+			(at 204.47 106.68 90)
+			(show_name no)
+			(do_not_autoplace no)
+			(effects
+				(font
+					(size 1.27 1.27)
+				)
+			)
+		)
+		(property "Value" "100k"
+			(at 204.47 109.22 90)
+			(show_name no)
+			(do_not_autoplace no)
+			(effects
+				(font
+					(size 1.27 1.27)
+				)
+			)
+		)
+		(property "Footprint" "Resistor_SMD:R_0805_2012Metric"
+			(at 204.47 114.808 90)
+			(hide yes)
+			(show_name no)
+			(do_not_autoplace no)
+			(effects
+				(font
+					(size 1.27 1.27)
+				)
+			)
+		)
+		(property "Datasheet" ""
+			(at 204.47 113.03 0)
+			(hide yes)
+			(show_name no)
+			(do_not_autoplace no)
+			(effects
+				(font
+					(size 1.27 1.27)
+				)
+			)
+		)
+		(property "Description" "Resistor"
+			(at 204.47 113.03 0)
+			(hide yes)
+			(show_name no)
+			(do_not_autoplace no)
+			(effects
+				(font
+					(size 1.27 1.27)
+				)
+			)
+		)
+		(property "LCSC" "C149504"
+			(at 204.47 113.03 0)
+			(hide yes)
+			(show_name no)
+			(do_not_autoplace no)
+			(effects
+				(font
+					(size 1.27 1.27)
+				)
+			)
+		)
+		(pin "1"
+			(uuid "096c1b15-6fee-43e7-ae44-4b58fb8a2cd4")
+		)
+		(pin "2"
+			(uuid "9aa2d57b-2cdf-4816-8783-0794ac61ffb5")
+		)
+		(instances
+			(project "flamingo"
+				(path "/817f49eb-0105-475d-aa60-c8a0ced591cc/c5e44d0c-2cd4-4f2b-9527-a93aaaabc021/0a5bbc8c-2796-4a7c-ac7a-9c1395654364"
+					(reference "R18")
 					(unit 1)
 				)
 			)

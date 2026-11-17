@@ -1283,8 +1283,20 @@
 		(uuid "020ac186-587f-4dd2-b625-374bb3555268")
 	)
 	(no_connect
+		(at 104.14 92.71)
+		(uuid "931d9a09-d390-4fd4-99c0-010041e20407")
+	)
+	(no_connect
+		(at 132.08 92.71)
+		(uuid "e0ce9cdd-7c7c-45c5-b5dd-1a5fd4da9ff0")
+	)
+	(no_connect
 		(at 138.43 76.2)
 		(uuid "e290224c-2bae-45e5-9623-08601137e04c")
+	)
+	(no_connect
+		(at 106.68 92.71)
+		(uuid "f3d8d7e6-d6aa-4657-8bad-767c8bdbdcff")
 	)
 	(no_connect
 		(at 138.43 73.66)
@@ -1312,17 +1324,7 @@
 	)
 	(wire
 		(pts
-			(xy 75 108.81) (xy 75 113.89)
-		)
-		(stroke
-			(width 0)
-			(type default)
-		)
-		(uuid "edcb0650-fe7d-4590-8970-94b9395994ef")
-	)
-	(wire
-		(pts
-			(xy 75 101.19) (xy 75 96.11)
+			(xy 73.66 96.52) (xy 73.66 100.33)
 		)
 		(stroke
 			(width 0)
@@ -1376,31 +1378,9 @@
 			)
 		)
 	)
-	(global_label "GND"
-		(shape bidirectional)
-		(at 75 113.89 0)
-		(effects
-			(font
-				(size 1 1)
-			)
-			(justify left)
-		)
-		(uuid "d89860e6-701a-44fc-ae06-0bac629dc27e")
-		(property "Intersheetrefs" "${INTERSHEET_REFS}"
-			(at 75 113.89 0)
-			(hide yes)
-			(show_name no)
-			(do_not_autoplace no)
-			(effects
-				(font
-					(size 1.27 1.27)
-				)
-			)
-		)
-	)
 	(global_label "ESP_EN"
 		(shape bidirectional)
-		(at 75 96.11 0)
+		(at 73.66 96.52 0)
 		(effects
 			(font
 				(size 1 1)
@@ -1409,7 +1389,7 @@
 		)
 		(uuid "e2e1d7f9-85ca-4cb1-90fe-e032b358959c")
 		(property "Intersheetrefs" "${INTERSHEET_REFS}"
-			(at 75 96.11 0)
+			(at 73.66 96.52 0)
 			(hide yes)
 			(show_name no)
 			(do_not_autoplace no)
@@ -1464,6 +1444,28 @@
 		)
 		(uuid "15df8648-0f1f-4ed3-980b-803733207612")
 	)
+	(hierarchical_label "IO12"
+		(shape bidirectional)
+		(at 116.84 92.71 270)
+		(effects
+			(font
+				(size 1.27 1.27)
+			)
+			(justify right)
+		)
+		(uuid "1ae9eb39-053e-4013-9664-5225dd373f4e")
+	)
+	(hierarchical_label "IO6"
+		(shape bidirectional)
+		(at 95.25 58.42 180)
+		(effects
+			(font
+				(size 1.27 1.27)
+			)
+			(justify right)
+		)
+		(uuid "204e266f-27da-478d-8adc-bdc57d2b58d1")
+	)
 	(hierarchical_label "DEBUG_RX"
 		(shape input)
 		(at 138.43 55.88 0)
@@ -1485,6 +1487,17 @@
 			(justify right)
 		)
 		(uuid "27f64ee6-4dc9-4977-941c-21fa2a8f6d6f")
+	)
+	(hierarchical_label "IO14"
+		(shape bidirectional)
+		(at 121.92 92.71 270)
+		(effects
+			(font
+				(size 1.27 1.27)
+			)
+			(justify right)
+		)
+		(uuid "35111384-8650-4f20-8c2a-a99c2e904016")
 	)
 	(hierarchical_label "FC_UART_TX"
 		(shape output)
@@ -1530,6 +1543,17 @@
 		)
 		(uuid "576d2ffe-b55e-4c37-8b23-92fab88aa3a0")
 	)
+	(hierarchical_label "GPIO_CS"
+		(shape output)
+		(at 129.54 92.71 270)
+		(effects
+			(font
+				(size 1.27 1.27)
+			)
+			(justify right)
+		)
+		(uuid "60951160-900a-4e32-a935-c22b47de02f4")
+	)
 	(hierarchical_label "CAM_SCK"
 		(shape output)
 		(at 95.25 73.66 180)
@@ -1541,6 +1565,28 @@
 		)
 		(uuid "708e49f7-8e7a-44c9-9b8c-63b12c39491f")
 	)
+	(hierarchical_label "IO15"
+		(shape bidirectional)
+		(at 95.25 63.5 180)
+		(effects
+			(font
+				(size 1.27 1.27)
+			)
+			(justify right)
+		)
+		(uuid "71cdd202-f0ed-40d8-8316-e6a5b5d1d562")
+	)
+	(hierarchical_label "IO13"
+		(shape bidirectional)
+		(at 119.38 92.71 270)
+		(effects
+			(font
+				(size 1.27 1.27)
+			)
+			(justify right)
+		)
+		(uuid "741a4998-d937-4cb4-8e49-2ffd081e6b10")
+	)
 	(hierarchical_label "ESP_BOOT"
 		(shape passive)
 		(at 138.43 78.74 0)
@@ -1551,6 +1597,17 @@
 			(justify left)
 		)
 		(uuid "7d320c49-09fa-471e-a9de-c6edecd6cce6")
+	)
+	(hierarchical_label "IO11"
+		(shape bidirectional)
+		(at 114.3 92.71 270)
+		(effects
+			(font
+				(size 1.27 1.27)
+			)
+			(justify right)
+		)
+		(uuid "7fc8038a-c191-49a0-baa4-889c4acb8659")
 	)
 	(hierarchical_label "SD_CS"
 		(shape output)
@@ -1584,6 +1641,17 @@
 			(justify left)
 		)
 		(uuid "a1cda742-d203-465b-807f-6107feb8574a")
+	)
+	(hierarchical_label "SCL"
+		(shape output)
+		(at 95.25 55.88 180)
+		(effects
+			(font
+				(size 1.27 1.27)
+			)
+			(justify right)
+		)
+		(uuid "a7d8e726-84a7-4bba-a1ed-79e3ae87950e")
 	)
 	(hierarchical_label "CAM_CS"
 		(shape output)
@@ -1661,6 +1729,28 @@
 			(justify right)
 		)
 		(uuid "e307b6a2-90dd-4498-adaa-e051a1f44b82")
+	)
+	(hierarchical_label "SDA"
+		(shape bidirectional)
+		(at 95.25 53.34 180)
+		(effects
+			(font
+				(size 1.27 1.27)
+			)
+			(justify right)
+		)
+		(uuid "f07881a5-d674-4c53-947a-6d6f4c3a6bb7")
+	)
+	(hierarchical_label "IO16"
+		(shape bidirectional)
+		(at 95.25 66.04 180)
+		(effects
+			(font
+				(size 1.27 1.27)
+			)
+			(justify right)
+		)
+		(uuid "fcd44614-11af-4599-8e7b-9a5a00fac68f")
 	)
 	(hierarchical_label "CAM_MISO"
 		(shape input)
@@ -2140,6 +2230,84 @@
 	)
 	(symbol
 		(lib_id "power:GND")
+		(at 73.66 107.95 0)
+		(unit 1)
+		(body_style 1)
+		(exclude_from_sim no)
+		(in_bom yes)
+		(on_board yes)
+		(in_pos_files yes)
+		(dnp no)
+		(fields_autoplaced yes)
+		(uuid "ab9b2366-cbab-4f08-85e9-8d7d6b13b147")
+		(property "Reference" "#PWR047"
+			(at 73.66 114.3 0)
+			(hide yes)
+			(show_name no)
+			(do_not_autoplace no)
+			(effects
+				(font
+					(size 1.27 1.27)
+				)
+			)
+		)
+		(property "Value" "GND"
+			(at 73.66 113.03 0)
+			(show_name no)
+			(do_not_autoplace no)
+			(effects
+				(font
+					(size 1.27 1.27)
+				)
+			)
+		)
+		(property "Footprint" ""
+			(at 73.66 107.95 0)
+			(hide yes)
+			(show_name no)
+			(do_not_autoplace no)
+			(effects
+				(font
+					(size 1.27 1.27)
+				)
+			)
+		)
+		(property "Datasheet" ""
+			(at 73.66 107.95 0)
+			(hide yes)
+			(show_name no)
+			(do_not_autoplace no)
+			(effects
+				(font
+					(size 1.27 1.27)
+				)
+			)
+		)
+		(property "Description" "Power symbol creates a global label with name \"GND\" , ground"
+			(at 73.66 107.95 0)
+			(hide yes)
+			(show_name no)
+			(do_not_autoplace no)
+			(effects
+				(font
+					(size 1.27 1.27)
+				)
+			)
+		)
+		(pin "1"
+			(uuid "9a4a4d85-fd1a-4334-924d-8462a5680a4f")
+		)
+		(instances
+			(project "flamingo"
+				(path "/817f49eb-0105-475d-aa60-c8a0ced591cc/91741965-6759-4532-86dd-7c4d063ae6ad"
+					(reference "#PWR047")
+					(unit 1)
+				)
+			)
+		)
+	)
+	(symbol
+		(lib_id "power:GND")
 		(at 138.43 41.91 90)
 		(unit 1)
 		(body_style 1)
@@ -2219,7 +2387,7 @@
 	)
 	(symbol
 		(lib_id "Device:C")
-		(at 75 105 0)
+		(at 73.66 104.14 0)
 		(unit 1)
 		(body_style 1)
 		(exclude_from_sim no)
@@ -2229,7 +2397,7 @@
 		(dnp no)
 		(uuid "df06f6c7-3a72-48a1-abc2-16aabba59d85")
 		(property "Reference" "C36"
-			(at 80 101 0)
+			(at 78.66 100.14 0)
 			(show_name no)
 			(do_not_autoplace no)
 			(effects
@@ -2239,7 +2407,7 @@
 			)
 		)
 		(property "Value" "1uF"
-			(at 80 103 0)
+			(at 78.66 102.14 0)
 			(show_name no)
 			(do_not_autoplace no)
 			(effects
@@ -2249,7 +2417,7 @@
 			)
 		)
 		(property "Footprint" "Capacitor_SMD:C_0805_2012Metric"
-			(at 80 105 0)
+			(at 78.66 104.14 0)
 			(hide yes)
 			(show_name no)
 			(do_not_autoplace no)
@@ -2260,7 +2428,7 @@
 			)
 		)
 		(property "Datasheet" ""
-			(at 75 105 0)
+			(at 73.66 104.14 0)
 			(show_name no)
 			(do_not_autoplace no)
 			(effects
@@ -2270,7 +2438,18 @@
 			)
 		)
 		(property "Description" ""
-			(at 75 105 0)
+			(at 73.66 104.14 0)
+			(show_name no)
+			(do_not_autoplace no)
+			(effects
+				(font
+					(size 1.27 1.27)
+				)
+			)
+		)
+		(property "LCSC" "C28323"
+			(at 73.66 104.14 0)
+			(hide yes)
 			(show_name no)
 			(do_not_autoplace no)
 			(effects

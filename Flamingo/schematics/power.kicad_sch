@@ -617,7 +617,7 @@
 						)
 					)
 				)
-				(pin unspecified line
+				(pin power_out line
 					(at -11.43 1.27 0)
 					(length 2.54)
 					(name "VOUT"
@@ -707,7 +707,7 @@
 						)
 					)
 				)
-				(pin unspecified line
+				(pin power_out line
 					(at 11.43 1.27 180)
 					(length 2.54)
 					(name "VOUT"
@@ -969,7 +969,7 @@
 						)
 					)
 				)
-				(pin power_in line
+				(pin power_out line
 					(at 12.7 10.16 180)
 					(length 5.08)
 					(name "SW"
@@ -1398,14 +1398,9 @@
 		(color 0 0 0 0)
 		(uuid "e539526f-4ca5-4f9c-bf8f-61dc1daef170")
 	)
-	(bus_entry
-		(at 81.28 130.81)
-		(size 2.54 2.54)
-		(stroke
-			(width 0)
-			(type default)
-		)
-		(uuid "9a4a36fa-a2ef-4731-925c-dbd425c6b3c2")
+	(no_connect
+		(at 152.4 67.31)
+		(uuid "0c6a718e-a974-4c97-b6bd-eb19138f3f9d")
 	)
 	(wire
 		(pts
@@ -2241,6 +2236,84 @@
 			(project "flamingo"
 				(path "/817f49eb-0105-475d-aa60-c8a0ced591cc/c5e44d0c-2cd4-4f2b-9527-a93aaaabc021"
 					(reference "R8")
+					(unit 1)
+				)
+			)
+		)
+	)
+	(symbol
+		(lib_id "power:GND")
+		(at 38.1 76.2 0)
+		(unit 1)
+		(body_style 1)
+		(exclude_from_sim no)
+		(in_bom yes)
+		(on_board yes)
+		(in_pos_files yes)
+		(dnp no)
+		(fields_autoplaced yes)
+		(uuid "13924a8f-2723-4920-a670-e29efcdc8b09")
+		(property "Reference" "#PWR045"
+			(at 38.1 82.55 0)
+			(hide yes)
+			(show_name no)
+			(do_not_autoplace no)
+			(effects
+				(font
+					(size 1.27 1.27)
+				)
+			)
+		)
+		(property "Value" "GND"
+			(at 38.1 81.28 0)
+			(show_name no)
+			(do_not_autoplace no)
+			(effects
+				(font
+					(size 1.27 1.27)
+				)
+			)
+		)
+		(property "Footprint" ""
+			(at 38.1 76.2 0)
+			(hide yes)
+			(show_name no)
+			(do_not_autoplace no)
+			(effects
+				(font
+					(size 1.27 1.27)
+				)
+			)
+		)
+		(property "Datasheet" ""
+			(at 38.1 76.2 0)
+			(hide yes)
+			(show_name no)
+			(do_not_autoplace no)
+			(effects
+				(font
+					(size 1.27 1.27)
+				)
+			)
+		)
+		(property "Description" "Power symbol creates a global label with name \"GND\" , ground"
+			(at 38.1 76.2 0)
+			(hide yes)
+			(show_name no)
+			(do_not_autoplace no)
+			(effects
+				(font
+					(size 1.27 1.27)
+				)
+			)
+		)
+		(pin "1"
+			(uuid "2f111e11-4f94-48dd-9187-c1a8271885bf")
+		)
+		(instances
+			(project "flamingo"
+				(path "/817f49eb-0105-475d-aa60-c8a0ced591cc/c5e44d0c-2cd4-4f2b-9527-a93aaaabc021"
+					(reference "#PWR045")
 					(unit 1)
 				)
 			)
@@ -3099,6 +3172,84 @@
 			(project "flamingo"
 				(path "/817f49eb-0105-475d-aa60-c8a0ced591cc/c5e44d0c-2cd4-4f2b-9527-a93aaaabc021"
 					(reference "J4")
+					(unit 1)
+				)
+			)
+		)
+	)
+	(symbol
+		(lib_id "power:GND")
+		(at 38.1 63.5 180)
+		(unit 1)
+		(body_style 1)
+		(exclude_from_sim no)
+		(in_bom yes)
+		(on_board yes)
+		(in_pos_files yes)
+		(dnp no)
+		(fields_autoplaced yes)
+		(uuid "8169139c-a2e5-4e97-9c2a-3ea0780ffb22")
+		(property "Reference" "#PWR046"
+			(at 38.1 57.15 0)
+			(hide yes)
+			(show_name no)
+			(do_not_autoplace no)
+			(effects
+				(font
+					(size 1.27 1.27)
+				)
+			)
+		)
+		(property "Value" "GND"
+			(at 38.1 58.42 0)
+			(show_name no)
+			(do_not_autoplace no)
+			(effects
+				(font
+					(size 1.27 1.27)
+				)
+			)
+		)
+		(property "Footprint" ""
+			(at 38.1 63.5 0)
+			(hide yes)
+			(show_name no)
+			(do_not_autoplace no)
+			(effects
+				(font
+					(size 1.27 1.27)
+				)
+			)
+		)
+		(property "Datasheet" ""
+			(at 38.1 63.5 0)
+			(hide yes)
+			(show_name no)
+			(do_not_autoplace no)
+			(effects
+				(font
+					(size 1.27 1.27)
+				)
+			)
+		)
+		(property "Description" "Power symbol creates a global label with name \"GND\" , ground"
+			(at 38.1 63.5 0)
+			(hide yes)
+			(show_name no)
+			(do_not_autoplace no)
+			(effects
+				(font
+					(size 1.27 1.27)
+				)
+			)
+		)
+		(pin "1"
+			(uuid "a440562a-1bba-4154-906e-373fdaae697e")
+		)
+		(instances
+			(project "flamingo"
+				(path "/817f49eb-0105-475d-aa60-c8a0ced591cc/c5e44d0c-2cd4-4f2b-9527-a93aaaabc021"
+					(reference "#PWR046")
 					(unit 1)
 				)
 			)

@@ -364,6 +364,10 @@
 		)
 		(uuid "ad78c682-cf7a-40e1-b2cb-d51da16decc0")
 	)
+	(no_connect
+		(at 102.87 82.55)
+		(uuid "9e67a712-f883-4bc5-939a-06c4a9f85dfd")
+	)
 	(wire
 		(pts
 			(xy 93.98 80.01) (xy 102.87 80.01)

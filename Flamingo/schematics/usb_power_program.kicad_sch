@@ -695,6 +695,14 @@
 		(color 0 0 0 0)
 		(uuid "da49d99a-dcfd-40ef-9935-71dab8fee3b7")
 	)
+	(no_connect
+		(at 124.46 72.39)
+		(uuid "94c4beb9-6563-4331-baff-fcbcf88234c5")
+	)
+	(no_connect
+		(at 124.46 87.63)
+		(uuid "dcfa4ee0-2f83-4bf4-afce-90c7f99f126a")
+	)
 	(wire
 		(pts
 			(xy 118.11 77.47) (xy 118.11 82.55)
@@ -1263,18 +1271,7 @@
 				)
 			)
 		)
-		(property "MPN" "USB-TYPE-C-017"
-			(at 132.08 110.49 0)
-			(hide yes)
-			(show_name no)
-			(do_not_autoplace no)
-			(effects
-				(font
-					(size 1.27 1.27)
-				)
-			)
-		)
-		(property "LCSC Part" "C2927037"
+		(property "LCSC" "C2927037"
 			(at 132.08 113.03 0)
 			(hide yes)
 			(show_name no)

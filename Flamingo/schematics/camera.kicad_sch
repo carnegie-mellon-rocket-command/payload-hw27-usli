@@ -620,13 +620,73 @@
 	)
 	(wire
 		(pts
-			(xy 84.92 80.08) (xy 74.76 80.08)
+			(xy 80.01 74.93) (xy 80.01 75)
+		)
+		(stroke
+			(width 0)
+			(type default)
+		)
+		(uuid "060771f4-792c-4c36-8fb2-d254d9dde7d6")
+	)
+	(wire
+		(pts
+			(xy 81.28 77.47) (xy 81.28 77.54)
+		)
+		(stroke
+			(width 0)
+			(type default)
+		)
+		(uuid "13c3bbd9-8cc1-4016-a3f4-80e0bacccd20")
+	)
+	(wire
+		(pts
+			(xy 85.09 80.01) (xy 82.55 80.01)
 		)
 		(stroke
 			(width 0)
 			(type default)
 		)
 		(uuid "2987e439-bbaf-434f-86e7-533eb15914e9")
+	)
+	(wire
+		(pts
+			(xy 82.55 80.01) (xy 82.55 80.08)
+		)
+		(stroke
+			(width 0)
+			(type default)
+		)
+		(uuid "3ffa9dca-cfef-4eb1-9480-a88f1b49f220")
+	)
+	(wire
+		(pts
+			(xy 82.55 80.08) (xy 74.76 80.08)
+		)
+		(stroke
+			(width 0)
+			(type default)
+		)
+		(uuid "42bd8d35-82b1-495d-8608-75565f31237a")
+	)
+	(wire
+		(pts
+			(xy 81.28 77.54) (xy 74.76 77.54)
+		)
+		(stroke
+			(width 0)
+			(type default)
+		)
+		(uuid "55f296b2-d034-430d-9b32-14a12a4884d2")
+	)
+	(wire
+		(pts
+			(xy 80.01 75) (xy 74.76 75)
+		)
+		(stroke
+			(width 0)
+			(type default)
+		)
+		(uuid "5ffcf31f-67e8-43df-a986-a94852d75e05")
 	)
 	(wire
 		(pts
@@ -640,7 +700,17 @@
 	)
 	(wire
 		(pts
-			(xy 84.92 82.62) (xy 74.76 82.62)
+			(xy 83.82 82.62) (xy 74.76 82.62)
+		)
+		(stroke
+			(width 0)
+			(type default)
+		)
+		(uuid "89c4ed74-731d-4e7a-94ad-d0d7203361aa")
+	)
+	(wire
+		(pts
+			(xy 85.09 82.55) (xy 83.82 82.55)
 		)
 		(stroke
 			(width 0)
@@ -660,7 +730,7 @@
 	)
 	(wire
 		(pts
-			(xy 84.92 77.54) (xy 74.76 77.54)
+			(xy 85.09 77.47) (xy 81.28 77.47)
 		)
 		(stroke
 			(width 0)
@@ -670,13 +740,23 @@
 	)
 	(wire
 		(pts
-			(xy 84.92 75) (xy 74.76 75)
+			(xy 85.09 74.93) (xy 80.01 74.93)
 		)
 		(stroke
 			(width 0)
 			(type default)
 		)
 		(uuid "c0a742e1-99f7-4a29-9a33-9c424ec084ca")
+	)
+	(wire
+		(pts
+			(xy 83.82 82.55) (xy 83.82 82.62)
+		)
+		(stroke
+			(width 0)
+			(type default)
+		)
+		(uuid "cf595a50-ee7c-4065-896c-9ff5d166dab2")
 	)
 	(label "CAM_CS"
 		(at 149.86 137.16 0)
@@ -782,7 +862,7 @@
 	)
 	(symbol
 		(lib_id "Connector_Generic:Conn_01x06")
-		(at 90 75 0)
+		(at 90.17 74.93 0)
 		(unit 1)
 		(body_style 1)
 		(exclude_from_sim no)
@@ -792,7 +872,7 @@
 		(dnp no)
 		(uuid "4a381509-dbba-4dc4-80dc-51c528b8a6f2")
 		(property "Reference" "J5"
-			(at 108 57 0)
+			(at 108.17 56.93 0)
 			(show_name no)
 			(do_not_autoplace no)
 			(effects
@@ -803,7 +883,7 @@
 			)
 		)
 		(property "Value" "ARDUCAM_MEGA_SPI"
-			(at 108 60 0)
+			(at 108.17 59.93 0)
 			(show_name no)
 			(do_not_autoplace no)
 			(effects
@@ -814,7 +894,7 @@
 			)
 		)
 		(property "Footprint" "Connector_PinHeader_2.54mm:PinHeader_1x06_P2.54mm_Vertical"
-			(at 90 75 0)
+			(at 90.17 74.93 0)
 			(hide yes)
 			(show_name no)
 			(do_not_autoplace no)
@@ -826,7 +906,7 @@
 			)
 		)
 		(property "Datasheet" ""
-			(at 90 75 0)
+			(at 90.17 74.93 0)
 			(show_name no)
 			(do_not_autoplace no)
 			(effects
@@ -836,7 +916,7 @@
 			)
 		)
 		(property "Description" ""
-			(at 90 75 0)
+			(at 90.17 74.93 0)
 			(show_name no)
 			(do_not_autoplace no)
 			(effects
