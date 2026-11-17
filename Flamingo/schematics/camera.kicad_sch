@@ -963,7 +963,7 @@
 		(in_pos_files yes)
 		(dnp no)
 		(uuid "c11aaa56-3518-4e3d-b89a-aea12f08e908")
-		(property "Reference" "R?"
+		(property "Reference" "R13"
 			(at 153.67 123.19 0)
 			(show_name no)
 			(do_not_autoplace no)
@@ -1038,7 +1038,7 @@
 		(instances
 			(project "flamingo"
 				(path "/817f49eb-0105-475d-aa60-c8a0ced591cc/40dd17db-c6fb-4a01-a68d-1434f55a08fb"
-					(reference "R?")
+					(reference "R13")
 					(unit 1)
 				)
 			)
